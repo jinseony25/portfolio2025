@@ -1,0 +1,1155 @@
+  /* 언어설정 */
+  @charset "utf-8";
+
+  /* 전체설정 */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    background-color: black;
+  }
+
+  a {
+    text-decoration: none;
+    color: #000;
+  }
+
+  ul,
+  ol {
+    list-style: none;
+  }
+
+  img {
+    border: 0;
+    vertical-align: bottom;
+  }
+
+  /* max-width 사이즈 설정 */
+  .box4-inner,
+
+  .box6-inner,
+  .box7-inner,
+  .box8-inner,
+  .box10-inner,
+
+  .boxA-2 {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+
+
+  /* order설정 */
+  .box1 {
+    order: 1;
+  }
+
+  .box2 {
+    order: 2;
+  }
+
+  .box3 {
+    order: 3;
+  }
+
+  .box4 {
+    order: 4;
+  }
+
+  .box5 {
+    order: 5;
+  }
+
+  .box6 {
+    order: 6;
+  }
+
+  .box7 {
+    order: 7;
+  }
+
+  .box8 {
+    order: 8;
+  }
+
+  .box9 {
+    order: 9;
+  }
+
+  .box10 {
+    order: 10;
+  }
+
+  .box11 {
+    order: 11;
+  }
+
+  /* 상세설정 #########################################################################*/
+
+
+
+
+
+  /* logo설정 */
+  .boxA {
+    background-color: #000;
+  }
+
+  .boxA-inner {}
+
+  .boxA-1 {
+    background-image: url(../resauce/img/logo/back.jpg);
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .boxA-1 .logo {
+    padding-left: 10px;
+  }
+
+  .boxA-1 .logo a {
+    display: block;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+  }
+
+  .boxA-1 .logo p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .boxA-1 .imgBox {
+    background-image: url(../resauce/img/logo/logo.png);
+    background-size: cover;
+    width: 100px;
+    height: 100px;
+  }
+
+
+  /* gnb설정 */
+  .boxA-2 {
+    background-color: #000;
+    width: 100%;
+    height: 70px;
+
+  }
+
+  .boxA-2 a {
+    color: #fff;
+  }
+
+
+  .gnb ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .gnb ul li a {
+    display: block;
+    font-size: 20px;
+    font-weight: bold;
+    padding-top: 15px;
+  }
+
+  .gnb ul li a:hover {
+    opacity: 0.7;
+  }
+
+
+
+
+
+  /* 동영상설정 */
+  .vid {
+    display: block;
+    margin: 0;
+    padding: 0;
+    border: none;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .vid video {
+    display: block;
+
+    width: 100%;
+
+    height: auto;
+    margin: 0;
+    padding: 0;
+    border: none;
+    object-fit: cover;
+
+    vertical-align: bottom;
+
+  }
+
+
+
+  /* review */
+
+  .review {
+    position: relative;
+    overflow: hidden;
+    height: 600px;
+    width: 100%;
+    background: black;
+  }
+
+  .review ul {
+    position: absolute;
+    top: 0;
+    display: flex;
+    gap: 50px;
+    padding: 70px 0;
+    border-top: 3px dotted #666;
+    border-bottom: 3px dotted #666;
+    animation: scroll 20s linear infinite;
+  }
+
+  .review ul:nth-of-type(1) {
+    left: 0;
+    animation-name: scroll;
+  }
+
+  .review ul:nth-of-type(2) {
+    left: 100%;
+    animation-name: scroll2;
+  }
+
+  .review li {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    border: 1px solid #666;
+    width: 400px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    margin-bottom: 80px;
+    background-color: #222;
+  }
+
+  .review li .imgBox {
+    width: 200px;
+    height: 200px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 10px;
+  }
+
+  .review .txt p {
+    color: #fff;
+    margin: 0;
+  }
+
+  .review .txt em {
+    font-style: normal;
+    font-size: 12px;
+    color: #aaa;
+  }
+
+  .review li a {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    text-decoration: none;
+    color: white;
+    box-sizing: border-box;
+  }
+
+  /* 백그라운드 이미지 예시 */
+  .review li:nth-child(1) .imgBox {
+    background-image: url(../resauce/img/review/r.jpg);
+  }
+
+  .review li:nth-child(2) .imgBox {
+    background-image: url(../resauce/img/review/re.jpg);
+  }
+
+  /* ... 계속 추가 ... */
+
+  /* 애니메이션 */
+  @keyframes scroll {
+    0% {
+      left: 0;
+    }
+
+    100% {
+      left: -100%;
+    }
+  }
+
+  @keyframes scroll2 {
+    0% {
+      left: 100%;
+    }
+
+    100% {
+      left: 0;
+    }
+  }
+
+
+  /* lineup 라인업 설정 */
+  .box3 {
+    width: 100%;
+    height: 1200px;
+    background-image:
+      linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0)),
+      linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0)),
+      url(../resauce/img/review/back.jpg);
+    background-position: center;
+    background-size: cover;
+  }
+
+  .whoTitle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    margin-bottom: 100px;
+    padding-top: 100px;
+    color: #fff;
+  }
+
+  .lineUp ul {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding-bottom: 50px;
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+  }
+
+  .lineUp ul li {
+    width: 20%;
+    cursor: pointer;
+    margin-bottom: 50px;
+  }
+
+  .lineUp ul li a {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .lineUp ul li .imgBox {
+    width: 100%;
+    height: 300px;
+    border-radius: 10px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: transform 0.5s ease;
+    overflow: hidden;
+  }
+
+  .lineUp ul li:hover .imgBox {
+    transform: scale(1.1);
+    z-index: 10;
+  }
+
+  .lineUp ul li p:hover {
+    opacity: 0.7;
+  }
+
+  .lineUp ul li .txt {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+  }
+
+  .lineUp ul li:nth-child(1) .imgBox {
+    background-image: url(../resauce/img/lineup/kungfu.jpg);
+  }
+
+  .lineUp ul li:nth-child(2) .imgBox {
+    background-image: url(../resauce/img/lineup/pulp.jpg);
+  }
+
+  .lineUp ul li:nth-child(3) .imgBox {
+    background-image: url(../resauce/img/lineup/beck.jpg);
+  }
+
+  .lineUp ul li:nth-child(4) .imgBox {
+    background-image: url(../resauce/img/lineup/simz.jpg);
+  }
+
+  .lineUp ul li:nth-child(5) .imgBox {
+    background-image: url(../resauce/img/lineup/jang.jpg);
+  }
+
+  .lineUp ul li:nth-child(6) .imgBox {
+    background-image: url(../resauce/img/lineup/crying.jpg);
+  }
+
+  .lineUp ul li:nth-child(7) .imgBox {
+    background-image: url(../resauce/img/lineup/bea.jpg);
+  }
+
+  .lineUp ul li:nth-child(8) .imgBox {
+    background-image: url(../resauce/img/lineup/method.jpg);
+  }
+
+  .more {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .more a {
+    display: block;
+    font-weight: bold;
+    color: #fff;
+    border: 2px solid #fff;
+    padding: 10px 50px;
+    border-radius: 10px;
+  }
+
+  .more a:hover {
+    opacity: 0.7;
+    border-color: #ffffffb3;
+  }
+
+
+
+  /* reservation설정 */
+  .box4 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 100px;
+    background-color: #000;
+    width: 100%;
+    height: 1000px;
+  }
+
+  .readyTitle {
+    display: flex;
+    font-size: 50px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 80px;
+    padding-top: 100px;
+    color: #fff;
+  }
+
+  .box4-2 {
+    border-bottom: 1px solid #666;
+    margin-bottom: 30px;
+    padding-bottom: 10px;
+    line-height: 20px;
+  }
+
+  .box4-2 h2 {
+    font-size: 14px;
+    font-weight: normal;
+    color: #fff;
+  }
+
+  .reservation ul {
+    display: flex;
+    justify-content: center;
+
+  }
+
+  .reservation .txt {
+    display: block;
+    justify-content: center;
+    margin-left: 50px;
+  }
+
+  .reservation .txt li {
+    color: #fff;
+  }
+
+  .reservation .txt li:nth-child(1) {
+    margin-bottom: 80px;
+  }
+
+  .reservation .txt li:nth-child(2) {
+    margin-bottom: 150px;
+  }
+
+  .reservation .txt li:nth-child(3) {
+    border: 1px solid #000;
+  }
+
+  .reservation .txt li:nth-child(3) {
+    border: 1px solid #fff;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .reservation .txt li:nth-child(3) a {
+    display: block;
+    color: #fff;
+    padding: 10px;
+  }
+
+  .reservation .poster {
+    width: 400px;
+    height: 600px;
+    margin-right: 50px;
+    background: url(../resauce/img/background/poster.jpg) center/contain no-repeat;
+    background-size: cover;
+  }
+
+  .reservation .calender {
+    border: 2px solid #666;
+    width: 400px;
+    height: 400px;
+  }
+
+  .reservation .calender a {
+    color: #fff;
+  }
+
+
+
+
+
+
+  /* timetable 설정 */
+  .box5 {
+    background-color: black;
+    padding-top: 100px;
+  }
+
+  .timeTitle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    padding-bottom: 70px;
+    color: #fff;
+
+  }
+
+  .box5-2 {
+    padding-bottom: 100px;
+  }
+
+  .box5-2 ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .box5-2 li {
+    margin: 10px;
+    width: 80%;
+    height: 700px;
+    background: url(../resauce/img/timetable/timetable.jpg) center/contain no-repeat;
+  }
+
+
+
+
+
+  /* festival map 설정 */
+  .festivalTitle {
+    display: flex;
+    justify-content: center;
+    font-size: 50px;
+    margin-bottom: 100px;
+
+  }
+
+  .box6 {
+    background-color: #000;
+    height: auto;
+    padding-bottom: 50px;
+    padding: 100px 0;
+  }
+
+  .box6 .map ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .box6 .map li {
+    width: 1000px;
+    height: 800px;
+    background-image: url(../resauce/img/festivalmap/pentaportrf_2025-07-14__080226.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+  }
+
+  .map {
+    padding-bottom: 90px;
+  }
+
+  .box6-1 h2 {
+    color: #fff;
+  }
+
+
+
+
+  /* notice 설정 */
+  .noticeTitle {
+    display: flex;
+    justify-content: center;
+    font-size: 50px;
+    margin-bottom: 100px;
+    padding-top: 50px;
+    color: #fff;
+  }
+
+  .box7 {
+    background-color: #000;
+    height: 650px;
+    border-bottom: 1px solid #666;
+  }
+
+  .box7 div {}
+
+  .notice {
+    padding-bottom: 50px;
+  }
+
+  .notice ul {
+    display: flex;
+    justify-content: center;
+    color: #fff;
+  }
+
+  .notice li {
+    display: flex;
+    width: 100%;
+    height: 25px;
+    border-top: 1px solid #666;
+    padding: 20px;
+    align-items: center;
+  }
+
+  .notice li a {
+    color: #fff
+  }
+
+  .notice li:nth-child(1) {
+    display: flex;
+    width: 10%;
+    justify-content: center;
+  }
+
+  .notice li:nth-child(2) {
+    display: flex;
+    width: 60%;
+    justify-content: flex-start;
+  }
+
+  .notice li:nth-child(3) {
+    display: flex;
+    width: 15%;
+    justify-content: center;
+  }
+
+  .notice li:nth-child(4) {
+    display: flex;
+    width: 15%;
+    justify-content: center;
+  }
+
+  .notice ul:nth-child(1) li:nth-child(2) {
+    display: flex;
+    width: 60%;
+    justify-content: center;
+  }
+
+  .notice ul:nth-child(4) li {
+    border-bottom: 1px solid #666;
+  }
+
+  .box7 .number ul {
+    display: flex;
+    justify-content: center;
+    padding-top: 80px;
+  }
+
+  .box7 .number ul li {
+    margin: 5px;
+
+  }
+
+  .number a {
+    color: #fff;
+  }
+
+
+
+
+
+  /* QnA 설정 */
+  .qnaTitle {
+    display: flex;
+    justify-content: center;
+    font-size: 50px;
+    margin-bottom: 100px;
+    padding-top: 50px;
+    color: #fff;
+  }
+
+  .box8 {
+    background-color: #00;
+    height: 650px;
+
+  }
+
+  .box8-2 {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 10px;
+    color: #fff;
+    gap: 5px;
+  }
+
+  .box8-2 div:nth-child(1):hover {
+    opacity: 0.7;
+  }
+
+  .box8-2 div:nth-child(2):hover {
+    opacity: 0.7;
+  }
+
+  .box8-2 div {
+    border: 1px solid #fff;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+
+
+  .box8-2 a {
+    color: #fff;
+  }
+
+  .qna {
+    color: #fff;
+    height: 300px;
+  }
+
+  .qna ul {
+    display: flex;
+    justify-content: center;
+  }
+
+  .qna li {
+    width: 100%;
+    height: 25px;
+    border-top: 1px solid #666;
+    padding: 20px;
+    align-items: center;
+  }
+
+  .qna li:nth-child(1) {
+    display: flex;
+    justify-content: center;
+    width: 10%;
+  }
+
+  .qna li:nth-child(2) {
+    display: flex;
+    justify-content: flex-start;
+    width: 60%;
+  }
+
+  .qna li:nth-child(3) {
+    display: flex;
+    justify-content: center;
+    width: 15%;
+  }
+
+  .qna li:nth-child(4) {
+    display: flex;
+    justify-content: center;
+    width: 15%;
+  }
+
+  .qna ul:nth-child(1) li:nth-child(2) {
+    display: flex;
+    justify-content: center;
+  }
+
+  .qna ul:nth-child(4) li {
+    border-bottom: 1px solid #666;
+  }
+
+  .qna a {
+    color: #fff;
+  }
+
+  .box8-3 .number ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .box8-3 .number ul li {
+    margin: 5px;
+  }
+
+  .box8-3 .number a {
+    color: #fff;
+  }
+
+  .number span {
+    font-size: 24px;
+  }
+
+  .answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    color: #fff;
+    padding: 0 20px;
+    background-color: #111;
+  }
+
+
+  /* replay */
+
+  .box9 {
+    background-color: #000;
+  }
+
+  .replay {
+    height: 500px;
+    padding-top: 50px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .replay ul {
+    display: flex;
+    gap: 50px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-top: 3px dotted #666;
+    border-bottom: 3px dotted #666;
+    padding: 70px 0;
+    width: max-content;
+    animation: slide 25s linear infinite;
+  }
+
+  .replay ul:nth-child(1) {
+    left: 0;
+    animation: slide 25s linear infinite;
+  }
+
+  .replay ul:nth-child(2) {
+    left: -100%;
+    animation: slide2 25s linear infinite;
+  }
+
+  @keyframes slide {
+    0% {
+      left: 0;
+    }
+
+    100% {
+      left: 100%;
+    }
+  }
+
+  @keyframes slide2 {
+    0% {
+      left: 100;
+    }
+
+    100% {
+      left: 0%;
+    }
+  }
+
+
+
+
+
+  .replay li {
+    flex: none;
+    width: 300px;
+    height: 300px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    border: 1px solid #fff;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .replay ul li a {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  .replay ul li a:hover {
+    opacity: 0.7;
+  }
+
+  .replay li img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.5s;
+    transform: scale(1);
+  }
+
+  .replay li:hover img {
+    transform: scale(1.2);
+  }
+
+  .replay li:nth-child(1) {
+    background-image: url(../resauce/img/replay/cherry.jpg);
+  }
+
+  .replay li:nth-child(2) {
+    background-image: url(../resauce/img/replay/people.jpg);
+  }
+
+  .replay li:nth-child(3) {
+    background-image: url(../resauce/img/replay/play.jpg);
+  }
+
+  .replay li:nth-child(4) {
+    background-image: url(../resauce/img/replay/rocknroll.jpg);
+  }
+
+  .replay li:nth-child(5) {
+    background-image: url(../resauce/img/replay/show.jpg);
+  }
+
+  .replay li:nth-child(6) {
+    background-image: url(../resauce/img/replay/yerin.jpg);
+  }
+
+
+
+
+
+  /* limited edition 설정 */
+  .box10 {
+    background-image:
+      linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)),
+      linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)),
+      url(../resauce/img/background/limited2.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 1200px;
+    color: white;
+  }
+
+
+  .limitedTitle {
+    display: flex;
+    justify-content: center;
+    font-size: 50px;
+    padding-top: 80px;
+    margin-bottom: 100px;
+  }
+
+  .limitedTitle a {
+    padding: 10px;
+    color: #fff;
+    display: block;
+  }
+
+  .limitedTitle a:hover {
+    opacity: 0.7;
+  }
+
+
+  .edition {
+    margin-bottom: 200px;
+  }
+
+  .edition .txt {}
+
+  .edition p {
+    color: #fff;
+  }
+
+  .edition h4 {
+    color: #fff;
+  }
+
+
+  .edition ul {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 50px;
+    padding: 10px;
+  }
+
+  .edition ul li {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    height: 400px;
+  }
+
+
+  .edition ul li a {
+    width: 300px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+  }
+
+  .imgBox {
+    width: 100%;
+    height: 300px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+  }
+
+  .edition ul li:nth-child(1) .imgBox {
+    background-image: url(../resauce/img/litmitededition/pin.png);
+  }
+
+  .edition ul li:nth-child(2) .imgBox {
+    background-image: url(../resauce/img/litmitededition/bandana.png);
+  }
+
+  .edition ul li:nth-child(3) .imgBox {
+    background-image: url(../resauce/img/litmitededition/keyring.png);
+  }
+
+  .edition ul li:nth-child(4) .imgBox {
+    background-image: url(../resauce/img/litmitededition/greycap.png);
+  }
+
+  .edition ul li:nth-child(5) .imgBox {
+    background-image: url(../resauce/img/litmitededition/blackcap.png);
+  }
+
+  .edition ul li:nth-child(6) .imgBox {
+    background-image: url(../resauce/img/litmitededition/case.png);
+  }
+
+  .edition ul li a span {
+    color: red;
+    padding-right: 5px;
+  }
+
+  .edition ul li a h5 {
+    padding-top: 10px;
+    line-height: 20px;
+    border-top: 0.5px solid #eee;
+    color: grey;
+  }
+
+  .edition ul li a p {
+    font-size: 14px;
+  }
+
+
+
+
+
+  /* directions 설정 */
+  .box11 {
+    width: 100%;
+    height: 800px;
+    padding-bottom: 100px;
+    background-color: #000;
+
+  }
+
+  .box11-inner {}
+
+  .box11-1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+  }
+
+  .box11-1 h2 {
+    font-size: 50px;
+    margin-bottom: 100px;
+  }
+
+  .box11-2 {
+    width: 40%;
+    border-radius: 10px;
+    overflow: hidden;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+
+  }
+
+  .directions {
+    width: 100%;
+    height: 600px;
+  }
+
+  .directions iframe {
+    width: 100%;
+    height: 800px;
+  }
+
+
+
+
+
+  /* footer 설정 */
+
+  .footer {
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 200px;
+    font-size: 14px;
+    color: #fff;
+    border: 1px solid #666
+  }
+
+  /* 미디어쿼리 ######################################################################## */
+  @media (max-width: 599px) {}
+
+  @media (min-width: 768px) {}
+
+  @media (min-width: 960px) {}
