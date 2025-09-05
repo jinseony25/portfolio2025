@@ -1,0 +1,189 @@
+/* 기본 폰트 및 배경 설정 */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', 'Pretendard', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f2f5;
+    color: #333;
+}
+
+/* 로그인 전체 컨테이너 */
+.login-container {
+    width: 100%;
+    max-width: 420px;
+    padding: 40px;
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* 로고 스타일 */
+.login-logo {
+    display: inline-block;
+    margin-bottom: 30px;
+    font-size: 24px;
+    font-weight: 700;
+    color: #1a1a1a;
+    text-decoration: none;
+    letter-spacing: 1px;
+}
+
+.login-form h2 {
+    margin-bottom: 24px;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+/* 아이디/비밀번호 입력 필드 그룹 */
+.input-group {
+    position: relative;
+    margin-bottom: 16px;
+}
+
+.input-group i {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #aaa;
+    transition: color 0.3s;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 14px 14px 14px 45px; /* 아이콘 공간 확보 */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: #333;
+    box-shadow: 0 0 0 3px rgba(51, 51, 51, 0.1);
+}
+
+.input-group input:focus + i {
+    color: #333;
+}
+
+/* 로그인 버튼 */
+.login-btn {
+    width: 100%;
+    padding: 15px;
+    background-color: #1a1a1a;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+    margin-top: 10px;
+}
+
+.login-btn:hover {
+    background-color: #444;
+}
+
+.login-btn:active {
+    transform: scale(0.98);
+}
+
+/* 링크 (아이디 찾기, 회원가입 등) */
+.form-links {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+}
+
+.form-links a {
+    color: #666;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.form-links a:hover {
+    color: #000;
+}
+
+.form-links span {
+    color: #ccc;
+}
+
+/* "또는" 구분선 */
+.divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 25px 0;
+    color: #aaa;
+    font-size: 13px;
+}
+
+.divider::before,
+.divider::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid #eee;
+}
+
+.divider span {
+    padding: 0 15px;
+}
+
+/* 소셜 로그인 버튼 */
+.social-login {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.social-btn {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+.social-btn.kakao {
+    background-color: #FEE500;
+    color: #191919;
+    border: none;
+}
+.social-btn.kakao:hover {
+    background-color: #f2da00;
+}
+
+.social-btn.naver {
+    background-color: #03C75A;
+    color: white;
+    border: none;
+}
+.social-btn.naver:hover {
+    background-color: #02b351;
+}
