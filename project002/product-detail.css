@@ -1,3 +1,4 @@
+/* --- Global Styles (Improved) --- */
 * {
     margin: 0;
     padding: 0;
@@ -6,25 +7,29 @@
 
 body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+    background-color: #ffffff;
+    /* [개선] 단색 배경으로 깔끔하게 */
     color: #1a1a1a;
     line-height: 1.6;
 }
 
 .container {
-    max-width: 1400px;
+    max-width: 1280px;
+    /* [개선] 최적의 가독성을 위한 너비 조정 */
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 30px;
 }
 
-/* Header */
+/* --- Header (Refined) --- */
 .header {
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(20px);
+    background: rgba(255, 255, 255, 0.8);
+    /* [개선] 투명도 조정 */
+    backdrop-filter: blur(12px);
     position: sticky;
     top: 0;
     z-index: 100;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    border-bottom: 1px solid #f0f0f0;
+    /* [개선] 더 옅은 경계선 */
 }
 
 .header-content {
@@ -35,20 +40,21 @@ body {
 }
 
 .logo {
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 24px;
-    font-weight: 700;
-    color: #1a1a1a;
-    text-decoration: none;
+    width: 150px;
+    height: 40px;
+    background: url('img/header/logo3.png') no-repeat center center / contain;
+    text-indent: -9999px;
+    cursor: pointer;
 }
 
 .nav-links {
     display: flex;
-    gap: 30px;
+    gap: 40px;
+    /* [개선] 간격 조정 */
 }
 
 .nav-links a {
-    color: #666;
+    color: #555;
     text-decoration: none;
     font-weight: 500;
     transition: color 0.3s ease;
@@ -58,129 +64,130 @@ body {
     color: #1a1a1a;
 }
 
-/* Product Detail */
+.nav-links span {
+    color: #ff5f1f;
+}
+
+
+/* --- Product Detail (Golden Ratio Layout) --- */
 .product-detail {
-    padding: 60px 0;
+    padding: 80px 0;
+    /* [개선] 상하 여백 조정 */
 }
 
 .product-main {
     display: grid;
-    grid-template-columns: 1.2fr 1fr;
-    gap: 80px;
-    margin-bottom: 80px;
+    /* [개선] 황금비율에 가까운 1.6:1 그리드 적용 */
+    grid-template-columns: 1fr 0.6fr;
+    gap: 60px;
+    /* [개선] 간격 최적화 */
+    margin-bottom: 100px;
 }
 
-/* Image Gallery */
+/* --- Image Gallery (Refined) --- */
 .product-gallery {
     position: relative;
 }
 
 .main-image-container {
-    position: relative;
-    background: #fff;
-    border-radius: 20px;
-    padding: 40px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+    background-color: #f9f9f9;
+    /* [개선] 은은한 배경색 */
+    border-radius: 16px;
     margin-bottom: 20px;
     overflow: hidden;
-}
-
-.main-image-container::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(45deg, #f8f9fa 0%, #ffffff 100%);
-    z-index: -1;
+    border: 1px solid #f0f0f0;
+    /* [개선] 깔끔한 테두리 추가 */
 }
 
 .main-image {
     width: 100%;
-    height: 500px;
-    object-fit: cover;
-    border-radius: 12px;
+    aspect-ratio: 1 / 1;
+    /* [개선] 1:1 비율로 안정감 */
+    object-fit: contain;
+    padding: 30px;
+    /* [추가] 이미지 주변 여백 */
     transition: transform 0.5s ease;
 }
 
 .main-image:hover {
-    transform: scale(1.02);
+    transform: scale(1.03);
 }
 
 .thumbnails {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    /* [개선] 그리드로 변경하여 정렬 */
     gap: 15px;
-    justify-content: center;
 }
 
 .thumbnail {
-    width: 80px;
-    height: 80px;
-    border-radius: 12px;
-    object-fit: cover;
+    width: 100%;
+    aspect-ratio: 1/1;
+    /* [개선] 1:1 비율 */
+    border-radius: 10px;
+    object-fit: contain;
     cursor: pointer;
-    border: 3px solid transparent;
+    border: 2px solid #f0f0f0;
+    /* [개선] 기본 테두리 */
     transition: all 0.3s ease;
-    opacity: 0.7;
+    opacity: 0.8;
+    background-color: #f9f9f9;
+    padding: 5px;
 }
 
-.thumbnail.active {
-    border-color: #1a1a1a;
-    opacity: 1;
-    transform: translateY(-2px);
-}
-
+.thumbnail.active,
 .thumbnail:hover {
+    border-color: #ff5f1f;
+    /* [개선] 포인트 컬러로 활성화/호버 효과 */
     opacity: 1;
-    transform: translateY(-1px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Product Info */
+/* --- Product Info (Improved Hierarchy) --- */
 .product-info {
-    padding: 20px 0;
+    padding-top: 10px;
 }
 
 .brand {
-    color: #666;
+    color: #888;
     font-size: 14px;
-    font-weight: 600;
-    letter-spacing: 2px;
+    font-weight: 500;
+    letter-spacing: 1px;
     text-transform: uppercase;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
 }
 
 .product-title {
     font-family: 'Space Grotesk', sans-serif;
-    font-size: 36px;
+    font-size: 40px;
+    /* [개선] 타이틀 크기 강조 */
     font-weight: 700;
     color: #1a1a1a;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     line-height: 1.2;
 }
 
 .price-section {
     margin-bottom: 40px;
-    padding: 30px;
-    background: linear-gradient(135deg, #1a1a1a 0%, #333 100%);
-    border-radius: 16px;
-    color: white;
+    border-bottom: 1px solid #f0f0f0;
+    padding-bottom: 30px;
 }
 
 .price {
     font-size: 32px;
-    font-weight: 700;
-    margin-bottom: 10px;
+    font-weight: 600;
+    /* [개선] 타이틀과 차별화 */
+    margin-bottom: 8px;
 }
 
 .price-note {
     font-size: 14px;
-    opacity: 0.8;
+    color: #888;
 }
 
 /* Options */
 .options-section {
-    margin-bottom: 40px;
+    margin-bottom: 30px;
 }
 
 .option-group {
@@ -201,16 +208,20 @@ body {
 }
 
 .size-btn {
-    padding: 12px 20px;
-    border: 2px solid #e0e0e0;
+    padding: 10px 18px;
+    border: 1px solid #ddd;
+    /* [개선] 얇은 테두리 */
     background: white;
-    border-radius: 10px;
+    border-radius: 8px;
     cursor: pointer;
     font-weight: 500;
     transition: all 0.3s ease;
 }
 
-.size-btn:hover,
+.size-btn:hover {
+    border-color: #888;
+}
+
 .size-btn.active {
     border-color: #1a1a1a;
     background: #1a1a1a;
@@ -220,27 +231,25 @@ body {
 .quantity-controls {
     display: flex;
     align-items: center;
-    gap: 20px;
-    background: white;
-    border: 2px solid #e0e0e0;
-    border-radius: 12px;
-    padding: 15px 20px;
+    gap: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 8px;
+    /* [개선] 더 컴팩트하게 */
     width: fit-content;
 }
 
 .quantity-btn {
-    width: 40px;
-    height: 40px;
+    width: 32px;
+    height: 32px;
+    /* [개선] 크기 축소 */
     border: none;
     background: #f5f5f5;
-    border-radius: 50%;
+    border-radius: 6px;
+    /* [개선] */
     cursor: pointer;
-    font-size: 18px;
-    font-weight: 600;
+    font-size: 16px;
     transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .quantity-btn:hover {
@@ -249,59 +258,17 @@ body {
 }
 
 .quantity-display {
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 600;
     min-width: 30px;
     text-align: center;
 }
 
-/* Action Buttons */
-.actions {
-    display: flex;
-    gap: 15px;
-    margin-bottom: 40px;
-}
-
-.btn {
-    flex: 1;
-    padding: 18px 30px;
-    border: none;
-    border-radius: 12px;
-    font-size: 16px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.btn-primary {
-    background: linear-gradient(135deg, #1a1a1a 0%, #333 100%);
-    color: white;
-}
-
-.btn-primary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 25px rgba(26, 26, 26, 0.3);
-}
-
-.btn-secondary {
-    background: white;
-    color: #1a1a1a;
-    border: 2px solid #1a1a1a;
-}
-
-.btn-secondary:hover {
-    background: #1a1a1a;
-    color: white;
-}
-
 .total-section {
-    background: #f8f9fa;
+    background: #f9f9f9;
     border-radius: 12px;
-    padding: 25px;
+    padding: 20px;
     margin-bottom: 30px;
-    border-left: 4px solid #1a1a1a;
 }
 
 .total-label {
@@ -316,62 +283,116 @@ body {
     color: #1a1a1a;
 }
 
+
+
+
+
+
+/* Action Buttons */
+.actions {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+.btn {
+    flex: 1;
+    padding: 16px 25px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn-primary {
+    background: white;
+    color: #1a1a1a;
+    border: 2px solid #ddd;
+}
+
+.btn-primary:hover {
+    background: #444;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.btn-secondary {
+    background: #1a1a1a;
+    color: white;
+    border: 2px solid #ddd;
+}
+
+.btn-secondary:hover {
+    border-color: #1a1a1a;
+}
+
+
+
+
+
+
 /* Share Section */
 .share-section {
-    border-top: 1px solid #e0e0e0;
+    border-top: 1px solid #f0f0f0;
     padding-top: 30px;
 }
 
 .share-title {
     font-size: 14px;
-    font-weight: 600;
-    color: #666;
+    font-weight: 500;
+    color: #888;
     margin-bottom: 15px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
 }
 
 .share-icons {
     display: flex;
     gap: 15px;
+    justify-content: flex-end;
 }
 
 .share-btn {
-    width: 50px;
-    height: 50px;
-    border: 2px solid #e0e0e0;
+    width: 40px;
+    height: 40px;
+    border: 1px solid #ddd;
     background: white;
-    border-radius: 50%;
+    border-radius: 8px;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
     transition: all 0.3s ease;
     text-decoration: none;
-    color: #666;
+    color: #555;
+    font-size: 16px;
 }
 
 .share-btn:hover {
     border-color: #1a1a1a;
     background: #1a1a1a;
     color: white;
-    transform: translateY(-2px);
 }
 
-/* Reviews Section */
+/* --- Reviews Section --- */
 .reviews-section {
-    margin-top: 80px;
-    background: white;
+    margin-top: 100px;
+    background: #f9f9f9;
+    /* [개선] 배경 통일 */
     border-radius: 20px;
-    padding: 50px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+    padding: 60px;
+    border: 1px solid #f0f0f0;
 }
 
 .section-title {
     font-family: 'Space Grotesk', sans-serif;
-    font-size: 28px;
+    font-size: 32px;
     font-weight: 700;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
+    text-align: center;
+    /* [추가] */
 }
 
 .reviews-header {
@@ -379,6 +400,8 @@ body {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 40px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #eee;
 }
 
 .rating-summary {
@@ -388,13 +411,14 @@ body {
 }
 
 .rating-score {
-    font-size: 36px;
+    font-size: 40px;
     font-weight: 700;
 }
 
 .stars {
-    color: #ffd700;
-    font-size: 24px;
+    color: #ffb400;
+    font-size: 20px;
+    /* [개선] 별 색상 변경 */
 }
 
 .review-count {
@@ -416,27 +440,30 @@ body {
 
 .review-photo {
     width: 100%;
-    height: 200px;
+    height: 250px;
+    /* [개선] 높이 조정 */
     object-fit: cover;
     border-radius: 12px;
 }
 
 .review-list {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
     gap: 25px;
 }
 
+/* [개선] */
 .review-card {
-    border: 1px solid #e0e0e0;
+    border: 1px solid #eee;
+    background: white;
     border-radius: 16px;
     padding: 30px;
     transition: all 0.3s ease;
 }
 
 .review-card:hover {
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    transform: translateY(-5px);
 }
 
 .review-header {
@@ -452,7 +479,7 @@ body {
 }
 
 .review-stars {
-    color: #ffd700;
+    color: #ffb400;
 }
 
 .review-text {
@@ -460,9 +487,9 @@ body {
     line-height: 1.7;
 }
 
-/* Recommendations */
+/* --- Recommendations (Improved) --- */
 .recommendations-section {
-    margin-top: 80px;
+    margin-top: 100px;
 }
 
 .recommendations-grid {
@@ -476,67 +503,98 @@ body {
     border-radius: 16px;
     overflow: hidden;
     transition: all 0.3s ease;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    border: 1px solid #f0f0f0;
 }
 
 .recommendation-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
 }
 
 .recommendation-image {
     width: 100%;
-    height: 250px;
+    height: 280px;
     object-fit: cover;
 }
 
 .recommendation-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     padding: 25px;
+    text-align: center;
 }
 
 .recommendation-title {
     font-size: 16px;
     font-weight: 600;
-    margin-bottom: 10px;
+    margin-bottom: 15px; /* [수정] 가격과의 간격 확보 */
     color: #1a1a1a;
+    height: 40px; /* [추가] 2줄 높이 고정으로 레이아웃 틀어짐 방지 */
 }
 
-.recommendation-price {
+/* [삭제] 기존 .recommendation-price 스타일은 아래의 새로운 클래스들로 대체됩니다. */
+
+/* [추가] 가격 정보 전체를 감싸는 컨테이너 */
+.price-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+/* [추가] 취소선이 적용된 원래 가격 */
+.original-price {
+    font-size: 14px;
+    color: #999;
+    text-decoration: line-through;
+}
+
+/* [추가] 할인율과 최종 가격을 묶는 라인 */
+.final-price-line {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* [추가] 할인율: 눈에 띄는 포인트 컬러 적용 */
+.discount-rate {
+    font-size: 18px;
+    font-weight: 700;
+    color: #ff5f1f; /* 포인트 컬러 */
+}
+
+/* [추가] 최종 할인가 */
+.final-price {
     font-size: 18px;
     font-weight: 700;
     color: #1a1a1a;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .container {
-        padding: 0 15px;
-    }
-
+/* --- Responsive & Animations (기존과 유사) --- */
+@media (max-width: 992px) {
     .product-main {
         grid-template-columns: 1fr;
         gap: 40px;
     }
 
-    .product-title {
-        font-size: 28px;
+    .review-list {
+        grid-template-columns: 1fr;
     }
+}
 
-    .actions {
-        flex-direction: column;
+@media (max-width: 768px) {
+    .container {
+        padding: 0 20px;
     }
 
     .nav-links {
         display: none;
     }
 
-    .recommendations-grid {
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 20px;
-    }
-
-    .reviews-section {
-        padding: 30px 20px;
+    .recommendations-grid,
+    .review-list {
+        grid-template-columns: 1fr 1fr;
     }
 
     .reviews-header {
@@ -546,18 +604,15 @@ body {
     }
 }
 
-/* Animations */
+.fade-in {
+    opacity: 0;
+    animation: fadeInUp 0.8s ease-out forwards;
+    /* [개선] forwards 추가 */
+}
+
 @keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
     to {
         opacity: 1;
         transform: translateY(0);
     }
-}
-
-.fade-in {
-    animation: fadeInUp 0.6s ease-out;
 }

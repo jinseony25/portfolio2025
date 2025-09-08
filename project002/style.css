@@ -70,6 +70,10 @@
         text-align: center;
     }
 
+    html {
+        scroll-behavior: smooth;
+    }
+
     /* --- Shopping Cart --- */
     .shopping {
         position: fixed;
@@ -83,6 +87,8 @@
         font-size: 1.5rem;
         color: #333;
         position: relative;
+        /* 장바구니 위치 변경 */
+        top: 50px;
         background: white;
         padding: 12px;
         border-radius: 50%;
@@ -243,10 +249,13 @@
         gap: 20px;
     }
 
+
     .gnb ul {
         display: flex;
-        gap: 30px;
+        /* 간격 변경 30->100 */
+        gap: 100px;
         text-transform: uppercase;
+
     }
 
     .gnb ul li {
@@ -298,6 +307,54 @@
         color: var(--accent-orange);
     }
 
+    /* --- Sticky Header Styles --- */
+
+    /* [추가] 스크롤 시 헤더에 적용될 스타일 */
+    .header.sticky {
+        position: fixed;
+        /* 화면에 고정 */
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.9);
+        /* 흰색 반투명 배경 */
+        backdrop-filter: blur(10px);
+        /* 배경 블러 효과 (모던한 느낌) */
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        /* 그림자 효과 */
+
+        /* 부드럽게 나타나는 애니메이션 적용 */
+        animation: slideDown 0.5s ease-out;
+    }
+
+    /* [추가] 헤더 텍스트 색상 조정 (어두운 색으로) */
+    .header.sticky .gnb ul li a {
+        color: var(--primary-black);
+        /* 기본 GNB 텍스트 색상 */
+    }
+
+    .header.sticky .gnb ul li:hover>a {
+        color: var(--accent-orange);
+        /* 호버 시 텍스트 색상 */
+    }
+
+    /* [추가] 로고 이미지 변경 (어두운 배경용 로고가 있다면) */
+    /* .header.sticky .logo {
+    background-image: url('img/header/logo-dark.png');
+} */
+
+
+    /* [추가] 부드럽게 내려오는 애니메이션 효과 */
+    @keyframes slideDown {
+        from {
+            transform: translateY(-100%);
+        }
+
+        to {
+            transform: translateY(0);
+        }
+    }
+
     .imgSlide {
         width: 100%;
         height: 100%;
@@ -344,7 +401,7 @@
         letter-spacing: 5px;
         text-transform: uppercase;
         opacity: 0.8;
-        background-color: rgba(255, 255, 255, 0.2);
+
         padding: 5px 10px;
         border-radius: 5px;
         display: inline-block;
@@ -374,12 +431,13 @@
         transform: translateY(-5px);
     }
 
+
     /* --- Season Sale Section --- */
     .seasonSale {
         background: #111;
         overflow: hidden;
-        /* [변경] 간격 조정 */
-        padding: var(--space-s) 0;
+        /* [수정] 배너의 상하 여백을 줄여 높이를 조절합니다. */
+        padding: 8px 0;
     }
 
     .marquee {
@@ -394,15 +452,18 @@
     }
 
     .marquee__content span {
-        margin-right: 60px;
-        font-size: 2.5rem;
+        /* [수정] 글자 사이의 좌우 간격을 줄입니다. */
+        margin-right: 40px;
+        /* [수정] 글자 크기를 줄이는 것이 가장 효과적입니다. */
+        font-size: 1.5rem;
         font-weight: 900;
         text-transform: uppercase;
         font-family: 'Bebas Neue', sans-serif;
-        letter-spacing: 2px;
+        /* [수정] 자간을 약간 줄여 더 압축된 느낌을 줍니다. */
+        letter-spacing: 1px;
         color: #FF5F1F;
-        text-shadow: 0 0 10px rgba(255, 95, 31, 0.7),
-            0 0 20px rgba(255, 95, 31, 0.5);
+        text-shadow: 0 0 5px rgba(255, 95, 31, 0.7),
+            0 0 10px rgba(255, 95, 31, 0.5);
     }
 
     @keyframes scrollLeft {
@@ -438,60 +499,46 @@
     /* --- Category Section --- */
     .category {
         padding: var(--space-xl) 20px;
-        /* 좌우 패딩 추가 */
         display: grid;
-        /* [개선 1] 안정적인 2단 그리드 레이아웃 */
         grid-template-columns: 0.8fr 1.2fr;
         gap: 40px;
-        /* 간격 조정 */
         max-width: 1400px;
         margin: 0 auto;
         align-items: center;
-        /* 세로 중앙 정렬 */
     }
 
-    /* [개선 1] 좌측 타이틀 영역 */
     .category-intro {
         text-align: left;
-        /* 좌측 정렬 */
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        /* 컨텐츠 좌측 정렬 */
     }
 
     .main-title {
         font-size: 4.5rem;
-        /* 크기 조정 */
         font-weight: 900;
         color: var(--primary-black);
-        /* 배경이 흰색이므로 검은색으로 */
         text-align: left;
         text-transform: uppercase;
         line-height: 1.1;
         letter-spacing: 3px;
         text-shadow: none;
-        /* 텍스트 그림자 제거 */
         animation: fadeDown 1.2s ease-out;
     }
 
     .sub-title {
         font-size: 1.5rem;
-        /* 크기 및 스타일 조정 */
         font-weight: 700;
         color: var(--accent-orange);
         text-align: left;
         margin: 20px 0;
-        /* 상하 마진 */
         animation: fadeIn 2s ease-in;
     }
 
     .sub-title::after {
         display: none;
-        /* 밑줄 제거하고 텍스트로 충분히 표현 */
     }
 
-    /* [개선 2] 설명 텍스트 */
     .category-desc {
         color: #555;
         font-size: 1rem;
@@ -499,7 +546,6 @@
         margin-bottom: 30px;
     }
 
-    /* [개선 2] 행동 유도 버튼 */
     .cta-button {
         background-color: var(--primary-black);
         color: var(--primary-white);
@@ -514,50 +560,40 @@
         background-color: var(--accent-orange);
     }
 
-
-    /* [개선 1] 우측 이미지 그리드 영역 */
     .category-grid {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         grid-template-rows: repeat(2, 1fr);
         gap: 20px;
         height: 600px;
-        /* 그리드 전체 높이 지정 */
     }
 
     /* 카드 공통 스타일 */
     .card {
         position: relative;
         overflow: hidden;
-        cursor: pointer;
+        /* [삭제] 마우스 포인터가 손가락 모양으로 바뀌는 효과 제거 */
+        /* cursor: pointer; */
         display: flex;
         align-items: center;
         justify-content: center;
         text-transform: uppercase;
         border-radius: 12px;
-        transition: transform 0.4s ease, box-shadow 0.4s ease;
+        /* [삭제] 호버 효과를 위한 transition 제거 */
+        /* transition: transform 0.4s ease, box-shadow 0.4s ease; */
     }
 
-    .card:hover {
-        transform: scale(1.03);
-        box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
-    }
-
-    /* [개선 3] 카드 내 이미지 요소 (줌인 효과용) */
+    /* 카드 내 이미지 요소 */
     .card-image {
         width: 100%;
         height: 100%;
         background-size: cover;
         background-position: center;
-        transition: transform 0.6s ease;
+        /* [삭제] 호버 효과를 위한 transition 제거 */
+        /* transition: transform 0.6s ease; */
     }
 
-    .card:hover .card-image {
-        transform: scale(1.1);
-        /* 호버 시 이미지 줌인 */
-    }
-
-    /* 각 카드 그리드 배치 및 배경 이미지 */
+    /* 각 카드 그리드 배치 및 배경 이미지 (기존과 동일) */
     .card-skateboards {
         grid-column: 1 / 2;
         grid-row: 1 / 2;
@@ -591,7 +627,7 @@
     }
 
     .card-latest .card-image {
-        background-image: url('img/category/category05.jpg');
+        background-image: url('img/category/cat1.jpg');
     }
 
     /* 카드 오버레이 */
@@ -602,13 +638,11 @@
         width: 100%;
         height: 100%;
         background-color: rgba(0, 0, 0, 0.35);
-        transition: background-color 0.3s ease;
+        /* [삭제] 호버 효과를 위한 transition 제거 */
+        /* transition: background-color 0.3s ease; */
     }
 
-    .card:hover .overlay {
-        background-color: rgba(0, 0, 0, 0.6);
-    }
-
+    /* 카드 텍스트 */
     /* 카드 텍스트 */
     .card a {
         position: absolute;
@@ -617,43 +651,64 @@
         font-size: 1.5rem;
         font-weight: 700;
         letter-spacing: 2px;
-        text-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
-        transition: color 0.3s ease, letter-spacing 0.3s ease, text-shadow 0.3s ease;
+        text-decoration: none;
+
+        /* [추가] 마우스 커서가 손가락 모양으로 바뀌지 않고 기본 모양으로 유지되도록 설정 */
+        cursor: default;
     }
 
-    .card:hover a {
-        color: var(--accent-orange);
-        letter-spacing: 4px;
-        text-shadow: 0 0 10px rgba(255, 95, 31, 0.8);
+    /* [추가] 마우스를 올려도 텍스트 색상이나 밑줄 등 아무런 변화가 없도록 설정 */
+    .card a:hover {
+        color: #fff;
+        /* 기본 상태의 색상(#fff)과 동일하게 유지 */
+        text-decoration: none;
+        /* 밑줄 등 장식 효과 방지 */
     }
 
-    /* [개선 3] "Shop Now" 텍스트 */
+    /* "Shop Now" 텍스트 */
     .shop-now {
         position: absolute;
         bottom: 20px;
         left: 50%;
         transform: translate(-50%, 10px);
-        /* 초기 위치 (아래) */
         color: #fff;
         font-size: 0.9rem;
         font-weight: 700;
+        /* [수정] 항상 보이지 않도록 opacity: 0 유지 */
         opacity: 0;
-        transition: opacity 0.4s ease, transform 0.4s ease;
+        /* [삭제] 호버 효과를 위한 transition 제거 */
+        /* transition: opacity 0.4s ease, transform 0.4s ease; */
     }
 
-    .card:hover .shop-now {
-        opacity: 1;
-        transform: translate(-50%, 0);
-        /* 호버 시 제자리로 */
-    }
+    /* [삭제] 마우스 호버 시 "Shop Now"가 나타나는 효과 제거 */
+    /*
+.card:hover .shop-now {
+    opacity: 1;
+    transform: translate(-50%, 0);
+}
+*/
 
     /* 애니메이션 키프레임 (기존과 동일) */
     @keyframes fadeDown {
-        /* ... */
+        from {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
     }
 
     @keyframes fadeIn {
-        /* ... */
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
     }
 
 
@@ -662,33 +717,30 @@
 
 
 
-
-
-    /* --- Banner Section --- */
+    /* --- Banner Section (Improved) --- */
     .banner {
-        /* [변경] 간격 조정 */
-        padding: var(--space-xxl) 0;
+        /* [수정] 상하 여백을 줄여 간결하게 */
+        padding: var(--space-l) 0;
         text-align: center;
         position: relative;
         overflow: hidden;
         background: linear-gradient(135deg, #23314E, #FF5F1F, #FF8C00);
         background-size: 400% 400%;
-        animation: gradientFlow 15s ease infinite;
+        animation: gradientFlow 5s ease infinite;
+        /* [수정] 하단 여백을 줄여 다른 섹션과의 간격을 좁힘 */
+        margin-bottom: 60px;
+
+        /* [추가] h1 태그들을 정렬하고 간격을 제어하기 위해 flex 사용 */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        /* 두 h1 사이의 간격 */
     }
 
+    /* [삭제] 배너 위아래를 희미하게 만들던 효과 제거하여 깔끔하게 */
     .banner::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(to bottom,
-                var(--primary-white) 0%,
-                transparent 25%,
-                transparent 75%,
-                var(--primary-white) 100%);
-        pointer-events: none;
+        display: none;
     }
 
     @keyframes gradientFlow {
@@ -708,13 +760,14 @@
     .banner h1 {
         font-size: clamp(2.5rem, 8vw, 5rem);
         font-weight: 700;
-        margin: 30px 0;
+        /* [수정] 개별 마진을 제거하고 부모 요소(banner)의 gap으로 제어 */
+        margin: 0;
         color: #fff;
         display: inline-block;
         line-height: 1.2;
         text-transform: uppercase;
         opacity: 0;
-        transition: transform 0.2s ease-out;
+        /* 애니메이션 시작 전 숨김 상태 */
     }
 
     .banner span {
@@ -723,13 +776,14 @@
         -webkit-background-clip: text;
         background-clip: text;
         color: transparent;
-        transition: transform 0.3s ease, filter 0.3s ease;
     }
 
+    /* --- Animations --- */
     @keyframes slideInLeft {
         from {
             opacity: 0;
-            transform: translateX(-100px);
+            transform: translateX(-50px);
+            /* 이동 거리를 줄여 더 부드럽게 */
         }
 
         to {
@@ -741,7 +795,8 @@
     @keyframes slideInRight {
         from {
             opacity: 0;
-            transform: translateX(100px);
+            transform: translateX(50px);
+            /* 이동 거리를 줄여 더 부드럽게 */
         }
 
         to {
@@ -750,24 +805,37 @@
         }
     }
 
-    .animate-left {
-        animation: slideInLeft 3s forwards 0.5s;
+    /* [수정] 기존 animate-left/right 대신 클래스명에 직접 애니메이션 적용 */
+    /* [수정] 애니메이션 시간을 줄여 더 경쾌한 느낌으로 변경 */
+    .banner .banner1 {
+        animation: slideInLeft 1.2s forwards 0.3s;
     }
 
-    .animate-right {
-        animation: slideInRight 3s forwards 1s;
+    .banner .banner2 {
+        animation: slideInRight 1.2s forwards 0.6s;
     }
+
+
+
+
+
+
+
+
+
 
     /* --- Brands Section --- */
+    /* Brands Section - Minimalist Version */
+    /* Brands Section - Light Mode Version */
     .brands {
-        /* [변경] 간격 조정 */
         padding: var(--space-xl) 0;
         text-align: center;
-        background: #111;
-        color: #fff;
+        /* [수정] 요청하신 밝은 회색 배경으로 변경 */
+        background: #f9f9f9;
         position: relative;
-        border-top: 3px solid var(--accent-orange);
-        border-bottom: 3px solid var(--accent-orange);
+        /* [수정] 상하단 테두리를 어둡고 옅은 색으로 변경 */
+        border-top: 1px solid #eee;
+        border-bottom: 1px solid #eee;
         overflow: hidden;
     }
 
@@ -777,6 +845,8 @@
         position: relative;
         display: inline-block;
         text-transform: uppercase;
+        /* [수정] 밝은 배경에 맞춰 타이틀 색상을 어둡게 변경 */
+        color: #111;
         opacity: 0;
         transform: translateY(30px);
         transition: opacity 0.6s ease, transform 0.6s ease;
@@ -792,10 +862,11 @@
         position: absolute;
         left: 50%;
         bottom: -10px;
-        transform: translateX(-50%) skewX(-20deg);
-        width: 120px;
-        height: 6px;
-        background: linear-gradient(90deg, var(--accent-orange), #ff1f5a);
+        transform: translateX(-50%);
+        width: 100px;
+        height: 1px;
+        /* [수정] 밑줄 효과를 어두운 색의 그라데이션으로 변경 */
+        background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.2), transparent);
         border-radius: 2px;
     }
 
@@ -811,19 +882,26 @@
         display: flex;
         justify-content: space-between;
         gap: 40px;
-        background: rgba(255, 255, 255, 0.05);
+        /* [수정] 유리 질감 대신, 부드러운 그림자가 있는 흰색 카드로 변경 */
+        background: #fff;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
         padding: 40px;
         border-radius: 12px;
-        backdrop-filter: blur(4px);
-        border: 1px solid rgba(255, 255, 255, 0.1);
+        /* [삭제] 라이트 모드에서는 불필요한 속성 제거 */
+        /* backdrop-filter: blur(10px); */
+        /* border: 1px solid rgba(255, 255, 255, 0.08); */
         opacity: 0;
         transform: scale(0.95);
-        transition: opacity 0.8s ease 0.2s, transform 0.8s ease 0.2s;
+        transition: opacity 0.8s ease 0.2s, transform 0.8s ease 0.2s, box-shadow 0.3s ease;
     }
 
     .brands.is-visible .t {
         opacity: 1;
         transform: scale(1);
+    }
+
+    .brands .t:hover {
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
     }
 
     .brands .info {
@@ -834,12 +912,14 @@
     .brands .info h2 {
         font-size: 2.8rem;
         margin-bottom: 20px;
-        color: var(--accent-orange);
         transition: all 0.3s ease;
+        /* [수정] 브랜드명도 어두운 색으로 변경 */
+        color: #222;
     }
 
     .brands .info p {
-        color: #ddd;
+        /* [수정] 본문 텍스트 색상을 적당한 회색으로 변경 */
+        color: #555;
         line-height: 1.7;
         min-height: 100px;
         transition: all 0.3s ease;
@@ -858,7 +938,8 @@
     .brands .brandsBox a {
         font-weight: 700;
         font-size: 1.2rem;
-        color: #bbb;
+        /* [수정] 기본 링크 색상을 회색으로 변경 */
+        color: #666;
         position: relative;
         transition: color 0.3s;
         padding: 5px 0;
@@ -877,7 +958,8 @@
 
     .brands .brandsBox a:hover,
     .brands .brandsBox a.active {
-        color: #fff;
+        /* 포인트 컬러는 라이트 모드에서도 잘 어울리므로 유지 */
+        color: var(--accent-orange);
     }
 
     .brands .brandsBox a:hover::after,
@@ -901,11 +983,22 @@
         position: absolute;
         font-size: 10vw;
         font-weight: 900;
-        color: rgba(255, 255, 255, 0.03);
+        /* [수정] 워터마크 색상을 매우 옅은 회색으로 변경 */
+        color: rgba(0, 0, 0, 0.04);
         transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
         opacity: 0;
         transform: translateY(20px);
     }
+
+
+
+
+
+
+
+
+
+
 
     /* --- Collabo Section --- */
     .collabo {
@@ -994,18 +1087,35 @@
 
 
 
-    /* --- Fresh Section --- */
+    /* --- Fresh Section (New Layout) --- */
     .fresh {
-        /* [변경] 간격 조정 */
         padding: var(--space-xl) 20px;
-        text-align: center;
         background-color: #f9f9f9;
     }
 
+    /* [추가] 2단 그리드 레이아웃을 위한 컨테이너 */
+    .fresh .fresh-content {
+        display: grid;
+        grid-template-columns: 0.8fr 1.2fr;
+        /* 좌:우 비율 */
+        gap: 50px;
+        align-items: center;
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+
+    /* [추가] 좌측 텍스트/썸네일 영역 */
+    .fresh .fresh-intro {
+        text-align: left;
+        /* 내부 모든 요소 좌측 정렬 */
+    }
+
+    /* [수정] h1, h2 텍스트 중앙 정렬 제거 */
     .fresh h1 {
         font-size: 36px;
         font-weight: 700;
-        margin-bottom: 50px;
+        margin-bottom: 20px;
+        /* 간격 조정 */
         letter-spacing: 2px;
         color: #222;
         text-transform: uppercase;
@@ -1018,46 +1128,45 @@
         height: 3px;
         background: #ff5f1f;
         display: block;
-        margin: 15px auto 0;
+        /* [수정] 좌측 정렬을 위해 auto 마진 제거 */
+        margin: 15px 0 0;
         border-radius: 3px;
     }
 
-    .fresh p {
-        font-size: 1.1rem;
+    .fresh h2 {
+        font-size: 1.5rem;
         color: #666;
         margin-top: 10px;
         font-weight: 500;
         letter-spacing: 0.5px;
         line-height: 1.4;
-        margin-bottom: 50px;
-        text-decoration: underline;
+        margin-bottom: 40px;
+        /* 간격 조정 */
     }
 
-    /* 메인 이미지 박스 수정 */
-    .fresh .shoes .mainImg {
-        width: 80%;
-        max-width: 700px;
-        /* height: 500px; /* ◀ [삭제] 고정 높이 제거 */
-        aspect-ratio: 4 / 3;
-        /* ◀ [추가] 4:3 비율 유지 */
-        margin: 0 auto 40px auto;
-        /* ◀ [변경] 썸네일과의 간격 확보 */
-        background-position: center;
-        /* ◀ [변경] 중앙 정렬로 대부분의 이미지에 대응 */
-        background-size: contain;
-        background-repeat: no-repeat;
-        border-radius: 16px;
-        position: relative;
-        cursor: pointer;
-        transition: transform 0.4s ease, box-shadow 0.4s ease;
-        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-    }
+    /* --- 메인 이미지 & 썸네일 --- */
+ .fresh .shoes .mainImg {
+    width: 100%;
+    max-width: none;
+    aspect-ratio: 16 / 9; /* 더 시원한 배너 비율 */
+    margin: 0;
+    background-position: center;
+    background-size: contain; /* contain으로 변경 */
+    background-repeat: no-repeat;
+    background-color: #ffb733; /* 노랑-주황 톤 배경 추가 */
+    border-radius: 16px;
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
 
     .fresh .shoes .mainImg:hover {
         transform: scale(1.03);
         box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
     }
 
+    /* --- 오버레이, 아이콘, 텍스트 효과 (기존과 동일) --- */
     .fresh .shoes .mainImg .overlay {
         position: absolute;
         top: 0;
@@ -1079,72 +1188,106 @@
         opacity: 1;
     }
 
+    .fresh .shoes .mainImg .txtBox h1,
+    .fresh .shoes .mainImg .txtBox h2 {
+        opacity: 0;
+        transform: translateY(10px);
+        transition: all 0.4s ease 0.2s;
+    }
+
     .fresh .shoes .mainImg:hover .txtBox h1,
     .fresh .shoes .mainImg:hover .txtBox h2 {
+        opacity: 1;
         color: #fff;
-        transform: translateY(-10px);
+        transform: translateY(0);
         z-index: 10;
     }
 
-    .fresh .shoes .thumbs {
+    .fresh .shoes .mainImg .icon {
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
         display: flex;
+        gap: 10px;
+        z-index: 5;
+    }
+
+    .fresh .shoes .mainImg .icon span {
+        display: flex;
+        align-items: center;
         justify-content: center;
+        width: 40px;
+        height: 40px;
+        background-color: rgba(255, 255, 255, 0.9);
+        border-radius: 50%;
+        color: #333;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .fresh .shoes .mainImg .icon span:hover {
+        background-color: var(--accent-orange);
+        color: #fff;
+        transform: scale(1.1);
+    }
+
+    /* --- 썸네일 이미지 (위치 변경됨) --- */
+    .fresh .thumbs {
+        /* [수정] 중앙 정렬 대신 좌측 정렬 */
+        justify-content: flex-start;
+        display: flex;
         gap: 15px;
         flex-wrap: wrap;
         margin-top: 10px;
     }
 
-
-    /* 썸네일 이미지 박스 수정 */
-    .fresh .shoes .thumbs .imgBox {
+    .fresh .thumbs .imgBox {
         width: 120px;
-        /* ◀ [변경] 비율에 맞춰 너비 조정 */
         height: 90px;
-        /* ◀ [변경] 비율에 맞춰 높이 조정 */
-        background-color: #f5f5f5;
         background-size: contain;
-        /* ◀ [변경] 이미지가 잘리지 않도록 contain 사용 */
         background-position: center;
         background-repeat: no-repeat;
         border-radius: 8px;
         cursor: pointer;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
         border: 2px solid transparent;
-        /* padding: 10px; /* ◀ [삭제] 불필요한 패딩 제거 */
+        opacity: 0.6;
+        transition: all 0.3s ease;
     }
 
-    .fresh .shoes .thumbs .imgBox:hover {
+    .fresh .thumbs .imgBox:hover,
+    .fresh .thumbs .imgBox.active {
+        opacity: 1;
         transform: scale(1.05);
         box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
     }
 
-    .fresh .shoes .thumbs .imgBox.active {
-        border: 2px solid #FF5F1F;
-        box-shadow: 0 0 10px rgba(255, 95, 31, 0.3);
-    }
-
-    /* stylecopy.css 파일에 추가 */
-    .main-product-link {
-        text-decoration: none;
-        cursor: pointer;
+    .fresh .thumbs .imgBox.active {
+        border-color: #FF5F1F;
     }
 
     .main-product-link {
         text-decoration: none;
-        /* 링크 밑줄 제거 */
         color: inherit;
-        /* 부모 요소의 글자색 상속 */
         cursor: pointer;
-        /* 마우스 올리면 포인터 모양으로 변경 */
     }
-
-
-
 
 
 
 
     /* --- Hot Drops Section --- */
+    /* :root {
+        --accent-orange: #ff5722;
+        --space-xl: 80px;
+        --font-heading: 'Arial Black', Arial, sans-serif;
+        --primary-dark: #1a1a1a;
+        --text-light: #666;
+        --bg-light: #f8f8f8;
+        --shadow-soft: 0 20px 60px rgba(0, 0, 0, 0.1);
+        --shadow-hover: 0 30px 80px rgba(255, 87, 34, 0.2);
+    } */
+
     /* --- Hot Drops Section --- */
     .hot {
         padding: var(--space-xl) 0;
@@ -1155,6 +1298,14 @@
         flex-direction: column;
         justify-content: center;
         overflow: hidden;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        border-radius: 20px;
+        margin: 0 auto;
+        /* 이 부분을 수정 */
+        width: calc(100% - 40px);
+        /* 양쪽에 20px씩 여백 */
+        box-shadow: var(--shadow-soft);
     }
 
     .hot::before {
@@ -1162,38 +1313,60 @@
         position: absolute;
         top: 50%;
         left: 50%;
-        transform: translate(-50%, -50%);
-        width: 800px;
-        height: 800px;
-        background: radial-gradient(circle, rgba(255, 87, 34, 0.1), transparent 70%);
-        filter: blur(50px);
+        transform: translate(-50%, -50%) rotate(45deg);
+        width: 600px;
+        height: 600px;
+        background: linear-gradient(45deg,
+                rgba(255, 87, 34, 0.1) 0%,
+                rgba(255, 193, 7, 0.05) 50%,
+                transparent 70%);
+        filter: blur(40px);
         z-index: -1;
+        animation: float 8s ease-in-out infinite;
+    }
+
+    @keyframes float {
+
+        0%,
+        100% {
+            transform: translate(-50%, -50%) rotate(45deg) scale(1);
+        }
+
+        50% {
+            transform: translate(-50%, -50%) rotate(45deg) scale(1.1);
+        }
     }
 
     .hot h1 {
-        font-size: 36px;
-        font-weight: 700;
+        font-size: clamp(2.5rem, 5vw, 4rem);
+        font-weight: 900;
         margin-bottom: 20px;
-        letter-spacing: 2px;
-        color: #222;
+        letter-spacing: 3px;
+        color: var(--primary-dark);
         text-transform: uppercase;
         position: relative;
+        background: linear-gradient(135deg, var(--accent-orange), #ff9800);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
     }
 
     .hot h1::after {
         content: "";
-        width: 60px;
-        height: 3px;
-        background: var(--accent-orange);
+        width: 80px;
+        height: 4px;
+        background: linear-gradient(90deg, var(--accent-orange), #ff9800);
         display: block;
-        margin: 15px auto 0;
-        border-radius: 3px;
+        margin: 20px auto 0;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(255, 87, 34, 0.3);
     }
 
     .hot p {
-        font-size: 1.1rem;
-        color: #666;
-        margin-bottom: 50px;
+        font-size: 1.2rem;
+        color: var(--text-light);
+        margin-bottom: 60px;
+        font-weight: 400;
     }
 
     .hot .inner {
@@ -1201,22 +1374,28 @@
         justify-content: center;
         align-items: center;
         width: 100%;
-        max-width: 1200px;
+        max-width: 1400px;
         margin: 0 auto;
-        gap: 80px;
+        gap: 100px;
+        padding: 0 40px;
     }
 
     .hot .imgBox {
-        flex: 0 0 450px;
-        height: 550px;
+        flex: 0 0 500px;
+        height: 600px;
         position: relative;
         overflow: hidden;
-        border-radius: 12px;
-        background-color: #f0f0f0;
-        /* 이미지 로드 전 배경색 */
+        border-radius: 20px;
+        background: linear-gradient(135deg, #f0f0f0, #e0e0e0);
+        box-shadow: var(--shadow-soft);
+        transition: transform 0.4s ease, box-shadow 0.4s ease;
     }
 
-    /* [수정] 이미지 레이어 z-index: 1 */
+    .hot .imgBox:hover {
+        transform: translateY(-10px) scale(1.02);
+        box-shadow: var(--shadow-hover);
+    }
+
     .hot .img-layer {
         position: absolute;
         top: 0;
@@ -1226,9 +1405,45 @@
         background-position: center;
         background-size: cover;
         background-repeat: no-repeat;
-        transition: opacity 0.6s ease-in-out;
+        transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1);
         z-index: 1;
-        /* 가장 아래에 위치 */
+    }
+
+    .hot .product-details {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+        color: white;
+        padding: 40px 30px 30px;
+        transform: translateY(100%);
+        transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .hot .imgBox:hover .product-details {
+        transform: translateY(0);
+    }
+
+    .product-brand {
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: var(--accent-orange);
+        margin-bottom: 5px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .product-title {
+        font-size: 1.1rem;
+        font-weight: 700;
+        margin-bottom: 8px;
+    }
+
+    .product-price {
+        font-size: 1.3rem;
+        font-weight: 900;
+        color: var(--accent-orange);
     }
 
     .hot .txtBox {
@@ -1240,34 +1455,78 @@
         position: relative;
         display: flex;
         flex-direction: column;
-        gap: 20px;
+        gap: 25px;
     }
 
     .link-indicator {
         position: absolute;
-        left: -30px;
+        left: -40px;
         top: 0;
         height: 0;
-        width: 5px;
-        background-color: var(--accent-orange);
-        border-radius: 5px;
-        transition: top 0.4s cubic-bezier(0.23, 1, 0.32, 1), height 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+        width: 6px;
+        background: linear-gradient(135deg, var(--accent-orange), #ff9800);
+        border-radius: 10px;
+        transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+        box-shadow: 0 0 20px rgba(255, 87, 34, 0.3);
+    }
+
+    .hot .txtBox li {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .hot .txtBox li::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255, 87, 34, 0.1), transparent);
+        transition: left 0.6s ease;
+        z-index: -1;
+    }
+
+    .hot .txtBox li:hover::before {
+        left: 100%;
     }
 
     .hot .txtBox li a {
-        font-size: 3.5rem;
+        font-size: clamp(2.5rem, 4vw, 3.8rem);
         font-weight: 900;
         font-family: var(--font-heading);
         position: relative;
         display: inline-block;
         color: transparent;
-        -webkit-text-stroke: 2px #aaa;
-        transition: color 0.4s ease, -webkit-text-stroke-color 0.4s ease;
+        -webkit-text-stroke: 2px #ccc;
+        transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+        text-decoration: none;
+        padding: 10px 0;
     }
 
     .hot .txtBox li a:hover {
         color: var(--accent-orange);
         -webkit-text-stroke-color: var(--accent-orange);
+        transform: translateX(20px);
+        text-shadow: 0 5px 15px rgba(255, 87, 34, 0.3);
+    }
+
+
+    /* 로딩 애니메이션 */
+    .loading-shimmer {
+        background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+        background-size: 200% 100%;
+        animation: shimmer 2s infinite;
+    }
+
+    @keyframes shimmer {
+        0% {
+            background-position: -200% 0;
+        }
+
+        100% {
+            background-position: 200% 0;
+        }
     }
 
     /* --- 오버레이 관련 스타일 --- */

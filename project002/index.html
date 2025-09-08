@@ -8,7 +8,7 @@
     <title>TIMBERSKATESHOP PROJECT</title>
 
     <!-- 기존 스타일 -->
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="stylecopy.css" />
 
     <!-- 아이콘/제이쿼리 (jQuery는 한 번만 로드!) -->
     <script src="https://kit.fontawesome.com/5b60675eee.js" crossorigin="anonymous"></script>
@@ -19,7 +19,7 @@
         /* 쇼핑카트 고정 위치 + 아이콘 클릭 가능 */
         .shopping {
             position: fixed;
-            top: 16px;
+            top: 100px;
             right: 16px;
             z-index: 1000;
         }
@@ -93,9 +93,14 @@
             font-weight: 800;
         }
     </style>
+
+    <!-- 웹앱아이콘 및 파비콘 설정하기 -->
+    <link rel="apple-touch-icon" href="img/header/logo.png">
+    <link rel="shortcut icon" href="img/header/logo.png">
 </head>
 
 <body>
+
 
     <!-- 쇼핑카트 -->
     <div class="shopping">
@@ -116,6 +121,22 @@
                 <p>총 상품금액 : <em>00</em> 원</p>
                 <p>총 배송비 : <em>00</em> 원</p>
                 <p class="total">총 주문금액 : <em>00</em> 원</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 시즌세일 -->
+    <div class="seasonSale">
+        <div class="marquee">
+            <div class="marquee__content">
+                <span>STREET VIBES SALE</span>
+                <span class="highlight">UP TO 70% OFF</span>
+                <span>LIMITED TIME ONLY</span>
+            </div>
+            <div class="marquee__content">
+                <span>STREET VIBES SALE</span>
+                <span class="highlight">UP TO 70% OFF</span>
+                <span>LIMITED TIME ONLY</span>
             </div>
         </div>
     </div>
@@ -148,7 +169,6 @@
                                 <li><a href=""><i class="fa-solid fa-magnifying-glass"></i></a></li>
                                 <li><a href="login.html"><i class="fa-solid fa-user"></i></a></li>
                                 <li><a href=""><i class="fa-solid fa-heart"></i></a></li>
-                                <li><a href=""><i class="fa-solid fa-cart-shopping"></i></a></li>
                             </ul>
                         </div>
                     </div>
@@ -162,207 +182,68 @@
             <div class="imgSlide2">
                 <div class="slideTxt">
                     <p>NEW COLLECTION 2025</p>
-                    <h3>OWN THE STREETS<br />RIDE TIMBERMR</h3>
-                    <span>SKATE ON <i class="fas fa-arrow-right"></i></span>
+                    <h3>OWN THE STREETS<br/>RIDE TIMBERMR</h3>
+                    <!-- skate on에서 수정 -->
+                    <a href="#new-drops"><span>SHOP NOW <i class="fas fa-arrow-right"></i></span></a>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- 시즌세일 -->
-    <div class="seasonSale">
-        <div class="marquee">
-            <div class="marquee__content">
-                <span>STREET VIBES SALE</span>
-                <span class="highlight">UP TO 70% OFF</span>
-                <span>LIMITED TIME ONLY</span>
-            </div>
-            <div class="marquee__content">
-                <span>STREET VIBES SALE</span>
-                <span class="highlight">UP TO 70% OFF</span>
-                <span>LIMITED TIME ONLY</span>
-            </div>
-        </div>
-    </div>
 
-    <!-- 카테고리 섹션 -->
-    <div class="inner_1">
-        <div class="category">
 
-            <div class="category-intro">
-                <h1 class="main-title">
-                    EXPLORE <br /> THE<br /> STREETS
-                </h1>
-                <h2 class="sub-title">URBAN EXPRESSION</h2>
-                <p class="category-desc">
-                    최신 스트리트웨어부터 전문 스케이트보드 데크까지, 당신의 아이덴티티를 표현할 모든 것을 만나보세요.
-                </p>
-                <a href="#" class="cta-button">View All Collections</a>
-            </div>
 
-            <div class="category-grid">
-                <div class="card card-skateboards">
-                    <div class="card-image"></div>
-                    <div class="overlay"></div>
-                    <a href="#">SKATEBOARDS</a>
-                    <span class="shop-now">Shop Now →</span>
-                </div>
-                <div class="card card-footwear">
-                    <div class="card-image"></div>
-                    <div class="overlay"></div>
-                    <a href="#">FOOTWEAR</a>
-                    <span class="shop-now">Shop Now →</span>
-                </div>
-                <div class="card card-apparel">
-                    <div class="card-image"></div>
-                    <div class="overlay"></div>
-                    <a href="#">APPAREL</a>
-                    <span class="shop-now">Shop Now →</span>
-                </div>
-                <div class="card card-latest">
-                    <div class="card-image"></div>
-                    <div class="overlay"></div>
-                    <a href="#">LATEST</a>
-                    <span class="shop-now">Shop Now →</span>
+
+    <div class="fresh" id="new-drops">
+        <div class="fresh-content">
+
+            <div class="fresh-intro">
+                <h1>NEW DROPS</h1>
+                <h2>신상품을 가장 먼저 만나보세요.</h2>
+
+                <div class="thumbs">
                 </div>
             </div>
 
-        </div>
-    </div>
-
-    <!-- 배너 섹션 -->
-    <div class="banner">
-        <h1 class="banner-text banner1">RIDE <span>YOUR IDENTITY</span></h1>
-        <br>
-        <h1 class="banner-text banner2">MAKE IT <span>YOURS</span></h1>
-    </div>
-
-
-    <!-- 브랜드 섹션 -->
-    <div class="brands">
-        <h1>BRANDS</h1>
-
-        <div class="inner">
-            <div class="t animated-box">
-                <div class="info">
-                    <h2 id="brand-name">TENSOR</h2>
-                    <p id="brand-desc">
-                        TENSOR TRUCKS는 2000년 로드니 뮬런이 설립한 스케이트보드 트럭 브랜드로,<br />
-                        경량화와 혁신적인 디자인을 통해 스케이터들의 요구를 반영하고 있습니다.<br />
-                        특히 마그라이트 시리즈는 뛰어난 내구성과 경량으로 주목받으며,<br />
-                        다양한 프로 스케이터들과 협업하여 독창적인 디자인의 트럭을 선보이고 있습니다.
-                    </p>
-                </div>
-                <div class="brandsBox">
-                    <ul class="brand-list">
-                        <li><a href="#" class="brand-link active" data-brand="TENSOR">TENSOR</a></li>
-                        <li><a href="#" class="brand-link" data-brand="THERE">THERE</a></li>
-                        <li><a href="#" class="brand-link" data-brand="THRASHER">THRASHER</a></li>
-                        <li><a href="#" class="brand-link" data-brand="THUNDER">THUNDER</a></li>
-                        <li><a href="#" class="brand-link" data-brand="TIMBER">TIMBER</a></li>
-                        <li><a href="#" class="brand-link" data-brand="TRIPLE8">TRIPLE 8</a></li>
-                    </ul>
-                </div>
+            <div class="shoes">
+                <a href="product-detail.html" class="main-product-link">
+                    <div class="mainImg imgBox" style="background-image:url('img/freshdrops/freshfreshfresh.png');">
+                        <div class="overlay">
+                            <div class="txtBox">
+                                <h1>SKATE HALF CAB<br>[ANTIQUE WHITE/GUM]</h1>
+                                <h1>VANS</h1>
+                                <h2>105,000원</h2>
+                            </div>
+                        </div>
+                        <div class="icon">
+                            <span class="add-to-cart" data-name="SKATE HALF CAB" data-price="105000"
+                                data-option="[ANTIQUE WHITE/GUM]">
+                                <i class="fa-solid fa-cart-shopping"></i>
+                            </span>
+                            <span><i class="fa-solid fa-heart"></i></span>
+                        </div>
+                    </div>
+                </a>
             </div>
 
-            <div id="watermark-container"></div>
         </div>
-    </div>
-
-    <!-- 콜라보 섹션 -->
-    <div class="collabo">
-        <div class="vans">
-            <div class="imgBox"></div>
-            <div class="txtBox">
-                <h3>CURREN CAPLES PRO SHOES</h3>
-                <h1>VANS </h1>
-                <p>SHOP</p>
-            </div>
-        </div>
-        <div class="polar">
-            <div class="imgBox"></div>
-            <div class="txtBox">
-                <h3>SUMMER 25</h3>
-                <h1>POLAR SKATE CO.</h1>
-                <p>SHOP</p>
-            </div>
-        </div>
-    </div>
-
-
-
-
-
-
-
-    <div class="fresh">
-        <h1>NEW DROPS</h1>
-        <p>신상품을 가장 먼저 만나보세요</p>
-        <div class="shoes">
-            <!-- 큰 메인 이미지 -->
-            <a href="productdetailcopy.html">
-                <div class="mainImg imgBox" style="background-image:url('img/freshdrops/fresh1.png');">
-                    <div class="overlay">
-                        <div class="txtBox">
-                            <h1>SKATE HALF CAB<br>[ANTIQUE WHITE/GUM]</h1>
-                            <h1>VANS</h1>
-                            <h2>105,000원</h2>
-            </a>
-            <div class="icon">
-                <!-- 장바구니 클릭 시 데이터 속성 필요 -->
-                <span class="add-to-cart" data-name="SKATE HALF CAB" data-price="105000"
-                    data-option="[ANTIQUE WHITE/GUM]">
-                    <i class="fa-solid fa-cart-shopping"></i>
-                </span>
-                <span><i class="fa-solid fa-heart"></i></span>
-            </div>
-        </div>
-    </div>
     </div>
 
 
     <!-- 하단 작은 이미지 목록 -->
-    <div class="thumbs">
+    <!-- <div class="thumbs">
         <div class="imgBox" style="background-image:url('img/freshdrops/fresh1.png');"></div>
         <div class="imgBox" style="background-image:url('img/freshdrops/fresh2.png');"></div>
         <div class="imgBox" style="background-image:url('img/freshdrops/fresh3.png');"></div>
         <div class="imgBox" style="background-image:url('img/freshdrops/fresh4.png');"></div>
         <div class="imgBox" style="background-image:url('img/freshdrops/fresh5.png');"></div>
         <div class="imgBox" style="background-image:url('img/freshdrops/fresh6.png');"></div>
+    </div> -->
     </div>
     </div>
-    </div>
 
 
 
-
-
-
-
-
-
-
-
-    <div class="hot">
-        <h1>HOT DROPS</h1>
-        <p>지금 가장 인기 있는 상품!</p>
-        <div class="inner">
-            <div class="imgBox" data-default-image="img/hotdrops/hotdrop.png"></div>
-            <div class="txtBox">
-                <ul>
-                    <div class="link-indicator"></div>
-                    <li><a href="#" data-image="img/hotdrops/hotdrop.png" data-brand="VANS" data-title="SKATE HALF CAB"
-                            data-price="105,000원">SKATE BOARDING</a></li>
-                    <li><a href="#" data-image="img/hotdrops/hot3.png" data-brand="DANCER" data-title="OG LOGO ZIP HOOD"
-                            data-price="245,000원">APPAREL</a></li>
-                    <li><a href="#" data-image="img/hotdrops/hot02.png" data-brand="THRASHER"
-                            data-title="THRASHER MAGAZINE" data-price="7,500원">ACCESSORIES</a></li>
-                    <li><a href="#" data-image="img/hotdrops/hot4.png" data-brand="VANS" data-title="SKATE OLD SKOOL"
-                            data-price="66,500원">SHOES</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
 
 
 
@@ -429,10 +310,57 @@
             <button class="arrow next" aria-label="다음 리뷰 보기">&gt;</button>
         </div>
 
-        <div class="reviewMore">
+        <!-- <div class="reviewMore">
             <p>SHOP</p>
+        </div> -->
+    </div>
+
+
+
+
+
+
+
+    <!-- 브랜드 섹션 -->
+    <div class="brands">
+        <h1>OUR BRANDS</h1>
+
+        <div class="inner">
+            <div class="t animated-box">
+                <div class="info">
+                    <h2 id="brand-name">TENSOR</h2>
+                    <p id="brand-desc">
+                        TENSOR TRUCKS는 2000년 로드니 뮬런이 설립한 스케이트보드 트럭 브랜드로,<br />
+                        경량화와 혁신적인 디자인을 통해 스케이터들의 요구를 반영하고 있습니다.<br />
+                        특히 마그라이트 시리즈는 뛰어난 내구성과 경량으로 주목받으며,<br />
+                        다양한 프로 스케이터들과 협업하여 독창적인 디자인의 트럭을 선보이고 있습니다.
+                    </p>
+                </div>
+                <div class="brandsBox">
+                    <ul class="brand-list">
+                        <li><a href="#" class="brand-link active" data-brand="TENSOR">TENSOR</a></li>
+                        <li><a href="#" class="brand-link" data-brand="THERE">THERE</a></li>
+                        <li><a href="#" class="brand-link" data-brand="THRASHER">THRASHER</a></li>
+                        <li><a href="#" class="brand-link" data-brand="THUNDER">THUNDER</a></li>
+                        <li><a href="#" class="brand-link" data-brand="TIMBER">TIMBER</a></li>
+                        <li><a href="#" class="brand-link" data-brand="TRIPLE8">TRIPLE 8</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="watermark-container"></div>
         </div>
     </div>
+
+
+
+
+
+
+    <!-- 배너 섹션 -->
+    <div class="banner">
+        <h1 class="banner-text banner1">RIDE <span>YOUR IDENTITY</span></h1>
+        <h1 class="banner-text banner2">MAKE IT <span>YOURS</span></h1>
     </div>
 
 
@@ -442,6 +370,140 @@
 
 
 
+
+    <!-- 카테고리 섹션 -->
+    <div class="inner_1">
+        <div class="category">
+
+            <div class="category-intro">
+                <h1 class="main-title">
+                    EXPLORE <br /> THE<br /> STREETS
+                </h1>
+                <h2 class="sub-title">URBAN EXPRESSION</h2>
+                <p class="category-desc">
+                    최신 스트리트웨어부터 전문 스케이트보드 데크까지, <br>
+                    당신의 아이덴티티를 표현할 모든 것을 만나보세요.
+                </p>
+                <a href="#" class="cta-button">View All Collections</a>
+            </div>
+
+            <div class="category-grid">
+                <div class="card card-skateboards">
+                    <div class="card-image"></div>
+                    <div class="overlay"></div>
+                    <a href="#">SKATEBOARDS</a>
+                    <!-- <span class="shop-now">Shop Now →</span> -->
+                </div>
+                <div class="card card-footwear">
+                    <div class="card-image"></div>
+                    <div class="overlay"></div>
+                    <a href="#">FOOTWEAR</a>
+                    <!-- <span class="shop-now">Shop Now →</span> -->
+                </div>
+                <div class="card card-apparel">
+                    <div class="card-image"></div>
+                    <div class="overlay"></div>
+                    <a href="#">APPAREL</a>
+                    <!-- <span class="shop-now">Shop Now →</span> -->
+                </div>
+                <div class="card card-latest">
+                    <div class="card-image"></div>
+                    <div class="overlay"></div>
+                    <a href="#">LATEST</a>
+                    <!-- <span class="shop-now">Shop Now →</span> -->
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- 콜라보 섹션 -->
+    <div class="collabo">
+        <div class="vans">
+            <div class="imgBox"></div>
+            <div class="txtBox">
+                <h3>CURREN CAPLES PRO SHOES</h3>
+                <h1>VANS </h1>
+                <p>VIEW THE COLLAB</p>
+            </div>
+        </div>
+        <div class="polar">
+            <div class="imgBox"></div>
+            <div class="txtBox">
+                <h3>SUMMER 25</h3>
+                <h1>POLAR SKATE CO.</h1>
+                <p>VIEW THE COLLAB</p>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+    <!-- 하단 작은 이미지 목록 -->
+    <!-- <div class="thumbs">
+        <div class="imgBox" style="background-image:url('img/freshdrops/fresh1.png');"></div>
+        <div class="imgBox" style="background-image:url('img/freshdrops/fresh2.png');"></div>
+        <div class="imgBox" style="background-image:url('img/freshdrops/fresh3.png');"></div>
+        <div class="imgBox" style="background-image:url('img/freshdrops/fresh4.png');"></div>
+        <div class="imgBox" style="background-image:url('img/freshdrops/fresh5.png');"></div>
+        <div class="imgBox" style="background-image:url('img/freshdrops/fresh6.png');"></div>
+    </div> -->
+    </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- 
     <div class="about">
         <h1>ABOUT US</h1>
         <div class="inner">
@@ -458,7 +520,7 @@
             </ul>
             <div class="imgBox"></div>
         </div>
-    </div>
+    </div> -->
 
     <!-- HISTORY -->
     <div class="history">
@@ -626,9 +688,7 @@
                     li.addEventListener('mouseenter', () => {
                         aboutImgBox.style.backgroundImage = `url('${li.dataset.image}')`;
                     });
-                    li.addEventListener('mouseleave', () => {
-                        aboutImgBox.style.backgroundImage = 'none';
-                    });
+
                 });
             }
 
@@ -735,7 +795,7 @@
             const brandData = {
                 TENSOR: {
                     name: 'TENSOR',
-                    desc: 'TENSOR TRUCKS는 2000년 로드니 뮬런이 설립한... 경량화와 혁신적인 디자인을 통해 스케이터들의 요구를 반영하고 있습니다.'
+                    desc: 'TENSOR TRUCKS는 경량화와 혁신적인 디자인을 통해 스케이터들의 요구를 반영하고 있습니다.'
                 },
                 THERE: {
                     name: 'THERE',
@@ -1130,6 +1190,135 @@
                 });
             });
         }
+
+
+
+
+
+
+        // hot
+        class HotDropsController {
+            constructor() {
+                this.imageContainer = document.getElementById('imageContainer');
+                this.productImage = document.getElementById('productImage');
+                this.productDetails = document.getElementById('productDetails');
+                this.indicator = document.getElementById('indicator');
+                this.links = document.querySelectorAll('.txtBox li a');
+                this.currentIndex = 0;
+
+                this.init();
+            }
+
+            init() {
+                // 첫 번째 상품으로 초기화
+                this.updateProduct(this.links[0]);
+                this.updateIndicator(0);
+
+                // 이벤트 리스너 등록
+                this.links.forEach((link, index) => {
+                    link.addEventListener('mouseenter', () => {
+                        this.updateProduct(link);
+                        this.updateIndicator(index);
+                        this.currentIndex = index;
+                    });
+
+                    link.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        this.handleProductClick(link);
+                    });
+                });
+
+                // 자동 슬라이드 (선택사항)
+                // this.startAutoSlide();
+            }
+
+            updateProduct(link) {
+                const image = link.dataset.image;
+                const brand = link.dataset.brand;
+                const title = link.dataset.title;
+                const price = link.dataset.price;
+
+                // 로딩 효과 시작
+                this.imageContainer.classList.add('loading-shimmer');
+
+                // 이미지 페이드 아웃
+                this.productImage.style.opacity = '0';
+
+                setTimeout(() => {
+                    // 이미지 변경
+                    this.productImage.style.backgroundImage = `url(${image})`;
+
+                    // 상품 정보 업데이트
+                    document.getElementById('productBrand').textContent = brand;
+                    document.getElementById('productTitle').textContent = title;
+                    document.getElementById('productPrice').textContent = price;
+
+                    // 이미지 페이드 인
+                    this.productImage.style.opacity = '1';
+
+                    // 로딩 효과 제거
+                    setTimeout(() => {
+                        this.imageContainer.classList.remove('loading-shimmer');
+                    }, 300);
+                }, 300);
+            }
+
+            updateIndicator(index) {
+                const linkElement = this.links[index];
+                const rect = linkElement.getBoundingClientRect();
+                const containerRect = linkElement.closest('ul').getBoundingClientRect();
+
+                const top = rect.top - containerRect.top;
+                const height = rect.height;
+
+                this.indicator.style.top = `${top}px`;
+                this.indicator.style.height = `${height}px`;
+            }
+
+            handleProductClick(link) {
+                // 클릭 애니메이션
+                link.style.transform = 'scale(0.95)';
+                setTimeout(() => {
+                    link.style.transform = '';
+                }, 150);
+
+                // 여기에 실제 상품 페이지로 이동하는 로직 추가
+                console.log('상품 클릭:', link.dataset.title);
+            }
+
+            startAutoSlide() {
+                setInterval(() => {
+                    this.currentIndex = (this.currentIndex + 1) % this.links.length;
+                    this.updateProduct(this.links[this.currentIndex]);
+                    this.updateIndicator(this.currentIndex);
+                }, 5000); // 5초마다 변경
+            }
+        }
+
+        // DOM 로드 완료 후 초기화
+        document.addEventListener('DOMContentLoaded', () => {
+            new HotDropsController();
+        });
+
+        // 1. 필요한 요소들을 선택합니다.
+        const header = document.querySelector('.header');
+
+        // 2. 스크롤 이벤트를 감지하는 함수를 만듭니다.
+        function handleScroll() {
+            // window.scrollY는 수직 스크롤 위치를 픽셀 단위로 반환합니다.
+            // 100px보다 많이 스크롤되면
+            if (window.scrollY > 100) {
+                // header 요소에 'sticky' 클래스를 추가합니다.
+                header.classList.add('sticky');
+            } else {
+                // 100px 미만이면 'sticky' 클래스를 제거합니다.
+                header.classList.remove('sticky');
+            }
+        }
+
+        // 3. window 객체에 스크롤 이벤트 리스너를 추가합니다.
+        // 스크롤될 때마다 handleScroll 함수가 실행됩니다.
+        window.addEventListener('scroll', handleScroll);
     </script>
 
 
