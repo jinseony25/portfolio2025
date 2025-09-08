@@ -1,0 +1,2309 @@
+    @import url('https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;700&display=swap');
+
+    /* CSS Reset and Global Styles */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        scroll-behavior: smooth;
+    }
+
+    :root {
+        --primary-black: #1a1a1a;
+        --primary-white: #f5f5f5;
+        --accent-orange: #ff5722;
+        --text-color-light: #888;
+        --font-heading: 'Anton', sans-serif;
+        --font-body: 'Inter', sans-serif;
+        --container-width: 1600px;
+        --transition-speed: 0.3s ease-in-out;
+
+        /* [추가] 일관된 간격을 위한 변수 시스템 */
+        --space-s: 32px;
+        --space-m: 64px;
+        --space-l: 100px;
+        --space-xl: 120px;
+        --space-xxl: 160px;
+    }
+
+    body {
+        font-family: var(--font-body);
+        color: var(--primary-black);
+        background-color: var(--primary-white);
+        line-height: 1.6;
+        overflow-x: hidden;
+    }
+
+    a {
+        text-decoration: none;
+        color: inherit;
+        transition: color var(--transition-speed);
+    }
+
+    ul {
+        list-style: none;
+    }
+
+    h1,
+    h2,
+    h3 {
+        font-family: var(--font-heading);
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        line-height: 1.2;
+    }
+
+    .inner,
+    .inner_1,
+    .collabo,
+    .fresh,
+    .brands,
+    .hot,
+    .review {
+        max-width: var(--container-width);
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    .demo-content {
+        padding: 50px;
+        text-align: center;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    /* --- Shopping Cart --- */
+    .shopping {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 2000;
+    }
+
+    .shopping .icon {
+        cursor: pointer;
+        font-size: 1.5rem;
+        color: #333;
+        position: relative;
+        /* 장바구니 위치 변경 */
+        top: 50px;
+        background: white;
+        padding: 12px;
+        border-radius: 50%;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        transition: transform 0.2s ease;
+    }
+
+    .shopping .icon:hover {
+        transform: scale(1.1);
+    }
+
+    .shopping .icon span {
+        position: absolute;
+        top: -5px;
+        right: -5px;
+        background: var(--accent-orange);
+        color: #fff;
+        font-size: 0.7rem;
+        font-weight: bold;
+        padding: 3px 7px;
+        border-radius: 50%;
+        min-width: 18px;
+        height: 18px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .cart_page {
+        display: none;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 350px;
+        background: #fff;
+        border: 1px solid #ddd;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        padding: 20px;
+        z-index: 999;
+    }
+
+    .cart_page.active {
+        display: block;
+    }
+
+    .cart_page .close-btn {
+        text-align: right;
+        font-size: 18px;
+        cursor: pointer;
+        color: #333;
+    }
+
+
+
+
+    /* style 태그 안에 아래 코드를 추가하세요 */
+
+    .cart_page .cart-divider {
+        border: 0;
+        height: 1px;
+        background: #eee;
+        margin: 12px 0;
+    }
+
+    .cart_page .purchase-btn {
+        display: block;
+        width: 100%;
+        padding: 12px;
+        margin-top: 16px;
+        background-color: #1a1a1a;
+        /* 로그인 버튼과 유사한 스타일 */
+        color: #fff;
+        text-align: center;
+        text-decoration: none;
+        border-radius: 8px;
+        font-weight: 600;
+        font-size: 16px;
+        transition: background-color 0.3s;
+    }
+
+    .cart_page .purchase-btn:hover {
+        background-color: #444;
+    }
+
+
+
+
+
+
+    /* --- Hero Section --- */
+    .hero {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+    }
+
+    .header {
+        width: 100%;
+        position: absolute;
+        top: 0;
+        z-index: 10;
+        background-color: transparent;
+    }
+
+    .sale {
+        overflow: hidden;
+        white-space: nowrap;
+        background-color: var(--primary-black);
+        color: var(--primary-white);
+        padding: 8px 0;
+        display: flex;
+        position: relative;
+    }
+
+    .sale ul {
+        display: flex;
+        animation: marquee 15s linear infinite;
+        gap: 20px;
+    }
+
+    .sale ul.clone {
+        position: absolute;
+        top: 0;
+        left: 100%;
+    }
+
+    .sale li {
+        padding: 0 10px;
+        font-size: 0.8rem;
+        letter-spacing: 2px;
+    }
+
+    .sale .fa-fire {
+        color: var(--accent-orange);
+        margin: 0 5px;
+    }
+
+    .header .inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+    }
+
+    .header .logo {
+        width: 150px;
+        height: 40px;
+        background: url('img/header/logo3.png') no-repeat center center / contain;
+        text-indent: -9999px;
+        cursor: pointer;
+    }
+
+    .header .inner1,
+    .header .inner2 {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+
+
+    .gnb ul {
+        display: flex;
+        /* 간격 변경 30->100 */
+        gap: 100px;
+        text-transform: uppercase;
+
+    }
+
+    .gnb ul li {
+        position: relative;
+    }
+
+    .gnb ul li a {
+        font-weight: 700;
+    }
+
+    .gnb ul li:hover>a {
+        color: var(--accent-orange);
+    }
+
+    .gnb ul li ul {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: var(--primary-white);
+        padding: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        min-width: 200px;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .gnb ul li:hover ul {
+        display: flex;
+    }
+
+    .gnb ul li ul li a {
+        padding: 5px 10px;
+        display: block;
+        font-weight: 400;
+    }
+
+    .gnb ul li ul li:hover a {
+        background-color: #f0f0f0;
+    }
+
+    .util ul {
+        display: flex;
+        gap: 15px;
+        font-size: 1.2rem;
+    }
+
+    .util ul li a:hover {
+        color: var(--accent-orange);
+    }
+
+    /* --- Sticky Header Styles --- */
+
+    /* [추가] 스크롤 시 헤더에 적용될 스타일 */
+    .header.sticky {
+        position: fixed;
+        /* 화면에 고정 */
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.9);
+        /* 흰색 반투명 배경 */
+        backdrop-filter: blur(10px);
+        /* 배경 블러 효과 (모던한 느낌) */
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        /* 그림자 효과 */
+
+        /* 부드럽게 나타나는 애니메이션 적용 */
+        animation: slideDown 0.5s ease-out;
+    }
+
+    /* [추가] 헤더 텍스트 색상 조정 (어두운 색으로) */
+    .header.sticky .gnb ul li a {
+        color: var(--primary-black);
+        /* 기본 GNB 텍스트 색상 */
+    }
+
+    .header.sticky .gnb ul li:hover>a {
+        color: var(--accent-orange);
+        /* 호버 시 텍스트 색상 */
+    }
+
+    /* [추가] 로고 이미지 변경 (어두운 배경용 로고가 있다면) */
+    /* .header.sticky .logo {
+    background-image: url('img/header/logo-dark.png');
+} */
+
+
+    /* [추가] 부드럽게 내려오는 애니메이션 효과 */
+    @keyframes slideDown {
+        from {
+            transform: translateY(-100%);
+        }
+
+        to {
+            transform: translateY(0);
+        }
+    }
+
+    .imgSlide {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        color: var(--primary-white);
+        text-align: center;
+        z-index: 1;
+    }
+
+    .imgSlide2 {
+        width: 100%;
+        height: 100vh;
+        background: url('img/header/slide3.jpg') no-repeat center center / cover;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        position: relative;
+    }
+
+    .imgSlide2::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.3);
+        z-index: 0;
+    }
+
+    .imgSlide2 .slideTxt {
+        position: relative;
+        z-index: 1;
+        text-align: left;
+        padding-left: 10%;
+        color: var(--primary-white);
+    }
+
+    .slideTxt p {
+        font-size: 1.2rem;
+        letter-spacing: 5px;
+        text-transform: uppercase;
+        opacity: 0.8;
+
+        padding: 5px 10px;
+        border-radius: 5px;
+        display: inline-block;
+    }
+
+    .slideTxt h3 {
+        display: block;
+        font-size: 4rem;
+        margin: 20px 0;
+        letter-spacing: 3px;
+    }
+
+    .slideTxt span {
+        font-size: 1.2rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        cursor: pointer;
+        background-color: var(--accent-orange);
+        padding: 10px 20px;
+        border-radius: 5px;
+        display: inline-block;
+        transition: background-color var(--transition-speed), transform var(--transition-speed);
+    }
+
+    .slideTxt span:hover {
+        background-color: #e04e1b;
+        transform: translateY(-5px);
+    }
+
+
+    /* --- Season Sale Section --- */
+    .seasonSale {
+        background: #111;
+        overflow: hidden;
+        /* [수정] 배너의 상하 여백을 줄여 높이를 조절합니다. */
+        padding: 8px 0;
+    }
+
+    .marquee {
+        display: inline-flex;
+        width: max-content;
+        animation: scrollLeft 15s linear infinite;
+    }
+
+    .marquee__content {
+        display: flex;
+        flex-shrink: 0;
+    }
+
+    .marquee__content span {
+        /* [수정] 글자 사이의 좌우 간격을 줄입니다. */
+        margin-right: 40px;
+        /* [수정] 글자 크기를 줄이는 것이 가장 효과적입니다. */
+        font-size: 1.5rem;
+        font-weight: 900;
+        text-transform: uppercase;
+        font-family: 'Bebas Neue', sans-serif;
+        /* [수정] 자간을 약간 줄여 더 압축된 느낌을 줍니다. */
+        letter-spacing: 1px;
+        color: #FF5F1F;
+        text-shadow: 0 0 5px rgba(255, 95, 31, 0.7),
+            0 0 10px rgba(255, 95, 31, 0.5);
+    }
+
+    @keyframes scrollLeft {
+        0% {
+            transform: translateX(0);
+        }
+
+        100% {
+            transform: translateX(-50%);
+        }
+    }
+
+    .highlight {
+        color: #fff;
+        animation: blink 1s infinite alternate;
+    }
+
+    @keyframes blink {
+        0% {
+            color: #fff;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8),
+                0 0 20px rgba(255, 255, 255, 0.6);
+        }
+
+        100% {
+            color: #FF5F1F;
+            text-shadow: 0 0 10px rgba(255, 95, 31, 0.7),
+                0 0 20px rgba(255, 95, 31, 0.5);
+        }
+    }
+
+    /* --- Category Section --- */
+    /* --- Category Section --- */
+    .category {
+        padding: var(--space-xl) 20px;
+        display: grid;
+        grid-template-columns: 0.8fr 1.2fr;
+        gap: 40px;
+        max-width: 1400px;
+        margin: 0 auto;
+        align-items: center;
+    }
+
+    .category-intro {
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .main-title {
+        font-size: 4.5rem;
+        font-weight: 900;
+        color: var(--primary-black);
+        text-align: left;
+        text-transform: uppercase;
+        line-height: 1.1;
+        letter-spacing: 3px;
+        text-shadow: none;
+        animation: fadeDown 1.2s ease-out;
+    }
+
+    .sub-title {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--accent-orange);
+        text-align: left;
+        margin: 20px 0;
+        animation: fadeIn 2s ease-in;
+    }
+
+    .sub-title::after {
+        display: none;
+    }
+
+    .category-desc {
+        color: #555;
+        font-size: 1rem;
+        line-height: 1.7;
+        margin-bottom: 30px;
+    }
+
+    .cta-button {
+        background-color: var(--primary-black);
+        color: var(--primary-white);
+        padding: 12px 25px;
+        font-weight: 700;
+        border-radius: 5px;
+        transition: background-color var(--transition-speed);
+        text-transform: uppercase;
+    }
+
+    .cta-button:hover {
+        background-color: var(--accent-orange);
+    }
+
+    .category-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        gap: 20px;
+        height: 600px;
+    }
+
+    /* 카드 공통 스타일 */
+    .card {
+        position: relative;
+        overflow: hidden;
+        /* [삭제] 마우스 포인터가 손가락 모양으로 바뀌는 효과 제거 */
+        /* cursor: pointer; */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-transform: uppercase;
+        border-radius: 12px;
+        /* [삭제] 호버 효과를 위한 transition 제거 */
+        /* transition: transform 0.4s ease, box-shadow 0.4s ease; */
+    }
+
+    /* 카드 내 이미지 요소 */
+    .card-image {
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+        /* [삭제] 호버 효과를 위한 transition 제거 */
+        /* transition: transform 0.6s ease; */
+    }
+
+    /* 각 카드 그리드 배치 및 배경 이미지 (기존과 동일) */
+    .card-skateboards {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+    }
+
+    .card-skateboards .card-image {
+        background-image: url('img/category/category03.jpg');
+    }
+
+    .card-footwear {
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
+    }
+
+    .card-footwear .card-image {
+        background-image: url('img/category/footwear.jpg');
+    }
+
+    .card-apparel {
+        grid-column: 1 / 3;
+        grid-row: 2 / 3;
+    }
+
+    .card-apparel .card-image {
+        background-image: url('img/category/category01.jpg');
+    }
+
+    .card-latest {
+        grid-column: 3 / 4;
+        grid-row: 1 / 3;
+    }
+
+    .card-latest .card-image {
+        background-image: url('img/category/cat1.jpg');
+    }
+
+    /* 카드 오버레이 */
+    .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.35);
+        /* [삭제] 호버 효과를 위한 transition 제거 */
+        /* transition: background-color 0.3s ease; */
+    }
+
+    /* 카드 텍스트 */
+    /* 카드 텍스트 */
+    .card a {
+        position: absolute;
+        z-index: 1;
+        color: #fff;
+        font-size: 1.5rem;
+        font-weight: 700;
+        letter-spacing: 2px;
+        text-decoration: none;
+
+        /* [추가] 마우스 커서가 손가락 모양으로 바뀌지 않고 기본 모양으로 유지되도록 설정 */
+        cursor: default;
+    }
+
+    /* [추가] 마우스를 올려도 텍스트 색상이나 밑줄 등 아무런 변화가 없도록 설정 */
+    .card a:hover {
+        color: #fff;
+        /* 기본 상태의 색상(#fff)과 동일하게 유지 */
+        text-decoration: none;
+        /* 밑줄 등 장식 효과 방지 */
+    }
+
+    /* "Shop Now" 텍스트 */
+    .shop-now {
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translate(-50%, 10px);
+        color: #fff;
+        font-size: 0.9rem;
+        font-weight: 700;
+        /* [수정] 항상 보이지 않도록 opacity: 0 유지 */
+        opacity: 0;
+        /* [삭제] 호버 효과를 위한 transition 제거 */
+        /* transition: opacity 0.4s ease, transform 0.4s ease; */
+    }
+
+    /* [삭제] 마우스 호버 시 "Shop Now"가 나타나는 효과 제거 */
+    /*
+.card:hover .shop-now {
+    opacity: 1;
+    transform: translate(-50%, 0);
+}
+*/
+
+    /* 애니메이션 키프레임 (기존과 동일) */
+    @keyframes fadeDown {
+        from {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
+    }
+
+
+
+
+
+
+
+    /* --- Banner Section (Improved) --- */
+    .banner {
+        /* [수정] 상하 여백을 줄여 간결하게 */
+        padding: var(--space-l) 0;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+        background: linear-gradient(135deg, #23314E, #FF5F1F, #FF8C00);
+        background-size: 400% 400%;
+        animation: gradientFlow 5s ease infinite;
+        /* [수정] 하단 여백을 줄여 다른 섹션과의 간격을 좁힘 */
+        margin-bottom: 60px;
+
+        /* [추가] h1 태그들을 정렬하고 간격을 제어하기 위해 flex 사용 */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        /* 두 h1 사이의 간격 */
+    }
+
+    /* [삭제] 배너 위아래를 희미하게 만들던 효과 제거하여 깔끔하게 */
+    .banner::before {
+        display: none;
+    }
+
+    @keyframes gradientFlow {
+        0% {
+            background-position: 0% 50%;
+        }
+
+        50% {
+            background-position: 100% 50%;
+        }
+
+        100% {
+            background-position: 0% 50%;
+        }
+    }
+
+    .banner h1 {
+        font-size: clamp(2.5rem, 8vw, 5rem);
+        font-weight: 700;
+        /* [수정] 개별 마진을 제거하고 부모 요소(banner)의 gap으로 제어 */
+        margin: 0;
+        color: #fff;
+        display: inline-block;
+        line-height: 1.2;
+        text-transform: uppercase;
+        opacity: 0;
+        /* 애니메이션 시작 전 숨김 상태 */
+    }
+
+    .banner span {
+        display: inline-block;
+        background: linear-gradient(45deg, #FFC837, #FF8C00);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+    }
+
+    /* --- Animations --- */
+    @keyframes slideInLeft {
+        from {
+            opacity: 0;
+            transform: translateX(-50px);
+            /* 이동 거리를 줄여 더 부드럽게 */
+        }
+
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    @keyframes slideInRight {
+        from {
+            opacity: 0;
+            transform: translateX(50px);
+            /* 이동 거리를 줄여 더 부드럽게 */
+        }
+
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    /* [수정] 기존 animate-left/right 대신 클래스명에 직접 애니메이션 적용 */
+    /* [수정] 애니메이션 시간을 줄여 더 경쾌한 느낌으로 변경 */
+    .banner .banner1 {
+        animation: slideInLeft 1.2s forwards 0.3s;
+    }
+
+    .banner .banner2 {
+        animation: slideInRight 1.2s forwards 0.6s;
+    }
+
+
+
+
+
+
+
+
+
+
+    /* --- Brands Section --- */
+    /* Brands Section - Minimalist Version */
+    /* Brands Section - Light Mode Version */
+    .brands {
+        padding: var(--space-xl) 0;
+        text-align: center;
+        /* [수정] 요청하신 밝은 회색 배경으로 변경 */
+        background: #f9f9f9;
+        position: relative;
+        /* [수정] 상하단 테두리를 어둡고 옅은 색으로 변경 */
+        border-top: 1px solid #eee;
+        border-bottom: 1px solid #eee;
+        overflow: hidden;
+    }
+
+    .brands>h1 {
+        font-size: 4rem;
+        margin-bottom: 60px;
+        position: relative;
+        display: inline-block;
+        text-transform: uppercase;
+        /* [수정] 밝은 배경에 맞춰 타이틀 색상을 어둡게 변경 */
+        color: #111;
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .brands.is-visible>h1 {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .brands>h1::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        bottom: -10px;
+        transform: translateX(-50%);
+        width: 100px;
+        height: 1px;
+        /* [수정] 밑줄 효과를 어두운 색의 그라데이션으로 변경 */
+        background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.2), transparent);
+        border-radius: 2px;
+    }
+
+    .brands .inner {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+        position: relative;
+        z-index: 2;
+    }
+
+    .brands .t {
+        display: flex;
+        justify-content: space-between;
+        gap: 40px;
+        /* [수정] 유리 질감 대신, 부드러운 그림자가 있는 흰색 카드로 변경 */
+        background: #fff;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+        padding: 40px;
+        border-radius: 12px;
+        /* [삭제] 라이트 모드에서는 불필요한 속성 제거 */
+        /* backdrop-filter: blur(10px); */
+        /* border: 1px solid rgba(255, 255, 255, 0.08); */
+        opacity: 0;
+        transform: scale(0.95);
+        transition: opacity 0.8s ease 0.2s, transform 0.8s ease 0.2s, box-shadow 0.3s ease;
+    }
+
+    .brands.is-visible .t {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    .brands .t:hover {
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+    }
+
+    .brands .info {
+        text-align: left;
+        flex-basis: 60%;
+    }
+
+    .brands .info h2 {
+        font-size: 2.8rem;
+        margin-bottom: 20px;
+        transition: all 0.3s ease;
+        /* [수정] 브랜드명도 어두운 색으로 변경 */
+        color: #222;
+    }
+
+    .brands .info p {
+        /* [수정] 본문 텍스트 색상을 적당한 회색으로 변경 */
+        color: #555;
+        line-height: 1.7;
+        min-height: 100px;
+        transition: all 0.3s ease;
+    }
+
+    .brands .brandsBox {
+        flex-basis: 35%;
+    }
+
+    .brands .brand-list {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 15px 30px;
+    }
+
+    .brands .brandsBox a {
+        font-weight: 700;
+        font-size: 1.2rem;
+        /* [수정] 기본 링크 색상을 회색으로 변경 */
+        color: #666;
+        position: relative;
+        transition: color 0.3s;
+        padding: 5px 0;
+    }
+
+    .brands .brandsBox a::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -2px;
+        width: 0;
+        height: 2px;
+        background: var(--accent-orange);
+        transition: width 0.3s;
+    }
+
+    .brands .brandsBox a:hover,
+    .brands .brandsBox a.active {
+        /* 포인트 컬러는 라이트 모드에서도 잘 어울리므로 유지 */
+        color: var(--accent-orange);
+    }
+
+    .brands .brandsBox a:hover::after,
+    .brands .brandsBox a.active::after {
+        width: 100%;
+    }
+
+    #watermark-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        pointer-events: none;
+        user-select: none;
+        overflow: hidden;
+    }
+
+    .street-tag {
+        position: absolute;
+        font-size: 10vw;
+        font-weight: 900;
+        /* [수정] 워터마크 색상을 매우 옅은 회색으로 변경 */
+        color: rgba(0, 0, 0, 0.04);
+        transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+
+
+
+
+
+
+
+
+
+
+    /* --- Collabo Section --- */
+    .collabo {
+        display: flex;
+        gap: 20px;
+        /* [변경] 간격 조정 */
+        padding: var(--space-xl) 0;
+    }
+
+    .vans,
+    .polar {
+        flex: 1;
+        display: flex;
+        position: relative;
+        height: 500px;
+        overflow: hidden;
+    }
+
+    .vans .imgBox,
+    .polar .imgBox {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        transition: transform var(--transition-speed);
+    }
+
+    .vans .imgBox {
+        background: url('img/promotion/arto3resized.jpg') center center / cover;
+    }
+
+    .polar .imgBox {
+        background: url('img/promotion/skaterresized.jpg') center left / cover;
+    }
+
+    .vans:hover .imgBox,
+    .polar:hover .imgBox {
+        transform: scale(1.05);
+    }
+
+    .txtBox {
+        position: relative;
+        z-index: 1;
+        color: var(--primary-white);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding: 40px;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+        width: 100%;
+        height: 100%;
+    }
+
+    .txtBox h3 {
+        font-size: 1.5rem;
+    }
+
+    .txtBox h1 {
+        font-size: 3rem;
+        margin: 10px 0;
+    }
+
+    .txtBox p {
+        font-size: 1.2rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        border: 2px solid var(--primary-white);
+        padding: 10px 20px;
+        width: fit-content;
+        transition: background-color var(--transition-speed);
+        cursor: pointer;
+    }
+
+    .txtBox p:hover {
+        background-color: var(--primary-white);
+        color: var(--primary-black);
+    }
+
+
+
+
+
+
+
+
+
+    /* --- Fresh Section (New Layout) --- */
+    .fresh {
+        padding: var(--space-xl) 20px;
+        background-color: #f9f9f9;
+    }
+
+    /* [추가] 2단 그리드 레이아웃을 위한 컨테이너 */
+    .fresh .fresh-content {
+        display: grid;
+        grid-template-columns: 0.8fr 1.2fr;
+        /* 좌:우 비율 */
+        gap: 50px;
+        align-items: center;
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+
+    /* [추가] 좌측 텍스트/썸네일 영역 */
+    .fresh .fresh-intro {
+        text-align: left;
+        /* 내부 모든 요소 좌측 정렬 */
+    }
+
+    /* [수정] h1, h2 텍스트 중앙 정렬 제거 */
+    .fresh h1 {
+        font-size: 36px;
+        font-weight: 700;
+        margin-bottom: 20px;
+        /* 간격 조정 */
+        letter-spacing: 2px;
+        color: #222;
+        text-transform: uppercase;
+        position: relative;
+    }
+
+    .fresh h1::after {
+        content: "";
+        width: 60px;
+        height: 3px;
+        background: #ff5f1f;
+        display: block;
+        /* [수정] 좌측 정렬을 위해 auto 마진 제거 */
+        margin: 15px 0 0;
+        border-radius: 3px;
+    }
+
+    .fresh h2 {
+        font-size: 1.5rem;
+        color: #666;
+        margin-top: 10px;
+        font-weight: 500;
+        letter-spacing: 0.5px;
+        line-height: 1.4;
+        margin-bottom: 40px;
+        /* 간격 조정 */
+    }
+
+    /* --- 메인 이미지 & 썸네일 --- */
+ .fresh .shoes .mainImg {
+    width: 100%;
+    max-width: none;
+    aspect-ratio: 16 / 9; /* 더 시원한 배너 비율 */
+    margin: 0;
+    background-position: center;
+    background-size: contain; /* contain으로 변경 */
+    background-repeat: no-repeat;
+    background-color: #ffb733; /* 노랑-주황 톤 배경 추가 */
+    border-radius: 16px;
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+    .fresh .shoes .mainImg:hover {
+        transform: scale(1.03);
+        box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+    }
+
+    /* --- 오버레이, 아이콘, 텍스트 효과 (기존과 동일) --- */
+    .fresh .shoes .mainImg .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.65);
+        opacity: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        border-radius: 16px;
+        transition: opacity 0.4s ease;
+    }
+
+    .fresh .shoes .mainImg:hover .overlay {
+        opacity: 1;
+    }
+
+    .fresh .shoes .mainImg .txtBox h1,
+    .fresh .shoes .mainImg .txtBox h2 {
+        opacity: 0;
+        transform: translateY(10px);
+        transition: all 0.4s ease 0.2s;
+    }
+
+    .fresh .shoes .mainImg:hover .txtBox h1,
+    .fresh .shoes .mainImg:hover .txtBox h2 {
+        opacity: 1;
+        color: #fff;
+        transform: translateY(0);
+        z-index: 10;
+    }
+
+    .fresh .shoes .mainImg .icon {
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+        display: flex;
+        gap: 10px;
+        z-index: 5;
+    }
+
+    .fresh .shoes .mainImg .icon span {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background-color: rgba(255, 255, 255, 0.9);
+        border-radius: 50%;
+        color: #333;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .fresh .shoes .mainImg .icon span:hover {
+        background-color: var(--accent-orange);
+        color: #fff;
+        transform: scale(1.1);
+    }
+
+    /* --- 썸네일 이미지 (위치 변경됨) --- */
+    .fresh .thumbs {
+        /* [수정] 중앙 정렬 대신 좌측 정렬 */
+        justify-content: flex-start;
+        display: flex;
+        gap: 15px;
+        flex-wrap: wrap;
+        margin-top: 10px;
+    }
+
+    .fresh .thumbs .imgBox {
+        width: 120px;
+        height: 90px;
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        border-radius: 8px;
+        cursor: pointer;
+        border: 2px solid transparent;
+        opacity: 0.6;
+        transition: all 0.3s ease;
+    }
+
+    .fresh .thumbs .imgBox:hover,
+    .fresh .thumbs .imgBox.active {
+        opacity: 1;
+        transform: scale(1.05);
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .fresh .thumbs .imgBox.active {
+        border-color: #FF5F1F;
+    }
+
+    .main-product-link {
+        text-decoration: none;
+        color: inherit;
+        cursor: pointer;
+    }
+
+
+
+
+    /* --- Hot Drops Section --- */
+    /* :root {
+        --accent-orange: #ff5722;
+        --space-xl: 80px;
+        --font-heading: 'Arial Black', Arial, sans-serif;
+        --primary-dark: #1a1a1a;
+        --text-light: #666;
+        --bg-light: #f8f8f8;
+        --shadow-soft: 0 20px 60px rgba(0, 0, 0, 0.1);
+        --shadow-hover: 0 30px 80px rgba(255, 87, 34, 0.2);
+    } */
+
+    /* --- Hot Drops Section --- */
+    .hot {
+        padding: var(--space-xl) 0;
+        text-align: center;
+        position: relative;
+        min-height: 800px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        overflow: hidden;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        border-radius: 20px;
+        margin: 0 auto;
+        /* 이 부분을 수정 */
+        width: calc(100% - 40px);
+        /* 양쪽에 20px씩 여백 */
+        box-shadow: var(--shadow-soft);
+    }
+
+    .hot::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(45deg);
+        width: 600px;
+        height: 600px;
+        background: linear-gradient(45deg,
+                rgba(255, 87, 34, 0.1) 0%,
+                rgba(255, 193, 7, 0.05) 50%,
+                transparent 70%);
+        filter: blur(40px);
+        z-index: -1;
+        animation: float 8s ease-in-out infinite;
+    }
+
+    @keyframes float {
+
+        0%,
+        100% {
+            transform: translate(-50%, -50%) rotate(45deg) scale(1);
+        }
+
+        50% {
+            transform: translate(-50%, -50%) rotate(45deg) scale(1.1);
+        }
+    }
+
+    .hot h1 {
+        font-size: clamp(2.5rem, 5vw, 4rem);
+        font-weight: 900;
+        margin-bottom: 20px;
+        letter-spacing: 3px;
+        color: var(--primary-dark);
+        text-transform: uppercase;
+        position: relative;
+        background: linear-gradient(135deg, var(--accent-orange), #ff9800);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    .hot h1::after {
+        content: "";
+        width: 80px;
+        height: 4px;
+        background: linear-gradient(90deg, var(--accent-orange), #ff9800);
+        display: block;
+        margin: 20px auto 0;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(255, 87, 34, 0.3);
+    }
+
+    .hot p {
+        font-size: 1.2rem;
+        color: var(--text-light);
+        margin-bottom: 60px;
+        font-weight: 400;
+    }
+
+    .hot .inner {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        max-width: 1400px;
+        margin: 0 auto;
+        gap: 100px;
+        padding: 0 40px;
+    }
+
+    .hot .imgBox {
+        flex: 0 0 500px;
+        height: 600px;
+        position: relative;
+        overflow: hidden;
+        border-radius: 20px;
+        background: linear-gradient(135deg, #f0f0f0, #e0e0e0);
+        box-shadow: var(--shadow-soft);
+        transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .hot .imgBox:hover {
+        transform: translateY(-10px) scale(1.02);
+        box-shadow: var(--shadow-hover);
+    }
+
+    .hot .img-layer {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        z-index: 1;
+    }
+
+    .hot .product-details {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+        color: white;
+        padding: 40px 30px 30px;
+        transform: translateY(100%);
+        transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .hot .imgBox:hover .product-details {
+        transform: translateY(0);
+    }
+
+    .product-brand {
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: var(--accent-orange);
+        margin-bottom: 5px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .product-title {
+        font-size: 1.1rem;
+        font-weight: 700;
+        margin-bottom: 8px;
+    }
+
+    .product-price {
+        font-size: 1.3rem;
+        font-weight: 900;
+        color: var(--accent-orange);
+    }
+
+    .hot .txtBox {
+        flex-basis: 50%;
+        text-align: left;
+    }
+
+    .hot .txtBox ul {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    .link-indicator {
+        position: absolute;
+        left: -40px;
+        top: 0;
+        height: 0;
+        width: 6px;
+        background: linear-gradient(135deg, var(--accent-orange), #ff9800);
+        border-radius: 10px;
+        transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+        box-shadow: 0 0 20px rgba(255, 87, 34, 0.3);
+    }
+
+    .hot .txtBox li {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .hot .txtBox li::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255, 87, 34, 0.1), transparent);
+        transition: left 0.6s ease;
+        z-index: -1;
+    }
+
+    .hot .txtBox li:hover::before {
+        left: 100%;
+    }
+
+    .hot .txtBox li a {
+        font-size: clamp(2.5rem, 4vw, 3.8rem);
+        font-weight: 900;
+        font-family: var(--font-heading);
+        position: relative;
+        display: inline-block;
+        color: transparent;
+        -webkit-text-stroke: 2px #ccc;
+        transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+        text-decoration: none;
+        padding: 10px 0;
+    }
+
+    .hot .txtBox li a:hover {
+        color: var(--accent-orange);
+        -webkit-text-stroke-color: var(--accent-orange);
+        transform: translateX(20px);
+        text-shadow: 0 5px 15px rgba(255, 87, 34, 0.3);
+    }
+
+
+    /* 로딩 애니메이션 */
+    .loading-shimmer {
+        background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+        background-size: 200% 100%;
+        animation: shimmer 2s infinite;
+    }
+
+    @keyframes shimmer {
+        0% {
+            background-position: -200% 0;
+        }
+
+        100% {
+            background-position: 200% 0;
+        }
+    }
+
+    /* --- 오버레이 관련 스타일 --- */
+
+    /* [수정] 오버레이 z-index: 2 */
+    .product-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent 50%);
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.4s ease, visibility 0.4s ease;
+        display: flex;
+        align-items: flex-end;
+        padding: 30px;
+        z-index: 2;
+        /* 이미지(1)보다 위에 위치 */
+    }
+
+    .product-overlay.show {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .product-info {
+        color: #fff;
+        text-align: left;
+        width: 100%;
+    }
+
+    .product-info h3,
+    .product-info h2,
+    .product-info p {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    .product-overlay.show .product-info h3,
+    .product-overlay.show .product-info h2,
+    .product-overlay.show .product-info p {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    #product-brand {
+        transition-delay: 0.2s;
+        font-size: 1rem;
+        font-weight: 700;
+        color: #ccc;
+        font-family: var(--font-body);
+    }
+
+    #product-title {
+        transition-delay: 0.3s;
+        font-size: 2.2rem;
+        margin: 5px 0 10px;
+        line-height: 1.2;
+    }
+
+    #product-price {
+        transition-delay: 0.4s;
+        font-size: 1.2rem;
+        font-weight: 700;
+        font-family: var(--font-body);
+        color: var(--accent-orange);
+    }
+
+
+
+
+    /* --- Review Section --- */
+    .review {
+        padding: var(--space-xl) 0;
+        text-align: center;
+        overflow: hidden;
+    }
+
+    .review h1 {
+        font-size: 36px;
+        font-weight: 700;
+        margin-bottom: 50px;
+        letter-spacing: 2px;
+        color: #222;
+        text-transform: uppercase;
+        position: relative;
+    }
+
+    .review h1::after {
+        content: "";
+        width: 60px;
+        height: 3px;
+        background: #ff5f1f;
+        display: block;
+        margin: 15px auto 0;
+        border-radius: 3px;
+    }
+
+    .review-container {
+        position: relative;
+        max-width: 1600px;
+        margin: 0 auto;
+        padding: 0 50px;
+    }
+
+    .review-slider {
+        overflow: hidden;
+    }
+
+    .review-track {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+    }
+
+    .arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 10;
+        background-color: rgba(255, 255, 255, 0.8);
+        border: 1px solid #ddd;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #333;
+        cursor: pointer;
+        transition: all 0.2s ease;
+    }
+
+    .arrow:hover {
+        background-color: var(--primary-black);
+        color: var(--primary-white);
+    }
+
+    .arrow.prev {
+        left: 0;
+    }
+
+    .arrow.next {
+        right: 0;
+    }
+
+    /* 4장만 보이도록 조정 */
+    .review .imgBox {
+        flex: 0 0 calc((100% - 90px) / 4);
+        /* (100% - (30px * 3)) / 4 */
+        margin-right: 30px;
+        height: 350px;
+        position: relative;
+        background-color: #ddd;
+        background-position: center;
+        background-size: cover;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        overflow: hidden;
+        cursor: pointer;
+        border: 1px solid #eee;
+        border-radius: 8px;
+    }
+
+    .review .imgBox:last-child {
+        margin-right: 0;
+    }
+
+    /* 이미지 경로 적용 */
+    .review .imgBox:nth-child(1) {
+        background-image: url('img/review/review01.png');
+    }
+
+    .review .imgBox:nth-child(2) {
+        background-image: url('img/review/review02.png');
+    }
+
+    .review .imgBox:nth-child(3) {
+        background-image: url('img/review/review03.png');
+    }
+
+    .review .imgBox:nth-child(4) {
+        background-image: url('img/review/review04.png');
+    }
+
+    .review .imgBox:nth-child(1):hover {
+        background-image: url('img/review/review01hover.png');
+    }
+
+    .review .imgBox:nth-child(2):hover {
+        background-image: url('img/review/review02hover.png');
+    }
+
+    .review .imgBox:nth-child(3):hover {
+        background-image: url('img/review/review03hover.png');
+    }
+
+    .review .imgBox:nth-child(4):hover {
+        background-image: url('img/review/review04hover.png');
+    }
+
+    /* 복제된 카드들도 동일한 이미지 적용 */
+    .review .imgBox:nth-child(5) {
+        background-image: url('img/review/review01.png');
+    }
+
+    .review .imgBox:nth-child(6) {
+        background-image: url('img/review/review02.png');
+    }
+
+    .review .imgBox:nth-child(7) {
+        background-image: url('img/review/review03.png');
+    }
+
+    .review .imgBox:nth-child(8) {
+        background-image: url('img/review/review04.png');
+    }
+
+    .review .imgBox:nth-child(5):hover {
+        background-image: url('img/review/review01hover.png');
+    }
+
+    .review .imgBox:nth-child(6):hover {
+        background-image: url('img/review/review02hover.png');
+    }
+
+    .review .imgBox:nth-child(7):hover {
+        background-image: url('img/review/review03hover.png');
+    }
+
+    .review .imgBox:nth-child(8):hover {
+        background-image: url('img/review/review04hover.png');
+    }
+
+    /* 호버 시 텍스트 박스 */
+    .review .txtBox {
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+        color: var(--primary-white);
+        padding: 20px;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+        text-align: center;
+        opacity: 0;
+        transition: opacity 0.4s ease;
+    }
+
+    .review .imgBox:hover .txtBox {
+        opacity: 1;
+    }
+
+    .review .txtBox h3 {
+        font-size: 0.9rem;
+        margin-bottom: 8px;
+    }
+
+    .review .txtBox h2 {
+        font-size: 1.1rem;
+        font-weight: 700;
+        margin-bottom: 10px;
+    }
+
+    .review .star-rating {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 10px;
+    }
+
+    .review .txtBox i {
+        color: gold;
+        font-size: 0.9rem;
+        margin: 0 1px;
+    }
+
+    .review .txtBox span {
+        font-size: 0.9rem;
+        display: block;
+        margin-top: 10px;
+    }
+
+    .reviewMore p {
+        margin-top: 50px;
+        display: inline-block;
+        border: 2px solid var(--primary-black);
+        padding: 10px 30px;
+        cursor: pointer;
+        transition: all var(--transition-speed);
+        text-transform: uppercase;
+        font-weight: 700;
+    }
+
+    .reviewMore p:hover {
+        background-color: var(--primary-black);
+        color: var(--primary-white);
+    }
+
+
+
+
+
+
+
+
+
+    /* --- About Section --- */
+    .about {
+        /* [변경] 간격 조정 */
+        padding: var(--space-xl) 20px;
+        background: #f8f8f8;
+        text-align: center;
+    }
+
+    .about h1 {
+        font-size: 36px;
+        font-weight: 700;
+        margin-bottom: 50px;
+        letter-spacing: 2px;
+        color: #222;
+        text-transform: uppercase;
+        position: relative;
+    }
+
+    .about h1::after {
+        content: "";
+        width: 60px;
+        height: 3px;
+        background: #ff5f1f;
+        display: block;
+        margin: 15px auto 0;
+        border-radius: 3px;
+    }
+
+    .about .inner {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 50px;
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+
+    .name-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        text-align: left;
+        flex: 1;
+    }
+
+    .name-list li {
+        font-size: 18px;
+        font-weight: 500;
+        padding: 12px 15px;
+        margin-bottom: 8px;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        color: #333;
+        background: #fff;
+        border: 1px solid #ddd;
+    }
+
+    .name-list li:hover {
+        background: #ff5f1f;
+        color: #fff;
+        transform: translateX(5px);
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .about .imgBox {
+        flex: 1;
+        width: 400px;
+        height: 560px;
+        border-radius: 12px;
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        transition: background-image 0.3s ease-in-out;
+        border-radius: 20px;
+    }
+
+    /* --- History Section --- */
+    .history {
+        /* [변경] 간격 조정 */
+        padding: var(--space-xl) 0;
+        position: relative;
+        text-align: center;
+    }
+
+    .history h1 {
+        font-size: 36px;
+        font-weight: 700;
+        margin-bottom: 50px;
+        letter-spacing: 2px;
+        color: #222;
+        text-transform: uppercase;
+        position: relative;
+    }
+
+    .history h1::after {
+        content: "";
+        width: 60px;
+        height: 3px;
+        background: #ff5f1f;
+        display: block;
+        margin: 15px auto 0;
+        border-radius: 3px;
+    }
+
+    .line {
+        position: absolute;
+        top: 150px;
+        bottom: 50px;
+        left: 50%;
+        width: 2px;
+        background-color: #ddd;
+        transform: translateX(-50%);
+        opacity: 0;
+        animation: fadeIn 1s ease 0.5s forwards;
+    }
+
+    .historyL,
+    .historyR {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        padding: 20px;
+        margin-bottom: 50px;
+        background-color: var(--primary-white);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        border-radius: 8px;
+        opacity: 0;
+        transition: all 0.8s ease;
+    }
+
+    .historyL {
+        text-align: right;
+        width: 45%;
+        margin-right: 50%;
+        transform: translateX(-100px);
+    }
+
+    .historyR {
+        text-align: left;
+        width: 45%;
+        margin-left: 55%;
+        transform: translateX(100px);
+    }
+
+    .historyL.active {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    .historyR.active {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    .historyL::before,
+    .historyR::before {
+        content: '';
+        position: absolute;
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        background-color: var(--accent-orange);
+        top: 30px;
+        z-index: 1;
+        border: 3px solid var(--primary-white);
+        opacity: 0;
+        transition: opacity 0.8s ease 0.3s;
+    }
+
+    .historyL.active::before,
+    .historyR.active::before {
+        opacity: 1;
+    }
+
+    .historyL::before {
+        right: -25px;
+    }
+
+    .historyR::before {
+        left: -25px;
+    }
+
+    .historyL h2,
+    .historyR h2 {
+        font-size: 2rem;
+        margin-bottom: 15px;
+    }
+
+    .historyL p,
+    .historyR p {
+        color: #555;
+        line-height: 1.6;
+    }
+
+    @keyframes fadeInUp {
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* --- Footer --- */
+    .footer {
+        /* [변경] 간격 조정 */
+        padding: var(--space-l) 0;
+        text-align: center;
+        background-color: var(--primary-black);
+        color: var(--primary-white);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .footer h1 {
+        font-size: 8rem;
+        line-height: 1;
+        margin-bottom: 20px;
+        position: relative;
+        z-index: 1;
+    }
+
+    .footer span {
+        color: var(--accent-orange);
+    }
+
+    .ani {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 15rem;
+        font-family: var(--font-heading);
+        letter-spacing: 5px;
+        color: transparent;
+        -webkit-text-stroke: 1px rgba(255, 255, 255, 0.1);
+        white-space: nowrap;
+        animation: rotate-ani 40s linear infinite;
+        opacity: 0.5;
+    }
+
+    /* --- Animations --- */
+    @keyframes marquee {
+        0% {
+            transform: translateX(0);
+        }
+
+        100% {
+            transform: translateX(-100%);
+        }
+    }
+
+    @keyframes marquee-h1 {
+        0% {
+            transform: translateX(0) translateY(-50%);
+        }
+
+        100% {
+            transform: translateX(-100%) translateY(-50%);
+        }
+    }
+
+    @keyframes rotate-ani {
+        0% {
+            transform: translate(-50%, -50%) rotate(0deg);
+        }
+
+        100% {
+            transform: translate(-50%, -50%) rotate(360deg);
+        }
+    }
+
+    /* --- Responsive Design --- */
+    @media (max-width: 1024px) {
+        .header .inner {
+            flex-direction: column;
+            padding: 10px;
+        }
+
+        .header .inner1,
+        .header .inner2 {
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .gnb ul {
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .util ul {
+            font-size: 1rem;
+        }
+
+        .slideTxt h3 {
+            font-size: 3rem;
+        }
+
+        .category {
+            grid-template-columns: 1fr;
+        }
+
+        .brands .inner {
+            grid-template-columns: 1fr;
+            height: auto;
+        }
+
+        .brands .info {
+            text-align: center;
+            padding-right: 0;
+        }
+
+        .brands .brandsBox {
+            justify-content: center;
+        }
+
+        .brands .I,
+        .brands .M,
+        .brands .B,
+        .brands .E,
+        .brands .R {
+            display: none;
+        }
+
+        .collabo {
+            flex-direction: column;
+        }
+
+        .fresh .shoes .wrap {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .hot .inner {
+            flex-direction: column;
+        }
+
+        .history {
+            padding: 40px 0;
+        }
+
+        .line,
+        .historyL::before,
+        .historyR::before {
+            display: none;
+        }
+
+        .historyL,
+        .historyR {
+            width: 90%;
+            margin-left: 5%;
+            margin-right: 5%;
+            text-align: center;
+        }
+
+        .footer h1 {
+            font-size: 5rem;
+        }
+
+        .ani {
+            font-size: 10rem;
+        }
+    }
+
+    @media (max-width: 768px) {
+
+        /* [추가] 모바일 간격 조정 */
+        :root {
+            --space-l: 64px;
+            --space-xl: 80px;
+            --space-xxl: 100px;
+        }
+
+        .slideTxt h3 {
+            font-size: 2.5rem;
+        }
+
+        .category {
+            padding-top: var(--space-l);
+            padding-bottom: var(--space-l);
+        }
+
+        .l_cat {
+            grid-template-rows: repeat(2, 200px);
+        }
+
+        .l_cat>div,
+        .r_cat>div {
+            min-height: 200px;
+        }
+
+        .fresh .shoes .wrap {
+            grid-template-columns: 1fr;
+        }
+
+        .review .inner {
+            grid-template-columns: 1fr;
+        }
+
+        .about .inner {
+            flex-direction: column;
+        }
+
+        .about .txtBox {
+            text-align: center;
+        }
+
+        .about .imgBox {
+            width: 90%;
+            height: 300px;
+            margin-left: 0;
+        }
+
+        .historyL,
+        .historyR {
+            transform: translateY(50px);
+        }
+
+        .historyL.active,
+        .historyR.active {
+            transform: translateY(0);
+        }
+
+        .footer h1 {
+            font-size: 3rem;
+        }
+
+        .ani {
+            font-size: 6rem;
+        }
+
+        .cat_inner {
+            font-size: 2rem;
+        }
+    }
+
+    /* 위로가기 버튼 스타일 */
+    .to-top {
+        position: fixed;
+        bottom: 24px;
+        right: 24px;
+        width: 48px;
+        height: 48px;
+        background-color: rgba(0, 0, 0, 0.6);
+        color: #fff;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        text-decoration: none;
+        z-index: 999;
+
+        /* 처음엔 안 보이게 처리 */
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(10px);
+
+        transition: opacity 0.3s, visibility 0.3s, transform 0.3s, background-color 0.3s;
+    }
+
+    /* 'show' 클래스가 붙으면 보이게 함 */
+    .to-top.show {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    .to-top:hover {
+        background-color: rgba(0, 0, 0, 0.85);
+    }
