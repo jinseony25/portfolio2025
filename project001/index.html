@@ -1,720 +1,478 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>2025인천펜타포트락페스티벌 웹사이트</title>
-    <!-- 그리드가이드연결 -->
-    <!-- <link rel="stylesheet" href="css/grid-guide.css"> -->
-    <!-- 외부스타일시트연결 -->
-    <link rel="stylesheet" href="css/style.css">
-    <!-- 폰트어썸 CDN -->
+    <title>2025 인천 펜타포트 락 페스티벌</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Poppins:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/73320eca81.js" crossorigin="anonymous"></script>
-
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- 웹앱아이콘 및 파비콘 설정하기 -->
+    <link rel="apple-touch-icon" href="resauce/img/logo/logo.png">
+    <link rel="shortcut icon" href="resauce/img/logo/logo.png">
 </head>
 
 <body>
-
-
-
-
-
-    <header class="boxA">
-        <div class="boxA-inner">
-            <div class="boxA-1">
-                <div class="imgBox"></div>
-                <h1 class="logo"><a href="">INCHEON PENTAPORT <br>
-                        <p>ROCK FESTIVAL 2025</p>
-                    </a></h1>
-            </div>
-        </div>
-        <div class="boxA-2">
-            <div class="boxA-2">
-                <div class="gnb">
-                    <ul>
-                        <li><a href="">LINE UP</a></li>
-                        <li><a href="">TICKET</a></li>
-                        <li><a href="">INFORMATION</a></li>
-                        <li><a href="">FESTA ZONE</a></li>
-                        <li><a href="">GALLERY</a></li>
-                        <li><a href="">PENTAPORT</a></li>
-                    </ul>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <div class="logo-icon"></div>
+                <div class="logo-text">
+                    <span>PENTAPORT</span>
+                    <small>ROCK FESTIVAL 2025</small>
                 </div>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="#lineup">LINE UP</a></li>
+                <li><a href="#tickets">TICKET</a></li>
+                <li><a href="#info">INFORMATION</a></li>
+                <li><a href="#gallery">GALLERY</a></li>
+                <li><a href="#directions">DIRECTIONS</a></li>
+            </ul>
+            <div class="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
         </div>
-    </header>
+    </nav>
 
-    <figure class="vid">
-        <video autoplay muted loop>
+    <!-- Hero Section -->
+    <section class="hero">
+        <video class="hero-video" autoplay muted loop playsinline>
             <source src="resauce/vid/penta_video.mp4" type="video/mp4">
         </video>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">INCHEON PENTAPORT<br><span>ROCK FESTIVAL 2025</span></h1>
+            <p class="hero-date">2025.08.01 - 08.03 | 송도달빛축제공원</p>
+            <a href="#booking-modal" class="cta-button">TICKET OPEN</a>
+        </div>
+        <a href="#reviews" class="scroll-down"><i class="fa-solid fa-chevron-down"></i></a>
+    </section>
 
-        </section>
-        <section class="box2">
-            <div class="review">
-                <ul>
-                    <li>
-                        <a href="">
-                            <div class="imgBox"></div>
-                            <div class="txt">
-                                <p>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                </p>
-                                <p>락은 시끄럽기만 한 음악인 줄<br>
-                                    알았는데, 그 안엔 순수한<br>
-                                    열정이 담겨 있었어요.</p>
-                                <em>rock*** 2024.08.01 조회 577 공감 425</em>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="">
-                            <div class="imgBox"></div>
-                            <div class="txt">
-                                <p>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                </p>
-                                <p>내년에도 무조건 갑니다. <br>
-                                    이건 단순한 공연이 아니라
-                                    제게는 <br> 하나의...</p>
-                                <em>sun*** 2024.08.01 조회 400 공감 250</em>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="">
-                            <div class="imgBox"></div>
-                            <div class="txt">
-                                <p>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                </p>
-                                <p>락페 처음 갔는데, 이게 진짜<br>
-                                    라이브의 맛이구나 싶더라고요.<br>
-                                    기타 소리...</p>
-                                <em>happy*** 2024.08.03 조회 162 공감 49</em>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="">
-                            <div class="imgBox"></div>
-                            <div class="txt">
-                                <p>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                </p>
-                                <p>옆에 같이 소리지르던 형이랑 친구됨.<br>
-                                    락이 우리를 연결시켜줌.</p>
-                                <em>run*** 2024.08.02 조회 177 공감 123</em>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="">
-                            <div class="imgBox"></div>
-                            <div class="txt">
-                                <p>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                </p>
-                                <p>이 날의 기타 솔로는 아직도 귓가에 맴돕니다.<br>
-                                    처음부터 끝까지 에너지 폭발!<br>
-                                    이 맛에 락페 오는 거죠.</p>
-                                <em>rock*** 2024.08.03 조회 512 공감 310</em>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="">
-                            <div class="imgBox"></div>
-                            <div class="txt">
-                                <p>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                </p>
-                                <p>비 맞으면서도 뛰고 또 뛰었습니다.<br>
-                                    옆사람이랑 모르는 사이인데도 같이...</p>
-                                <em>wild*** 2024.08.05 조회 601 공감 370</em>
-                            </div>
-                        </a>
-                    </li>
-                </ul>
-
-                <ul>
-                    <li>
-                        <a href="">
-                            <div class="imgBox"></div>
-                            <div class="txt">
-                                <p>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                </p>
-                                <p>락은 시끄럽기만 한 음악인 줄<br>
-                                    알았는데, 그 안엔 순수한<br>
-                                    열정이 담겨 있었어요.</p>
-                                <em>rock*** 2024.08.01 조회 577 공감 425</em>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="">
-                            <div class="imgBox"></div>
-                            <div class="txt">
-                                <p>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                </p>
-                                <p>내년에도 무조건 갑니다.<br>
-                                    이건 단순한 공연이 아니라<br>
-                                    제게는 하나의...</p>
-                                <em>sun*** 2024.08.01 조회 400 공감 250</em>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="">
-                            <div class="imgBox"></div>
-                            <div class="txt">
-                                <p>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                </p>
-                                <p>락페 처음 갔는데, 이게 진짜<br>
-                                    라이브의 맛이구나 싶더라고요.<br>
-                                    기타 소리...</p>
-                                <em>happy*** 2024.08.03 조회 162 공감 49</em>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="">
-                            <div class="imgBox"></div>
-                            <div class="txt">
-                                <p>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                </p>
-                                <p>옆에 같이 소리지르던 형이랑 친구됨.<br>
-                                    락이 우리를 연결시켜줌.</p>
-                                <em>run*** 2024.08.02 조회 177 공감 123</em>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="">
-                            <div class="imgBox"></div>
-                            <div class="txt">
-                                <p>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                </p>
-                                <p>이 날의 기타 솔로는 아직도 귓가에 맴돕니다.<br>
-                                    처음부터 끝까지 에너지 폭발!<br>
-                                    이 맛에 락페 오는 거죠.</p>
-                                <em>rock*** 2024.08.03 조회 512 공감 310</em>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="">
-                            <div class="imgBox"></div>
-                            <div class="txt">
-                                <p>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                </p>
-                                <p>비 맞으면서도 뛰고 또 뛰었습니다.<br>
-                                    옆사람이랑 모르는 사이인데도 같이...</p>
-                                <em>wild*** 2024.08.05 조회 601 공감 370</em>
-                            </div>
-                        </a>
-                    </li>
-                </ul>
+    <!-- Reviews Section -->
+    <section class="reviews-section" id="reviews">
+        <h2 class="section-title">VOICE OF THE UNIVERSE</h2>
+        <div class="reviews-scroll">
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p class="review-text">"락은 시끄럽기만 한 음악인 줄 알았는데, 그 안엔 순수한 열정이 담겨 있었어요."</p>
+                <div class="review-author">rock*** 2024.08.01</div>
             </div>
-        </section>
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p class="review-text">"내년에도 무조건 갑니다. 이건 단순한 공연이 아니라 제게는 하나의 축제예요."</p>
+                <div class="review-author">sun*** 2024.08.01</div>
+            </div>
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p class="review-text">"락페 처음 갔는데, 이게 진짜 라이브의 맛이구나 싶더라고요. 기타 소리가 아직도 생생해요."</p>
+                <div class="review-author">happy*** 2024.08.03</div>
+            </div>
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p class="review-text">"옆에 같이 소리지르던 형이랑 친구됨. 락이 우리를 연결시켜줌."</p>
+                <div class="review-author">run*** 2024.08.02</div>
+            </div>
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p class="review-text">"이 날의 기타 솔로는 아직도 귓가에 맴돕니다. 처음부터 끝까지 에너지 폭발!"</p>
+                <div class="review-author">rock*** 2024.08.03</div>
+            </div>
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p class="review-text">"비 맞으면서도 뛰고 또 뛰었습니다. 옆사람이랑 모르는 사이인데도 같이..."</p>
+                <div class="review-author">wild*** 2024.08.05</div>
+            </div>
+        </div>
+    </section>
 
-
-
-        <section class="box3">
-            <div class="box3-inner">
-                <div class="box3-1">
-                    <h1 class="whoTitle">WHO'S COMING</h1>
-                    <div class="lineUp">
-                        <ul>
-                            <li>
-                                <a href="">
-                                    <div class="imgBox"></div>
-                                    <div class="txt">
-                                        <p>Asian Kung-fu Generation</p>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="">
-                                    <div class="imgBox"></div>
-                                    <div class="txt">
-                                        <p>PULP</p>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="">
-                                    <div class="imgBox"></div>
-                                    <div class="txt">
-                                        <p>Beck</p>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="">
-                                    <div class="imgBox"></div>
-                                    <div class="txt">
-                                        <p>Little Simz</p>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="">
-                                    <div class="imgBox"></div>
-                                    <div class="txt">
-                                        <p>장기하</p>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="">
-                                    <div class="imgBox"></div>
-                                    <div class="txt">
-                                        <p>크라잉넛</p>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="">
-                                    <div class="imgBox"></div>
-                                    <div class="txt">
-                                        <p>beabadoobee</p>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="">
-                                    <div class="imgBox"></div>
-                                    <div class="txt">
-                                        <p>메써드</p>
-                                    </div>
-                                </a>
-                            </li>
-                        </ul>
+    <!-- Lineup Section -->
+    <section class="lineup-section" id="lineup">
+        <div class="lineup-container">
+            <h2 class="section-title">STELLAR LINEUP</h2>
+            <div class="lineup-grid">
+                <div class="artist-card main-artist">
+                    <div class="artist-image artist-1"></div>
+                    <div class="artist-info">
+                        <div class="artist-name">Asian Kung-fu Generation</div>
+                        <div class="artist-genre">Alternative Rock</div>
                     </div>
-                    </ul>
                 </div>
-                <div class="more"><a href="">MORE</a></p>
+                <div class="artist-card featured-artist">
+                    <div class="artist-image artist-2"></div>
+                    <div class="artist-info">
+                        <div class="artist-name">PULP</div>
+                        <div class="artist-genre">Britpop</div>
+                    </div>
                 </div>
-        </section>
+                <div class="artist-card">
+                    <div class="artist-image artist-3"></div>
+                    <div class="artist-info">
+                        <div class="artist-name">Beck</div>
+                        <div class="artist-genre">Alternative</div>
+                    </div>
+                </div>
+                <div class="artist-card featured-artist">
+                    <div class="artist-image artist-4"></div>
+                    <div class="artist-info">
+                        <div class="artist-name">Little Simz</div>
+                        <div class="artist-genre">Hip Hop</div>
+                    </div>
+                </div>
+                <div class="artist-card">
+                    <div class="artist-image artist-5"></div>
+                    <div class="artist-info">
+                        <div class="artist-name">장기하</div>
+                        <div class="artist-genre">Indie Rock</div>
+                    </div>
+                </div>
+                <div class="artist-card">
+                    <div class="artist-image artist-6"></div>
+                    <div class="artist-info">
+                        <div class="artist-name">크라잉넛</div>
+                        <div class="artist-genre">Punk Rock</div>
+                    </div>
+                </div>
+                <div class="artist-card featured-artist">
+                    <div class="artist-image artist-7"></div>
+                    <div class="artist-info">
+                        <div class="artist-name">beabadoobee</div>
+                        <div class="artist-genre">Dream Pop</div>
+                    </div>
+                </div>
+                <div class="artist-card">
+                    <div class="artist-image artist-8"></div>
+                    <div class="artist-info">
+                        <div class="artist-name">메써드</div>
+                        <div class="artist-genre">Hip Hop</div>
+                    </div>
+                </div>
+            </div>
+            <div class="more-button">
+                <a href="#" class="cta-button">MORE ARTISTS</a>
+            </div>
+        </div>
+    </section>
 
-
-
-        <section class="box4">
-            <div class="box4-inner">
-                <div class="box4-1">
-                    <h1 class="readyTitle">READY TO ROCK?</h1>
-                </div>
-                <div class="box4-2">
-                    <h2>2025 인천펜타포트록페스티벌</h2>
-                    <h2>2025.08.01 ~ 2025.08.03 송도달빛축제공원</h2>
-                </div>
-                <div class="box4-3">
-                    <div class="reservation">
-                        <form accept="">
-                            <ul>
-                                <li class="poster"><a href=""></a></li>
-                                <div class="calendar"><a href="">달력</a></div>
-                                <div class="txt">
-                                    <li>
-                                        <span>회차/시간 선택</span>
-                                        <div>
-                                            <p><label for="time">1회</label><select name="time" id="">명
-                                                    <option value="" selected><span>1회</span><span>오전 11시 00분</span>
-                                                    </option>
-                                                </select>
-                                            </p>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <span>인원선택</span>
-                                        <div>
-                                            <p><label for="adult">성인</label><input type="text" id="adult">명</p>
-                                            <p><label for="teen">청소년</label><input type="text" id="teen">명</p>
-                                            <p><label for="child">소아</label><input type="text" id="child">명</p>
-                                        </div>
-                                    </li>
-                                    <li><span><a href="">예매하기 / BOOKING</a></span></li>
+    <!-- Booking Section -->
+    <div id="booking-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <div class="booking-container">
+                <h2 class="section-title">GET YOUR TICKET</h2>
+                <div class="booking-form-wrapper">
+                    <div class="poster-section">
+                        <div class="poster"></div>
+                    </div>
+                    <div class="form-section">
+                        <h3>2025 인천펜타포트록페스티벌</h3>
+                        <p class="form-details"><i class="fa-regular fa-calendar-days"></i> 2025.08.01 ~ 08.03</p>
+                        <p class="form-details"><i class="fa-solid fa-location-dot"></i> 송도달빛축제공원</p>
+                        <form>
+                            <div class="form-group">
+                                <label for="time-select">회차/시간 선택</label>
+                                <select id="time-select" name="time">
+                                    <option value="1">1회 오전 11시 00분</option>
+                                    <option value="2">2회 오후 2시 00분</option>
+                                    <option value="3">3회 오후 6시 00분</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>인원선택</label>
+                                <div class="person-inputs">
+                                    <div>
+                                        <span>성인</span>
+                                        <input type="number" id="adult" min="0" value="0">
+                                    </div>
+                                    <div>
+                                        <span>청소년</span>
+                                        <input type="number" id="teen" min="0" value="0">
+                                    </div>
+                                    <div>
+                                        <span>소아</span>
+                                        <input type="number" id="child" min="0" value="0">
+                                    </div>
                                 </div>
-                            </ul>
+                            </div>
+                            <button type="submit" class="cta-button book-button">BOOKING NOW</button>
                         </form>
                     </div>
                 </div>
-        </section>
-
-
-
-        <section class="box5">
-            <div class="box5-inner">
-                <div class="box5-1">
-                    <h2 class="timeTitle">TIME TABLE</h2>
-                </div>
-                <div class="box5-2">
-                    <ul>
-                        <li><a href=""></a></li>
-                    </ul>
-                </div>
             </div>
-        </section>
+        </div>
+    </div>
 
-
-
-        <section class="box6">
-            <div class="box6-inner">
-                <div class="box6-1">
-                    <h2 class="festivalTitle">FESTIVAL MAP</h2>
-                </div>
-                <div class="map">
-                    <ul>
-                        <li><a href=""></a></li>
-                    </ul>
-                </div>
+    <!-- Information Section (Timetable & Map) -->
+    <section class="info-section" id="info">
+        <div class="info-container">
+            <div class="info-card timetable">
+                <h3>TIME TABLE</h3>
+                <div class="info-image timetable-image"></div>
             </div>
-        </section>
+            <div class="info-card map">
+                <h3>FESTIVAL MAP</h3>
+                <div class="info-image map-image"></div>
+            </div>
+        </div>
+    </section>
 
 
-        <section class="box7">
-            <div class="box7-inner">
-                <div class="box7-1">
-                    <h2 class="noticeTitle">NOTICE</h2>
-                </div>
-                <div class="box7-2">
-                    <div class="notice">
-                        <ul>
-                            <li>번호</li>
-                            <li>제목</li>
-                            <li>작성자</li>
-                            <li>작성일</li>
-                        </ul>
-                        <ul>
-                            <li>1</li>
-                            <li><a href="">[2025 PENTAPORT] 팝업 스토어 오픈
-                                    <i class="fa-solid fa-angle-down"></i></a></li>
-                            <li>관리자</li>
-                            <li>2025.07.03</li>
-                        </ul>
-                        <ul>
-                            <li>2</li>
-                            <li><a href="">[2025 PENTAPORT] 4차 라인업 발표
-                                    <i class="fa-solid fa-angle-down"></i></a></li>
-                            <li>관리자</li>
-                            <li>2025.07.01</li>
-                        </ul>
-                        <ul>
-                            <li>3</li>
-                            <li><a href="">[2025 PENTAPORT] 펜타 슈퍼루키 TOP 10
-                                    <i class="fa-solid fa-angle-down"></i>
-                                </a></li>
-                            <li>관리자</li>
-                            <li>2025.06.30</li>
-                        </ul>
+    <!-- Notice & QnA Section (Accordion) -->
+    <section class="board-section" id="notice">
+        <div class="container">
+            <h2 class="section-title">NOTICE & Q&A</h2>
+            <div class="combined-board">
 
+                <!-- Pinned Notices -->
+                <div class="board-row pinned">
+                    <div class="board-cell title">
+                        <i class="fa-solid fa-thumbtack"></i>
+                        <a href="#">[2025 PENTAPORT] 팝업 스토어 오픈</a>
                     </div>
-                    <div class="number">
-                        <ul>
-                            <li><a href=""><i class="fa-solid fa-angle-left"></i></a></li>
-                            <li><a href="">1</a></li>
-                            <li><a href=""><span>2</span></a></li>
-                            <li><a href="">3</a></li>
-                            <li><a href="">4</a></li>
-                            <li><a href="">5</a></li>
-                            <li><a href=""><i class="fa-solid fa-chevron-right"></i></a></li>
-                        </ul>
+                    <div class="board-cell date">2025.07.03</div>
+                </div>
+                <div class="board-row pinned">
+                    <div class="board-cell title">
+                        <i class="fa-solid fa-thumbtack"></i>
+                        <a href="#">[2025 PENTAPORT] 4차 라인업 발표</a>
                     </div>
+                    <div class="board-cell date">2025.07.01</div>
                 </div>
-            </div>
-            <div class="box7-3"></div>
-            </div>
-        </section>
 
-
-
-        <section class="box8">
-            <div class="box8-inner">
-                <div class="box8-1">
-                    <h2 class="qnaTitle">QnA</h2>
-                </div>
-                <div class="box8-2">
-                    <div><a href="">자주 묻는 질문</a></div><br>
-                    <div><a href="">글쓰기</a></div>
-                </div>
-                <div class="box8-3">
-                    <div class="qna">
-                        <ul>
-                            <li>번호</li>
-                            <li>제목</li>
-                            <li>작성자</li>
-                            <li>작성일</li>
-                        </ul>
-                        <ul>
-                            <li>1</li>
-                            <li><a href="">티켓을 분실했는데 입장할 수 있나요?
-                                    <i class="fa-solid fa-angle-down"></i></a></li>
-                            <li>비공개</li>
-                            <li>2025.07.03</li>
-                            <div class="answer">
-                                <p>답변</p>
-                            </div>
-                        </ul>
-                        <ul>
-                            <li>2</li>
-                            <li><a href="">야외 행사장에 텐트나 돗자리 가지고 들어갈 수 있나요?
-                                    <i class="fa-solid fa-angle-down"></i></a></li>
-                            <li>비공개</li>
-                            <li>2025.07.01</li>
-                        </ul>
-                        <ul>
-                            <li>3</li>
-                            <li><a href="">비가 와도 공연은 진행되나요?
-                                    <i class="fa-solid fa-angle-down"></i></a></li>
-                            <li>비공개</li>
-                            <li>2025.06.30</li>
-                        </ul>
-                    </div>
-                    <div>
-                        <div class="number">
-                            <ul>
-                                <li><a href=""><i class="fa-solid fa-angle-left"></i></a></li>
-                                <li><a href="">1</a></li>
-                                <li><span><a href="">2</a></span></li>
-                                <li><a href="">3</a></li>
-                                <li><a href="">4</a></li>
-                                <li><a href="">5</a></li>
-                                <li><a href=""><i class="fa-solid fa-chevron-right"></i></a></li>
-                            </ul>
+                <!-- QnA Accordion List -->
+                <div class="board-row accordion-item">
+                    <div class="accordion-header">
+                        <div class="board-cell title">
+                            <span class="qna-badge">Q.</span>
+                            <a>티켓을 분실했는데 입장할 수 있나요?</a>
                         </div>
+                        <div class="board-cell date">2025.07.03</div>
+                        <div class="board-cell icon"><i class="fa-solid fa-chevron-down"></i></div>
+                    </div>
+                    <div class="accordion-content">
+                        <p><strong>A.</strong> 분실 또는 훼손된 티켓은 재발행이 절대 불가능하며, 티켓이 없을 경우 입장이 제한됩니다. 티켓 보관에 각별히
+                            유의해주시기 바랍니다.</p>
                     </div>
                 </div>
-        </section>
+                <div class="board-row accordion-item">
+                    <div class="accordion-header">
+                        <div class="board-cell title">
+                            <span class="qna-badge">Q.</span>
+                            <a>야외 행사장에 텐트나 돗자리 가지고 들어갈 수 있나요?</a>
+                        </div>
+                        <div class="board-cell date">2025.07.01</div>
+                        <div class="board-cell icon"><i class="fa-solid fa-chevron-down"></i></div>
+                    </div>
+                    <div class="accordion-content">
+                        <p><strong>A.</strong> 그라운드 시트(돗자리)는 지정된 피크닉 존에서만 사용 가능합니다. 스탠딩 존에서의 사용은 안전상의 이유로
+                            제한됩니다. 텐트, 의자 등 다른 캠핑 용품의 반입은 불가능합니다.</p>
+                    </div>
+                </div>
+                <div class="board-row accordion-item">
+                    <div class="accordion-header">
+                        <div class="board-cell title">
+                            <span class="qna-badge">Q.</span>
+                            <a>비가 와도 공연은 진행되나요?</a>
+                        </div>
+                        <div class="board-cell date">2025.06.30</div>
+                        <div class="board-cell icon"><i class="fa-solid fa-chevron-down"></i></div>
+                    </div>
+                    <div class="accordion-content">
+                        <p><strong>A.</strong> 일반적인 우천 시에는 공연이 정상적으로 진행됩니다. 다만, 태풍, 폭우 등 아티스트와 관객의 안전에 위협이
+                            되는 심각한 자연재해가 발생할 경우 주최 측의 판단하에 공연이 중단될 수 있습니다.</p>
+                    </div>
+                </div>
 
-
-
-        <section class="box9">
-            <div class="replay">
-                <ul>
-                    <li>
-                        <a href="">
-                            <div class="imgBox"></div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="">
-                            <div class="imgBox"></div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="">
-                            <div class="imgBox"></div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="">
-                            <div class="imgBox"></div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="">
-                            <div class="imgBox"></div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="">
-                            <div class="imgBox"></div>
-                        </a>
-                    </li>
-                </ul>
-                <ul>
-                    <li>
-                        <a href="">
-                            <div class="imgBox"></div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="">
-                            <div class="imgBox"></div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="">
-                            <div class="imgBox"></div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="">
-                            <div class="imgBox"></div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="">
-                            <div class="imgBox"></div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="">
-                            <div class="imgBox"></div>
-                        </a>
-                    </li>
-                </ul>
             </div>
-        </section>
+            <div class="pagination">
+                <a href="#">&lt;</a>
+                <a href="#" class="active">1</a>
+                <a href="#">2</a>
+                <a href="#">3</a>
+                <a href="#">&gt;</a>
+            </div>
+        </div>
+    </section>
 
 
+    <!-- Gallery Section -->
+    <section class="gallery-section" id="gallery">
+        <h2 class="section-title">GALACTIC MOMENTS</h2>
+        <div class="gallery-scroll">
+            <div class="gallery-item gallery-1"></div>
+            <div class="gallery-item gallery-2"></div>
+            <div class="gallery-item gallery-3"></div>
+            <div class="gallery-item gallery-4"></div>
+            <div class="gallery-item gallery-5"></div>
+        </div>
+    </section>
 
-        <section class="box10">
-            <div class="box10-inner">
-                <div class="box10-1">
-                    <h2 class="limitedTitle"><a href="">LIMITED EDITION</a></h2>
-                    <div class=" edition">
-                        <ul>
-                            <li>
-                                <a href="">
-                                    <div class="imgBox"></div>
-                                    <div class="txtBox">
-                                        <h5>디스커스 애슬레틱</h5>
-                                        <p>2025 PENTAPORT ORT 핀버튼</p>
-                                        <h4>3,000원</h4>
-                                    </div>
-
-                                </a>
-                            </li>
-                            <li>
-                                <a href="">
-                                    <div class="imgBox"></div>
-                                    <div class="txtBox">
-                                        <h5>디스커스 애슬레틱</h5>
-                                        <p>2025 PENTAPORT 트라이벌 로고 반다나 블랙</p>
-                                        <h4><span>10%</span>17,100원</h4>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="">
-                                    <div class="imgBox"></div>
-                                    <div class="txtBox">
-                                        <h5>디스커스 애슬레틱</h5>
-                                        <p>2025 PENTAPORT 20주년 키링 세트</p>
-                                        <h4><span>10%</span>17,500원</h4>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="">
-                                    <div class="imgBox"></div>
-                                    <div class="txtBox">
-                                        <h5>디스커스 애슬레틱</h5>
-                                        <p>2025 PENTAPORT 데스메탈 로고 볼캡 차콜</p>
-                                        <h4>35,000원</h4>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="">
-                                    <div class="imgBox"></div>
-                                    <div class="txtBox">
-                                        <h5>디스커스 애슬레틱</h5>
-                                        <p>2025 PENTAPORT 레터링 5패널 캡 네이비</p>
-                                        <h4><span>10%</span>31,500원</h4>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="">
-                                    <div class="imgBox"></div>
-                                    <div class="txtBox">
-                                        <h5>디스커스 애슬레틱</h5>
-                                        <p>2025 PENTAPORT ROCK KIDS 틴케이스</p>
-                                        <h4>7,000원</h4>
-                                    </div>
-                                </a>
-                            </li>
-                        </ul>
+    <section class="limited-section" id="store">
+        <div class="container">
+            <h2 class="section-title">LIMITED EDITION</h2>
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-image product-1"></div>
+                    <div class="product-info">
+                        <p>2025 PENTAPORT ORT 핀버튼</p>
+                        <h4>3,000원</h4>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image product-2"></div>
+                    <div class="product-info">
+                        <p>2025 PENTAPORT 트라이벌 로고 반다나 블랙</p>
+                        <h4>17,100원</h4>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image product-3"></div>
+                    <div class="product-info">
+                        <p>2025 PENTAPORT 20주년 키링 세트</p>
+                        <h4>17,500원</h4>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image product-4"></div>
+                    <div class="product-info">
+                        <p>2025 PENTAPORT 데스메탈 로고 볼캡 차콜</p>
+                        <h4>35,000원</h4>
                     </div>
                 </div>
             </div>
-        </section>
-
-
-
-        <section class="box11">
-            <div class="box11-1">
-                <h2 class="directionsTitle">DIRECTIONS</h2>
+            <div class="shop-button-wrapper">
+                <a href="#" class="cta-button">SHOP NOW</a>
             </div>
-            <div class="box11-inner">
-                <div class="box11-2">
-                    <div class="directions">
-                        <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3169.297944785735!2d126.6312487763175!3d37.406432033291736!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357b779432cbecc7%3A0x9b38cc650bb7b441!2z7Iah64-E64us67mb7LaV7KCc6rO17JuQ!5e0!3m2!1sko!2skr!4v1753665567433!5m2!1sko!2skr"
-                            style="border:0;" allowfullscreen="" loading="lazy"
-                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </section>
+
+    <!-- Directions Section (Content Added) -->
+    <section class="directions-section" id="directions">
+        <div class="container">
+            <h2 class="section-title">DIRECTIONS</h2>
+            <div class="directions-content">
+                <div class="map-container">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3169.297944785735!2d126.6312487763175!3d37.406432033291736!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357b779432cbecc7%3A0x9b38cc650bb7b441!2z7Iah64-E64us67mb7LaV7KCc6rO17JuQ!5e0!3m2!1sko!2skr!4v1753665567433!5m2!1sko!2skr"
+                        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+                <div class="directions-info">
+                    <!-- <div class="info-block">
+                        <h4><i class="fa-solid fa-map-location-dot"></i> 주소</h4>
+                        <p>인천광역시 연수구 센트럴로 350 (송도동)</p>
+                    </div> -->
+                    <div class="info-block">
+                        <h4><i class="fa-solid fa-train-subway"></i> 대중교통</h4>
+                        <p><strong>지하철:</strong> 인천 1호선 송도달빛축제공원역 5번 출구, 도보 5분</p>
+                        <p><strong>버스:</strong> 간선 8번, 908번, 급행 91번 버스 이용</p>
+                    </div>
+                    <div class="info-block">
+                        <h4><i class="fa-solid fa-car"></i> 자가용 및 주차</h4>
+                        <p><strong>네비게이션:</strong> '송도달빛축제공원' 검색</p>
+                        <p><strong>주차:</strong> 공원 내 제1, 2주차장 이용 가능 (유료). 주차 공간이 협소하오니 가급적 대중교통 이용을 권장합니다.
+                        </p>
+                    </div>
+                    <div class="info-block">
+                        <h4><i class="fa-solid fa-bus"></i> 셔틀버스</h4>
+                        <p>수도권 주요 지점 (서울, 경기)에서 출발하는 유료 셔틀버스를 운행할 예정입니다. 자세한 노선 및 예매 정보는 추후 공지됩니다.</p>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <span>PENTAPORT</span>
+                    <small>ROCK FESTIVAL 2025</small>
+                </div>
+                <div class="footer-links">
+                    <a href="#">이용약관</a>
+                    <a href="#">개인정보처리방침</a>
+                    <a href="#">고객센터</a>
+                </div>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>Copyright &copy; 2025. Jinseon. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
 
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const accordionItems = document.querySelectorAll('.accordion-item');
 
+            if (accordionItems.length > 0) {
+                accordionItems.forEach(item => {
+                    const header = item.querySelector('.accordion-header');
+                    const content = item.querySelector('.accordion-content');
 
-        <footer class="boxC">
-            <div class="footer">Copyright &copy; 2025.Jinseon. All Rights Reserved.</div>
-        </footer>
+                    header.addEventListener('click', () => {
+                        const wasActive = item.classList.contains('active');
+
+                        // Close all items
+                        accordionItems.forEach(otherItem => {
+                            otherItem.classList.remove('active');
+                            otherItem.querySelector('.accordion-content').style.maxHeight = null;
+                        });
+
+                        // If it wasn't active, open it
+                        if (!wasActive) {
+                            item.classList.add('active');
+                            // Set max-height to the actual height of the content
+                            content.style.maxHeight = content.scrollHeight + "px";
+                        }
+                    });
+                });
+            }
+        });
+
+        // Booking Modal
+        const ticketButton = document.querySelector('.hero-content .cta-button');
+        const modal = document.getElementById('booking-modal');
+        const closeButton = document.querySelector('.close-button');
+
+        if (ticketButton && modal && closeButton) {
+            // TICKET OPEN 버튼 클릭 시 모달 열기
+            ticketButton.addEventListener('click', (e) => {
+                e.preventDefault();
+                modal.style.display = 'block';
+            });
+
+            // 닫기 버튼 클릭 시 모달 닫기
+            closeButton.addEventListener('click', () => {
+                modal.style.display = 'none';
+            });
+
+            // 모달 바깥 영역 클릭 시 모달 닫기
+            window.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    modal.style.display = 'none';
+                }
+            });
+        }
+    </script>
 </body>
-
-</div>
 
 </html>

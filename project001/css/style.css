@@ -1,1155 +1,1283 @@
-  /* 언어설정 */
-  @charset "utf-8";
+@charset "utf-8";
 
-  /* 전체설정 */
-  * {
+/* --- Global Settings & Variables --- */
+:root {
+    --color-dark: #0D021A;
+    --color-primary: #9F54FF;
+    /* Purple */
+    --color-secondary: #F04E98;
+    /* Pink */
+    --color-light: #E0E0E0;
+    --font-heading: 'Orbitron', sans-serif;
+    --font-body: 'Poppins', 'Noto Sans KR', sans-serif;
+}
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-  }
-
-  html,
-  body {
-    margin: 0;
-    padding: 0;
-  }
-
-  body {
-    background-color: black;
-  }
-
-  a {
-    text-decoration: none;
-    color: #000;
-  }
-
-  ul,
-  ol {
-    list-style: none;
-  }
-
-  img {
-    border: 0;
-    vertical-align: bottom;
-  }
-
-  /* max-width 사이즈 설정 */
-  .box4-inner,
-
-  .box6-inner,
-  .box7-inner,
-  .box8-inner,
-  .box10-inner,
-
-  .boxA-2 {
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-
-
-
-  /* order설정 */
-  .box1 {
-    order: 1;
-  }
-
-  .box2 {
-    order: 2;
-  }
-
-  .box3 {
-    order: 3;
-  }
-
-  .box4 {
-    order: 4;
-  }
-
-  .box5 {
-    order: 5;
-  }
-
-  .box6 {
-    order: 6;
-  }
-
-  .box7 {
-    order: 7;
-  }
-
-  .box8 {
-    order: 8;
-  }
-
-  .box9 {
-    order: 9;
-  }
-
-  .box10 {
-    order: 10;
-  }
-
-  .box11 {
-    order: 11;
-  }
-
-  /* 상세설정 #########################################################################*/
-
-
-
-
-
-  /* logo설정 */
-  .boxA {
-    background-color: #000;
-  }
-
-  .boxA-inner {}
-
-  .boxA-1 {
-    background-image: url(../resauce/img/logo/back.jpg);
-    background-size: cover;
-    background-position: center;
-    width: 100%;
-    height: 150px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .boxA-1 .logo {
-    padding-left: 10px;
-  }
-
-  .boxA-1 .logo a {
-    display: block;
-    color: #fff;
-    font-size: 40px;
-    font-weight: bold;
-  }
-
-  .boxA-1 .logo p {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .boxA-1 .imgBox {
-    background-image: url(../resauce/img/logo/logo.png);
-    background-size: cover;
-    width: 100px;
-    height: 100px;
-  }
-
-
-  /* gnb설정 */
-  .boxA-2 {
-    background-color: #000;
-    width: 100%;
-    height: 70px;
-
-  }
-
-  .boxA-2 a {
-    color: #fff;
-  }
-
-
-  .gnb ul {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  .gnb ul li a {
-    display: block;
-    font-size: 20px;
-    font-weight: bold;
-    padding-top: 15px;
-  }
-
-  .gnb ul li a:hover {
-    opacity: 0.7;
-  }
-
-
-
-
-
-  /* 동영상설정 */
-  .vid {
-    display: block;
-    margin: 0;
-    padding: 0;
-    border: none;
-    width: 100%;
-    overflow: hidden;
-  }
-
-  .vid video {
-    display: block;
-
-    width: 100%;
-
-    height: auto;
-    margin: 0;
-    padding: 0;
-    border: none;
-    object-fit: cover;
-
-    vertical-align: bottom;
-
-  }
-
-
-
-  /* review */
-
-  .review {
-    position: relative;
-    overflow: hidden;
-    height: 600px;
-    width: 100%;
-    background: black;
-  }
-
-  .review ul {
-    position: absolute;
-    top: 0;
-    display: flex;
-    gap: 50px;
-    padding: 70px 0;
-    border-top: 3px dotted #666;
-    border-bottom: 3px dotted #666;
-    animation: scroll 20s linear infinite;
-  }
-
-  .review ul:nth-of-type(1) {
-    left: 0;
-    animation-name: scroll;
-  }
-
-  .review ul:nth-of-type(2) {
-    left: 100%;
-    animation-name: scroll2;
-  }
-
-  .review li {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    border: 1px solid #666;
-    width: 400px;
-    background-size: cover;
-    background-position: center;
-    border-radius: 10px;
-    margin-bottom: 80px;
-    background-color: #222;
-  }
-
-  .review li .imgBox {
-    width: 200px;
-    height: 200px;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    border-radius: 10px;
-  }
-
-  .review .txt p {
-    color: #fff;
-    margin: 0;
-  }
-
-  .review .txt em {
-    font-style: normal;
-    font-size: 12px;
-    color: #aaa;
-  }
-
-  .review li a {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    padding: 20px;
-    text-decoration: none;
-    color: white;
-    box-sizing: border-box;
-  }
-
-  /* 백그라운드 이미지 예시 */
-  .review li:nth-child(1) .imgBox {
-    background-image: url(../resauce/img/review/r.jpg);
-  }
-
-  .review li:nth-child(2) .imgBox {
-    background-image: url(../resauce/img/review/re.jpg);
-  }
-
-  /* ... 계속 추가 ... */
-
-  /* 애니메이션 */
-  @keyframes scroll {
-    0% {
-      left: 0;
-    }
-
-    100% {
-      left: -100%;
-    }
-  }
-
-  @keyframes scroll2 {
-    0% {
-      left: 100%;
-    }
-
-    100% {
-      left: 0;
-    }
-  }
-
-
-  /* lineup 라인업 설정 */
-  .box3 {
-    width: 100%;
-    height: 1200px;
-    background-image:
-      linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0)),
-      linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0)),
-      url(../resauce/img/review/back.jpg);
-    background-position: center;
-    background-size: cover;
-  }
-
-  .whoTitle {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 50px;
-    margin-bottom: 100px;
-    padding-top: 100px;
-    color: #fff;
-  }
-
-  .lineUp ul {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 20px;
-    padding-bottom: 50px;
-    list-style: none;
-    margin: 0;
-    padding-left: 0;
-  }
-
-  .lineUp ul li {
-    width: 20%;
-    cursor: pointer;
-    margin-bottom: 50px;
-  }
-
-  .lineUp ul li a {
-    display: flex;
-    flex-direction: column;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--color-dark);
+    background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="4" height="4" viewBox="0 0 4 4"%3E%3Cpath fill="%239F54FF" fill-opacity="0.05" d="M1 3h1v1H1V3zm2-2h1v1H3V1z"%3E%3C/path%3E%3C/svg%3E');
+    color: var(--color-light);
+    overflow-x: hidden;
+    line-height: 1.7;
+}
+
+a {
     text-decoration: none;
     color: inherit;
-  }
+}
 
-  .lineUp ul li .imgBox {
-    width: 100%;
-    height: 300px;
-    border-radius: 10px;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    transition: transform 0.5s ease;
-    overflow: hidden;
-  }
+ul,
+ol {
+    list-style: none;
+}
 
-  .lineUp ul li:hover .imgBox {
-    transform: scale(1.1);
-    z-index: 10;
-  }
-
-  .lineUp ul li p:hover {
-    opacity: 0.7;
-  }
-
-  .lineUp ul li .txt {
-    margin-top: 10px;
-    text-align: center;
-    font-size: 16px;
-    font-weight: bold;
-    color: #fff;
-  }
-
-  .lineUp ul li:nth-child(1) .imgBox {
-    background-image: url(../resauce/img/lineup/kungfu.jpg);
-  }
-
-  .lineUp ul li:nth-child(2) .imgBox {
-    background-image: url(../resauce/img/lineup/pulp.jpg);
-  }
-
-  .lineUp ul li:nth-child(3) .imgBox {
-    background-image: url(../resauce/img/lineup/beck.jpg);
-  }
-
-  .lineUp ul li:nth-child(4) .imgBox {
-    background-image: url(../resauce/img/lineup/simz.jpg);
-  }
-
-  .lineUp ul li:nth-child(5) .imgBox {
-    background-image: url(../resauce/img/lineup/jang.jpg);
-  }
-
-  .lineUp ul li:nth-child(6) .imgBox {
-    background-image: url(../resauce/img/lineup/crying.jpg);
-  }
-
-  .lineUp ul li:nth-child(7) .imgBox {
-    background-image: url(../resauce/img/lineup/bea.jpg);
-  }
-
-  .lineUp ul li:nth-child(8) .imgBox {
-    background-image: url(../resauce/img/lineup/method.jpg);
-  }
-
-  .more {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .more a {
-    display: block;
-    font-weight: bold;
-    color: #fff;
-    border: 2px solid #fff;
-    padding: 10px 50px;
-    border-radius: 10px;
-  }
-
-  .more a:hover {
-    opacity: 0.7;
-    border-color: #ffffffb3;
-  }
-
-
-
-  /* reservation설정 */
-  .box4 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-bottom: 100px;
-    background-color: #000;
-    width: 100%;
-    height: 1000px;
-  }
-
-  .readyTitle {
-    display: flex;
-    font-size: 50px;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 80px;
-    padding-top: 100px;
-    color: #fff;
-  }
-
-  .box4-2 {
-    border-bottom: 1px solid #666;
-    margin-bottom: 30px;
-    padding-bottom: 10px;
-    line-height: 20px;
-  }
-
-  .box4-2 h2 {
-    font-size: 14px;
-    font-weight: normal;
-    color: #fff;
-  }
-
-  .reservation ul {
-    display: flex;
-    justify-content: center;
-
-  }
-
-  .reservation .txt {
-    display: block;
-    justify-content: center;
-    margin-left: 50px;
-  }
-
-  .reservation .txt li {
-    color: #fff;
-  }
-
-  .reservation .txt li:nth-child(1) {
-    margin-bottom: 80px;
-  }
-
-  .reservation .txt li:nth-child(2) {
-    margin-bottom: 150px;
-  }
-
-  .reservation .txt li:nth-child(3) {
-    border: 1px solid #000;
-  }
-
-  .reservation .txt li:nth-child(3) {
-    border: 1px solid #fff;
-    border-radius: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .reservation .txt li:nth-child(3) a {
-    display: block;
-    color: #fff;
-    padding: 10px;
-  }
-
-  .reservation .poster {
-    width: 400px;
-    height: 600px;
-    margin-right: 50px;
-    background: url(../resauce/img/background/poster.jpg) center/contain no-repeat;
-    background-size: cover;
-  }
-
-  .reservation .calender {
-    border: 2px solid #666;
-    width: 400px;
-    height: 400px;
-  }
-
-  .reservation .calender a {
-    color: #fff;
-  }
-
-
-
-
-
-
-  /* timetable 설정 */
-  .box5 {
-    background-color: black;
-    padding-top: 100px;
-  }
-
-  .timeTitle {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 50px;
-    padding-bottom: 70px;
-    color: #fff;
-
-  }
-
-  .box5-2 {
-    padding-bottom: 100px;
-  }
-
-  .box5-2 ul {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .box5-2 li {
-    margin: 10px;
-    width: 80%;
-    height: 700px;
-    background: url(../resauce/img/timetable/timetable.jpg) center/contain no-repeat;
-  }
-
-
-
-
-
-  /* festival map 설정 */
-  .festivalTitle {
-    display: flex;
-    justify-content: center;
-    font-size: 50px;
-    margin-bottom: 100px;
-
-  }
-
-  .box6 {
-    background-color: #000;
+img {
+    max-width: 100%;
     height: auto;
-    padding-bottom: 50px;
-    padding: 100px 0;
-  }
+    display: block;
+}
 
-  .box6 .map ul {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
 
-  .box6 .map li {
-    width: 1000px;
-    height: 800px;
-    background-image: url(../resauce/img/festivalmap/pentaportrf_2025-07-14__080226.jpg);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-  }
-
-  .map {
-    padding-bottom: 90px;
-  }
-
-  .box6-1 h2 {
-    color: #fff;
-  }
-
-
-
-
-  /* notice 설정 */
-  .noticeTitle {
-    display: flex;
-    justify-content: center;
-    font-size: 50px;
-    margin-bottom: 100px;
-    padding-top: 50px;
-    color: #fff;
-  }
-
-  .box7 {
-    background-color: #000;
-    height: 650px;
-    border-bottom: 1px solid #666;
-  }
-
-  .box7 div {}
-
-  .notice {
-    padding-bottom: 50px;
-  }
-
-  .notice ul {
-    display: flex;
-    justify-content: center;
-    color: #fff;
-  }
-
-  .notice li {
-    display: flex;
-    width: 100%;
-    height: 25px;
-    border-top: 1px solid #666;
-    padding: 20px;
-    align-items: center;
-  }
-
-  .notice li a {
-    color: #fff
-  }
-
-  .notice li:nth-child(1) {
-    display: flex;
-    width: 10%;
-    justify-content: center;
-  }
-
-  .notice li:nth-child(2) {
-    display: flex;
-    width: 60%;
-    justify-content: flex-start;
-  }
-
-  .notice li:nth-child(3) {
-    display: flex;
-    width: 15%;
-    justify-content: center;
-  }
-
-  .notice li:nth-child(4) {
-    display: flex;
-    width: 15%;
-    justify-content: center;
-  }
-
-  .notice ul:nth-child(1) li:nth-child(2) {
-    display: flex;
-    width: 60%;
-    justify-content: center;
-  }
-
-  .notice ul:nth-child(4) li {
-    border-bottom: 1px solid #666;
-  }
-
-  .box7 .number ul {
-    display: flex;
-    justify-content: center;
-    padding-top: 80px;
-  }
-
-  .box7 .number ul li {
-    margin: 5px;
-
-  }
-
-  .number a {
-    color: #fff;
-  }
-
-
-
-
-
-  /* QnA 설정 */
-  .qnaTitle {
-    display: flex;
-    justify-content: center;
-    font-size: 50px;
-    margin-bottom: 100px;
-    padding-top: 50px;
-    color: #fff;
-  }
-
-  .box8 {
-    background-color: #00;
-    height: 650px;
-
-  }
-
-  .box8-2 {
-    display: flex;
-    justify-content: flex-end;
-    margin-bottom: 10px;
-    color: #fff;
-    gap: 5px;
-  }
-
-  .box8-2 div:nth-child(1):hover {
-    opacity: 0.7;
-  }
-
-  .box8-2 div:nth-child(2):hover {
-    opacity: 0.7;
-  }
-
-  .box8-2 div {
-    border: 1px solid #fff;
-    padding: 5px;
-    padding-left: 10px;
-    padding-right: 10px;
-  }
-
-
-
-  .box8-2 a {
-    color: #fff;
-  }
-
-  .qna {
-    color: #fff;
-    height: 300px;
-  }
-
-  .qna ul {
-    display: flex;
-    justify-content: center;
-  }
-
-  .qna li {
-    width: 100%;
-    height: 25px;
-    border-top: 1px solid #666;
-    padding: 20px;
-    align-items: center;
-  }
-
-  .qna li:nth-child(1) {
-    display: flex;
-    justify-content: center;
-    width: 10%;
-  }
-
-  .qna li:nth-child(2) {
-    display: flex;
-    justify-content: flex-start;
-    width: 60%;
-  }
-
-  .qna li:nth-child(3) {
-    display: flex;
-    justify-content: center;
-    width: 15%;
-  }
-
-  .qna li:nth-child(4) {
-    display: flex;
-    justify-content: center;
-    width: 15%;
-  }
-
-  .qna ul:nth-child(1) li:nth-child(2) {
-    display: flex;
-    justify-content: center;
-  }
-
-  .qna ul:nth-child(4) li {
-    border-bottom: 1px solid #666;
-  }
-
-  .qna a {
-    color: #fff;
-  }
-
-  .box8-3 .number ul {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .box8-3 .number ul li {
-    margin: 5px;
-  }
-
-  .box8-3 .number a {
-    color: #fff;
-  }
-
-  .number span {
-    font-size: 24px;
-  }
-
-  .answer {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease;
-    color: #fff;
-    padding: 0 20px;
-    background-color: #111;
-  }
-
-
-  /* replay */
-
-  .box9 {
-    background-color: #000;
-  }
-
-  .replay {
-    height: 500px;
-    padding-top: 50px;
+/* --- Reusable Components --- */
+.section-title {
+    text-align: center;
+    font-family: var(--font-heading);
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    margin-bottom: 4rem;
+    background: linear-gradient(135deg, var(--color-light) 0%, var(--color-primary) 50%, var(--color-secondary) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 2px;
     position: relative;
-    overflow: hidden;
-  }
+    text-shadow: 0 0 15px rgba(159, 84, 255, 0.3);
+}
 
-  .replay ul {
+.cta-button {
+    display: inline-block;
+    padding: 1rem 3rem;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    color: white;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    border: none;
+    box-shadow: 0 10px 30px rgba(159, 84, 255, 0.3);
+}
+
+.cta-button:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 15px 40px rgba(240, 78, 152, 0.4);
+}
+
+/* --- Navigation Bar --- */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 1rem 0;
+    transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
+}
+
+.navbar.scrolled {
+    background: rgba(13, 2, 26, 0.8);
+    backdrop-filter: blur(10px);
+}
+
+.nav-container {
     display: flex;
-    gap: 50px;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo-icon {
+    width: 40px;
+    height: 40px;
+    background: url(resauce/img/logo/logo.png) center/cover;
+    transition: transform 0.4s ease;
+}
+
+.logo:hover .logo-icon {
+    transform: rotate(360deg);
+}
+
+.logo-text span {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    display: block;
+}
+
+.logo-text small {
+    font-size: 0.8rem;
+    opacity: 0.7;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+}
+
+.nav-menu a {
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-menu a::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+    transform: translateX(-50%);
+    transition: width 0.3s ease;
+}
+
+.nav-menu a:hover {
+    color: #fff;
+}
+
+.nav-menu a:hover::after {
+    width: 100%;
+}
+
+.mobile-menu-toggle {
+    display: none;
+}
+
+/* --- Hero Section --- */
+.hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.hero-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+.hero-overlay {
     position: absolute;
     top: 0;
     left: 0;
-    border-top: 3px dotted #666;
-    border-bottom: 3px dotted #666;
-    padding: 70px 0;
-    width: max-content;
-    animation: slide 25s linear infinite;
-  }
+    width: 100%;
+    height: 100%;
+    /* 배경색을 검은색으로 유지하면서 투명도(알파 값)를 높입니다. */
+    /* 0.4(40%)에서 0.6(60%)으로 변경하여 더 어둡게 만듭니다. */
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+}
 
-  .replay ul:nth-child(1) {
-    left: 0;
-    animation: slide 25s linear infinite;
-  }
+.hero-content {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    max-width: 900px;
+    padding: 0 2rem;
+}
 
-  .replay ul:nth-child(2) {
-    left: -100%;
-    animation: slide2 25s linear infinite;
-  }
+.hero-title {
+    font-family: var(--font-heading);
+    /* 최소 크기: 2.5rem, 기본 크기: 6vw, 최대 크기: 5rem */
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    font-weight: 900;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+    /* text-shadow: 0 5px 15px rgba(0, 0, 0, 0.5); */
+}
 
-  @keyframes slide {
-    0% {
-      left: 0;
-    }
+.hero-title span {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
 
+.hero-date {
+    font-size: 1.5rem;
+    margin-bottom: 3rem;
+    color: var(--color-light);
+    font-weight: 500;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.scroll-down {
+    position: absolute;
+    bottom: 30px;
+    font-size: 1.5rem;
+    animation: bounce 2s infinite;
+    z-index: 3;
+}
+
+@keyframes bounce {
+
+    0%,
+    20%,
+    50%,
+    80%,
     100% {
-      left: 100%;
-    }
-  }
-
-  @keyframes slide2 {
-    0% {
-      left: 100;
+        transform: translateY(0);
     }
 
-    100% {
-      left: 0%;
+    40% {
+        transform: translateY(-15px);
     }
-  }
 
+    60% {
+        transform: translateY(-10px);
+    }
+}
 
-
-
-
-  .replay li {
-    flex: none;
-    width: 300px;
-    height: 300px;
-    background-size: cover;
-    background-position: center;
-    border-radius: 10px;
-    border: 1px solid #fff;
+/* --- Reviews Section --- */
+.reviews-section {
+    padding: 6rem 0;
+    background: var(--color-dark);
     overflow: hidden;
     position: relative;
-  }
+}
 
-  .replay ul li a {
-    display: block;
+.reviews-scroll {
+    display: flex;
+    width: max-content;
+    animation: scroll-left 40s linear infinite;
+    gap: 2rem;
+}
+
+.review-card {
+    min-width: 400px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.review-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(159, 84, 255, 0.2);
+}
+
+.stars {
+    color: #ffcc02;
+}
+
+.review-text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    flex-grow: 1;
+}
+
+.review-author {
+    font-size: 0.9rem;
+    color: #aaa;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* --- Lineup Section --- */
+.lineup-section {
+    padding: 6rem 0;
+    position: relative;
+    background-color: var(--color-dark);
+}
+
+.lineup-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.lineup-grid {
+    display: grid;
+    gap: 1.5rem;
+    margin-bottom: 4rem;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: auto;
+    /* 그리드 템플릿 영역을 다시 구성하여 균형 맞춤 */
+    grid-template-areas:
+        "a1 a1 a1 a1 a1 a1 a2 a2 a2 a2 a2 a2"
+        "a1 a1 a1 a1 a1 a1 a2 a2 a2 a2 a2 a2"
+        "a3 a3 a3 a3 a4 a4 a4 a4 a5 a5 a5 a5"
+        "a3 a3 a3 a3 a6 a6 a6 a6 a7 a7 a7 a7"
+        "a8 a8 a8 a8 a8 a8 a8 a8 a8 a8 a8 a8";
+}
+
+/* 개별 아티스트 카드 배치 */
+.artist-card:nth-child(1) {
+    grid-area: a1;
+}
+
+.artist-card:nth-child(2) {
+    grid-area: a2;
+}
+
+.artist-card:nth-child(3) {
+    grid-area: a3;
+}
+
+.artist-card:nth-child(4) {
+    grid-area: a4;
+}
+
+.artist-card:nth-child(5) {
+    grid-area: a5;
+}
+
+.artist-card:nth-child(6) {
+    grid-area: a6;
+}
+
+.artist-card:nth-child(7) {
+    grid-area: a7;
+}
+
+.artist-card:nth-child(8) {
+    grid-area: a8;
+}
+
+
+/* 모든 카드의 기본 스타일 */
+.artist-card {
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    min-height: 250px;
+}
+
+.artist-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(159, 84, 255, 0.4);
+    z-index: 10;
+}
+
+.artist-image {
     width: 100%;
     height: 100%;
-  }
-
-  .replay ul li a:hover {
-    opacity: 0.7;
-  }
-
-  .replay li img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: all 0.5s;
-    transform: scale(1);
-  }
-
-  .replay li:hover img {
-    transform: scale(1.2);
-  }
-
-  .replay li:nth-child(1) {
-    background-image: url(../resauce/img/replay/cherry.jpg);
-  }
-
-  .replay li:nth-child(2) {
-    background-image: url(../resauce/img/replay/people.jpg);
-  }
-
-  .replay li:nth-child(3) {
-    background-image: url(../resauce/img/replay/play.jpg);
-  }
-
-  .replay li:nth-child(4) {
-    background-image: url(../resauce/img/replay/rocknroll.jpg);
-  }
-
-  .replay li:nth-child(5) {
-    background-image: url(../resauce/img/replay/show.jpg);
-  }
-
-  .replay li:nth-child(6) {
-    background-image: url(../resauce/img/replay/yerin.jpg);
-  }
-
-
-
-
-
-  /* limited edition 설정 */
-  .box10 {
-    background-image:
-      linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)),
-      linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)),
-      url(../resauce/img/background/limited2.jpg);
     background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-    height: 1200px;
-    color: white;
-  }
+    background-position: center;
+    transition: transform 0.6s ease;
+}
 
+.artist-card:hover .artist-image {
+    transform: scale(1.05);
+}
 
-  .limitedTitle {
-    display: flex;
-    justify-content: center;
-    font-size: 50px;
-    padding-top: 80px;
-    margin-bottom: 100px;
-  }
-
-  .limitedTitle a {
-    padding: 10px;
+.artist-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
+    padding: 1.5rem;
     color: #fff;
-    display: block;
-  }
+    text-align: left;
+    transition: opacity 0.3s ease;
+}
 
-  .limitedTitle a:hover {
-    opacity: 0.7;
-  }
+.artist-name {
+    font-family: var(--font-heading);
+    font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.8);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.artist-genre {
+    font-size: clamp(0.85rem, 1.7vw, 1.1rem);
+    color: var(--color-secondary);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.main-artist .artist-name {
+    font-size: clamp(1.5rem, 3.5vw, 2.2rem);
+}
+
+.more-button {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: var(--color-accent);
+    color: var(--color-dark);
+    padding: 1rem 2.5rem;
+    border-radius: 30px;
+    text-decoration: none;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: var(--color-secondary);
+    transform: translateY(-3px);
+}
+
+/* Artist Images - 기존과 동일 */
+.artist-1 {
+    background-image: url(../resauce/img/lineup/kungfu.jpg);
+}
+
+.artist-2 {
+    background-image: url(../resauce/img/lineup/pulp2.jpg);
+    background-position: center 30%;
+}
+
+.artist-3 {
+    background-image: url(../resauce/img/lineup/simz.jpg);
+}
+
+.artist-4 {
+    background-image: url(../resauce/img/lineup/beck.jpg);
+    background-position: center 20%;
+}
+
+.artist-5 {
+    background-image: url(../resauce/img/lineup/jang.jpg);
+    background-position: center 30%;
+}
+
+.artist-6 {
+    background-image: url(../resauce/img/lineup/crying.jpg);
+}
+
+.artist-7 {
+    background-image: url(../resauce/img/lineup/bea.jpg);
+}
+
+.artist-8 {
+    background-image: url(../resauce/img/lineup/method.jpg);
+    background-position: center 40%;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 1024px) {
+    .lineup-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+        grid-template-areas:
+            "a1 a2"
+            "a3 a4"
+            "a5 a6"
+            "a7 a8";
+    }
+
+    .artist-card {
+        grid-area: auto !important;
+        grid-column: span 1;
+        grid-row: auto;
+        min-height: 200px;
+        aspect-ratio: 3/2;
+    }
+}
+
+@media (max-width: 768px) {
+    .lineup-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        grid-template-areas:
+            "a1"
+            "a2"
+            "a3"
+            "a4"
+            "a5"
+            "a6"
+            "a7"
+            "a8";
+    }
+
+    .artist-card {
+        grid-area: auto !important;
+        grid-column: auto;
+        grid-row: auto;
+        height: auto;
+        min-height: 250px;
+        aspect-ratio: 3 / 2;
+    }
+}
 
 
-  .edition {
-    margin-bottom: 200px;
-  }
-
-  .edition .txt {}
-
-  .edition p {
-    color: #fff;
-  }
-
-  .edition h4 {
-    color: #fff;
-  }
 
 
-  .edition ul {
+
+
+
+
+
+
+
+/* --- Booking Section --- */
+.booking-section {
+    padding: 6rem 0;
+}
+
+.booking-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.booking-form-wrapper {
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 50px;
-    padding: 10px;
-  }
+    gap: 3rem;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 3rem;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
 
-  .edition ul li {
-    display: flex;
-    flex-direction: column;
-    box-sizing: border-box;
-    height: 400px;
-  }
+.poster-section {
+    flex: 0 0 350px;
+}
 
-
-  .edition ul li a {
-    width: 300px;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    padding: 0;
-  }
-
-  .imgBox {
+.poster {
     width: 100%;
+    aspect-ratio: 2/3;
+    background: url(../resauce/img/background/poster.jpg) center/cover;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.form-section {
+    flex: 1;
+}
+
+.form-section h3 {
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.form-details {
+    color: #aaa;
+    margin-bottom: 2rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.form-group select,
+.person-inputs input {
+    width: 80%;
+    padding: 0.8rem;
+    border: 1px solid #555;
+    border-radius: 8px;
+    background: #222;
+    color: #fff;
+    font-size: 1rem;
+}
+
+.person-inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.person-inputs>div {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.person-inputs span {
+    flex-basis: 50px;
+}
+
+.book-button {
+    width: 100%;
+    margin-top: 1rem;
+}
+
+/* --- Information Section --- */
+.info-section {
+    padding: 6rem 0;
+}
+
+.info-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.info-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    padding: 2rem;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.info-card h3 {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.info-image {
+    width: 100%;
+    aspect-ratio: 16/9;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 10px;
+}
+
+.timetable-image {
+    background-image: url(../resauce/img/timetable/timetable.jpg);
+}
+
+.map-image {
+    background-image: url(../resauce/img/festivalmap/pentaportrf_2025-07-14__080226.jpg);
+}
+
+
+
+
+
+
+
+
+
+
+
+/* --- Board Section (Notice & QnA Combined) --- */
+/* --- Board Section (Notice & QnA Combined) --- */
+.board-section {
+    padding: 6rem 0;
+}
+
+.combined-board {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    padding: 1rem 2rem;
+    margin-bottom: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.board-row {
+    display: flex;
+    flex-direction: column;
+    /* 아코디언 구조를 위해 column으로 변경 */
+    padding: 0;
+    /* 내부 요소에서 패딩 제어 */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+.board-row:last-child {
+    border-bottom: none;
+}
+
+/* --- 각 행의 헤더(질문) 부분 --- */
+.accordion-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 1.2rem 0;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.accordion-header:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.board-cell.title {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex: 1;
+}
+
+.board-cell.title a {
+    transition: color 0.3s ease;
+}
+
+/* 질문이 활성화(열렸을 때) 또는 호버 시 색상 변경 */
+.accordion-item.active .accordion-header .board-cell.title a,
+.accordion-header:hover .board-cell.title a {
+    color: var(--color-primary);
+}
+
+.board-cell.date {
+    color: #888;
+    font-size: 0.9rem;
+    text-align: right;
+    flex-basis: 120px;
+}
+
+/* --- 고정된 공지사항 스타일 --- */
+.board-row.pinned {
+    flex-direction: row;
+    /* 고정 공지는 row 방향 유지 */
+    align-items: center;
+    padding: 1.2rem 0;
+    background-color: rgba(159, 84, 255, 0.1);
+    font-weight: 500;
+}
+
+.board-row.pinned a:hover {
+    color: var(--color-primary);
+}
+
+.board-row.pinned .fa-thumbtack {
+    color: var(--color-primary);
+    transform: rotate(-25deg);
+}
+
+/* --- QnA 전용 스타일 --- */
+.qna-badge {
+    color: var(--color-secondary);
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.board-cell.icon {
+    flex-basis: 40px;
+    text-align: right;
+    color: #888;
+}
+
+.board-cell.icon i {
+    transition: transform 0.4s ease;
+}
+
+/* 아코디언이 열렸을 때 아이콘 회전 */
+.accordion-item.active .board-cell.icon i {
+    transform: rotate(180deg);
+}
+
+/* --- 아코디언 답변 내용 --- */
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-out, padding 0.4s ease-out;
+    padding: 0 1rem;
+    color: #bbb;
+    line-height: 1.8;
+}
+
+.accordion-content p {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 1.5rem 0;
+}
+
+.accordion-content strong {
+    color: var(--color-secondary);
+}
+
+/* --- 페이지네이션 --- */
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.pagination a {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #555;
+    border-radius: 50%;
+    color: #aaa;
+    transition: all 0.3s ease;
+}
+
+.pagination a:hover,
+.pagination a.active {
+    background: var(--color-primary);
+    border-color: var(--color-primary);
+    color: #fff;
+}
+
+/* --- Gallery Section --- */
+.gallery-section {
+    padding: 6rem 0;
+    overflow: hidden;
+}
+
+.gallery-scroll {
+    display: flex;
+    width: max-content;
+    animation: scroll-right 60s linear infinite;
+    gap: 2rem;
+}
+
+.gallery-item {
+    flex: none;
+    width: 400px;
     height: 300px;
     background-size: cover;
     background-position: center;
-    border-radius: 10px;
-  }
+    border-radius: 15px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    transition: transform 0.3s ease;
+}
 
-  .edition ul li:nth-child(1) .imgBox {
-    background-image: url(../resauce/img/litmitededition/pin.png);
-  }
+.gallery-item:hover {
+    transform: scale(1.05) rotate(2deg);
+}
 
-  .edition ul li:nth-child(2) .imgBox {
-    background-image: url(../resauce/img/litmitededition/bandana.png);
-  }
+.gallery-1 {
+    background-image: url(../resauce/img/replay/yerin.jpg);
+}
 
-  .edition ul li:nth-child(3) .imgBox {
-    background-image: url(../resauce/img/litmitededition/keyring.png);
-  }
+.gallery-2 {
+    background-image: url(../resauce/img/replay/rocknroll.jpg);
+}
 
-  .edition ul li:nth-child(4) .imgBox {
-    background-image: url(../resauce/img/litmitededition/greycap.png);
-  }
+.gallery-3 {
+    background-image: url(../resauce/img/replay/show.jpg);
+}
 
-  .edition ul li:nth-child(5) .imgBox {
-    background-image: url(../resauce/img/litmitededition/blackcap.png);
-  }
+.gallery-4 {
+    background-image: url(../resauce/img/replay/people.jpg);
+}
 
-  .edition ul li:nth-child(6) .imgBox {
-    background-image: url(../resauce/img/litmitededition/case.png);
-  }
-
-  .edition ul li a span {
-    color: red;
-    padding-right: 5px;
-  }
-
-  .edition ul li a h5 {
-    padding-top: 10px;
-    line-height: 20px;
-    border-top: 0.5px solid #eee;
-    color: grey;
-  }
-
-  .edition ul li a p {
-    font-size: 14px;
-  }
+.gallery-5 {
+    background-image: url(../resauce/img/replay/play.jpg);
+}
 
 
 
 
 
-  /* directions 설정 */
-  .box11 {
-    width: 100%;
-    height: 800px;
-    padding-bottom: 100px;
-    background-color: #000;
 
-  }
 
-  .box11-inner {}
 
-  .box11-1 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #fff;
-  }
 
-  .box11-1 h2 {
-    font-size: 50px;
-    margin-bottom: 100px;
-  }
 
-  .box11-2 {
-    width: 40%;
-    border-radius: 10px;
+
+
+
+/* --- Limited Edition Section --- */
+.limited-section {
+    padding: 6rem 0;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.product-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
     overflow: hidden;
+    transition: transform 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
 
+.product-card:hover {
+    transform: translateY(-5px);
+}
+
+.product-image {
+    width: 100%;
+    aspect-ratio: 1/1;
+    background-size: cover;
+    background-position: center;
+}
+
+.product-1 {
+    background-image: url(../resauce/img/litmitededition/pin.png);
+}
+
+.product-2 {
+    background-image: url(../resauce/img/litmitededition/bandana.png);
+}
+
+.product-3 {
+    background-image: url(../resauce/img/litmitededition/keyring.png);
+}
+
+.product-4 {
+    background-image: url(../resauce/img/litmitededition/greycap.png);
+}
+
+.product-info {
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.product-info p {
+    color: var(--color-light);
+    margin-bottom: 1rem;
+    font-size: 1rem;
+}
+
+.product-info h4 {
+    font-size: 1.2rem;
+}
+
+.discount {
+    color: var(--color-secondary);
+    margin-right: 0.5rem;
+}
+
+/* shop 버튼을 위한 스타일을 추가합니다. */
+.shop-button-wrapper {
     display: flex;
+    /* Flexbox를 사용하여 내부 요소를 정렬합니다. */
     justify-content: center;
+    /* 가로 중앙 정렬 */
+    margin-top: 3rem;
+    /* 상품 그리드와 버튼 사이의 간격을 줍니다. */
+}
+
+
+
+
+
+
+
+
+/* --- Directions Section --- */
+.directions-section {
+    padding: 6rem 0;
+}
+
+.directions-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
     align-items: center;
-    margin: 0 auto;
+}
 
-  }
-
-  .directions {
+.map-container {
     width: 100%;
-    height: 600px;
-  }
+    aspect-ratio: 4/3;
+    border-radius: 15px;
+    overflow: hidden;
+}
 
-  .directions iframe {
+.map-container iframe {
     width: 100%;
-    height: 800px;
-  }
+    height: 100%;
+    border: none;
+}
 
+.directions-info .info-block {
+    margin-bottom: 2rem;
+}
 
-
-
-
-  /* footer 설정 */
-
-  .footer {
-    background-color: #000;
+.directions-info h4 {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    margin-bottom: 0.8rem;
+    color: var(--color-primary);
     display: flex;
-    justify-content: center;
     align-items: center;
-    width: 100%;
-    height: 200px;
-    font-size: 14px;
+    gap: 0.5rem;
+}
+
+.directions-info p {
+    color: #bbb;
+    line-height: 1.8;
+}
+
+.directions-info p strong {
+    color: var(--color-light);
+}
+
+/* --- Footer --- */
+.footer {
+    background: #000;
+    padding: 4rem 0 2rem;
+    border-top: 1px solid #333;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.footer-links a {
+    margin: 0 1rem;
+    color: #aaa;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
     color: #fff;
-    border: 1px solid #666
-  }
+}
 
-  /* 미디어쿼리 ######################################################################## */
-  @media (max-width: 599px) {}
+.social-links a {
+    font-size: 1.5rem;
+    margin-left: 1.5rem;
+    transition: color 0.3s;
+}
 
-  @media (min-width: 768px) {}
+.social-links a:hover {
+    color: var(--color-primary);
+}
 
-  @media (min-width: 960px) {}
+.copyright {
+    text-align: center;
+    color: #888;
+    font-size: 0.9rem;
+}
+
+/* --- Animations --- */
+@keyframes scroll-left {
+    from {
+        transform: translateX(0%);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+@keyframes scroll-right {
+    from {
+        transform: translateX(-50%);
+    }
+
+    to {
+        transform: translateX(0%);
+    }
+}
+
+/* Scroll Animations */
+[data-scroll] {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+[data-scroll].is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 1024px) {
+    .lineup-grid {
+        grid-template-columns: repeat(4, 1fr);
+        height: auto;
+        max-height: none;
+    }
+
+    /* Simplified grid for tablet */
+    .artist-card {
+        grid-column: span 2;
+        grid-row: span 2;
+        min-height: 250px;
+    }
+
+    .main-artist {
+        grid-column: span 4;
+        grid-row: span 2;
+        min-height: 350px;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-menu {
+        display: none;
+    }
+
+    .mobile-menu-toggle {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+    }
+
+    .mobile-menu-toggle span {
+        width: 25px;
+        height: 3px;
+        background: #fff;
+        transition: 0.3s;
+    }
+
+    /* More responsive styles needed for mobile menu */
+    .directions-content,
+    .board-container,
+    .info-container {
+        grid-template-columns: 1fr;
+    }
+
+    .booking-form-wrapper {
+        flex-direction: column;
+    }
+
+    .poster-section {
+        width: 100%;
+        max-width: 350px;
+    }
+}
+
+/* --- Booking Modal Popup --- */
+.modal {
+    display: none;
+    /* 기본적으로 숨김 */
+    position: fixed;
+    /* 화면에 고정 */
+    z-index: 1000;
+    /* 다른 요소 위에 표시 */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    /* 내용이 넘칠 경우 스크롤 */
+    background-color: rgba(0, 0, 0, 0.8);
+    /* 반투명 검정 배경 */
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    padding-top: 50px;
+}
+
+.modal-content {
+    background-color: var(--color-dark);
+    margin: 5% auto;
+    padding: 2.5rem;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 800px;
+    position: relative;
+    animation: fadeIn 0.5s ease-out;
+    box-shadow: 0 10px 40px rgba(159, 84, 255, 0.5);
+    border: 1px solid var(--color-accent);
+}
+
+.modal .booking-container {
+    padding: 0;
+}
+
+.close-button {
+    color: var(--color-light);
+    font-size: 2.5rem;
+    font-weight: bold;
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: var(--color-accent);
+}
+
+.modal .section-title {
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+    .modal-content {
+        width: 95%;
+        padding: 1.5rem;
+        margin: 10% auto;
+    }
+
+    .close-button {
+        font-size: 2rem;
+        right: 15px;
+        top: 5px;
+    }
+}
