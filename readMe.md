@@ -60,7 +60,7 @@
 ### 🚀 링크
 - [디자인 시안](링크)
 - [코드 저장소](링크)
-- [배포 사이트](https://jinseony25.github.io/portfolio2025/project001)
+- [배포 사이트](https://jinseony25.github.io/portfolio2025/project002)
 
 ### 👀 페이지 미리보기
 | 메인 페이지 | 
