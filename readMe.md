@@ -36,12 +36,12 @@
 ### 🚀 링크
 - [브레인스토밍](https://docs.google.com/presentation/d/1YYeh7Mng7aWQ4SW1CoP_B6Z0WO-mMtDISJ8aaHj3NrA/edit?pli=1&slide=id.p#slide=id.p)
 - [와이어프레임 & 디자인](링크)
-- [최종 사이트](링크)
+- [배포 사이트](https://jinseony25.github.io/portfolio2025/project001)
 
 ### 👀 페이지 미리보기
 | 메인 | 서브 | |
 |-----|------|--|
-| ![메인](이미지주소) | ![서브](이미지주소) |
+| ![메인](https://github.com/jinseony25/portfolio2025/blob/main/project001/main.png) | ![서브](이미지주소) |
 
 ---
 
@@ -61,12 +61,12 @@
 ### 🚀 링크
 - [디자인 시안](링크)
 - [코드 저장소](링크)
-- [배포 사이트](링크)
+- [배포 사이트](https://jinseony25.github.io/portfolio2025/project002)
 
 ### 👀 페이지 미리보기
 | 메인 페이지 | 상품 상세 페이지 |
 |------------|----------------|
-| ![메인](이미지주소) | ![상품](이미지주소) |
+| ![메인](https://github.com/jinseony25/portfolio2025/blob/main/project002/main.png) | ![상품](https://github.com/jinseony25/portfolio2025/blob/main/project002/product.png) |
 
 ---
 
