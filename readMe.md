@@ -36,7 +36,7 @@
 ### 🚀 링크
 - [브레인스토밍]
 - [와이어프레임 & 디자인](링크)
-- [최종 사이트](https://jinseony25.github.io/portfolio2025/project001)
+- [배포 사이트](https://jinseony25.github.io/portfolio2025/project001)
 
 ### 👀 페이지 미리보기
 | 메인 | 예매 |
@@ -60,7 +60,7 @@
 ### 🚀 링크
 - [디자인 시안](링크)
 - [코드 저장소](링크)
-- [배포 사이트](링크)
+- [배포 사이트](https://jinseony25.github.io/portfolio2025/project001)
 
 ### 👀 페이지 미리보기
 | 메인 페이지 | 
