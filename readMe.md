@@ -34,7 +34,7 @@
 - 메인컬러 : 블랙 / 포인트컬러 : 퍼플  
 
 ### 🚀 링크
-- [브레인스토밍](링크)
+- [브레인스토밍](https://docs.google.com/presentation/d/1YYeh7Mng7aWQ4SW1CoP_B6Z0WO-mMtDISJ8aaHj3NrA/edit?pli=1&slide=id.p#slide=id.p)
 - [와이어프레임 & 디자인](링크)
 - [최종 사이트](링크)
 
