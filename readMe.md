@@ -34,8 +34,7 @@
 - 메인컬러 : 블랙 / 포인트컬러 : 퍼플  
 
 ### 🚀 링크
-- [브레인스토밍]
-- [와이어프레임 & 디자인](링크)
+- [컨셉뷰](https://www.figma.com/proto/7YxhjEPt015kOoBf2rxosN/%EC%BB%A8%EC%85%89%EB%B7%B0?node-id=107-318&t=albQbGwGXot4ResD-1)
 - [배포 사이트](https://jinseony25.github.io/portfolio2025/project001)
 
 ### 👀 페이지 미리보기
