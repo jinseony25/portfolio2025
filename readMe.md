@@ -41,7 +41,7 @@
 ### 👀 페이지 미리보기
 | 메인 | 예매 |
 |-----|-----|
-| ![메인](https://raw.githubusercontent.com/jinseony25/portfolio2025/main/project001/main.png) | ![예매](https://raw.githubusercontent.com/jinseony25/portfolio2025/main/project001/booking.jpg) |
+| ![메인]() | ![예매]() |
 
 ---
 
