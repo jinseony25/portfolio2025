@@ -57,8 +57,7 @@
 - 메인컬러 : 화이트 / 포인트컬러 : 오렌지  
 
 ### 🚀 링크
-- [디자인 시안](링크)
-- [코드 저장소](링크)
+- [컨셉뷰](https://www.figma.com/proto/TSghEgF1Ed5aCHkgVIzAxH/%ED%8C%80%EB%B2%84%EC%83%B5-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8?node-id=679-2&t=He9FICvCOsKyqrNA-1&scaling=min-zoom&content-scaling=fixed&page-id=572%3A2)
 - [배포 사이트](https://jinseony25.github.io/portfolio2025/project002)
 
 ### 👀 페이지 미리보기
