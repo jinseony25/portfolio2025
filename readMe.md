@@ -65,7 +65,7 @@
 ### 👀 페이지 미리보기
 | 메인 페이지 | 상품 상세 페이지 |
 |------------|------------------|
-| ![메인](이미지주소) | ![상품](이미지주소) |
+| ![메인](https://github.com/jinseony25/portfolio2025/blob/main/project002/main.png) | ![상품](https://github.com/jinseony25/portfolio2025/blob/main/project002/product.png) |
 
 ---
 
