@@ -34,6 +34,9 @@
 - 메인컬러 : 블랙 / 포인트컬러 : 퍼플  
 
 ### 🚀 링크
+- [무드보드](https://www.figma.com/proto/UJYk4FPG0nr5SFCJ2IBJZG/%EC%9D%B8%EC%B2%9C%ED%8E%9C%ED%83%80%ED%8F%AC%ED%8A%B8%EB%9D%BD%ED%8E%98%EC%8A%A4%ED%8B%B0%EB%B2%8C2025-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8?node-id=1-7&t=l3x592lyGHpiySqb-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1)
+- [인포메이션 아키텍처](https://www.figma.com/proto/UJYk4FPG0nr5SFCJ2IBJZG/%EC%9D%B8%EC%B2%9C%ED%8E%9C%ED%83%80%ED%8F%AC%ED%8A%B8%EB%9D%BD%ED%8E%98%EC%8A%A4%ED%8B%B0%EB%B2%8C2025-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8?node-id=18-31&t=FoPz2HPLM04DQ6yD-1&scaling=min-zoom&content-scaling=fixed&page-id=1%3A2)
+- [플로우차트](https://www.figma.com/proto/UJYk4FPG0nr5SFCJ2IBJZG/%EC%9D%B8%EC%B2%9C%ED%8E%9C%ED%83%80%ED%8F%AC%ED%8A%B8%EB%9D%BD%ED%8E%98%EC%8A%A4%ED%8B%B0%EB%B2%8C2025-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8?node-id=151-464&t=UTcLucvxO7J2cE0b-1&scaling=min-zoom&content-scaling=fixed&page-id=1%3A4)
 - [컨셉뷰](https://www.figma.com/proto/7YxhjEPt015kOoBf2rxosN/%EC%BB%A8%EC%85%89%EB%B7%B0?node-id=107-318&t=albQbGwGXot4ResD-1)
 - [배포 사이트](https://jinseony25.github.io/portfolio2025/project001)
 
