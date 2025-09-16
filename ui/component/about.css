@@ -1,0 +1,341 @@
+/* ABOUT 섹션 */
+#about {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 2rem;
+    animation: fadeInUp 0.8s ease-out;
+
+    /* 배경 이미지 + 은은한 오버레이 */
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.65), rgba(255, 255, 255, 0.65)),
+        url(../../img/background/background3.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/* 떠다니는 요소 */
+.floating-element {
+    position: absolute;
+    z-index: 0;
+    animation: float 6s ease-in-out infinite;
+}
+
+.floating-element img {
+    width: 100%;
+    height: auto;
+    opacity: 0.9;
+}
+
+/* 개별 위치 (배경과 자연스럽게 맞춤) */
+.wave {
+    top: 30%;
+    left: 5%;
+    width: 150px;
+}
+
+.ball {
+    top: 22%;
+    right: 5%;
+    width: 100px;
+}
+
+.cube {
+    bottom: 28%;
+    right: 12%;
+    width: 180px;
+}
+
+/* 둥실 애니메이션 */
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+/* 컨테이너 */
+.profileCover {
+    display: flex;
+    gap: 3rem;
+    max-width: 1200px;
+    width: 100%;
+    align-items: stretch;
+}
+
+/* 프로필 박스 */
+.profileBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    animation: bounceIn 1s ease-out;
+    background: linear-gradient(135deg, #ffffffcc, #f8f9ffcc);
+    border-radius: 30px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+    padding: 20px;
+}
+
+.profile {
+    width: 300px;
+    height: 400px;
+    background-image: url(../../img/profile/profile3.png);
+    background-size: cover;
+    background-position: center;
+    border-radius: 25px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+
+
+/* 텍스트 */
+.profileTxt {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.profileTxt h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.profileTxt p {
+    font-size: 1.05rem;
+    color: #444;
+    margin-bottom: 1.5rem;
+}
+
+/* 성격 키워드 */
+.characterUp {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    list-style: none;
+}
+
+.characterUp li {
+    padding: 12px 20px;
+    border-radius: 25px;
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    color: white;
+    font-size: 0.9rem;
+    font-weight: bold;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    animation: pianoBounce 5s ease-in-out infinite;
+}
+
+.characterUp li:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.characterUp li:nth-child(2) {
+    animation-delay: 1.25s;
+}
+
+.characterUp li:nth-child(3) {
+    animation-delay: 2.5s;
+}
+
+.characterUp li:nth-child(4) {
+    animation-delay: 3.75s;
+}
+
+@keyframes pianoBounce {
+    0% {
+        transform: translateY(0);
+        background: linear-gradient(45deg, #667eea, #764ba2);
+    }
+
+    20% {
+        transform: translateY(-8px) scale(1.1);
+        background: linear-gradient(45deg, #ff6b6b, #ffd93d);
+    }
+
+    40% {
+        transform: translateY(0);
+        background: linear-gradient(45deg, #667eea, #764ba2);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+
+
+/* 오른쪽 info */
+.info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* SKILLS 카드 */
+.infoUp {
+    flex: 1;
+    padding: 40px;
+    background: linear-gradient(135deg, #ffffffcc, #f8f9ffcc);
+    border-radius: 30px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+    animation: slideInRight 0.8s ease-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.skills h1 {
+    font-size: 2rem;
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 1.5rem;
+}
+
+.skillsElements {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    color: #444;
+}
+
+/* 스킬 아이템 */
+.skill {
+    position: relative;
+    width: 90px;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: floatSkill 4s ease-in-out infinite;
+}
+
+.skill i {
+    position: absolute;
+    font-size: 32px;
+    z-index: 2;
+}
+
+/* 원형 게이지 */
+.circle {
+    transform: rotate(-90deg);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+circle.bg {
+    fill: none;
+    stroke: #eee;
+    stroke-width: 8;
+}
+
+circle.progress {
+    fill: none;
+    stroke: #667eea;
+    stroke-width: 8;
+    stroke-dasharray: 251.2;
+    stroke-dashoffset: 251.2;
+    transition: stroke-dashoffset 1.8s ease;
+}
+
+/* TRAINING / CERTIFICATION */
+.infoDown {
+    flex: 1;
+    display: flex;
+    gap: 2rem;
+    padding: 20px;
+    animation: slideInLeft 0.8s ease-out;
+}
+
+.infoLeft,
+.infoRight {
+    flex: 1;
+    padding: 20px;
+    background: linear-gradient(135deg, #ffffffcc, #f8f9ffcc);
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+.infoLeft:hover,
+.infoRight:hover {
+    transform: translateY(-5px);
+}
+
+.infoLeft h1,
+.infoRight h1 {
+    color: #667eea;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    position: relative;
+}
+
+.infoLeft h1::after,
+.infoRight h1::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 28px;
+    height: 3px;
+    background: linear-gradient(45deg, #ff6b6b, #ffd93d);
+    border-radius: 3px;
+}
+
+.infoLeft p,
+.infoRight p {
+    color: #444;
+    line-height: 1.5;
+    font-size: 0.95rem;
+}
+
+/* 애니메이션 */
+@keyframes floatSkill {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* 공통 카드 그림자 */
+.profileBox,
+.infoUp,
+.infoLeft,
+.infoRight {
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.10);
+    /* 부드럽게 퍼지는 그림자 */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover 시 조금 더 강조 */
+.profileBox:hover,
+.infoUp:hover,
+.infoLeft:hover,
+.infoRight:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.10);
+    /* 더 진하고 멀리 */
+}

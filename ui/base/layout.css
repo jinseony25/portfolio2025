@@ -1,0 +1,43 @@
+/* === Global layout & fullpage scroll === */
+html, body {
+  height: 100%;
+  margin: 0;
+  scroll-behavior: smooth;
+}
+
+/* 스크롤은 body만 담당 -> 중복 스크롤바 방지 */
+html { overflow: hidden; }      /* ← html은 숨기고 */
+body {
+  overflow-y: auto;             /* ← body만 스크롤 */
+  overflow-x: hidden;
+  scroll-snap-type: y mandatory;/* 섹션 스냅은 body에만 */
+  font-family: "Nunito", sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background: linear-gradient(135deg, #E8FFF6 0%, #FFFBEA 100%);
+}
+
+/* 공통 타이포 */
+body, h1, h2, h3, h4, h5, h6, p, span, li, a {
+  font-family: "Nunito", sans-serif;
+}
+
+/* 스냅 섹션 공통 */
+.section {
+  /* 모바일 주소창 높이 변화 대응 */
+  min-height: 100svh;  /* 최신 브라우저 */
+  min-height: 100vh;   /* 폴백 */
+  scroll-snap-align: start;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 4rem 2rem;  /* 섹션 패딩 */
+  text-align: center;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}

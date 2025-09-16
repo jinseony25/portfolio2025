@@ -1,0 +1,124 @@
+/* 랜딩 배경 */
+#landing {
+    background-image: url("../../img/landing/background.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100vh;
+}
+
+/* 랜딩 애니메이션 */
+.landing-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    position: relative;
+    /* 자식 absolute 정렬용 */
+}
+
+/* 팝업 효과 (첫 등장 1회만 실행) */
+.pop-once {
+    animation: popOnce 0.8s ease-out 1;
+}
+
+/* 중앙 겹치기용: 부모 기준 absolute */
+.floating,
+.floatingTxt {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 1200px;
+    height: 1200px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    transform: translate(-50%, -50%);
+    animation: floatY 3s ease-in-out infinite;
+}
+
+/* 이미지 각각 지정 */
+.floating {
+    background-image: url("../../img/landing/landing.png");
+    background-size: 90%;
+}
+
+
+/* 플로팅 효과 */
+@keyframes floatY {
+
+    0%,
+    100% {
+        transform: translate(-50%, -50%) translateY(0);
+    }
+
+    50% {
+        transform: translate(-50%, -50%) translateY(-20px);
+    }
+}
+
+/* 팝업 효과 */
+@keyframes popOnce {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+
+    60% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+
+    80% {
+        transform: scale(0.9);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* 랜딩 텍스트 */
+.landing-text {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 1980px;   /* 텍스트가 화면 밖으로 안 나가도록 제한 */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;     /* 좌우 여백 */
+    color: #111;
+    box-sizing: border-box;
+}
+
+.landing-text .left {
+    color: #FF6B81;
+    font-size: 18px;
+}
+
+.landing-text .right {
+    font-size: 28px;
+
+    color: #FF6B81;
+}
+
+/* 공통 섹션 */
+.section {
+    min-height: 100vh;
+    padding: 6rem 2rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.container {
+    max-width: 1200px;
+    width: 100%;
+    text-align: center;
+}

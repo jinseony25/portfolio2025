@@ -1,0 +1,128 @@
+/* CONTACT */
+#contact {
+    background: linear-gradient(135deg, #FAF6B6 0%, #FFF2CC 100%);
+    padding: 6rem 2rem;
+    width: 100%;
+    background: linear-gradient(to bottom, #E9F2BF 0%, #8fd5f3 100%);
+}
+
+.section-title {
+    font-size: 3rem;
+    color: #333;
+    margin-bottom: 3rem;
+    text-align: center;
+    position: relative;
+}
+
+.section-title::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #f39c12, #d35400);
+    margin: 1rem auto 0;
+    border-radius: 2px;
+}
+
+.contact-grid {
+    display: flex;
+    flex-wrap: nowrap;
+    /* 반응형 대응 */
+    justify-content: center;
+    gap: 2rem;
+}
+
+.contact-item {
+    background: rgba(255, 255, 255, 0.7);
+    padding: 2rem;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    max-width: 280px;
+    flex: 1 1 250px;
+    text-align: center;
+}
+
+.contact-item:hover {
+    transform: translateY(-8px) scale(1.03);
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.contact-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #f39c12;
+}
+
+.contact-item h3 {
+    font-size: 1.4rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.contact-item p {
+    color: #444;
+    font-size: 1rem;
+}
+
+.contact-item p a {
+    color: #2980b9;
+    text-decoration: none;
+}
+
+.contact-item p a:hover {
+    text-decoration: underline;
+}
+
+/* 풀페이지 스크롤 */
+.section {
+    height: 100vh;
+    /* 각 섹션, 프로젝트 카드 한 화면 꽉 채우기 */
+    scroll-snap-align: start;
+}
+
+/* 애니메이션 */
+@keyframes bounce-in {
+    0% {
+        transform: scale(0.3);
+        opacity: 0;
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    70% {
+        transform: scale(0.9);
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes slide-up {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-20px) rotate(180deg);
+    }
+}

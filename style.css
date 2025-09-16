@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+/* === Base Styles === */
+@import url('./ui/base/reset.css');
+@import url('./ui/base/layout.css');
+@import url('./ui/base/media.css');
+
+/* === Component Styles === */
+@import url('./ui/component/header.css');
+@import url('./ui/component/landing.css');
+@import url('./ui/component/about.css');
+@import url('./ui/component/project.css');
+@import url('./ui/component/contact.css');
+@import url('./ui/component/ending.css');

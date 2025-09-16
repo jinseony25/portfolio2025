@@ -1,0 +1,51 @@
+/* 네비게이션 */
+header {
+    position: fixed;
+    padding: .5rem 0;
+    z-index: 1000;
+    width: 100%;
+}
+
+header nav {
+    width: 100%;
+}
+
+header .nav-links {
+    display: flex;
+    list-style: none;
+    justify-content: center;   /* 중앙 정렬 */
+    gap: 100px;                 /* 아이템 간격 (기존보다 좁힘) */
+    margin: 0;
+    padding: 0 40px;           /* 좌우 여백 줄임 */
+}
+
+header .nav-links a {
+    font-size: 15px;
+    font-weight: 400;
+    display: block;
+    text-decoration: none;
+    color: #fff;
+    padding: 0.5rem 1rem;      /* 아이템 내부 좌우 패딩 줄임 */
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+header .nav-links a:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-3px);
+    box-shadow: 0 3px 10px rgba(81, 81, 81, 0.15);
+}
+
+
+/* 페이지 이동시 네비게이션 색깔 변경 */
+.nav-links a {
+  color: #fff;
+  transition: color 0.3s ease;
+}
+
+/* 스크롤 내려왔을 때 → 글자 어두운 색 */
+header.scrolled .nav-links a {
+  color: #4B4B7A;
+}
