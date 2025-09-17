@@ -1,0 +1,237 @@
+/* 3D 모던 스타일 커서 효과 */
+
+/* 기본 커서 변경 - 심플한 원형 */
+* {
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8" fill="%2300D4FF" opacity="0.8"/><circle cx="12" cy="12" r="4" fill="%23FFFFFF"/></svg>'), auto;
+}
+
+/* 버튼 및 링크에 포인터 커서 */
+button, a, .btn, .nav-links a, .contact-item {
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28"><circle cx="14" cy="14" r="10" fill="%23FF6B9D" opacity="0.9"/><circle cx="14" cy="14" r="6" fill="%23FFFFFF"/><circle cx="14" cy="14" r="2" fill="%23FF6B9D"/></svg>'), pointer;
+}
+
+/* 입력 필드에 텍스트 커서 */
+input, textarea {
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><rect x="11" y="6" width="2" height="12" fill="%23667eea" rx="1"/><rect x="9" y="6" width="6" height="1.5" fill="%23667eea"/><rect x="9" y="16.5" width="6" height="1.5" fill="%23667eea"/></svg>'), text;
+}
+
+/* 3D 스타일 파티클 효과 */
+.cursor-particle {
+    position: fixed;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    animation: particle3D 1.2s ease-out forwards;
+}
+
+.cursor-particle.blue { background: linear-gradient(135deg, #00D4FF, #0099CC); }
+.cursor-particle.pink { background: linear-gradient(135deg, #FF6B9D, #FF4081); }
+.cursor-particle.yellow { background: linear-gradient(135deg, #FFD93D, #FFC107); }
+.cursor-particle.green { background: linear-gradient(135deg, #4CAF50, #66BB6A); }
+.cursor-particle.purple { background: linear-gradient(135deg, #9C27B0, #BA68C8); }
+
+@keyframes particle3D {
+    0% {
+        opacity: 1;
+        transform: scale(0) translateY(0) rotateZ(0deg);
+        box-shadow: 0 0 0 rgba(255, 255, 255, 0.5);
+    }
+    50% {
+        opacity: 0.8;
+        transform: scale(1.5) translateY(-20px) rotateZ(180deg);
+        box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0.5) translateY(-40px) rotateZ(360deg);
+        box-shadow: 0 10px 25px rgba(255, 255, 255, 0);
+    }
+}
+
+/* 3D 형태 이펙트 */
+.cursor-shape {
+    position: fixed;
+    pointer-events: none;
+    z-index: 9998;
+    animation: shape3D 2s ease-out forwards;
+}
+
+.cursor-shape.sphere {
+    width: 20px;
+    height: 20px;
+    background: linear-gradient(135deg, #00D4FF 0%, #0099CC 100%);
+    border-radius: 50%;
+    box-shadow: 
+        inset -3px -3px 6px rgba(0, 0, 0, 0.2),
+        inset 3px 3px 6px rgba(255, 255, 255, 0.8),
+        0 8px 16px rgba(0, 212, 255, 0.3);
+}
+
+.cursor-shape.cube {
+    width: 16px;
+    height: 16px;
+    background: linear-gradient(135deg, #FF6B9D 0%, #FF4081 100%);
+    border-radius: 3px;
+    box-shadow: 
+        inset -2px -2px 4px rgba(0, 0, 0, 0.2),
+        inset 2px 2px 4px rgba(255, 255, 255, 0.8),
+        0 6px 12px rgba(255, 107, 157, 0.3);
+}
+
+.cursor-shape.triangle {
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 16px solid #FFD93D;
+    filter: drop-shadow(0 4px 8px rgba(255, 217, 61, 0.3));
+}
+
+@keyframes shape3D {
+    0% {
+        opacity: 1;
+        transform: scale(0.5) translateY(0) rotateX(0deg) rotateY(0deg);
+    }
+    50% {
+        opacity: 0.8;
+        transform: scale(1.2) translateY(-25px) rotateX(180deg) rotateY(180deg);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0.7) translateY(-50px) rotateX(360deg) rotateY(360deg);
+    }
+}
+
+/* 웨이브 효과 */
+.cursor-wave {
+    position: fixed;
+    width: 30px;
+    height: 30px;
+    border: 2px solid #00D4FF;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9997;
+    animation: wave3D 1s ease-out forwards;
+}
+
+@keyframes wave3D {
+    0% {
+        opacity: 1;
+        transform: scale(0.5);
+        border-color: #00D4FF;
+        box-shadow: 0 0 0 rgba(0, 212, 255, 0.5);
+    }
+    50% {
+        opacity: 0.6;
+        transform: scale(2);
+        border-color: #FF6B9D;
+        box-shadow: 0 0 20px rgba(255, 107, 157, 0.3);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(3.5);
+        border-color: #FFD93D;
+        box-shadow: 0 0 40px rgba(255, 217, 61, 0);
+    }
+}
+
+/* 클릭시 버스트 효과 */
+.cursor-burst {
+    position: fixed;
+    pointer-events: none;
+    z-index: 9996;
+}
+
+.burst-particle {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    animation: burstOut 0.8s ease-out forwards;
+}
+
+.burst-particle:nth-child(1) { background: #00D4FF; transform: rotate(0deg); }
+.burst-particle:nth-child(2) { background: #FF6B9D; transform: rotate(45deg); }
+.burst-particle:nth-child(3) { background: #FFD93D; transform: rotate(90deg); }
+.burst-particle:nth-child(4) { background: #4CAF50; transform: rotate(135deg); }
+.burst-particle:nth-child(5) { background: #9C27B0; transform: rotate(180deg); }
+.burst-particle:nth-child(6) { background: #FF4081; transform: rotate(225deg); }
+.burst-particle:nth-child(7) { background: #66BB6A; transform: rotate(270deg); }
+.burst-particle:nth-child(8) { background: #FFC107; transform: rotate(315deg); }
+
+@keyframes burstOut {
+    0% {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(40px) scale(0.3);
+    }
+}
+
+/* 3D 글로우 효과 */
+.cursor-glow {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9995;
+    background: radial-gradient(circle, rgba(0, 212, 255, 0.3) 0%, transparent 70%);
+    animation: glow3D 1.5s ease-out forwards;
+}
+
+@keyframes glow3D {
+    0% {
+        opacity: 0.8;
+        transform: scale(0.3);
+        background: radial-gradient(circle, rgba(0, 212, 255, 0.4) 0%, transparent 70%);
+    }
+    50% {
+        opacity: 0.5;
+        transform: scale(1.5);
+        background: radial-gradient(circle, rgba(255, 107, 157, 0.3) 0%, transparent 70%);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(2.5);
+        background: radial-gradient(circle, rgba(255, 217, 61, 0.2) 0%, transparent 70%);
+    }
+}
+
+/* 호버시 3D 효과 */
+.btn:hover, .nav-links a:hover, .contact-item:hover {
+    animation: hover3D 0.8s ease-in-out infinite;
+    box-shadow: 
+        0 10px 25px rgba(0, 0, 0, 0.1),
+        0 0 20px rgba(0, 212, 255, 0.3);
+}
+
+@keyframes hover3D {
+    0% {
+        transform: translateY(0) rotateX(0deg);
+    }
+    50% {
+        transform: translateY(-3px) rotateX(5deg);
+    }
+    100% {
+        transform: translateY(0) rotateX(0deg);
+    }
+}
+
+/* 텍스트에도 3D 효과 */
+.portfolio-text {
+    text-shadow: 
+        2px 2px 4px rgba(0, 0, 0, 0.1),
+        0 0 10px rgba(0, 212, 255, 0.2);
+    transition: text-shadow 0.3s ease;
+}
+
+.portfolio-text:hover {
+    text-shadow: 
+        3px 3px 6px rgba(0, 0, 0, 0.2),
+        0 0 20px rgba(255, 107, 157, 0.4);
+}

@@ -5,23 +5,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>2025 인천 펜타포트 락 페스티벌</title>
-    <!-- Google Fonts -->
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Poppins:wght@400;500;700&display=swap"
         rel="stylesheet">
-    <!-- Font Awesome -->
+
     <script src="https://kit.fontawesome.com/73320eca81.js" crossorigin="anonymous"></script>
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/style.css">
-    <!-- 웹앱아이콘 및 파비콘 설정하기 -->
-    <link rel="apple-touch-icon" href="resauce/img/logo/logo.png">
-    <link rel="shortcut icon" href="resauce/img/logo/logo.png">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="apple-touch-icon" href="resources/img/logo/logo.png">
+    <link rel="shortcut icon" href="resources/img/logo/logo.png">
 </head>
 
 <body>
-    <!-- Navigation Bar -->
+
+    <!-- hero section -->
     <nav class="navbar">
         <div class="nav-container">
             <a href="#" class="logo">
@@ -33,7 +33,7 @@
             </a>
             <ul class="nav-menu">
                 <li><a href="#lineup">LINE UP</a></li>
-                <li><a href="#tickets">TICKET</a></li>
+                <li><a href="#booking-modal">TICKET</a></li>
                 <li><a href="#info">INFORMATION</a></li>
                 <li><a href="#gallery">GALLERY</a></li>
                 <li><a href="#directions">DIRECTIONS</a></li>
@@ -46,10 +46,9 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <section class="hero">
         <video class="hero-video" autoplay muted loop playsinline>
-            <source src="resauce/vid/penta_video.mp4" type="video/mp4">
+            <source src="resources/vid/penta_video.mp4" type="video/mp4">
         </video>
         <div class="hero-overlay"></div>
         <div class="hero-content">
@@ -60,44 +59,150 @@
         <a href="#reviews" class="scroll-down"><i class="fa-solid fa-chevron-down"></i></a>
     </section>
 
-    <!-- Reviews Section -->
+    <!-- review section -->
     <section class="reviews-section" id="reviews">
         <h2 class="section-title">VOICE OF THE UNIVERSE</h2>
         <div class="reviews-scroll">
+
+            <!-- 카드 1세트 -->
             <div class="review-card">
-                <div class="stars">★★★★★</div>
+                <div class="review-top">
+                    <div class="review-img">
+                        <img src="resources/img/review/review.jpg" alt="reviewer">
+                    </div>
+                    <div class="stars">★★★★★</div>
+                </div>
                 <p class="review-text">"락은 시끄럽기만 한 음악인 줄 알았는데, 그 안엔 순수한 열정이 담겨 있었어요."</p>
                 <div class="review-author">rock*** 2024.08.01</div>
             </div>
+
             <div class="review-card">
-                <div class="stars">★★★★★</div>
+                <div class="review-top">
+                    <div class="review-img">
+                        <img src="resources/img/review/r.jpg" alt="reviewer">
+                    </div>
+                    <div class="stars">★★★★★</div>
+                </div>
                 <p class="review-text">"내년에도 무조건 갑니다. 이건 단순한 공연이 아니라 제게는 하나의 축제예요."</p>
                 <div class="review-author">sun*** 2024.08.01</div>
             </div>
+
             <div class="review-card">
-                <div class="stars">★★★★★</div>
+                <div class="review-top">
+                    <div class="review-img">
+                        <img src="resources/img/review/re.jpg" alt="reviewer">
+                    </div>
+                    <div class="stars">★★★★★</div>
+                </div>
                 <p class="review-text">"락페 처음 갔는데, 이게 진짜 라이브의 맛이구나 싶더라고요. 기타 소리가 아직도 생생해요."</p>
                 <div class="review-author">happy*** 2024.08.03</div>
             </div>
+
             <div class="review-card">
-                <div class="stars">★★★★★</div>
+                <div class="review-top">
+                    <div class="review-img">
+                        <img src="resources/img/review/rev.jpg" alt="reviewer">
+                    </div>
+                    <div class="stars">★★★★★</div>
+                </div>
                 <p class="review-text">"옆에 같이 소리지르던 형이랑 친구됨. 락이 우리를 연결시켜줌."</p>
                 <div class="review-author">run*** 2024.08.02</div>
             </div>
+
             <div class="review-card">
-                <div class="stars">★★★★★</div>
+                <div class="review-top">
+                    <div class="review-img">
+                        <img src="resources/img/review/revi.jpg" alt="reviewer">
+                    </div>
+                    <div class="stars">★★★★★</div>
+                </div>
                 <p class="review-text">"이 날의 기타 솔로는 아직도 귓가에 맴돕니다. 처음부터 끝까지 에너지 폭발!"</p>
                 <div class="review-author">rock*** 2024.08.03</div>
             </div>
+
             <div class="review-card">
-                <div class="stars">★★★★★</div>
+                <div class="review-top">
+                    <div class="review-img">
+                        <img src="resources/img/review/revie.jpg" alt="reviewer">
+                    </div>
+                    <div class="stars">★★★★★</div>
+                </div>
                 <p class="review-text">"비 맞으면서도 뛰고 또 뛰었습니다. 옆사람이랑 모르는 사이인데도 같이..."</p>
                 <div class="review-author">wild*** 2024.08.05</div>
             </div>
+
+            <!-- 카드 2세트 (복제) -->
+            <div class="review-card">
+                <div class="review-top">
+                    <div class="review-img">
+                        <img src="resources/img/review/review.jpg" alt="reviewer">
+                    </div>
+                    <div class="stars">★★★★★</div>
+                </div>
+                <p class="review-text">"락은 시끄럽기만 한 음악인 줄 알았는데, 그 안엔 순수한 열정이 담겨 있었어요."</p>
+                <div class="review-author">rock*** 2024.08.01</div>
+            </div>
+
+            <div class="review-card">
+                <div class="review-top">
+                    <div class="review-img">
+                        <img src="resources/img/review/r.jpg" alt="reviewer">
+                    </div>
+                    <div class="stars">★★★★★</div>
+                </div>
+                <p class="review-text">"내년에도 무조건 갑니다. 이건 단순한 공연이 아니라 제게는 하나의 축제예요."</p>
+                <div class="review-author">sun*** 2024.08.01</div>
+            </div>
+
+            <div class="review-card">
+                <div class="review-top">
+                    <div class="review-img">
+                        <img src="resources/img/review/re.jpg" alt="reviewer">
+                    </div>
+                    <div class="stars">★★★★★</div>
+                </div>
+                <p class="review-text">"락페 처음 갔는데, 이게 진짜 라이브의 맛이구나 싶더라고요. 기타 소리가 아직도 생생해요."</p>
+                <div class="review-author">happy*** 2024.08.03</div>
+            </div>
+
+            <div class="review-card">
+                <div class="review-top">
+                    <div class="review-img">
+                        <img src="resources/img/review/rev.jpg" alt="reviewer">
+                    </div>
+                    <div class="stars">★★★★★</div>
+                </div>
+                <p class="review-text">"옆에 같이 소리지르던 형이랑 친구됨. 락이 우리를 연결시켜줌."</p>
+                <div class="review-author">run*** 2024.08.02</div>
+            </div>
+
+            <div class="review-card">
+                <div class="review-top">
+                    <div class="review-img">
+                        <img src="resources/img/review/revi.jpg" alt="reviewer">
+                    </div>
+                    <div class="stars">★★★★★</div>
+                </div>
+                <p class="review-text">"이 날의 기타 솔로는 아직도 귓가에 맴돕니다. 처음부터 끝까지 에너지 폭발!"</p>
+                <div class="review-author">rock*** 2024.08.03</div>
+            </div>
+
+            <div class="review-card">
+                <div class="review-top">
+                    <div class="review-img">
+                        <img src="resources/img/review/revie.jpg" alt="reviewer">
+                    </div>
+                    <div class="stars">★★★★★</div>
+                </div>
+                <p class="review-text">"비 맞으면서도 뛰고 또 뛰었습니다. 옆사람이랑 모르는 사이인데도 같이..."</p>
+                <div class="review-author">wild*** 2024.08.05</div>
+            </div>
+
         </div>
     </section>
 
-    <!-- Lineup Section -->
+
+    <!-- lineup section -->
     <section class="lineup-section" id="lineup">
         <div class="lineup-container">
             <h2 class="section-title">STELLAR LINEUP</h2>
@@ -106,56 +211,56 @@
                     <div class="artist-image artist-1"></div>
                     <div class="artist-info">
                         <div class="artist-name">Asian Kung-fu Generation</div>
-                        <div class="artist-genre">Alternative Rock</div>
+                        <div class="artist-genre">8 / 1 FRI</div>
                     </div>
                 </div>
                 <div class="artist-card featured-artist">
                     <div class="artist-image artist-2"></div>
                     <div class="artist-info">
                         <div class="artist-name">PULP</div>
-                        <div class="artist-genre">Britpop</div>
+                        <div class="artist-genre">8 / 2 SAT</div>
                     </div>
                 </div>
                 <div class="artist-card">
                     <div class="artist-image artist-3"></div>
                     <div class="artist-info">
-                        <div class="artist-name">Beck</div>
-                        <div class="artist-genre">Alternative</div>
+                        <div class="artist-name">Little Simz</div>
+                        <div class="artist-genre">8 / 1 FRI</div>
                     </div>
                 </div>
                 <div class="artist-card featured-artist">
                     <div class="artist-image artist-4"></div>
                     <div class="artist-info">
-                        <div class="artist-name">Little Simz</div>
-                        <div class="artist-genre">Hip Hop</div>
+                        <div class="artist-name">Beck</div>
+                        <div class="artist-genre">8 / 3 SUN</div>
                     </div>
                 </div>
                 <div class="artist-card">
                     <div class="artist-image artist-5"></div>
                     <div class="artist-info">
                         <div class="artist-name">장기하</div>
-                        <div class="artist-genre">Indie Rock</div>
+                        <div class="artist-genre">8 / 1 FRI</div>
                     </div>
                 </div>
                 <div class="artist-card">
                     <div class="artist-image artist-6"></div>
                     <div class="artist-info">
                         <div class="artist-name">크라잉넛</div>
-                        <div class="artist-genre">Punk Rock</div>
+                        <div class="artist-genre">8 / 1 FRI</div>
                     </div>
                 </div>
                 <div class="artist-card featured-artist">
                     <div class="artist-image artist-7"></div>
                     <div class="artist-info">
                         <div class="artist-name">beabadoobee</div>
-                        <div class="artist-genre">Dream Pop</div>
+                        <div class="artist-genre">8 / 1 FRI</div>
                     </div>
                 </div>
                 <div class="artist-card">
                     <div class="artist-image artist-8"></div>
                     <div class="artist-info">
                         <div class="artist-name">메써드</div>
-                        <div class="artist-genre">Hip Hop</div>
+                        <div class="artist-genre">8 / 2 SAT</div>
                     </div>
                 </div>
             </div>
@@ -165,7 +270,7 @@
         </div>
     </section>
 
-    <!-- Booking Section -->
+    <!-- booking section -->
     <div id="booking-modal" class="modal">
         <div class="modal-content">
             <span class="close-button">&times;</span>
@@ -213,7 +318,7 @@
         </div>
     </div>
 
-    <!-- Information Section (Timetable & Map) -->
+    <!-- info section -->
     <section class="info-section" id="info">
         <div class="info-container">
             <div class="info-card timetable">
@@ -227,14 +332,12 @@
         </div>
     </section>
 
-
-    <!-- Notice & QnA Section (Accordion) -->
+    <!-- board section -->
     <section class="board-section" id="notice">
         <div class="container">
             <h2 class="section-title">NOTICE & Q&A</h2>
             <div class="combined-board">
 
-                <!-- Pinned Notices -->
                 <div class="board-row pinned">
                     <div class="board-cell title">
                         <i class="fa-solid fa-thumbtack"></i>
@@ -242,6 +345,7 @@
                     </div>
                     <div class="board-cell date">2025.07.03</div>
                 </div>
+
                 <div class="board-row pinned">
                     <div class="board-cell title">
                         <i class="fa-solid fa-thumbtack"></i>
@@ -250,7 +354,6 @@
                     <div class="board-cell date">2025.07.01</div>
                 </div>
 
-                <!-- QnA Accordion List -->
                 <div class="board-row accordion-item">
                     <div class="accordion-header">
                         <div class="board-cell title">
@@ -261,10 +364,11 @@
                         <div class="board-cell icon"><i class="fa-solid fa-chevron-down"></i></div>
                     </div>
                     <div class="accordion-content">
-                        <p><strong>A.</strong> 분실 또는 훼손된 티켓은 재발행이 절대 불가능하며, 티켓이 없을 경우 입장이 제한됩니다. 티켓 보관에 각별히
-                            유의해주시기 바랍니다.</p>
+                        <p><strong>A.</strong> 분실 또는 훼손된 티켓은 재발행이 절대 불가능하며, 티켓이 없을 경우 입장이 제한됩니다. 티켓 보관에 각별히 유의해주시기 바랍니다.
+                        </p>
                     </div>
                 </div>
+
                 <div class="board-row accordion-item">
                     <div class="accordion-header">
                         <div class="board-cell title">
@@ -275,10 +379,11 @@
                         <div class="board-cell icon"><i class="fa-solid fa-chevron-down"></i></div>
                     </div>
                     <div class="accordion-content">
-                        <p><strong>A.</strong> 그라운드 시트(돗자리)는 지정된 피크닉 존에서만 사용 가능합니다. 스탠딩 존에서의 사용은 안전상의 이유로
-                            제한됩니다. 텐트, 의자 등 다른 캠핑 용품의 반입은 불가능합니다.</p>
+                        <p><strong>A.</strong> 그라운드 시트(돗자리)는 지정된 피크닉 존에서만 사용 가능합니다. 스탠딩 존에서의 사용은 안전상의 이유로 제한됩니다. 텐트, 의자
+                            등 다른 캠핑 용품의 반입은 불가능합니다.</p>
                     </div>
                 </div>
+
                 <div class="board-row accordion-item">
                     <div class="accordion-header">
                         <div class="board-cell title">
@@ -289,12 +394,13 @@
                         <div class="board-cell icon"><i class="fa-solid fa-chevron-down"></i></div>
                     </div>
                     <div class="accordion-content">
-                        <p><strong>A.</strong> 일반적인 우천 시에는 공연이 정상적으로 진행됩니다. 다만, 태풍, 폭우 등 아티스트와 관객의 안전에 위협이
-                            되는 심각한 자연재해가 발생할 경우 주최 측의 판단하에 공연이 중단될 수 있습니다.</p>
+                        <p><strong>A.</strong> 일반적인 우천 시에는 공연이 정상적으로 진행됩니다. 다만, 태풍, 폭우 등 아티스트와 관객의 안전에 위협이 되는 심각한 자연재해가
+                            발생할 경우 주최 측의 판단하에 공연이 중단될 수 있습니다.</p>
                     </div>
                 </div>
 
             </div>
+
             <div class="pagination">
                 <a href="#">&lt;</a>
                 <a href="#" class="active">1</a>
@@ -305,59 +411,91 @@
         </div>
     </section>
 
+<section class="limited-section" id="store">
+    <div class="container">
+        <h2 class="section-title">LIMITED EDITION</h2>
 
-    <!-- Gallery Section -->
-    <section class="gallery-section" id="gallery">
-        <h2 class="section-title">GALACTIC MOMENTS</h2>
-        <div class="gallery-scroll">
-            <div class="gallery-item gallery-1"></div>
-            <div class="gallery-item gallery-2"></div>
-            <div class="gallery-item gallery-3"></div>
-            <div class="gallery-item gallery-4"></div>
-            <div class="gallery-item gallery-5"></div>
-        </div>
-    </section>
-
-    <section class="limited-section" id="store">
-        <div class="container">
-            <h2 class="section-title">LIMITED EDITION</h2>
-            <div class="products-grid">
-                <div class="product-card">
-                    <div class="product-image product-1"></div>
-                    <div class="product-info">
-                        <p>2025 PENTAPORT ORT 핀버튼</p>
-                        <h4>3,000원</h4>
+        <div class="products-grid">
+            <div class="product-card">
+                <div class="product-image product-1"></div>
+                <div class="product-info">
+                    <p>2025 PENTAPORT ORT 핀버튼</p>
+                    <div class="price-row">
+                        <del class="original">5,000원</del>
+                        <span class="badge-percent">40% OFF</span>
                     </div>
-                </div>
-                <div class="product-card">
-                    <div class="product-image product-2"></div>
-                    <div class="product-info">
-                        <p>2025 PENTAPORT 트라이벌 로고 반다나 블랙</p>
-                        <h4>17,100원</h4>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <div class="product-image product-3"></div>
-                    <div class="product-info">
-                        <p>2025 PENTAPORT 20주년 키링 세트</p>
-                        <h4>17,500원</h4>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <div class="product-image product-4"></div>
-                    <div class="product-info">
-                        <p>2025 PENTAPORT 데스메탈 로고 볼캡 차콜</p>
-                        <h4>35,000원</h4>
-                    </div>
+                    <h4 class="sale">3,000원</h4>
                 </div>
             </div>
-            <div class="shop-button-wrapper">
-                <a href="#" class="cta-button">SHOP NOW</a>
-            </div>
-        </div>
-    </section>
 
-    <!-- Directions Section (Content Added) -->
+            <div class="product-card">
+                <div class="product-image product-2"></div>
+                <div class="product-info">
+                    <p>2025 PENTAPORT 트라이벌 로고 반다나 블랙</p>
+                    <div class="price-row">
+                        <del class="original">19,000원</del>
+                        <span class="badge-percent">10% OFF</span>
+                    </div>
+                    <h4 class="sale">17,100원</h4>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image product-3"></div>
+                <div class="product-info">
+                    <p>2025 PENTAPORT 20주년 키링 세트</p>
+                    <div class="price-row">
+                        <del class="original">25,000원</del>
+                        <span class="badge-percent">30% OFF</span>
+                    </div>
+                    <h4 class="sale">17,500원</h4>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image product-4"></div>
+                <div class="product-info">
+                    <p>2025 PENTAPORT 데스메탈 로고 볼캡 차콜</p>
+                    <div class="price-row">
+                        <del class="original">50,000원</del>
+                        <span class="badge-percent">30% OFF</span>
+                    </div>
+                    <h4 class="sale">35,000원</h4>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image product-5"></div>
+                <div class="product-info">
+                    <p>2025 PENTAPORT 트라이벌 로고 볼캡 그레이</p>
+                    <div class="price-row">
+                        <del class="original">25,000원</del>
+                        <span class="badge-percent">30% OFF</span>
+                    </div>
+                    <h4 class="sale">17,500원</h4>
+                </div>
+            </div>
+            
+            <div class="product-card">
+                <div class="product-image product-6"></div>
+                <div class="product-info">
+                    <p>2025 PENTAPORT 하트 그래픽 짐색 화이트</p>
+                    <div class="price-row">
+                        <del class="original">50,000원</del>
+                        <span class="badge-percent">30% OFF</span>
+                    </div>
+                    <h4 class="sale">35,000원</h4>
+                </div>
+            </div>
+        
+        </div> <div class="shop-button-wrapper">
+            <a href="#" class="cta-button">SHOP NOW</a>
+        </div>
+    </div>
+</section>
+
+
+    <!-- directions section -->
     <section class="directions-section" id="directions">
         <div class="container">
             <h2 class="section-title">DIRECTIONS</h2>
@@ -368,10 +506,6 @@
                         allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
                 <div class="directions-info">
-                    <!-- <div class="info-block">
-                        <h4><i class="fa-solid fa-map-location-dot"></i> 주소</h4>
-                        <p>인천광역시 연수구 센트럴로 350 (송도동)</p>
-                    </div> -->
                     <div class="info-block">
                         <h4><i class="fa-solid fa-train-subway"></i> 대중교통</h4>
                         <p><strong>지하철:</strong> 인천 1호선 송도달빛축제공원역 5번 출구, 도보 5분</p>
@@ -380,8 +514,7 @@
                     <div class="info-block">
                         <h4><i class="fa-solid fa-car"></i> 자가용 및 주차</h4>
                         <p><strong>네비게이션:</strong> '송도달빛축제공원' 검색</p>
-                        <p><strong>주차:</strong> 공원 내 제1, 2주차장 이용 가능 (유료). 주차 공간이 협소하오니 가급적 대중교통 이용을 권장합니다.
-                        </p>
+                        <p><strong>주차:</strong> 공원 내 제1, 2주차장 이용 가능 (유료). 주차 공간이 협소하오니 가급적 대중교통 이용을 권장합니다.</p>
                     </div>
                     <div class="info-block">
                         <h4><i class="fa-solid fa-bus"></i> 셔틀버스</h4>
@@ -392,7 +525,7 @@
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- footer section -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
@@ -418,6 +551,16 @@
         </div>
     </footer>
 
+
+
+    <!-- info pop up -->
+    <div class="modal-overlay hidden">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <img src="" alt="Festival Info" class="modal-image">
+        </div>
+    </div>
+
     <script src="script.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
@@ -431,16 +574,13 @@
                     header.addEventListener('click', () => {
                         const wasActive = item.classList.contains('active');
 
-                        // Close all items
                         accordionItems.forEach(otherItem => {
                             otherItem.classList.remove('active');
                             otherItem.querySelector('.accordion-content').style.maxHeight = null;
                         });
 
-                        // If it wasn't active, open it
                         if (!wasActive) {
                             item.classList.add('active');
-                            // Set max-height to the actual height of the content
                             content.style.maxHeight = content.scrollHeight + "px";
                         }
                     });
@@ -448,31 +588,68 @@
             }
         });
 
-        // Booking Modal
         const ticketButton = document.querySelector('.hero-content .cta-button');
         const modal = document.getElementById('booking-modal');
         const closeButton = document.querySelector('.close-button');
 
         if (ticketButton && modal && closeButton) {
-            // TICKET OPEN 버튼 클릭 시 모달 열기
             ticketButton.addEventListener('click', (e) => {
                 e.preventDefault();
                 modal.style.display = 'block';
             });
 
-            // 닫기 버튼 클릭 시 모달 닫기
             closeButton.addEventListener('click', () => {
                 modal.style.display = 'none';
             });
 
-            // 모달 바깥 영역 클릭 시 모달 닫기
             window.addEventListener('click', (e) => {
                 if (e.target === modal) {
                     modal.style.display = 'none';
                 }
             });
         }
+
+        // 필요한 DOM 요소들을 선택합니다.
+        const infoImages = document.querySelectorAll('.info-image');
+        const modalOverlay = document.querySelector('.modal-overlay');
+        const modalImage = document.querySelector('.modal-image');
+        const closeBtn = document.querySelector('.close-btn');
+
+        // infoImages나 modalOverlay가 null이면 HTML에 해당 요소가 없거나 오타가 난 것입니다.
+        if (infoImages.length > 0 && modalOverlay && modalImage && closeBtn) {
+
+            // 각 info-image 카드에 클릭 이벤트를 추가합니다.
+            infoImages.forEach(imageCard => {
+                imageCard.addEventListener('click', () => {
+                    const style = window.getComputedStyle(imageCard);
+                    const bgImage = style.backgroundImage;
+                    const imageUrl = bgImage.slice(5, -2); // url("...") 형식에서 주소 추출
+
+                    modalImage.src = imageUrl;
+                    modalOverlay.classList.remove('hidden');
+                });
+            });
+
+            // 모달을 닫는 함수
+            function closeModal() {
+                modalOverlay.classList.add('hidden');
+            }
+
+            // 닫기 버튼을 클릭하면 모달을 닫습니다.
+            closeBtn.addEventListener('click', closeModal);
+
+            // 모달 배경을 클릭하면 모달을 닫습니다.
+            modalOverlay.addEventListener('click', (event) => {
+                if (event.target === modalOverlay) {
+                    closeModal();
+                }
+            });
+
+        } else {
+            console.error("팝업 기능에 필요한 HTML 요소를 찾을 수 없습니다. 클래스 이름을 확인해주세요.");
+        }
     </script>
+
 </body>
 
 </html>

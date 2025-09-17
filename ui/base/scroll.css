@@ -1,0 +1,277 @@
+/* 기본 스크롤바 - 네온 튜브 스타일 */
+::-webkit-scrollbar {
+    width: 16px;
+    background: 
+        radial-gradient(ellipse at center, rgba(0, 0, 0, 0.8) 0%, transparent 50%),
+        linear-gradient(90deg, 
+            rgba(0, 212, 255, 0.1) 0%, 
+            rgba(255, 107, 157, 0.1) 50%, 
+            rgba(255, 217, 61, 0.1) 100%);
+    border-radius: 12px;
+}
+
+/* 스크롤바 트랙 - 우주 터널 */
+::-webkit-scrollbar-track {
+    background: 
+        radial-gradient(circle at 20% 20%, rgba(138, 43, 226, 0.3) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(30, 144, 255, 0.3) 0%, transparent 50%),
+        radial-gradient(circle at 40% 70%, rgba(255, 20, 147, 0.2) 0%, transparent 50%),
+        linear-gradient(45deg, 
+            rgba(25, 25, 112, 0.8) 0%, 
+            rgba(72, 61, 139, 0.8) 50%, 
+            rgba(106, 90, 205, 0.8) 100%);
+    border-radius: 12px;
+    margin: 3px;
+    box-shadow: 
+        inset 0 0 10px rgba(138, 43, 226, 0.5),
+        inset 0 0 20px rgba(30, 144, 255, 0.3),
+        0 0 5px rgba(255, 255, 255, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+/* 스크롤바 트랙에 별빛 효과 */
+::-webkit-scrollbar-track::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(1px 1px at 20px 30px, white, transparent),
+        radial-gradient(1px 1px at 40px 70px, white, transparent),
+        radial-gradient(1px 1px at 60px 120px, white, transparent),
+        radial-gradient(1px 1px at 80px 160px, white, transparent),
+        radial-gradient(1px 1px at 30px 200px, white, transparent);
+    background-size: 100px 240px;
+    animation: stars 20s linear infinite;
+    opacity: 0.6;
+}
+
+@keyframes stars {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-240px); }
+}
+
+/* 스크롤바 썸 - 액체 블롭 스타일 */
+::-webkit-scrollbar-thumb {
+    background: 
+        radial-gradient(ellipse at top, #FF6B9D 0%, #FF1744 100%),
+        radial-gradient(ellipse at bottom, #00D4FF 0%, #0066CC 100%);
+    background-size: 100% 50%, 100% 50%;
+    background-position: top, bottom;
+    background-repeat: no-repeat;
+    border-radius: 12px;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 
+        0 0 15px rgba(255, 107, 157, 0.6),
+        0 0 25px rgba(0, 212, 255, 0.4),
+        inset 0 2px 5px rgba(255, 255, 255, 0.3),
+        inset 0 -2px 5px rgba(0, 0, 0, 0.2);
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    position: relative;
+    overflow: hidden;
+}
+
+/* 스크롤바 썸에 펄스 효과 */
+::-webkit-scrollbar-thumb::before {
+    content: '';
+    position: absolute;
+    top: 20%;
+    left: 20%;
+    right: 20%;
+    bottom: 20%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.6) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { 
+        transform: scale(0.8);
+        opacity: 0.8;
+    }
+    50% { 
+        transform: scale(1.2);
+        opacity: 0.4;
+    }
+}
+
+/* 호버시 - 용암 효과 */
+::-webkit-scrollbar-thumb:hover {
+    background: 
+        linear-gradient(45deg, 
+            #FF4500 0%, 
+            #FF6347 25%, 
+            #FF1493 50%, 
+            #8A2BE2 75%, 
+            #00CED1 100%);
+    box-shadow: 
+        0 0 25px rgba(255, 69, 0, 0.8),
+        0 0 35px rgba(255, 20, 147, 0.6),
+        0 0 45px rgba(0, 206, 209, 0.4),
+        inset 0 0 10px rgba(255, 255, 255, 0.4);
+    transform: scale(1.15) rotateZ(2deg);
+    border: 3px solid rgba(255, 255, 255, 0.6);
+    animation: lavaFlow 1.5s ease-in-out infinite;
+}
+
+@keyframes lavaFlow {
+    0%, 100% {
+        background-position: 0% 0%;
+    }
+    25% {
+        background-position: 100% 0%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    75% {
+        background-position: 0% 100%;
+    }
+}
+
+/* 클릭시 - 전기 효과 */
+::-webkit-scrollbar-thumb:active {
+    background: 
+        linear-gradient(90deg, 
+            #FFD700 0%, 
+            #FFFF00 20%, 
+            #00FFFF 40%, 
+            #FF00FF 60%, 
+            #00FF00 80%, 
+            #FFD700 100%);
+    background-size: 200% 100%;
+    box-shadow: 
+        0 0 20px rgba(255, 215, 0, 1),
+        0 0 30px rgba(0, 255, 255, 0.8),
+        0 0 40px rgba(255, 0, 255, 0.6),
+        inset 0 0 15px rgba(255, 255, 255, 0.5);
+    transform: scale(0.9) rotateZ(-2deg);
+    animation: electricity 0.1s linear infinite;
+}
+
+@keyframes electricity {
+    0% { background-position: 0% 0%; }
+    100% { background-position: 200% 0%; }
+}
+
+/* 가로 스크롤바 */
+::-webkit-scrollbar:horizontal {
+    height: 16px;
+}
+
+/* 특별한 이스터에그 - 무지개 파티 모드 */
+.party-scroll::-webkit-scrollbar-thumb {
+    animation: rainbowParty 1s linear infinite;
+}
+
+@keyframes rainbowParty {
+    0% { background: linear-gradient(45deg, #FF0000, #FF7F00); transform: rotateZ(0deg); }
+    12.5% { background: linear-gradient(45deg, #FF7F00, #FFFF00); transform: rotateZ(45deg); }
+    25% { background: linear-gradient(45deg, #FFFF00, #00FF00); transform: rotateZ(90deg); }
+    37.5% { background: linear-gradient(45deg, #00FF00, #0000FF); transform: rotateZ(135deg); }
+    50% { background: linear-gradient(45deg, #0000FF, #4B0082); transform: rotateZ(180deg); }
+    62.5% { background: linear-gradient(45deg, #4B0082, #9400D3); transform: rotateZ(225deg); }
+    75% { background: linear-gradient(45deg, #9400D3, #FF1493); transform: rotateZ(270deg); }
+    87.5% { background: linear-gradient(45deg, #FF1493, #FF69B4); transform: rotateZ(315deg); }
+    100% { background: linear-gradient(45deg, #FF69B4, #FF0000); transform: rotateZ(360deg); }
+}
+
+/* 슬라임 모드 - 끈적한 느낌 */
+.slime-scroll::-webkit-scrollbar-thumb {
+    background: 
+        radial-gradient(ellipse at top, #32CD32 0%, #228B22 50%, #006400 100%);
+    border-radius: 20px;
+    animation: slimeBounce 3s ease-in-out infinite;
+}
+
+@keyframes slimeBounce {
+    0%, 100% { 
+        border-radius: 20px;
+        transform: scaleY(1);
+    }
+    25% { 
+        border-radius: 20px 20px 40px 40px;
+        transform: scaleY(0.8);
+    }
+    50% { 
+        border-radius: 40px 40px 20px 20px;
+        transform: scaleY(1.2);
+    }
+    75% { 
+        border-radius: 30px;
+        transform: scaleY(0.9);
+    }
+}
+
+/* 글리치 효과 */
+.glitch-scroll::-webkit-scrollbar-thumb {
+    background: #FF00FF;
+    animation: glitch 0.3s linear infinite;
+}
+
+@keyframes glitch {
+    0% { 
+        background: #FF00FF;
+        transform: translateX(0);
+    }
+    10% { 
+        background: #00FFFF;
+        transform: translateX(-2px);
+    }
+    20% { 
+        background: #FFFF00;
+        transform: translateX(2px);
+    }
+    30% { 
+        background: #FF0000;
+        transform: translateX(-1px);
+    }
+    40% { 
+        background: #00FF00;
+        transform: translateX(1px);
+    }
+    50% { 
+        background: #0000FF;
+        transform: translateX(0);
+    }
+    60% { 
+        background: #FFFFFF;
+        transform: translateX(-3px);
+    }
+    70% { 
+        background: #000000;
+        transform: translateX(3px);
+    }
+    80% { 
+        background: #FF00FF;
+        transform: translateX(-1px);
+    }
+    90% { 
+        background: #00FFFF;
+        transform: translateX(1px);
+    }           
+    100% { 
+        background: #FF00FF;
+        transform: translateX(0);
+    }
+}
+
+/* 반응형 */
+@media (max-width: 768px) {
+    ::-webkit-scrollbar {
+        width: 12px;
+    }
+    
+    ::-webkit-scrollbar:horizontal {
+        height: 12px;
+    }
+}
+
+/* Firefox 지원 */
+html {
+    scrollbar-width: thin;
+    scrollbar-color: #FF6B9D rgba(25, 25, 112, 0.8);
+}

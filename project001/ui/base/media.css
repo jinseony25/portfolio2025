@@ -1,0 +1,55 @@
+/* --- Responsive Design --- */
+@media (max-width: 1024px) {
+    .lineup-grid {
+        grid-template-columns: repeat(4, 1fr);
+        height: auto;
+        max-height: none;
+    }
+
+    .artist-card {
+        grid-column: span 2;
+        grid-row: span 2;
+        min-height: 250px;
+    }
+
+    .main-artist {
+        grid-column: span 4;
+        grid-row: span 2;
+        min-height: 350px;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-menu {
+        display: none;
+    }
+
+    .mobile-menu-toggle {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+    }
+
+    .mobile-menu-toggle span {
+        width: 25px;
+        height: 3px;
+        background: #fff;
+        transition: 0.3s;
+    }
+
+    .directions-content,
+    .board-container,
+    .info-container {
+        grid-template-columns: 1fr;
+    }
+
+    .booking-form-wrapper {
+        flex-direction: column;
+    }
+
+    .poster-section {
+        width: 100%;
+        max-width: 350px;
+    }
+}

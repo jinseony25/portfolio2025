@@ -168,7 +168,7 @@
                     <div class="infoLeft">
                         <h1>TRAINING</h1>
                         <p>2025.10 그린컴퓨터아트학원<br>
-                            UI/UX 반응형 웹 퍼블리셔<br>프론트엔드 과정 수료</p>
+                            NCS UI/UX 반응형 웹 퍼블리셔<br>프론트엔드 과정 수료</p>
                     </div>
                     <div class="infoRight">
                         <h1>CERTIFICATION</h1>
@@ -184,94 +184,98 @@
 
 
 
+<!-- work -->
+<!-- 팝업 오버레이 -->
+<div class="popup-overlay" id="popupOverlay">
+    <div class="popup-content">
+        <button class="popup-close" onclick="closePopup()">&times;</button>
+        <img id="popupImage" src="" alt="컨셉 이미지">
+    </div>
+</div>
 
-    <!-- PROJECT 01 -->
-    <section id="work">
-        <section id="project1" class="section project-section">
-            <div class="project-card">
-
-                <!-- 이미지 -->
-                <div class="project-image">
-                    <img src="img/project/project1.jpg" alt="프로젝트 목업 이미지">
-                </div>
-
-                <!-- 정보 -->
-                <div class="project-info">
-                    <!-- work & tools 묶음 -->
-                    <div class="work-tools">
-                        <div class="work">
-                            <strong>WORK</strong> Design 100% / Publishing (100%) / 60h
-                        </div>
-                        <div class="tools">
-                            <strong>TOOLS</strong>
-                            <i class="fa-brands fa-html5"></i>
-                            <i class="fa-brands fa-css3-alt"></i>
-                            <i class="fa-brands fa-js"></i>
-                            <i class="fa-brands fa-figma"></i>
-                            <i class="fa-solid fa-image"></i>
-                        </div>
-                    </div>
-
-                    <!-- 설명 -->
-                    <h1>2025 인천펜타포트록페스티벌</h1>
-                    <p class="project-desc">
-                        예매 시스템을 간결하게 개선하여 사용자 경험을 향상시켰고,<br>
-                        공지사항과 오시는 길 등 주요 정보를 직관적으로 배치해 접근성을 강화했습니다.
-                    </p>
-                </div>
-
-                <!-- 버튼 -->
-                <div class="project-buttons">
-                    <a href="#" class="btn">Concept View</a>
-                    <a href="#" class="btn">Web Site</a>
-                </div>
+<!-- PROJECT 01 -->
+<section id="work">
+    <section id="project1" class="section project-section">
+        <div class="project-card">
+            <!-- 이미지 -->
+            <div class="project-image">
+                <img src="img/project/project1.jpg" alt="프로젝트 목업 이미지">
             </div>
-        </section>
 
-
-        <!-- PROJECT 02 -->
-        <section id="project2" class="section project-section">
-            <div class="project-card">
-
-                <!-- 이미지 -->
-                <div class="project-image">
-                    <img src="img/project/project2.jpg" alt="프로젝트 목업 이미지">
-                </div>
-
-                <!-- 정보 -->
-                <div class="project-info">
-                    <!-- work & tools 묶음 -->
-                    <div class="work-tools">
-                        <div class="work">
-                            <strong>WORK</strong> Design 100% / Publishing (100%) / 60h
-                        </div>
-                        <div class="tools">
-                            <strong>TOOLS</strong>
-                            <i class="fa-brands fa-html5"></i>
-                            <i class="fa-brands fa-css3-alt"></i>
-                            <i class="fa-brands fa-js"></i>
-                            <i class="fa-brands fa-figma"></i>
-                            <i class="fa-solid fa-image"></i>
-                        </div>
+            <!-- 정보 -->
+            <div class="project-info">
+                <!-- work & tools 묶음 -->
+                <div class="work-tools">
+                    <div class="work">
+                        <strong>WORK</strong> Design 100% / Publishing (100%) / 60h
                     </div>
-
-                    <!-- 설명 -->
-                    <h1>팀버스케이트샵</h1>
-                    <p class="project-desc">
-                        로고 제작으로 브랜드 아이덴티티를 강화하고, 스케이트보드샵 특유의<br>
-                        시원한 느낌과 신제품 강조, 직관적 UI 개선을 통해 구매를 유도했습니다.
-                    </p>
+                    <div class="tools">
+                        <strong>TOOLS</strong>
+                        <i class="fa-brands fa-html5"></i>
+                        <i class="fa-brands fa-css3-alt"></i>
+                        <i class="fa-brands fa-js"></i>
+                        <i class="fa-brands fa-figma"></i>
+                        <i class="fa-solid fa-image"></i>
+                    </div>
                 </div>
 
-                <!-- 버튼 -->
-                <!-- 버튼 영역 -->
-                <div class="project-footer">
-                    <a href="#" class="btn">Concept View</a>
-                    <a href="#" class="btn">Web Site</a>
-                </div>
+                <!-- 설명 -->
+                <h1>2025 인천펜타포트록페스티벌</h1>
+                <p class="project-desc">
+                    예매 시스템을 간결하게 개선하여 사용자 경험을 향상시켰고,<br>
+                    공지사항과 오시는 길 등 주요 정보를 직관적으로 배치해 접근성을 강화했습니다.
+                </p>
             </div>
-        </section>
+
+            <!-- 버튼 -->
+            <div class="project-buttons">
+                <a href="#" class="btn" onclick="openPopup('img/conceptview/project1.png')">Concept View</a>
+                <a href="https://jinseony25.github.io/portfolio2025/project001/" class="btn">Web Site</a>
+            </div>
+        </div>
     </section>
+
+    <!-- PROJECT 02 -->
+    <section id="project2" class="section project-section">
+        <div class="project-card">
+            <!-- 이미지 -->
+            <div class="project-image">
+                <img src="img/project/project2.jpg" alt="프로젝트 목업 이미지">
+            </div>
+
+            <!-- 정보 -->
+            <div class="project-info">
+                <!-- work & tools 묶음 -->
+                <div class="work-tools">
+                    <div class="work">
+                        <strong>WORK</strong> Design 100% / Publishing (100%) / 60h
+                    </div>
+                    <div class="tools">
+                        <strong>TOOLS</strong>
+                        <i class="fa-brands fa-html5"></i>
+                        <i class="fa-brands fa-css3-alt"></i>
+                        <i class="fa-brands fa-js"></i>
+                        <i class="fa-brands fa-figma"></i>
+                        <i class="fa-solid fa-image"></i>
+                    </div>
+                </div>
+
+                <!-- 설명 -->
+                <h1>팀버스케이트샵</h1>
+                <p class="project-desc">
+                    로고 제작으로 브랜드 아이덴티티를 강화하고, 스케이트보드샵 특유의<br>
+                    시원한 느낌과 신제품 강조, 직관적 UI 개선을 통해 구매를 유도했습니다.
+                </p>
+            </div>
+
+            <!-- 버튼 영역 -->
+            <div class="project-footer">
+                <a href="#" class="btn" onclick="openPopup('img/conceptview/project2.png')">Concept View</a>
+                <a href="https://jinseony25.github.io/portfolio2025/project002/" class="btn">Web Site</a>
+            </div>
+        </div>
+    </section>
+</section>
 
 
 
@@ -283,36 +287,27 @@
             <div class="contact-content">
                 <h2 class="section-title">CONTACT</h2>
                 <div class="contact-grid">
-                    <div class="contact-item">
+                    <!-- Email -->
+                    <div class="contact-item" id="email-item">
                         <span class="contact-icon"><i class="fa-solid fa-envelope"></i></span>
                         <h3>Email</h3>
-                        <p><a href="mailto:hello@portfolio.com">jinseony25@gmail.com</a></p>
+                        <p><a href="mailto:jinseony25@gmail.com">jinseony25@gmail.com</a></p>
                     </div>
-                    <div class="contact-item">
+                    <!-- Website -->
+                    <div class="contact-item" id="website-item">
                         <span class="contact-icon"><i class="fa-solid fa-globe"></i></span>
-                        <h3>Website</h3>
-                        <p><a href="https://www.portfolio.com" target="_blank">www.portfolio.com</a></p>
-                    </div>
-                    <div class="contact-item">
-                        <span class="contact-icon"><i class="fa-brands fa-linkedin"></i></span>
-                        <h3>LinkedIn</h3>
-                        <p><a href="https://linkedin.com/in/portfolio" target="_blank">linkedin.com/in/portfolio</a>
-                        </p>
+                        <h3>github.com</h3>
+                        <p><a href="https://github.com/jinseony25/portfolio2025" target="_blank">https://github.com/jinseony25</a></p>
                     </div>
                 </div>
             </div>
         </div>
+        <!-- 복사 알람 -->
+        <div id="copy-alert">Copy!</div>
     </section>
 
 
-
-
-
-
-    </div>
-
-
-
+    
     <script src="js.js"></script>
 </body>
 

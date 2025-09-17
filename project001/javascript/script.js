@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- 3. Scroll-based Fade-in Animations ---
     const scrollElements = document.querySelectorAll('section');
-    
+
     const elementObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- 5. Mobile Menu Toggle ---
     const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
     const navMenu = document.querySelector('.nav-menu');
-    
+
     if (mobileMenuToggle && navMenu) {
         mobileMenuToggle.addEventListener('click', () => {
             // This is a basic toggle. For a full implementation, 
@@ -69,3 +69,39 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 });
+
+// nav의 ticket 클릭시 연동
+const ticketButton = document.querySelector('.hero-content .cta-button');
+const navTicketButton = document.querySelector('.nav-ticket'); // 네비 TICKET
+const modal = document.getElementById('booking-modal');
+const closeButton = document.querySelector('.close-button');
+
+function openModal(e) {
+    e.preventDefault();
+    modal.style.display = 'block';
+}
+
+if (ticketButton && modal && closeButton) {
+    ticketButton.addEventListener('click', openModal);
+}
+
+if (navTicketButton && modal && closeButton) {
+    navTicketButton.addEventListener('click', openModal);
+}
+
+if (closeButton) {
+    closeButton.addEventListener('click', () => {
+        modal.style.display = 'none';
+    });
+
+    window.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            modal.style.display = 'none';
+        }
+    });
+}
+
+
+
+
+

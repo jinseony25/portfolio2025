@@ -1,0 +1,131 @@
+/* --- Information Section --- */
+.info-section {
+    padding: 6rem 0;
+}
+
+.info-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.info-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    padding: 2rem;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.info-card h3 {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.info-image {
+    width: 100%;
+    aspect-ratio: 16/9;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 10px;
+}
+
+.timetable-image {
+    background-image: url(../../resources/img/timetable/timetable.jpg);
+}
+
+.map-image {
+    background-image: url(../../resources/img/festivalmap/pentaportrf_2025-07-14__080226.jpg);
+}
+
+/* --- Modal Popup Styles --- */
+
+/* 팝업 배경 (어둡게 처리) */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+/* 팝업을 숨기는 클래스 */
+.modal-overlay.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* 팝업 콘텐츠 영역 */
+.modal-content {
+    position: relative;
+    padding: 20px;
+    background: #1a1a1a;
+    border-radius: 15px;
+    max-width: 90vw;
+    max-height: 90vh;
+    display: flex;
+    justify-content: center;
+}
+
+/* 팝업 내 이미지 */
+.modal-image {
+    display: block;
+    max-width: 100%;
+    max-height: calc(90vh - 40px);
+    /* 패딩 값을 고려 */
+    border-radius: 10px;
+}
+
+/* 닫기 버튼 */
+.close-btn {
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #fff;
+    background: #000;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 1;
+    cursor: pointer;
+    border: 2px solid #fff;
+}
+
+/* --- 기존 코드 수정 --- */
+
+/* 클릭 가능한 요소임을 알려주기 위해 커서 모양 변경 */
+.info-image {
+    width: 100%;
+    aspect-ratio: 16/9;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 10px;
+    cursor: pointer;
+    /* 이 부분을 추가합니다 */
+    transition: transform 0.3s ease;
+    /* 부드러운 효과 추가 */
+}
+
+.info-image:hover {
+    transform: scale(1.03);
+    /* 마우스 올렸을 때 약간 확대되는 효과 */
+}

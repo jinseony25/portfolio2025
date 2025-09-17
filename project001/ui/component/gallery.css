@@ -1,0 +1,47 @@
+/* --- Gallery Section --- */
+.gallery-section {
+    padding: 6rem 0;
+    overflow: hidden;
+}
+
+.gallery-scroll {
+    display: flex;
+    width: max-content;
+    animation: scroll-right 60s linear infinite;
+    gap: 2rem;
+}
+
+.gallery-item {
+    flex: none;
+    width: 400px;
+    height: 300px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 15px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: scale(1.05) rotate(2deg);
+}
+
+.gallery-1 {
+    background-image: url(../../resources/img/replay/yerin.jpg);
+}
+
+.gallery-2 {
+    background-image: url(../../resources/img/replay/rocknroll.jpg);
+}
+
+.gallery-3 {
+    background-image: url(../../resources/img/replay/show.jpg);
+}
+
+.gallery-4 {
+    background-image: url(../../resources/img/replay/people.jpg);
+}
+
+.gallery-5 {
+    background-image: url(../../resources/img/replay/play.jpg);
+}

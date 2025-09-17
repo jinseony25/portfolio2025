@@ -21,7 +21,7 @@
 .floating-element {
     position: absolute;
     z-index: 0;
-    animation: float 6s ease-in-out infinite;
+    animation: floatAndRotate 6s ease-in-out infinite;
 }
 
 .floating-element img {
@@ -35,28 +35,47 @@
     top: 30%;
     left: 5%;
     width: 150px;
+    animation: floatAndRotate 8s ease-in-out infinite;
 }
 
 .ball {
     top: 22%;
     right: 5%;
     width: 100px;
+    animation: floatAndRotate 6s ease-in-out infinite reverse;
 }
 
 .cube {
     bottom: 28%;
     right: 12%;
     width: 180px;
+    animation: floatAndRotate 10s ease-in-out infinite;
 }
 
-/* 둥실 애니메이션 */
-@keyframes float {
-
-    0%,
+/* 둥실 + 회전 애니메이션 */
+@keyframes floatAndRotate {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+    25% {
+        transform: translateY(-15px) rotate(90deg);
+    }
+    50% {
+        transform: translateY(-30px) rotate(180deg);
+    }
+    75% {
+        transform: translateY(-15px) rotate(270deg);
+    }
     100% {
+        transform: translateY(0) rotate(360deg);
+    }
+}
+
+/* 기존 float 애니메이션 (필요시 사용) */
+@keyframes float {
+    0%, 100% {
         transform: translateY(0);
     }
-
     50% {
         transform: translateY(-20px);
     }
@@ -87,7 +106,7 @@
 .profile {
     width: 300px;
     height: 400px;
-    background-image: url(../../img/profile/profile3.png);
+    background-image: url(../../img/profile/profile6.png);
     background-size: cover;
     background-position: center;
     border-radius: 25px;
@@ -95,8 +114,6 @@
     overflow: hidden;
     transition: all 0.3s ease;
 }
-
-
 
 /* 텍스트 */
 .profileTxt {
@@ -135,7 +152,6 @@
     font-weight: bold;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease;
-    cursor: pointer;
     animation: pianoBounce 5s ease-in-out infinite;
 }
 
@@ -160,23 +176,18 @@
         transform: translateY(0);
         background: linear-gradient(45deg, #667eea, #764ba2);
     }
-
     20% {
         transform: translateY(-8px) scale(1.1);
         background: linear-gradient(45deg, #ff6b6b, #ffd93d);
     }
-
     40% {
         transform: translateY(0);
         background: linear-gradient(45deg, #667eea, #764ba2);
     }
-
     100% {
         transform: translateY(0);
     }
 }
-
-
 
 /* 오른쪽 info */
 .info {
@@ -309,12 +320,9 @@ circle.progress {
 
 /* 애니메이션 */
 @keyframes floatSkill {
-
-    0%,
-    100% {
+    0%, 100% {
         transform: translateY(0);
     }
-
     50% {
         transform: translateY(-10px);
     }
@@ -326,7 +334,6 @@ circle.progress {
 .infoLeft,
 .infoRight {
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.10);
-    /* 부드럽게 퍼지는 그림자 */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -337,5 +344,5 @@ circle.progress {
 .infoRight:hover {
     transform: translateY(-6px);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.10);
-    /* 더 진하고 멀리 */
 }
+

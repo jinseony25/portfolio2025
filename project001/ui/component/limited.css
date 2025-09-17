@@ -1,0 +1,92 @@
+/* --- Limited Edition Section (새로운 HTML 구조에 맞게 수정) --- */
+.limited-section {
+    padding: 6rem 0;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2.5rem;
+}
+
+.product-card {
+    background: rgba(30, 30, 30, 0.5);
+    border-radius: 15px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.product-image {
+    width: 100%;
+    aspect-ratio: 1/1;
+    background-size: cover;
+    background-position: center;
+}
+
+.product-1 { background-image: url(../../resources/img/litmitededition/pin.png); }
+.product-2 { background-image: url(../../resources/img/litmitededition/bandana.png); }
+.product-3 { background-image: url(../../resources/img/litmitededition/keyring.png); }
+.product-4 { background-image: url(../../resources/img/litmitededition/greycap.png); }
+.product-5 { background-image: url(../../resources/img/litmitededition/penta1.png); }
+.product-6 { background-image: url(../../resources/img/litmitededition/penta2.png); }
+
+.product-info {
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.product-info p {
+    color: var(--color-light);
+    margin-bottom: 0.8rem; /* 가격과의 간격 조정 */
+    font-size: 1rem;
+    min-height: 2.5em; 
+}
+
+/* --- 가격 표시 & 할인율 스타일 (새로운 클래스 이름에 적용) --- */
+
+/* 원래 가격과 할인율 배지를 담는 행 */
+.price-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.6rem;
+    margin-bottom: 0.5rem;
+}
+
+/* 원래 가격 (HTML <del> 태그 사용) */
+del.original {
+    color: #888;
+    font-size: 1rem;
+    text-decoration: line-through;
+}
+
+/* 할인율 배지 */
+.badge-percent {
+    background-color: var(--color-secondary, #ff4081); /* 포인트 색상 배경 */
+    color: #fff;
+    font-size: 0.8rem;
+    font-weight: bold;
+    padding: 0.3em 0.8em;
+    border-radius: 20px; /* 둥근 알약 모양 */
+}
+
+/* 최종 할인가 (HTML <h4> 태그 사용) */
+h4.sale {
+    font-family: var(--font-heading);
+    color: var(--color-light);
+    font-size: 1.2rem;
+    font-weight: 900;
+    margin: 0; /* h4 태그의 기본 마진 제거 */
+}
+
+.shop-button-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+}

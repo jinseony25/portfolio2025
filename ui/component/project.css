@@ -1,122 +1,208 @@
 /* === PROJECT 섹션 === */
-/* === PROJECT SECTION === */
 .project-section {
-  background:
-    radial-gradient(900px 600px at 20% 10%, rgba(168, 216, 255, 0.25), transparent 60%), /* 민트 강조 */
-    radial-gradient(800px 500px at 80% 20%, rgba(255, 199, 209, 0.10), transparent 60%), /* 핑크 약간 */
-    radial-gradient(1000px 700px at 50% 100%, rgba(255, 245, 179, 0.10), transparent 60%), /* 노랑 약간 */
-    radial-gradient(circle, rgba(0,0,0,0.05) 2px, transparent 2px), /* 도트 */
-    linear-gradient(180deg, #E8FFF6 0%, #FFFBEA 100%);
-  background-size:
-    auto, auto, auto,
-    60px 60px,  /* 도트 간격 */
-    cover;
-  width: 100%;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-sizing: border-box;
-  padding: 40px 0;
+    background: 
+        radial-gradient(900px 600px at 20% 10%, rgba(168, 216, 255, 0.25), transparent 60%), /* 민트 강조 */
+        radial-gradient(800px 500px at 80% 20%, rgba(255, 199, 209, 0.10), transparent 60%), /* 핑크 약간 */
+        radial-gradient(1000px 700px at 50% 100%, rgba(255, 245, 179, 0.10), transparent 60%), /* 노랑 약간 */
+        radial-gradient(circle, rgba(0,0,0,0.05) 2px, transparent 2px), /* 도트 */
+        linear-gradient(180deg, #E8FFF6 0%, #FFFBEA 100%);
+    background-size: 
+        auto, auto, auto,
+        60px 60px,  /* 도트 간격 */
+        cover;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    padding: 40px 0;
 }
-
-
-
-
 
 /* === 카드 === */
 .project-card {
-  background: #fff;
-  border-radius: 20px;
-  height: 85vh;              /* 화면보다 살짝 작게 */
-  width: 90%;
-  max-width: 1100px;
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;          /* 내부 이중 스크롤 방지 */
-  box-shadow: 0 3px 10px rgba(0,0,0,0.12);
-  transition: transform .3s ease, box-shadow .3s ease;
+    background: #fff;
+    border-radius: 20px;
+    height: 85vh;              /* 화면보다 살짝 작게 */
+    width: 90%;
+    max-width: 1100px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;          /* 내부 이중 스크롤 방지 */
+    box-shadow: 0 3px 10px rgba(0,0,0,0.12);
+    transition: transform .3s ease, box-shadow .3s ease;
 }
+
 .project-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 3px 10px rgba(0,0,0,0.18);
+    transform: translateY(-8px);
+    box-shadow: 0 3px 10px rgba(0,0,0,0.18);
 }
 
 /* === 이미지 === */
 .project-card .project-image {
-  flex: 0 0 55%;
-  display: flex; justify-content: center; align-items: center;
-  background: #f9f9f9;
+    flex: 0 0 55%;
+    display: flex; justify-content: center; align-items: center;
+    background: #f9f9f9;
 }
+
 .project-card .project-image img {
-  max-width: 100%; max-height: 100%;
-  object-fit: contain;       /* 잘림 방지 */
-  border-radius: 20px 20px 0 0;
-  transition: transform .5s ease;
+    max-width: 100%; max-height: 100%;
+    object-fit: contain;       /* 잘림 방지 */
+    border-radius: 20px 20px 0 0;
+    transition: transform .5s ease;
 }
-.project-card:hover .project-image img { transform: scale(1.02); }
+
+.project-card:hover .project-image img { 
+    transform: scale(1.02); 
+}
 
 /* === 정보 === */
 .project-card .project-info {
-  flex: 1;
-  padding: 1rem 1.5rem;
-  display: flex; flex-direction: column; justify-content: flex-start;
-  text-align: center;
-  font-size: .9rem; line-height: 1.4;
+    flex: 1;
+    padding: 1rem 1.5rem;
+    display: flex; flex-direction: column; justify-content: flex-start;
+    text-align: center;
+    font-size: .9rem; line-height: 1.4;
 }
 
 /* WORK + TOOLS 좌우 배치 */
 .project-card .work-tools {
-  display: flex;
-  justify-content: space-between; /* 좌우 끝 */
-  align-items: center;
-  width: 100%;
-  margin-bottom: 1rem;
-  font-size: .95rem;
+    display: flex;
+    justify-content: space-between; /* 좌우 끝 */
+    align-items: center;
+    width: 100%;
+    margin-bottom: 1rem;
+    font-size: .95rem;
 }
-.project-card .work { color: #444; }
-.project-card .tools { color: #333; }
+
+.project-card .work { 
+    color: #444; 
+}
+
+.project-card .tools { 
+    color: #333; 
+}
+
 .project-card .tools i {
-  font-size: 1.1rem; margin-left: .4rem; color: #666; transition: color .3s;
+    font-size: 1.1rem; margin-left: .4rem; color: #666; transition: color .3s;
 }
-.project-card .tools i:hover { color: #ff5f5f; }
+
+.project-card .tools i:hover { 
+    color: #ff5f5f; 
+}
 
 /* 설명 */
 .project-card h1 {
-  font-size: 1.4rem; font-weight: 700; color: #222; margin-bottom: .6rem;
+    font-size: 1.4rem; font-weight: 700; color: #222; margin-bottom: .6rem;
 }
+
 .project-card .project-desc {
-  font-size: .9rem; color: #555; line-height: 1.4;
-  margin-bottom: auto; /* 아래 버튼 공간 확보 */
+    font-size: .9rem; color: #555; line-height: 1.4;
+    margin-bottom: auto; /* 아래 버튼 공간 확보 */
 }
 
 /* === 버튼 영역 (하단 고정) === */
-.project-card .project-footer,
-.project-card .project-buttons {
-  margin-top: auto; /* 카드 하단으로 밀착 */
-  padding: .8rem 1rem;
-  border-top: 1px solid #eee;
-  background: #fff;
-  display: flex; justify-content: center; gap: .8rem;
+.project-card .project-footer, .project-card .project-buttons {
+    margin-top: auto; /* 카드 하단으로 밀착 */
+    padding: .8rem 1rem;
+    border-top: 1px solid #eee;
+    background: #fff;
+    display: flex; justify-content: center; gap: .8rem;
 }
+
 .project-card .btn {
-  display: inline-block;
-  padding: .6rem 1.2rem;
-  background: linear-gradient(135deg, #ff7a7a, #ff4b4b);
-  color: #fff; text-decoration: none; border-radius: 25px;
-  font-weight: 600; font-size: .85rem; white-space: nowrap;
-  box-shadow: 0 4px 15px rgba(255,75,75,.3);
-  transition: all .3s ease;
+    display: inline-block;
+    padding: .6rem 1.2rem;
+    background: linear-gradient(135deg, #ff7a7a, #ff4b4b);
+    color: #fff; text-decoration: none; border-radius: 25px;
+    font-weight: 600; font-size: .85rem; white-space: nowrap;
+    box-shadow: 0 4px 15px rgba(255,75,75,.3);
+    transition: all .3s ease;
+    cursor: pointer;
 }
+
 .project-card .btn:hover {
-  transform: translateY(-2px) scale(1.05);
-  background: linear-gradient(135deg, #ff4b4b, #e63e3e);
-  box-shadow: 0 8px 20px rgba(255,75,75,.4);
+    transform: translateY(-2px) scale(1.05);
+    background: linear-gradient(135deg, #ff4b4b, #e63e3e);
+    box-shadow: 0 8px 20px rgba(255,75,75,.4);
+}
+
+/* === 팝업 스타일 === */
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    /* 스크롤 추가 */
+    overflow-y: auto;
+}
+
+.popup-content {
+    position: relative;
+    max-width: 90%;
+    /* max-height 제거하여 전체 이미지 표시 */
+    background: #fff;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    transform: scale(0.8);
+    transition: transform 0.3s ease;
+    /* 세로 중앙 정렬을 위한 margin */
+    margin: auto;
+}
+
+.popup-overlay.show .popup-content {
+    transform: scale(1);
+}
+
+.popup-content img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    display: block;
+    /* 최대 높이 제한 제거 */
+}
+
+.popup-close {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    width: 40px;
+    height: 40px;
+    background: #ff4b4b;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(255,75,75,.4);
+    transition: all .3s ease;
+}
+
+.popup-close:hover {
+    background: #e63e3e;
+    transform: scale(1.1);
 }
 
 /* === 반응형 (옵션) === */
 @media (max-width: 768px) {
-  .project-card { height: 88vh; width: 94%; }
-  .project-card .project-image { flex-basis: 50%; }
-  .project-card h1 { font-size: 1.25rem; }
+    .popup-overlay {
+        padding: 10px 0;
+    }
+    
+    .popup-content {
+        max-width: 95%;
+        padding: 15px;
+    }
 }

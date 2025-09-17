@@ -21,7 +21,7 @@ header .nav-links {
 
 header .nav-links a {
     font-size: 15px;
-    font-weight: 400;
+    font-weight: bold;
     display: block;
     text-decoration: none;
     color: #fff;

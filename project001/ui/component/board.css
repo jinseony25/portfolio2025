@@ -1,0 +1,142 @@
+/* --- Board Section (Notice & QnA Combined) --- */
+.board-section {
+    padding: 6rem 0;
+}
+
+.combined-board {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    padding: 1rem 2rem;
+    margin-bottom: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.board-row {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+.board-row:last-child {
+    border-bottom: none;
+}
+
+.accordion-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 1.2rem 0;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.accordion-header:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.board-cell.title {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex: 1;
+}
+
+.board-cell.title a {
+    transition: color 0.3s ease;
+}
+
+.accordion-item.active .accordion-header .board-cell.title a,
+.accordion-header:hover .board-cell.title a {
+    color: var(--color-primary);
+}
+
+.board-cell.date {
+    color: #888;
+    font-size: 0.9rem;
+    text-align: right;
+    flex-basis: 120px;
+}
+
+.board-row.pinned {
+    flex-direction: row;
+    align-items: center;
+    padding: 1.2rem 0;
+    background-color: rgba(159, 84, 255, 0.1);
+    font-weight: 500;
+}
+
+.board-row.pinned a:hover {
+    color: var(--color-primary);
+}
+
+.board-row.pinned .fa-thumbtack {
+    color: var(--color-primary);
+    transform: rotate(-25deg);
+}
+
+.qna-badge {
+    color: var(--color-secondary);
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.board-cell.icon {
+    flex-basis: 40px;
+    text-align: right;
+    color: #888;
+}
+
+.board-cell.icon i {
+    transition: transform 0.4s ease;
+}
+
+.accordion-item.active .board-cell.icon i {
+    transform: rotate(180deg);
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-out, padding 0.4s ease-out;
+    padding: 0 1rem;
+    color: #bbb;
+    line-height: 1.8;
+}
+
+.accordion-content p {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 1.5rem 0;
+}
+
+.accordion-content strong {
+    color: var(--color-secondary);
+}
+
+/* --- Pagination --- */
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.pagination a {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #555;
+    border-radius: 50%;
+    color: #aaa;
+    transition: all 0.3s ease;
+}
+
+.pagination a:hover,
+.pagination a.active {
+    background: var(--color-primary);
+    border-color: var(--color-primary);
+    color: #fff;
+}
