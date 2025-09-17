@@ -1,0 +1,308 @@
+ /* --- Hot Drops Section --- */
+    .hot {
+        padding: var(--space-xl) 0;
+        text-align: center;
+        position: relative;
+        min-height: 800px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        overflow: hidden;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        border-radius: 20px;
+        margin: 0 auto;
+        /* 이 부분을 수정 */
+        width: calc(100% - 40px);
+        /* 양쪽에 20px씩 여백 */
+        box-shadow: var(--shadow-soft);
+    }
+
+    .hot::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(45deg);
+        width: 600px;
+        height: 600px;
+        background: linear-gradient(45deg,
+                rgba(255, 87, 34, 0.1) 0%,
+                rgba(255, 193, 7, 0.05) 50%,
+                transparent 70%);
+        filter: blur(40px);
+        z-index: -1;
+        animation: float 8s ease-in-out infinite;
+    }
+
+    @keyframes float {
+
+        0%,
+        100% {
+            transform: translate(-50%, -50%) rotate(45deg) scale(1);
+        }
+
+        50% {
+            transform: translate(-50%, -50%) rotate(45deg) scale(1.1);
+        }
+    }
+
+    .hot h1 {
+        font-size: clamp(2.5rem, 5vw, 4rem);
+        font-weight: 900;
+        margin-bottom: 20px;
+        letter-spacing: 3px;
+        color: var(--primary-dark);
+        text-transform: uppercase;
+        position: relative;
+        background: linear-gradient(135deg, var(--accent-orange), #ff9800);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    .hot h1::after {
+        content: "";
+        width: 80px;
+        height: 4px;
+        background: linear-gradient(90deg, var(--accent-orange), #ff9800);
+        display: block;
+        margin: 20px auto 0;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(255, 87, 34, 0.3);
+    }
+
+    .hot p {
+        font-size: 1.2rem;
+        color: var(--text-light);
+        margin-bottom: 60px;
+        font-weight: 400;
+    }
+
+    .hot .inner {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        max-width: 1400px;
+        margin: 0 auto;
+        gap: 100px;
+        padding: 0 40px;
+    }
+
+    .hot .imgBox {
+        flex: 0 0 500px;
+        height: 600px;
+        position: relative;
+        overflow: hidden;
+        border-radius: 20px;
+        background: linear-gradient(135deg, #f0f0f0, #e0e0e0);
+        box-shadow: var(--shadow-soft);
+        transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .hot .imgBox:hover {
+        transform: translateY(-10px) scale(1.02);
+        box-shadow: var(--shadow-hover);
+    }
+
+    .hot .img-layer {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        z-index: 1;
+    }
+
+    .hot .product-details {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+        color: white;
+        padding: 40px 30px 30px;
+        transform: translateY(100%);
+        transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .hot .imgBox:hover .product-details {
+        transform: translateY(0);
+    }
+
+    .product-brand {
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: var(--accent-orange);
+        margin-bottom: 5px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .product-title {
+        font-size: 1.1rem;
+        font-weight: 700;
+        margin-bottom: 8px;
+    }
+
+    .product-price {
+        font-size: 1.3rem;
+        font-weight: 900;
+        color: var(--accent-orange);
+    }
+
+    .hot .txtBox {
+        flex-basis: 50%;
+        text-align: left;
+    }
+
+    .hot .txtBox ul {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    .link-indicator {
+        position: absolute;
+        left: -40px;
+        top: 0;
+        height: 0;
+        width: 6px;
+        background: linear-gradient(135deg, var(--accent-orange), #ff9800);
+        border-radius: 10px;
+        transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+        box-shadow: 0 0 20px rgba(255, 87, 34, 0.3);
+    }
+
+    .hot .txtBox li {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .hot .txtBox li::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255, 87, 34, 0.1), transparent);
+        transition: left 0.6s ease;
+        z-index: -1;
+    }
+
+    .hot .txtBox li:hover::before {
+        left: 100%;
+    }
+
+    .hot .txtBox li a {
+        font-size: clamp(2.5rem, 4vw, 3.8rem);
+        font-weight: 900;
+        font-family: var(--font-heading);
+        position: relative;
+        display: inline-block;
+        color: transparent;
+        -webkit-text-stroke: 2px #ccc;
+        transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+        text-decoration: none;
+        padding: 10px 0;
+    }
+
+    .hot .txtBox li a:hover {
+        color: var(--accent-orange);
+        -webkit-text-stroke-color: var(--accent-orange);
+        transform: translateX(20px);
+        text-shadow: 0 5px 15px rgba(255, 87, 34, 0.3);
+    }
+
+
+    /* 로딩 애니메이션 */
+    .loading-shimmer {
+        background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+        background-size: 200% 100%;
+        animation: shimmer 2s infinite;
+    }
+
+    @keyframes shimmer {
+        0% {
+            background-position: -200% 0;
+        }
+
+        100% {
+            background-position: 200% 0;
+        }
+    }
+
+    /* --- 오버레이 관련 스타일 --- */
+
+    /* [수정] 오버레이 z-index: 2 */
+    .product-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent 50%);
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.4s ease, visibility 0.4s ease;
+        display: flex;
+        align-items: flex-end;
+        padding: 30px;
+        z-index: 2;
+        /* 이미지(1)보다 위에 위치 */
+    }
+
+    .product-overlay.show {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .product-info {
+        color: #fff;
+        text-align: left;
+        width: 100%;
+    }
+
+    .product-info h3,
+    .product-info h2,
+    .product-info p {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    .product-overlay.show .product-info h3,
+    .product-overlay.show .product-info h2,
+    .product-overlay.show .product-info p {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    #product-brand {
+        transition-delay: 0.2s;
+        font-size: 1rem;
+        font-weight: 700;
+        color: #ccc;
+        font-family: var(--font-body);
+    }
+
+    #product-title {
+        transition-delay: 0.3s;
+        font-size: 2.2rem;
+        margin: 5px 0 10px;
+        line-height: 1.2;
+    }
+
+    #product-price {
+        transition-delay: 0.4s;
+        font-size: 1.2rem;
+        font-weight: 700;
+        font-family: var(--font-body);
+        color: var(--accent-orange);
+    }

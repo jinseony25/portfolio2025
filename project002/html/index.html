@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TIMBERSKATESHOP PROJECT</title>
+
+    <!-- 기존 스타일 -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- 아이콘/제이쿼리 (jQuery는 한 번만 로드!) -->
+    <script src="https://kit.fontawesome.com/5b60675eee.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <!-- 장바구니 토글이 바로 보이도록 최소 CSS 추가 -->
+    <style>
+        /* 쇼핑카트 고정 위치 + 아이콘 클릭 가능 */
+        .shopping {
+            position: fixed;
+            top: 100px;
+            right: 16px;
+            z-index: 1000;
+        }
+
+        .shopping .icon {
+            cursor: pointer;
+            user-select: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 12px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, .1);
+        }
+
+        .shopping .icon span {
+            font-weight: 700;
+        }
+
+        /* 장바구니 패널 */
+        .cart_page {
+            display: none;
+            position: absolute;
+            top: 46px;
+            right: 0;
+            width: 360px;
+            background: #fff;
+            border: 1px solid #eaeaea;
+            border-radius: 12px;
+            box-shadow: 0 12px 28px rgba(0, 0, 0, .15);
+            padding: 16px;
+        }
+
+        .cart_page.active {
+            display: block;
+        }
+
+        .cart_page .close-btn {
+            text-align: right;
+            cursor: pointer;
+            font-size: 18px;
+            color: #333;
+        }
+
+        .cart_page .cart-header {
+            list-style: none;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 8px;
+            margin: 8px 0;
+            padding: 0;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .cart_page hr {
+            border: 0;
+            height: 1px;
+            background: #eee;
+            margin: 8px 0 12px;
+        }
+
+        .cart_page .cart-body p {
+            display: flex;
+            justify-content: space-between;
+            margin: 6px 0;
+        }
+
+        .cart_page .cart-body .total {
+            font-weight: 800;
+        }
+    </style>
+
+    <!-- 웹앱아이콘 및 파비콘 설정하기 -->
+    <link rel="apple-touch-icon" href="img/header/logo.png">
+    <link rel="shortcut icon" href="img/header/logo.png">
+</head>
+
+<body>
+
+
+    <!-- 쇼핑카트 -->
+    <div class="shopping">
+        <p class="icon" role="button" aria-expanded="false" aria-controls="cartPanel">
+            <i class="fa-solid fa-basket-shopping"></i><span>0</span>
+        </p>
+        <div class="cart_page" id="cartPanel">
+            <div class="close-btn" aria-label="장바구니 닫기"><i class="fa-solid fa-xmark"></i></div>
+            <h2>장바구니</h2>
+            <ul class="cart-header">
+                <li><span>상품정보</span></li>
+                <li><span>옵션</span></li>
+                <li><span>금액</span></li>
+                <li><span>갯수</span></li>
+            </ul>
+            <hr />
+            <div class="cart-body">
+                <p>총 상품금액 : <em>00</em> 원</p>
+                <p>총 배송비 : <em>00</em> 원</p>
+                <p class="total">총 주문금액 : <em>00</em> 원</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 시즌세일 -->
+    <div class="seasonSale">
+        <div class="marquee">
+            <div class="marquee__content">
+                <span>STREET VIBES SALE</span>
+                <span class="highlight">UP TO 70% OFF</span>
+                <span>LIMITED TIME ONLY</span>
+            </div>
+            <div class="marquee__content">
+                <span>STREET VIBES SALE</span>
+                <span class="highlight">UP TO 70% OFF</span>
+                <span>LIMITED TIME ONLY</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <header class="header">
+            <!-- 상단 세일 슬라이드 (주석 유지) -->
+
+            <!-- 헤더 로고 & 네비게이션 -->
+            <div class="inner">
+                <h1 class="logo"></h1>
+                <div class="inner1">
+                    <nav class="gnb">
+                        <ul>
+                            <li><a href="">BRANDS</a></li>
+                            <li><a href="">SKATEBOARDS</a></li>
+                            <li><a href="">APPAREL / ACC</a></li>
+                            <li><a href="">NEW</a></li>
+                            <li><a href="">%SALE</a></li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <!-- 유틸리티 아이콘 -->
+                <div class="inner2">
+                    <div class="util">
+                        <div class="util2">
+                            <ul>
+                                <li><a href=""><i class="fa-solid fa-magnifying-glass"></i></a></li>
+                                <li><a href="login.html"><i class="fa-solid fa-user"></i></a></li>
+                                <li><a href=""><i class="fa-solid fa-heart"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </header>
+
+        <!-- 슬라이드 -->
+        <div class="imgSlide">
+            <div class="imgSlide2">
+                <div class="slideTxt">
+                    <p>NEW COLLECTION 2025</p>
+                    <h3>OWN THE STREETS<br/>RIDE TIMBERMR</h3>
+                    <!-- skate on에서 수정 -->
+                    <a href="#new-drops"><span>SHOP NOW <i class="fas fa-arrow-right"></i></span></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <div class="fresh" id="new-drops">
+        <div class="fresh-content">
+
+            <div class="fresh-intro">
+                <h1>NEW DROPS</h1>
+                <h2>신상품을 가장 먼저 만나보세요.</h2>
+
+                <div class="thumbs">
+                </div>
+            </div>
+
+            <div class="shoes">
+                <a href="product-detail.html" class="main-product-link">
+                    <div class="mainImg imgBox" style="background-image:url('img/photoshop/fresh.png');">
+                        <div class="overlay">
+                            <div class="txtBox">
+                                <h1>SKATE HALF CAB<br>[ANTIQUE WHITE/GUM]</h1>
+                                <h1>VANS</h1>
+                                <h2>105,000원</h2>
+                            </div>
+                        </div>
+                        <div class="icon">
+                            <span class="add-to-cart" data-name="SKATE HALF CAB" data-price="105000"
+                                data-option="[ANTIQUE WHITE/GUM]">
+                                <i class="fa-solid fa-cart-shopping"></i>
+                            </span>
+                            <span><i class="fa-solid fa-heart"></i></span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- 하단 작은 이미지 목록 -->
+    <!-- <div class="thumbs">
+        <div class="imgBox" style="background-image:url('img/freshdrops/fresh1.png');"></div>
+        <div class="imgBox" style="background-image:url('img/freshdrops/fresh2.png');"></div>
+        <div class="imgBox" style="background-image:url('img/freshdrops/fresh3.png');"></div>
+        <div class="imgBox" style="background-image:url('img/freshdrops/fresh4.png');"></div>
+        <div class="imgBox" style="background-image:url('img/freshdrops/fresh5.png');"></div>
+        <div class="imgBox" style="background-image:url('img/freshdrops/fresh6.png');"></div>
+    </div> -->
+    </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="review">
+        <h1>BEST REVIEWS</h1>
+
+        <div class="review-container">
+            <div class="review-slider">
+                <div class="review-track">
+                    <div class="imgBox">
+                        <div class="txtBox">
+                            <h3>REVERSIBLE PINSTRIPE WOOL/COTTON JACKET</h3>
+                            <h2>449,000원</h2>
+                            <div class="star-rating">
+                                <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i><i class="fa fa-star"></i>
+                            </div>
+                            <span>"제품이 기대 이상이에요!"</span>
+                        </div>
+                    </div>
+                    <div class="imgBox">
+                        <div class="txtBox">
+                            <h3>THINK BIG HAT [BROWN]</h3>
+                            <h2>69,000원</h2>
+                            <div class="star-rating">
+                                <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i><i class="fa fa-star"></i>
+                            </div>
+                            <span>"퀄리티도 좋고 배송도 빨랐어요."</span>
+                        </div>
+                    </div>
+                    <div class="imgBox">
+                        <div class="txtBox">
+                            <h3>VM004 Milic Suede Los [Duo Green/White]</h3>
+                            <h2>169,000원</h2>
+                            <div class="star-rating">
+                                <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i><i class="fa fa-star"></i>
+                            </div>
+                            <span>"가성비 최고! 재구매 의사 100%입니다."</span>
+                        </div>
+                    </div>
+                    <div class="imgBox">
+                        <div class="txtBox">
+                            <h3>BACK TO CLASSICS MUG [BLACK]</h3>
+                            <h2>45,000원</h2>
+                            <div class="star-rating">
+                                <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i><i class="fa fa-star"></i>
+                            </div>
+                            <span>"주변에 추천하고 싶어요."</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <button class="arrow prev" aria-label="이전 리뷰 보기">&lt;</button>
+            <button class="arrow next" aria-label="다음 리뷰 보기">&gt;</button>
+        </div>
+
+        <!-- <div class="reviewMore">
+            <p>SHOP</p>
+        </div> -->
+    </div>
+
+
+
+
+
+
+
+    <!-- 브랜드 섹션 -->
+    <div class="brands">
+        <h1>OUR BRANDS</h1>
+
+        <div class="inner">
+            <div class="t animated-box">
+                <div class="info">
+                    <h2 id="brand-name">TENSOR</h2>
+                    <p id="brand-desc">
+                        TENSOR TRUCKS는 2000년 로드니 뮬런이 설립한 스케이트보드 트럭 브랜드로,<br />
+                        경량화와 혁신적인 디자인을 통해 스케이터들의 요구를 반영하고 있습니다.<br />
+                        특히 마그라이트 시리즈는 뛰어난 내구성과 경량으로 주목받으며,<br />
+                        다양한 프로 스케이터들과 협업하여 독창적인 디자인의 트럭을 선보이고 있습니다.
+                    </p>
+                </div>
+                <div class="brandsBox">
+                    <ul class="brand-list">
+                        <li><a href="#" class="brand-link active" data-brand="TENSOR">TENSOR</a></li>
+                        <li><a href="#" class="brand-link" data-brand="THERE">THERE</a></li>
+                        <li><a href="#" class="brand-link" data-brand="THRASHER">THRASHER</a></li>
+                        <li><a href="#" class="brand-link" data-brand="THUNDER">THUNDER</a></li>
+                        <li><a href="#" class="brand-link" data-brand="TIMBER">TIMBER</a></li>
+                        <li><a href="#" class="brand-link" data-brand="TRIPLE8">TRIPLE 8</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="watermark-container"></div>
+        </div>
+    </div>
+
+
+
+
+
+
+    <!-- 배너 섹션 -->
+    <div class="banner">
+        <h1 class="banner-text banner1">RIDE <span>YOUR IDENTITY</span></h1>
+        <h1 class="banner-text banner2">MAKE IT <span>YOURS</span></h1>
+    </div>
+
+
+
+
+
+
+
+
+
+    <!-- 카테고리 섹션 -->
+    <div class="inner_1">
+        <div class="category">
+
+            <div class="category-intro">
+                <h1 class="main-title">
+                    EXPLORE <br /> THE<br /> STREETS
+                </h1>
+                <h2 class="sub-title">URBAN EXPRESSION</h2>
+                <p class="category-desc">
+                    최신 스트리트웨어부터 전문 스케이트보드 데크까지, <br>
+                    당신의 아이덴티티를 표현할 모든 것을 만나보세요.
+                </p>
+                <a href="#" class="cta-button">View All Collections</a>
+            </div>
+
+            <div class="category-grid">
+                <div class="card card-skateboards">
+                    <div class="card-image"></div>
+                    <div class="overlay"></div>
+                    <a href="#">SKATEBOARDS</a>
+                    <!-- <span class="shop-now">Shop Now →</span> -->
+                </div>
+                <div class="card card-footwear">
+                    <div class="card-image"></div>
+                    <div class="overlay"></div>
+                    <a href="#">FOOTWEAR</a>
+                    <!-- <span class="shop-now">Shop Now →</span> -->
+                </div>
+                <div class="card card-apparel">
+                    <div class="card-image"></div>
+                    <div class="overlay"></div>
+                    <a href="#">APPAREL</a>
+                    <!-- <span class="shop-now">Shop Now →</span> -->
+                </div>
+                <div class="card card-latest">
+                    <div class="card-image"></div>
+                    <div class="overlay"></div>
+                    <a href="#">LATEST</a>
+                    <!-- <span class="shop-now">Shop Now →</span> -->
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- 콜라보 섹션 -->
+    <div class="collabo">
+        <div class="vans">
+            <div class="imgBox"></div>
+            <div class="txtBox">
+                <h3>CURREN CAPLES PRO SHOES</h3>
+                <h1>VANS </h1>
+                <p>VIEW THE COLLAB</p>
+            </div>
+        </div>
+        <div class="polar">
+            <div class="imgBox"></div>
+            <div class="txtBox">
+                <h3>SUMMER 25</h3>
+                <h1>POLAR SKATE CO.</h1>
+                <p>VIEW THE COLLAB</p>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+    <!-- 하단 작은 이미지 목록 -->
+    <!-- <div class="thumbs">
+        <div class="imgBox" style="background-image:url('img/freshdrops/fresh1.png');"></div>
+        <div class="imgBox" style="background-image:url('img/freshdrops/fresh2.png');"></div>
+        <div class="imgBox" style="background-image:url('img/freshdrops/fresh3.png');"></div>
+        <div class="imgBox" style="background-image:url('img/freshdrops/fresh4.png');"></div>
+        <div class="imgBox" style="background-image:url('img/freshdrops/fresh5.png');"></div>
+        <div class="imgBox" style="background-image:url('img/freshdrops/fresh6.png');"></div>
+    </div> -->
+    </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- 
+    <div class="about">
+        <h1>ABOUT US</h1>
+        <div class="inner">
+            <ul class="name-list">
+                <li data-image="img/about/about1.png">최재승 / JASON CHOI</li>
+                <li data-image="img/about/about2.png">최유진 / EUGENE CHOI</li>
+                <li data-image="img/about/about3.png">최호진 / HOJIN CHOI</li>
+                <li data-image="img/about/about4.png">조성민 / SUNGMIN CHO</li>
+                <li data-image="img/about/about5.png">정지훈 / JUNG JI HOON</li>
+                <li data-image="img/about/about6.png">조현주 / HYUNJU CHO</li>
+                <li data-image="img/about/about7.png">하시예 / SIYE HA</li>
+                <li data-image="img/about/about8.png">KATSUYA NAKAZAWA</li>
+                <li data-image="img/about/about9.png">YUSUKE IWATA</li>
+            </ul>
+            <div class="imgBox"></div>
+        </div>
+    </div> -->
+
+    <!-- HISTORY -->
+    <div class="history">
+        <h1>HISTORY</h1>
+        <div class="line"></div>
+        <div class="historyL">
+            <h2>2012년</h2>
+            <p>서울 남산 아래에서 Timber Shop 설립<br />
+                서울뿐만 아니라 한국 스케이트보드 문화 발전에 기여
+            </p>
+        </div>
+        <div class="historyR">
+            <h2>2013년</h2>
+            <p>자체 브랜드 'Timber Skateboards' 론칭<br />
+                한국에서 가장 많이 판매되는 데크 브랜드로 성장
+            </p>
+        </div>
+        <div class="historyL">
+            <h2>2014년~</h2>
+            <p>전 세계 50개 이상의 스케이트보드 브랜드 소개<br />
+                한국 최고 수준의 스케이트 팀과 아티스트, 디자이너와 협력<br />
+                POLAR SKATE CO, LAST RESORT AB, BAKER 등 글로벌 브랜드와 협업<br />
+                국내외 투어·대회 참여 및 다양한 문화 발전 기여
+            </p>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="ani">TIMBERSHOP</div>
+        <div class="footer-content">
+            <h1><span>SKATE</span> HARD<br />LIVE <span>FREE</span></h1>
+            <p class="copyright">© 2025 Jinseon Jeon. All Rights Reserved.</p>
+        </div>
+    </div>
+
+
+    <!-- 위로가기 버튼 -->
+    <a href="#" class="to-top">
+        <i class="fa-solid fa-arrow-up"></i>
+    </a>
+
+
+
+
+
+    <script src="javascript/js.js"></script>
+
+  
+   
+
+
+</body>
+
+</html>

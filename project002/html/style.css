@@ -1,0 +1,26 @@
+    @import url('https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;700&display=swap');
+
+    /* ================================
+   Base Styles
+================================ */
+    @import url('./ui/base/reset.css');
+    @import url('./ui/base/layout.css');
+    @import url('./ui/base/media.css');
+    @import url('./ui/base/cart.css');
+    @import url('./ui/base/top.css');
+
+    /* ================================
+   Component Styles
+================================ */
+    @import url('./ui/component/about.css');
+    @import url('./ui/component/banner.css');
+    @import url('./ui/component/brands.css');
+    @import url('./ui/component/category.css');
+    @import url('./ui/component/collabo.css');
+    @import url('./ui/component/footer.css');
+    @import url('./ui/component/fresh.css');
+    @import url('./ui/component/hero.css');
+    @import url('./ui/component/history.css');
+    @import url('./ui/component/hot.css');
+    @import url('./ui/component/review.css');
+    @import url('./ui/component/season.css');

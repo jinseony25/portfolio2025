@@ -1,0 +1,164 @@
+ /* --- Responsive Design --- */
+    @media (max-width: 1024px) {
+        .header .inner {
+            flex-direction: column;
+            padding: 10px;
+        }
+
+        .header .inner1,
+        .header .inner2 {
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .gnb ul {
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .util ul {
+            font-size: 1rem;
+        }
+
+        .slideTxt h3 {
+            font-size: 3rem;
+        }
+
+        .category {
+            grid-template-columns: 1fr;
+        }
+
+        .brands .inner {
+            grid-template-columns: 1fr;
+            height: auto;
+        }
+
+        .brands .info {
+            text-align: center;
+            padding-right: 0;
+        }
+
+        .brands .brandsBox {
+            justify-content: center;
+        }
+
+        .brands .I,
+        .brands .M,
+        .brands .B,
+        .brands .E,
+        .brands .R {
+            display: none;
+        }
+
+        .collabo {
+            flex-direction: column;
+        }
+
+        .fresh .shoes .wrap {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .hot .inner {
+            flex-direction: column;
+        }
+
+        .history {
+            padding: 40px 0;
+        }
+
+        .line,
+        .historyL::before,
+        .historyR::before {
+            display: none;
+        }
+
+        .historyL,
+        .historyR {
+            width: 90%;
+            margin-left: 5%;
+            margin-right: 5%;
+            text-align: center;
+        }
+
+        .footer h1 {
+            font-size: 5rem;
+        }
+
+        .ani {
+            font-size: 10rem;
+        }
+    }
+
+    @media (max-width: 768px) {
+
+        /* [추가] 모바일 간격 조정 */
+        :root {
+            --space-l: 64px;
+            --space-xl: 80px;
+            --space-xxl: 100px;
+        }
+
+        .slideTxt h3 {
+            font-size: 2.5rem;
+        }
+
+        .category {
+            padding-top: var(--space-l);
+            padding-bottom: var(--space-l);
+        }
+
+        .l_cat {
+            grid-template-rows: repeat(2, 200px);
+        }
+
+        .l_cat>div,
+        .r_cat>div {
+            min-height: 200px;
+        }
+
+        .fresh .shoes .wrap {
+            grid-template-columns: 1fr;
+        }
+
+        .review .inner {
+            grid-template-columns: 1fr;
+        }
+
+        .about .inner {
+            flex-direction: column;
+        }
+
+        .about .txtBox {
+            text-align: center;
+        }
+
+        .about .imgBox {
+            width: 90%;
+            height: 300px;
+            margin-left: 0;
+        }
+
+        .historyL,
+        .historyR {
+            transform: translateY(50px);
+        }
+
+        .historyL.active,
+        .historyR.active {
+            transform: translateY(0);
+        }
+
+        .footer h1 {
+            font-size: 3rem;
+        }
+
+        .ani {
+            font-size: 6rem;
+        }
+
+        .cat_inner {
+            font-size: 2rem;
+        }
+    }

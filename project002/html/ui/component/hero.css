@@ -1,0 +1,252 @@
+ /* --- Hero Section --- */
+    .hero {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+    }
+
+    .header {
+        width: 100%;
+        position: absolute;
+        top: 0;
+        z-index: 10;
+        background-color: transparent;
+    }
+
+    .sale {
+        overflow: hidden;
+        white-space: nowrap;
+        background-color: var(--primary-black);
+        color: var(--primary-white);
+        padding: 8px 0;
+        display: flex;
+        position: relative;
+    }
+
+    .sale ul {
+        display: flex;
+        animation: marquee 15s linear infinite;
+        gap: 20px;
+    }
+
+    .sale ul.clone {
+        position: absolute;
+        top: 0;
+        left: 100%;
+    }
+
+    .sale li {
+        padding: 0 10px;
+        font-size: 0.8rem;
+        letter-spacing: 2px;
+    }
+
+    .sale .fa-fire {
+        color: var(--accent-orange);
+        margin: 0 5px;
+    }
+
+    .header .inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+    }
+
+    .header .logo {
+        width: 150px;
+        height: 40px;
+        background: url('img/header/logo3.png') no-repeat center center / contain;
+        text-indent: -9999px;
+        cursor: pointer;
+    }
+
+    .header .inner1,
+    .header .inner2 {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+
+
+    .gnb ul {
+        display: flex;
+        /* 간격 변경 30->100 */
+        gap: 100px;
+        text-transform: uppercase;
+
+    }
+
+    .gnb ul li {
+        position: relative;
+    }
+
+    .gnb ul li a {
+        font-weight: 700;
+    }
+
+    .gnb ul li:hover>a {
+        color: var(--accent-orange);
+    }
+
+    .gnb ul li ul {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: var(--primary-white);
+        padding: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        min-width: 200px;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .gnb ul li:hover ul {
+        display: flex;
+    }
+
+    .gnb ul li ul li a {
+        padding: 5px 10px;
+        display: block;
+        font-weight: 400;
+    }
+
+    .gnb ul li ul li:hover a {
+        background-color: #f0f0f0;
+    }
+
+    .util ul {
+        display: flex;
+        gap: 15px;
+        font-size: 1.2rem;
+    }
+
+    .util ul li a:hover {
+        color: var(--accent-orange);
+    }
+
+    /* --- Sticky Header Styles --- */
+
+    /* [추가] 스크롤 시 헤더에 적용될 스타일 */
+    .header.sticky {
+        position: fixed;
+        /* 화면에 고정 */
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.9);
+        /* 흰색 반투명 배경 */
+        backdrop-filter: blur(10px);
+        /* 배경 블러 효과 (모던한 느낌) */
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        /* 그림자 효과 */
+
+        /* 부드럽게 나타나는 애니메이션 적용 */
+        animation: slideDown 0.5s ease-out;
+    }
+
+    /* [추가] 헤더 텍스트 색상 조정 (어두운 색으로) */
+    .header.sticky .gnb ul li a {
+        color: var(--primary-black);
+        /* 기본 GNB 텍스트 색상 */
+    }
+
+    .header.sticky .gnb ul li:hover>a {
+        color: var(--accent-orange);
+        /* 호버 시 텍스트 색상 */
+    }
+
+    /* [추가] 로고 이미지 변경 (어두운 배경용 로고가 있다면) */
+    /* .header.sticky .logo {
+    background-image: url('img/header/logo-dark.png');
+} */
+
+
+    /* [추가] 부드럽게 내려오는 애니메이션 효과 */
+    @keyframes slideDown {
+        from {
+            transform: translateY(-100%);
+        }
+
+        to {
+            transform: translateY(0);
+        }
+    }
+
+    .imgSlide {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        color: var(--primary-white);
+        text-align: center;
+        z-index: 1;
+    }
+
+    .imgSlide2 {
+        width: 100%;
+        height: 100vh;
+        background: url('../../img/header/slide3.jpg') no-repeat center center / cover;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        position: relative;
+    }
+
+    .imgSlide2::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.3);
+        z-index: 0;
+    }
+
+    .imgSlide2 .slideTxt {
+        position: relative;
+        z-index: 1;
+        text-align: left;
+        padding-left: 10%;
+        color: var(--primary-white);
+    }
+
+    .slideTxt p {
+        font-size: 1.2rem;
+        letter-spacing: 5px;
+        text-transform: uppercase;
+        opacity: 0.8;
+
+        padding: 5px 10px;
+        border-radius: 5px;
+        display: inline-block;
+    }
+
+    .slideTxt h3 {
+        display: block;
+        font-size: 4rem;
+        margin: 20px 0;
+        letter-spacing: 3px;
+    }
+
+    .slideTxt span {
+        font-size: 1.2rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        cursor: pointer;
+        background-color: var(--accent-orange);
+        padding: 10px 20px;
+        border-radius: 5px;
+        display: inline-block;
+        transition: background-color var(--transition-speed), transform var(--transition-speed);
+    }
+
+    .slideTxt span:hover {
+        background-color: #e04e1b;
+        transform: translateY(-5px);
+    }

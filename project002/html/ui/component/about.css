@@ -1,0 +1,77 @@
+/* --- About Section --- */
+    .about {
+        /* [변경] 간격 조정 */
+        padding: var(--space-xl) 20px;
+        background: #f8f8f8;
+        text-align: center;
+    }
+
+    .about h1 {
+        font-size: 36px;
+        font-weight: 700;
+        margin-bottom: 50px;
+        letter-spacing: 2px;
+        color: #222;
+        text-transform: uppercase;
+        position: relative;
+    }
+
+    .about h1::after {
+        content: "";
+        width: 60px;
+        height: 3px;
+        background: #ff5f1f;
+        display: block;
+        margin: 15px auto 0;
+        border-radius: 3px;
+    }
+
+    .about .inner {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 50px;
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+
+    .name-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        text-align: left;
+        flex: 1;
+    }
+
+    .name-list li {
+        font-size: 18px;
+        font-weight: 500;
+        padding: 12px 15px;
+        margin-bottom: 8px;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        color: #333;
+        background: #fff;
+        border: 1px solid #ddd;
+    }
+
+    .name-list li:hover {
+        background: #ff5f1f;
+        color: #fff;
+        transform: translateX(5px);
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .about .imgBox {
+        flex: 1;
+        width: 400px;
+        height: 560px;
+        border-radius: 12px;
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        transition: background-image 0.3s ease-in-out;
+        border-radius: 20px;
+    }

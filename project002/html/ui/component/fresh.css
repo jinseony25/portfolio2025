@@ -1,0 +1,183 @@
+/* --- Fresh Section (New Layout) --- */
+    .fresh {
+        padding: var(--space-xl) 20px;
+        background-color: #f9f9f9;
+    }
+
+    /* [추가] 2단 그리드 레이아웃을 위한 컨테이너 */
+    .fresh .fresh-content {
+        display: grid;
+        grid-template-columns: 0.8fr 1.2fr;
+        /* 좌:우 비율 */
+        gap: 50px;
+        align-items: center;
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+
+    /* [추가] 좌측 텍스트/썸네일 영역 */
+    .fresh .fresh-intro {
+        text-align: left;
+        /* 내부 모든 요소 좌측 정렬 */
+    }
+
+    /* [수정] h1, h2 텍스트 중앙 정렬 제거 */
+    .fresh h1 {
+        font-size: 36px;
+        font-weight: 700;
+        margin-bottom: 20px;
+        /* 간격 조정 */
+        letter-spacing: 2px;
+        color: #222;
+        text-transform: uppercase;
+        position: relative;
+    }
+
+    .fresh h1::after {
+        content: "";
+        width: 60px;
+        height: 3px;
+        background: #ff5f1f;
+        display: block;
+        /* [수정] 좌측 정렬을 위해 auto 마진 제거 */
+        margin: 15px 0 0;
+        border-radius: 3px;
+    }
+
+    .fresh h2 {
+        font-size: 1.5rem;
+        color: #666;
+        margin-top: 10px;
+        font-weight: 500;
+        letter-spacing: 0.5px;
+        line-height: 1.4;
+        margin-bottom: 40px;
+        /* 간격 조정 */
+    }
+
+    /* --- 메인 이미지 & 썸네일 --- */
+ .fresh .shoes .mainImg {
+    width: 100%;
+    max-width: none;
+    aspect-ratio: 16 / 9; /* 더 시원한 배너 비율 */
+    margin: 0;
+    background-position: center;
+    background-size: cover; 
+    border-radius: 16px;
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+    .fresh .shoes .mainImg:hover {
+        transform: scale(1.03);
+        box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+    }
+
+    /* --- 오버레이, 아이콘, 텍스트 효과 (기존과 동일) --- */
+    .fresh .shoes .mainImg .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.65);
+        opacity: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        border-radius: 16px;
+        transition: opacity 0.4s ease;
+    }
+
+    .fresh .shoes .mainImg:hover .overlay {
+        opacity: 1;
+    }
+
+    .fresh .shoes .mainImg .txtBox h1,
+    .fresh .shoes .mainImg .txtBox h2 {
+        opacity: 0;
+        transform: translateY(10px);
+        transition: all 0.4s ease 0.2s;
+    }
+
+    .fresh .shoes .mainImg:hover .txtBox h1,
+    .fresh .shoes .mainImg:hover .txtBox h2 {
+        opacity: 1;
+        color: #fff;
+        transform: translateY(0);
+        z-index: 10;
+    }
+
+    .fresh .shoes .mainImg .icon {
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+        display: flex;
+        gap: 10px;
+        z-index: 5;
+    }
+
+    .fresh .shoes .mainImg .icon span {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background-color: rgba(255, 255, 255, 0.9);
+        border-radius: 50%;
+        color: #333;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .fresh .shoes .mainImg .icon span:hover {
+        background-color: var(--accent-orange);
+        color: #fff;
+        transform: scale(1.1);
+    }
+
+    /* --- 썸네일 이미지 (위치 변경됨) --- */
+    .fresh .thumbs {
+        /* [수정] 중앙 정렬 대신 좌측 정렬 */
+        justify-content: flex-start;
+        display: flex;
+        gap: 15px;
+        flex-wrap: wrap;
+        margin-top: 10px;
+    }
+
+    .fresh .thumbs .imgBox {
+        width: 120px;
+        height: 90px;
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        border-radius: 8px;
+        cursor: pointer;
+        border: 2px solid transparent;
+        opacity: 0.6;
+        transition: all 0.3s ease;
+    }
+
+    .fresh .thumbs .imgBox:hover,
+    .fresh .thumbs .imgBox.active {
+        opacity: 1;
+        transform: scale(1.05);
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .fresh .thumbs .imgBox.active {
+        border-color: #FF5F1F;
+    }
+
+    .main-product-link {
+        text-decoration: none;
+        color: inherit;
+        cursor: pointer;
+    }

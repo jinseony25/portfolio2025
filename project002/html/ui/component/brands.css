@@ -1,0 +1,165 @@
+ /* --- Brands Section --- */
+    /* Brands Section - Minimalist Version */
+    /* Brands Section - Light Mode Version */
+    .brands {
+        padding: var(--space-xl) 0;
+        text-align: center;
+        /* [수정] 요청하신 밝은 회색 배경으로 변경 */
+        background: #f9f9f9;
+        position: relative;
+        /* [수정] 상하단 테두리를 어둡고 옅은 색으로 변경 */
+        border-top: 1px solid #eee;
+        border-bottom: 1px solid #eee;
+        overflow: hidden;
+    }
+
+    .brands>h1 {
+        font-size: 4rem;
+        margin-bottom: 60px;
+        position: relative;
+        display: inline-block;
+        text-transform: uppercase;
+        /* [수정] 밝은 배경에 맞춰 타이틀 색상을 어둡게 변경 */
+        color: #111;
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .brands.is-visible>h1 {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .brands>h1::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        bottom: -10px;
+        transform: translateX(-50%);
+        width: 100px;
+        height: 1px;
+        /* [수정] 밑줄 효과를 어두운 색의 그라데이션으로 변경 */
+        background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.2), transparent);
+        border-radius: 2px;
+    }
+
+    .brands .inner {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+        position: relative;
+        z-index: 2;
+    }
+
+    .brands .t {
+        display: flex;
+        justify-content: space-between;
+        gap: 40px;
+        /* [수정] 유리 질감 대신, 부드러운 그림자가 있는 흰색 카드로 변경 */
+        background: #fff;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+        padding: 40px;
+        border-radius: 12px;
+        /* [삭제] 라이트 모드에서는 불필요한 속성 제거 */
+        /* backdrop-filter: blur(10px); */
+        /* border: 1px solid rgba(255, 255, 255, 0.08); */
+        opacity: 0;
+        transform: scale(0.95);
+        transition: opacity 0.8s ease 0.2s, transform 0.8s ease 0.2s, box-shadow 0.3s ease;
+    }
+
+    .brands.is-visible .t {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    .brands .t:hover {
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+    }
+
+    .brands .info {
+        text-align: left;
+        flex-basis: 60%;
+    }
+
+    .brands .info h2 {
+        font-size: 2.8rem;
+        margin-bottom: 20px;
+        transition: all 0.3s ease;
+        /* [수정] 브랜드명도 어두운 색으로 변경 */
+        color: #222;
+    }
+
+    .brands .info p {
+        /* [수정] 본문 텍스트 색상을 적당한 회색으로 변경 */
+        color: #555;
+        line-height: 1.7;
+        min-height: 100px;
+        transition: all 0.3s ease;
+    }
+
+    .brands .brandsBox {
+        flex-basis: 35%;
+    }
+
+    .brands .brand-list {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 15px 30px;
+    }
+
+    .brands .brandsBox a {
+        font-weight: 700;
+        font-size: 1.2rem;
+        /* [수정] 기본 링크 색상을 회색으로 변경 */
+        color: #666;
+        position: relative;
+        transition: color 0.3s;
+        padding: 5px 0;
+    }
+
+    .brands .brandsBox a::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -2px;
+        width: 0;
+        height: 2px;
+        background: var(--accent-orange);
+        transition: width 0.3s;
+    }
+
+    .brands .brandsBox a:hover,
+    .brands .brandsBox a.active {
+        /* 포인트 컬러는 라이트 모드에서도 잘 어울리므로 유지 */
+        color: var(--accent-orange);
+    }
+
+    .brands .brandsBox a:hover::after,
+    .brands .brandsBox a.active::after {
+        width: 100%;
+    }
+
+    #watermark-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        pointer-events: none;
+        user-select: none;
+        overflow: hidden;
+    }
+
+    .street-tag {
+        position: absolute;
+        font-size: 10vw;
+        font-weight: 900;
+        /* [수정] 워터마크 색상을 매우 옅은 회색으로 변경 */
+        color: rgba(0, 0, 0, 0.04);
+        transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+        opacity: 0;
+        transform: translateY(20px);
+    }

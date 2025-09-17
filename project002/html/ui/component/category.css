@@ -1,0 +1,216 @@
+ /* --- Category Section --- */
+    /* --- Category Section --- */
+    .category {
+        padding: var(--space-xl) 20px;
+        display: grid;
+        grid-template-columns: 0.8fr 1.2fr;
+        gap: 40px;
+        max-width: 1400px;
+        margin: 0 auto;
+        align-items: center;
+    }
+
+    .category-intro {
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .main-title {
+        font-size: 4.5rem;
+        font-weight: 900;
+        color: var(--primary-black);
+        text-align: left;
+        text-transform: uppercase;
+        line-height: 1.1;
+        letter-spacing: 3px;
+        text-shadow: none;
+        animation: fadeDown 1.2s ease-out;
+    }
+
+    .sub-title {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--accent-orange);
+        text-align: left;
+        margin: 20px 0;
+        animation: fadeIn 2s ease-in;
+    }
+
+    .sub-title::after {
+        display: none;
+    }
+
+    .category-desc {
+        color: #555;
+        font-size: 1rem;
+        line-height: 1.7;
+        margin-bottom: 30px;
+    }
+
+    .cta-button {
+        background-color: var(--primary-black);
+        color: var(--primary-white);
+        padding: 12px 25px;
+        font-weight: 700;
+        border-radius: 5px;
+        transition: background-color var(--transition-speed);
+        text-transform: uppercase;
+    }
+
+    .cta-button:hover {
+        background-color: var(--accent-orange);
+    }
+
+    .category-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        gap: 20px;
+        height: 600px;
+    }
+
+    /* 카드 공통 스타일 */
+    .card {
+        position: relative;
+        overflow: hidden;
+        /* [삭제] 마우스 포인터가 손가락 모양으로 바뀌는 효과 제거 */
+        /* cursor: pointer; */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-transform: uppercase;
+        border-radius: 12px;
+        /* [삭제] 호버 효과를 위한 transition 제거 */
+        /* transition: transform 0.4s ease, box-shadow 0.4s ease; */
+    }
+
+    /* 카드 내 이미지 요소 */
+    .card-image {
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+        /* [삭제] 호버 효과를 위한 transition 제거 */
+        /* transition: transform 0.6s ease; */
+    }
+
+    /* 각 카드 그리드 배치 및 배경 이미지 (기존과 동일) */
+    .card-skateboards {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+    }
+
+    .card-skateboards .card-image {
+        background-image: url('../../img/category/category03.jpg');
+    }
+
+    .card-footwear {
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
+    }
+
+    .card-footwear .card-image {
+        background-image: url('../../img/category/footwear.jpg');
+    }
+
+    .card-apparel {
+        grid-column: 1 / 3;
+        grid-row: 2 / 3;
+    }
+
+    .card-apparel .card-image {
+        background-image: url('../../img/category/category01.jpg');
+    }
+
+    .card-latest {
+        grid-column: 3 / 4;
+        grid-row: 1 / 3;
+    }
+
+    .card-latest .card-image {
+        background-image: url('../../img/category/cat1.jpg');
+    }
+
+    /* 카드 오버레이 */
+    .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.35);
+        /* [삭제] 호버 효과를 위한 transition 제거 */
+        /* transition: background-color 0.3s ease; */
+    }
+
+    /* 카드 텍스트 */
+    /* 카드 텍스트 */
+    .card a {
+        position: absolute;
+        z-index: 1;
+        color: #fff;
+        font-size: 1.5rem;
+        font-weight: 700;
+        letter-spacing: 2px;
+        text-decoration: none;
+
+        /* [추가] 마우스 커서가 손가락 모양으로 바뀌지 않고 기본 모양으로 유지되도록 설정 */
+        cursor: default;
+    }
+
+    /* [추가] 마우스를 올려도 텍스트 색상이나 밑줄 등 아무런 변화가 없도록 설정 */
+    .card a:hover {
+        color: #fff;
+        /* 기본 상태의 색상(#fff)과 동일하게 유지 */
+        text-decoration: none;
+        /* 밑줄 등 장식 효과 방지 */
+    }
+
+    /* "Shop Now" 텍스트 */
+    .shop-now {
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translate(-50%, 10px);
+        color: #fff;
+        font-size: 0.9rem;
+        font-weight: 700;
+        /* [수정] 항상 보이지 않도록 opacity: 0 유지 */
+        opacity: 0;
+        /* [삭제] 호버 효과를 위한 transition 제거 */
+        /* transition: opacity 0.4s ease, transform 0.4s ease; */
+    }
+
+    /* [삭제] 마우스 호버 시 "Shop Now"가 나타나는 효과 제거 */
+    /*
+.card:hover .shop-now {
+    opacity: 1;
+    transform: translate(-50%, 0);
+}
+*/
+
+    /* 애니메이션 키프레임 (기존과 동일) */
+    @keyframes fadeDown {
+        from {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
+    }
+

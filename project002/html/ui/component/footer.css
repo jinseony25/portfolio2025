@@ -1,0 +1,68 @@
+ /* --- Footer --- */
+    .footer {
+        /* [변경] 간격 조정 */
+        padding: var(--space-l) 0;
+        text-align: center;
+        background-color: var(--primary-black);
+        color: var(--primary-white);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .footer h1 {
+        font-size: 8rem;
+        line-height: 1;
+        margin-bottom: 20px;
+        position: relative;
+        z-index: 1;
+    }
+
+    .footer span {
+        color: var(--accent-orange);
+    }
+
+    .ani {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 15rem;
+        font-family: var(--font-heading);
+        letter-spacing: 5px;
+        color: transparent;
+        -webkit-text-stroke: 1px rgba(255, 255, 255, 0.1);
+        white-space: nowrap;
+        animation: rotate-ani 40s linear infinite;
+        opacity: 0.5;
+    }
+
+    /* --- Animations --- */
+    @keyframes marquee {
+        0% {
+            transform: translateX(0);
+        }
+
+        100% {
+            transform: translateX(-100%);
+        }
+    }
+
+    @keyframes marquee-h1 {
+        0% {
+            transform: translateX(0) translateY(-50%);
+        }
+
+        100% {
+            transform: translateX(-100%) translateY(-50%);
+        }
+    }
+
+    @keyframes rotate-ani {
+        0% {
+            transform: translate(-50%, -50%) rotate(0deg);
+        }
+
+        100% {
+            transform: translate(-50%, -50%) rotate(360deg);
+        }
+    }

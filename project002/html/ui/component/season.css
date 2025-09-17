@@ -1,0 +1,62 @@
+/* --- Season Sale Section --- */
+    .seasonSale {
+        background: #111;
+        overflow: hidden;
+        /* [수정] 배너의 상하 여백을 줄여 높이를 조절합니다. */
+        padding: 8px 0;
+    }
+
+    .marquee {
+        display: inline-flex;
+        width: max-content;
+        animation: scrollLeft 15s linear infinite;
+    }
+
+    .marquee__content {
+        display: flex;
+        flex-shrink: 0;
+    }
+
+    .marquee__content span {
+        /* [수정] 글자 사이의 좌우 간격을 줄입니다. */
+        margin-right: 40px;
+        /* [수정] 글자 크기를 줄이는 것이 가장 효과적입니다. */
+        font-size: 1.5rem;
+        font-weight: 900;
+        text-transform: uppercase;
+        font-family: 'Bebas Neue', sans-serif;
+        /* [수정] 자간을 약간 줄여 더 압축된 느낌을 줍니다. */
+        letter-spacing: 1px;
+        color: #FF5F1F;
+        text-shadow: 0 0 5px rgba(255, 95, 31, 0.7),
+            0 0 10px rgba(255, 95, 31, 0.5);
+    }
+
+    @keyframes scrollLeft {
+        0% {
+            transform: translateX(0);
+        }
+
+        100% {
+            transform: translateX(-50%);
+        }
+    }
+
+    .highlight {
+        color: #fff;
+        animation: blink 1s infinite alternate;
+    }
+
+    @keyframes blink {
+        0% {
+            color: #fff;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8),
+                0 0 20px rgba(255, 255, 255, 0.6);
+        }
+
+        100% {
+            color: #FF5F1F;
+            text-shadow: 0 0 10px rgba(255, 95, 31, 0.7),
+                0 0 20px rgba(255, 95, 31, 0.5);
+        }
+    }

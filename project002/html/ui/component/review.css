@@ -1,0 +1,226 @@
+ /* --- Review Section --- */
+    .review {
+        padding: var(--space-xl) 0;
+        text-align: center;
+        overflow: hidden;
+    }
+
+    .review h1 {
+        font-size: 36px;
+        font-weight: 700;
+        margin-bottom: 50px;
+        letter-spacing: 2px;
+        color: #222;
+        text-transform: uppercase;
+        position: relative;
+    }
+
+    .review h1::after {
+        content: "";
+        width: 60px;
+        height: 3px;
+        background: #ff5f1f;
+        display: block;
+        margin: 15px auto 0;
+        border-radius: 3px;
+    }
+
+    .review-container {
+        position: relative;
+        max-width: 1600px;
+        margin: 0 auto;
+        padding: 0 50px;
+    }
+
+    .review-slider {
+        overflow: hidden;
+    }
+
+    .review-track {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+    }
+
+    .arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 10;
+        background-color: rgba(255, 255, 255, 0.8);
+        border: 1px solid #ddd;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #333;
+        cursor: pointer;
+        transition: all 0.2s ease;
+    }
+
+    .arrow:hover {
+        background-color: var(--primary-black);
+        color: var(--primary-white);
+    }
+
+    .arrow.prev {
+        left: 0;
+    }
+
+    .arrow.next {
+        right: 0;
+    }
+
+    /* 4장만 보이도록 조정 */
+    .review .imgBox {
+        flex: 0 0 calc((100% - 90px) / 4);
+        /* (100% - (30px * 3)) / 4 */
+        margin-right: 30px;
+        height: 350px;
+        position: relative;
+        background-color: #ddd;
+        background-position: center;
+        background-size: cover;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        overflow: hidden;
+        cursor: pointer;
+        border: 1px solid #eee;
+        border-radius: 8px;
+    }
+
+    .review .imgBox:last-child {
+        margin-right: 0;
+    }
+
+    /* 이미지 경로 적용 */
+    .review .imgBox:nth-child(1) {
+        background-image: url('../../img/review/review01.png');
+    }
+
+    .review .imgBox:nth-child(2) {
+        background-image: url('../../img/review/review02.png');
+    }
+
+    .review .imgBox:nth-child(3) {
+        background-image: url('../../img/review/review03.png');
+    }
+
+    .review .imgBox:nth-child(4) {
+        background-image: url('../../img/review/review04.png');
+    }
+
+    .review .imgBox:nth-child(1):hover {
+        background-image: url('../../img/review/review01hover.png');
+    }
+
+    .review .imgBox:nth-child(2):hover {
+        background-image: url('../../img/review/review02hover.png');
+    }
+
+    .review .imgBox:nth-child(3):hover {
+        background-image: url('../../img/review/review03hover.png');
+    }
+
+    .review .imgBox:nth-child(4):hover {
+        background-image: url('../../img/review/review04hover.png');
+    }
+
+    /* 복제된 카드들도 동일한 이미지 적용 */
+    .review .imgBox:nth-child(5) {
+        background-image: url('../../img/review/review01.png');
+    }
+
+    .review .imgBox:nth-child(6) {
+        background-image: url('../../img/review/review02.png');
+    }
+
+    .review .imgBox:nth-child(7) {
+        background-image: url('../../img/review/review03.png');
+    }
+
+    .review .imgBox:nth-child(8) {
+        background-image: url('../../img/review/review04.png');
+    }
+
+    .review .imgBox:nth-child(5):hover {
+        background-image: url('../../img/review/review01hover.png');
+    }
+
+    .review .imgBox:nth-child(6):hover {
+        background-image: url('../../img/review/review02hover.png');
+    }
+
+    .review .imgBox:nth-child(7):hover {
+        background-image: url('../../img/review/review03hover.png');
+    }
+
+    .review .imgBox:nth-child(8):hover {
+        background-image: url('../../img/review/review04hover.png');
+    }
+
+    /* 호버 시 텍스트 박스 */
+    .review .txtBox {
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+        color: var(--primary-white);
+        padding: 20px;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+        text-align: center;
+        opacity: 0;
+        transition: opacity 0.4s ease;
+    }
+
+    .review .imgBox:hover .txtBox {
+        opacity: 1;
+    }
+
+    .review .txtBox h3 {
+        font-size: 0.9rem;
+        margin-bottom: 8px;
+    }
+
+    .review .txtBox h2 {
+        font-size: 1.1rem;
+        font-weight: 700;
+        margin-bottom: 10px;
+    }
+
+    .review .star-rating {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 10px;
+    }
+
+    .review .txtBox i {
+        color: gold;
+        font-size: 0.9rem;
+        margin: 0 1px;
+    }
+
+    .review .txtBox span {
+        font-size: 0.9rem;
+        display: block;
+        margin-top: 10px;
+    }
+
+    .reviewMore p {
+        margin-top: 50px;
+        display: inline-block;
+        border: 2px solid var(--primary-black);
+        padding: 10px 30px;
+        cursor: pointer;
+        transition: all var(--transition-speed);
+        text-transform: uppercase;
+        font-weight: 700;
+    }
+
+    .reviewMore p:hover {
+        background-color: var(--primary-black);
+        color: var(--primary-white);
+    }
