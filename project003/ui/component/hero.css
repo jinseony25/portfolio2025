@@ -1,0 +1,54 @@
+/* 히어로 전체 */
+.hero {
+  display: flex;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  top: 0;
+}
+/* 왼쪽 사진 */
+.hero-image {
+  flex: 1; /* 남는 공간 우선 차지 */
+  background: url('../../img/poster/poster.png') no-repeat left center;
+  background-size: cover; /* 비율 유지하면서 잘릴 수 있음 */
+}
+
+/* 오른쪽 nav */
+.side-nav {
+  flex: 0 0 20%; /* nav는 기본적으로 25% 폭, 이미지에 따라 유동 조정 */
+  background: #FDE2E4;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.side-nav .logo {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  font-weight: bold;
+  color: #2c3e50;;
+}
+
+.side-nav .nav-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  text-align: center;
+}
+
+.side-nav .nav-links a {
+  color: #2c3e50;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: color 0.3s;
+}
+
+.side-nav .nav-links a:hover {
+  color: #f39c12;
+}
