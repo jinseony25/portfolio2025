@@ -1,0 +1,406 @@
+/* Story Book Section */
+.book {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  perspective: 2500px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url(../../img/background/back9.png);
+  background-size: cover;
+  background-position: center;
+}
+
+/* Page Common Styles */
+.page {
+  position: absolute;
+  width: 90%;
+  max-width: 1200px;
+  height: 80%;
+  max-height: 800px;
+  transform-origin: left center;
+  transform-style: preserve-3d;
+  transition: transform 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+
+.page-front,
+.page-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  backface-visibility: hidden;
+  /* box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1); */
+  overflow: hidden;
+}
+
+.page-front {
+  background: linear-gradient(135deg,
+      rgba(255, 255, 255, 0.95) 0%,
+      rgba(240, 248, 255, 0.95) 50%,
+      rgba(230, 245, 255, 0.95) 100%);
+  z-index: 2;
+  border-radius: 15px;
+}
+
+.page-back {
+  background: #fff;
+  transform: rotateY(180deg);
+  z-index: 1;
+  border-radius: 15px;
+  opacity: 0;
+}
+
+/* Page Stacking Order */
+.page[data-page="0"] {
+  z-index: 6;
+}
+
+.page[data-page="1"] {
+  z-index: 5;
+}
+
+.page[data-page="2"] {
+  z-index: 4;
+}
+
+.page[data-page="3"] {
+  z-index: 3;
+}
+
+.page[data-page="4"] {
+  z-index: 2;
+}
+
+.page[data-page="5"] {
+  z-index: 1;
+}
+
+.page.flipped {
+  transform: rotateY(-180deg);
+}
+
+.page.current {
+  z-index: 10 !important;
+}
+
+.page.flipping {
+  z-index: 15 !important;
+}
+
+/* Cover Page Styles */
+.cover-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Cover Image Container */
+.cover-image {
+  width: 100%;
+  flex-grow: 1;
+  background-image: url('../../img/gallery/ponyo50.png');
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+  animation: coverImageFloat 4s ease-in-out infinite;
+  min-height: 200px;
+}
+
+/* @keyframes coverImageFloat {
+    0%, 100% { transform: translateY(0px) scale(1); }
+    50% { transform: translateY(-5px) scale(1.005); }
+} */
+
+/* Back Cover Styles */
+.back-cover-page .page-front {
+  color: #fff;
+  border: 3px solid rgba(255, 255, 255, 0.2);
+  overflow: hidden;
+  border-radius: 15px;
+}
+
+.back-cover-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 50px 40px;
+  text-align: center;
+}
+
+.back-cover-image {
+  width: 100%;
+  height: 200px;
+  background-image: url('../../img/gallery/ponyo011.jpg');
+  background-size: cover;
+  background-position: center;
+  border-radius: 15px;
+  border: 3px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  margin: 20px auto;
+  flex-shrink: 0;
+}
+
+.copyright {
+  font-size: 1rem;
+  opacity: 0.7;
+  padding-top: 15px;
+  font-family: 'Cinzel';
+  color: #555;
+}
+
+/* Story Pages Styles */
+.story-content {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+/* Story Image Styles */
+.story-img {
+  width: 100%;
+  flex-grow: 1;
+  margin: 0px auto;
+  border-radius: 10px;
+  background-size: cover;
+  background-position: center;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+  min-height: 150px;
+}
+
+.page[data-page="1"] .story-img {
+  background-image: url('../../img/gallery/ponyo004.jpg');
+}
+
+.page[data-page="2"] .story-img {
+  background-image: url('../../img/gallery/ponyo008.jpg');
+}
+
+.page[data-page="3"] .story-img {
+  background-image: url('../../img/gallery/ponyo036.jpg');
+}
+
+.page[data-page="4"] .story-img {
+  background-image: url('../../img/gallery/ponyo028.jpg');
+}
+
+/* Story Text Styles */
+.story-content p {
+  font-size: 1rem;
+  max-width: 100%;
+  background: rgba(44, 90, 160, 0.1);
+  padding: 20px 25px;
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  color: #fff;
+  transition: all 0.3s ease;
+  font-family: 'Cinzel';
+  flex-shrink: 0;
+  position: absolute;
+  bottom: 20px;
+}
+
+/* Navigation Buttons */
+.nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.8);
+  border: 2px solid rgba(44, 90, 160, 0.3);
+  font-size: 1.1rem;
+  color: #2c5aa0;
+  cursor: pointer;
+  padding: 15px 20px;
+  border-radius: 50%;
+  z-index: 20;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.nav-btn:hover {
+  background: rgba(255, 255, 255, 1);
+  border-color: #4facfe;
+  color: #4facfe;
+}
+
+.nav-btn:active {
+  transform: translateY(-50%) scale(0.95);
+}
+
+.prev-btn {
+  left: 250px;
+}
+
+.next-btn {
+  right: 250px;
+}
+
+/* Page Indicator */
+.page-indicator {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 15px;
+  z-index: 20;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.dot.active {
+  background: #4facfe;
+  border-color: #4facfe;
+  transform: scale(1.3);
+  box-shadow: 0 0 10px rgba(79, 172, 254, 0.5);
+}
+
+.dot:hover {
+  background: rgba(255, 255, 255, 0.8);
+  transform: scale(1.1);
+}
+
+/* Page Flipping Effects */
+.page {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.page.flipping {
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .book {
+    perspective: 2000px;
+  }
+
+  .page {
+    width: 95%;
+    height: 85%;
+  }
+
+  .cover-content,
+  .story-content,
+  .back-cover-content {
+    padding: 30px 20px;
+  }
+
+  .story-img,
+  .cover-image {
+    min-height: 180px;
+  }
+
+  .story-content p {
+    font-size: 1.2rem;
+  }
+
+  .story-img,
+  .cover-image {
+    border-radius: 8px;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .cover-content,
+  .story-content,
+  .back-cover-content {
+    padding: 20px 15px;
+  }
+
+  .cover-title .subtitle {
+    font-size: 1.2rem;
+  }
+
+  .story-img,
+  .cover-image {
+    min-height: 150px;
+  }
+
+  .story-content p {
+    font-size: 1.1rem;
+    padding: 15px;
+    max-width: 95%;
+  }
+
+  .nav-btn {
+    font-size: 1.5rem;
+    padding: 12px 16px;
+  }
+
+  .prev-btn {
+    left: 15px;
+  }
+
+  .next-btn {
+    right: 15px;
+  }
+
+  .back-cover-image {
+    height: 150px;
+  }
+}
+
+@media (max-width: 480px) {
+  .page {
+    width: 98%;
+    height: 90%;
+  }
+
+  .cover-content,
+  .story-content,
+  .back-cover-content {
+    padding: 15px 10px;
+  }
+
+  .story-img,
+  .cover-image {
+    min-height: 120px;
+  }
+
+  .story-content p {
+    font-size: 1rem;
+    padding: 10px;
+  }
+
+  .page-indicator {
+    bottom: 20px;
+  }
+
+  .dot {
+    width: 10px;
+    height: 10px;
+  }
+
+  .nav-btn {
+    display: none;
+  }
+}

@@ -1,0 +1,57 @@
+/* Footer */
+footer {
+    background: var(--deep-sea);
+    color: #fff;
+    padding: 60px 50px 30px;
+    text-align: center;
+
+    position: relative;
+    /* 버블과 레이어 분리 */
+    z-index: 10;
+    /* 위로 올리기 */
+    overflow: hidden;
+    /* 푸터 영역 밖 버블 숨기기 */
+}
+
+.footer-content {
+    max-width: 800px;
+    margin: 0 auto
+}
+
+.footer-content h3 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: var(--seafoam)
+}
+
+.footer-content p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    opacity: .9
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 30px
+}
+
+.social-links a {
+    display: inline-flex;
+    width: 50px;
+    height: 50px;
+    background: var(--coral-pink);
+    color: #fff;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    transition: .3s
+}
+
+.social-links a:hover {
+    background: var(--sunset-orange);
+    transform: translateY(-5px) scale(1.1)
+}

@@ -1,25 +1,27 @@
-:root {
-    --header-height: 84px;
-}
-
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: border-box
+}
+
+a {
+    text-decoration: none
+}
+
+:root {
+    --ocean-blue: #4a90e2;
+    --coral-pink: #ff6b6b;
+    --sunset-orange: #ff8c42;
+    --seafoam: #26d0ce;
+    --sand-beige: #f4e4bc;
+    --deep-sea: #1e3a8a;
+    --wave-white: #ffffff;
+    --ghibli-red: #dc143c;
 }
 
 body {
-    font-family: 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
-    /* background: linear-gradient(135deg, #2c3e50 0%, #34495e 50%, #1a252f 100%); */
-    color: #333;
+    font-family: 'Cinzel', 'Gamja Flower', 'Jua', 'sans-serif';
     overflow-x: hidden;
-    line-height: 1.6;
-    /* fixed header 때문에 내용이 가려지지 않도록 여백 확보 */
-    padding-top: var(--header-height);
-}
-
-html, body {
-  margin: 0;
-  padding: 0;
-  height: 100%;
+    background: linear-gradient(180deg, var(--ocean-blue) 0%, var(--seafoam) 50%, var(--sand-beige) 100%);
+    min-height: 100vh;
 }

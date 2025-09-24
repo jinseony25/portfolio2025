@@ -1,0 +1,73 @@
+/* Header & Nav */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    /* background: rgba(255, 255, 255, .1);
+    backdrop-filter: blur(3px); */
+    z-index: 1000;
+}
+
+.logo img {
+    height: 60px;
+    /* 헤더 높이(80px)에 맞게 조정 */
+    width: auto;
+    /* 가로 비율 자동 */
+    display: block;
+    /* 여백 제거 */
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 50px;
+    height: 80px
+}
+
+.logo-text a {
+    font-style: 'Cinzel';
+    font-size: 28px;
+    color: fff;
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, .5);
+}
+
+.nav-menu {
+    display: flex;
+    flex-direction: column;
+    margin-top: 900px;
+    list-style: none;
+    gap: 40px;
+    text-align: right;
+}
+
+.nav-menu a {
+    font-style: 'Cinzel';
+    color: #fff;
+    font-size: 20px;
+    position: relative;
+    transition: .3s;
+}
+
+.nav-menu a:hover {
+    color: var(--coral-pink);
+    transform: translateY(-2px)
+}
+
+.nav-menu a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--coral-pink), var(--sunset-orange));
+    transition: .3s;
+    border-radius: 2px
+}
+
+.nav-menu a:hover::after {
+    width: 100%
+}

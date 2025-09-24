@@ -1,0 +1,15 @@
+/* 전체 스크롤바 */
+::-webkit-scrollbar {
+    width: 0; /* 스크롤바의 너비를 0으로 설정하여 숨김 */
+    background: transparent; /* 배경을 투명하게 설정 */
+}
+
+/* 스크롤바 트랙(빈 공간) */
+::-webkit-scrollbar-track {
+    background: transparent; /* 트랙을 투명하게 설정 */
+}
+
+/* 스크롤바 핸들(움직이는 막대) */
+::-webkit-scrollbar-thumb {
+    background: transparent; /* 핸들을 투명하게 설정 */
+}

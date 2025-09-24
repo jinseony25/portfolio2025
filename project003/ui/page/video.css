@@ -1,0 +1,30 @@
+/* 비디오 섹션 */
+#video {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 20px;
+  background: #f0f4f9; /* 배경색은 필요에 따라 */
+  background-image: url(../../img/background/back.png);
+}
+
+/* 반응형 비디오 박스 */
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 900px; /* 최대 크기 제한 */
+  aspect-ratio: 16 / 9; /* 가로세로 비율 유지 */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  border: none;
+}

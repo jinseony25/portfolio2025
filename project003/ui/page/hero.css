@@ -1,0 +1,35 @@
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    background-image: url(../../img/gallery/gallery1.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.hero .logo {
+    position: absolute;
+    top: 25%;
+    /* 원하는 위치 (기본은 50%, 살짝 위로 올리려면 40~45%) */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.hero a {
+    font-size: 280px;
+    color: #fff;
+    line-height: 0.8;
+}
+
+.hero p {
+    font-size: 16px;
+    color: #fff;
+}
+
+.hero span {
+    font-size: 24px;
+}
