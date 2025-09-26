@@ -1,30 +1,46 @@
 /* 비디오 섹션 */
 #video {
   width: 100%;
+  height: 100vh;
   display: flex;
+  /* 비디오를 중앙에 배치 */
   justify-content: center;
   align-items: center;
   padding: 50px 20px;
-  background: #f0f4f9; /* 배경색은 필요에 따라 */
-  background-image: url(../../img/background/back.png);
+  background: #f0f4f9;
+  background-image: url(../../img/background/back10.png);
+  background-size: cover;
+  overflow: hidden;
 }
 
 /* 반응형 비디오 박스 */
 .video-wrapper {
   position: relative;
   width: 100%;
-  max-width: 900px; /* 최대 크기 제한 */
-  aspect-ratio: 16 / 9; /* 가로세로 비율 유지 */
+  max-width: 1000px;
+  /* 최대 크기 제한 */
+  aspect-ratio: 16 / 9;
+  /* 가로세로 비율 유지 */
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
   border-radius: 15px;
   overflow: hidden;
 }
 
-.video-wrapper iframe {
+.video-wrapper iframe,
+.video-wrapper video {
   position: absolute;
   width: 100%;
   height: 100%;
   top: 0;
   left: 0;
   border: none;
+  object-fit: cover;
+  /* ⭐️ 이 속성을 사용해 컨테이너를 꽉 채우고 여백을 제거합니다. */
+}
+
+.video-wrapper video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.1); /* 살짝 확대해서 위아래 검은줄 잘라내기 */
 }

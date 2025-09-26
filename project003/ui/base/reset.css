@@ -22,6 +22,66 @@ a {
 body {
     font-family: 'Cinzel', 'Gamja Flower', 'Jua', 'sans-serif';
     overflow-x: hidden;
+  
     background: linear-gradient(180deg, var(--ocean-blue) 0%, var(--seafoam) 50%, var(--sand-beige) 100%);
     min-height: 100vh;
 }
+
+
+
+
+/* style.css 파일에 아래 내용을 추가하거나 기존 내용을 대체하세요. */
+
+/* HTML 전체 높이를 100%로 설정하여 body가 전체 화면을 덮도록 합니다. */
+html {
+    height: 100%; 
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* 기존 * 스타일은 유지합니다. */
+}
+
+a {
+    text-decoration: none;
+}
+
+:root {
+    --ocean-blue: #4a90e2;
+    --coral-pink: #ff6b6b;
+    --sunset-orange: #ff8c42;
+    --seafoam: #26d0ce;
+    --sand-beige: #f4e4bc;
+    --deep-sea: #1e3a8a;
+    --wave-white: #ffffff;
+    --ghibli-red: #dc143c;
+}
+
+body {
+    font-family: 'Cinzel', 'Gamja Flower', 'Jua', 'sans-serif';
+    /* 수평 스크롤 방지 (기존 속성) */
+    overflow-x: hidden;
+ 
+    /* body 배경 그라데이션 (기존 속성) */
+    background: linear-gradient(180deg, var(--ocean-blue) 0%, var(--seafoam) 50%, var(--sand-beige) 100%);
+    
+    /* 👇 불필요한 스크롤 방지 및 푸터 하단 고정을 위한 Flexbox 설정 */
+    display: flex; /* Flex 컨테이너로 설정 */
+    flex-direction: column; /* 자식 요소들을 세로(위에서 아래로) 정렬 */
+    min-height: 100%; /* HTML의 100% 높이를 따르도록 설정 */
+}
+
+main {
+    /* main 요소가 남은 공간을 모두 채우도록 설정하여, footer를 하단으로 밀어냅니다. */
+    flex-grow: 1; 
+}
+/* 푸터 아래에 원치 않는 배경과 스크롤이 사라졌는지 확인해 보세요. */
+
+/* 참고: 첨부 이미지의 어두운 파란색 바 문제는 HTML의 다른 요소와 관련 있을 수 있으니, 
+   CSS 수정 후에도 문제가 지속된다면 해당 바를 개발자 도구로 선택하여 어떤 요소인지 확인해 봐야 합니다. */
+
+   
+
+
+   

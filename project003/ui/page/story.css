@@ -11,6 +11,7 @@
   background-image: url(../../img/background/back9.png);
   background-size: cover;
   background-position: center;
+  
 }
 
 /* Page Common Styles */
@@ -24,6 +25,7 @@
   transform-style: preserve-3d;
   transition: transform 1.2s cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
+  border-radius: 20px;
 }
 
 .page-front,
@@ -224,12 +226,12 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.5);
   border: 2px solid rgba(44, 90, 160, 0.3);
   font-size: 1.1rem;
   color: #2c5aa0;
   cursor: pointer;
-  padding: 15px 20px;
+  padding: 10px 15px;
   border-radius: 50%;
   z-index: 20;
   transition: all 0.3s ease;

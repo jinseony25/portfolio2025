@@ -1,0 +1,52 @@
+/* 위로가기 버튼 스타일 */
+.back-to-top {
+    /* 고정 위치 설정 */
+    position: fixed;
+    bottom: 30px;
+    /* 아래에서 30px 위 */
+    right: 30px;
+    /* 오른쪽에서 30px 왼쪽 */
+    z-index: 999;
+    /* 다른 요소 위에 표시 */
+
+    /* 디자인 */
+    width: 50px;
+    height: 50px;
+    background-color: rgba(255, 107, 107, 0.8);
+    /* 추천 색상 (코랄 핑크 계열) */
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    opacity: 0;
+    /* 초기에는 숨김 */
+    visibility: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    display: flex;
+    /* SVG 아이콘 중앙 정렬 */
+    justify-content: center;
+    align-items: center;
+}
+
+/* 스크롤 시 버튼 표시 */
+.back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* 호버 효과 */
+.back-to-top:hover {
+    background-color: #ff4757;
+    /* 호버 시 색상 강조 */
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* SVG 아이콘 크기 조정 */
+.back-to-top svg {
+    width: 24px;
+    height: 24px;
+    fill: currentColor;
+    /* 버튼 색상을 따라가도록 설정 */
+}

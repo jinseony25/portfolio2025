@@ -683,32 +683,32 @@ if ('ontouchstart' in window) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  const storyItems = document.querySelectorAll(".story-item");
+    const storyItems = document.querySelectorAll(".story-item");
 
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const content = entry.target.querySelector(".story-content");
-        const elements = [
-          content.querySelector("h2"),
-          content.querySelector(".story-img"),
-          content.querySelector("p")
-        ];
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const content = entry.target.querySelector(".story-content");
+                const elements = [
+                    content.querySelector("h2"),
+                    content.querySelector(".story-img"),
+                    content.querySelector("p")
+                ];
 
-        elements.forEach((el, index) => {
-          if (el) {
-            setTimeout(() => el.classList.add("fade-in"), index * 400);
-          }
+                elements.forEach((el, index) => {
+                    if (el) {
+                        setTimeout(() => el.classList.add("fade-in"), index * 400);
+                    }
+                });
+
+                observer.unobserve(entry.target); // 한 번만 실행
+            }
         });
-
-        observer.unobserve(entry.target); // 한 번만 실행
-      }
+    }, {
+        threshold: 0.2
     });
-  }, {
-    threshold: 0.2
-  });
 
-  storyItems.forEach(item => observer.observe(item));
+    storyItems.forEach(item => observer.observe(item));
 });
 
 // 스토리 책장 넘기기
@@ -719,20 +719,20 @@ class StoryBook {
         this.nextBtn = document.getElementById('nextBtn');
         this.prevBtn = document.getElementById('prevBtn');
         this.dots = document.querySelectorAll('.dot');
-        
+
         this.currentPage = 0;
         this.totalPages = this.pages.length;
         this.isFlipping = false;
         this.autoFlipTimer = null;
-        
+
         this.init();
     }
-    
+
     init() {
         this.setupEventListeners();
         this.updatePageStates();
         this.startAutoFlip();
-        
+
         // 페이지 클릭으로도 넘기기
         this.pages.forEach((page, index) => {
             page.addEventListener('click', (e) => {
@@ -742,7 +742,7 @@ class StoryBook {
             });
         });
     }
-    
+
     setupEventListeners() {
         // 네비게이션 버튼
         this.nextBtn.addEventListener('click', (e) => {
@@ -750,13 +750,13 @@ class StoryBook {
             this.nextPage();
             this.resetAutoFlip();
         });
-        
+
         this.prevBtn.addEventListener('click', (e) => {
             e.stopPropagation();
             this.prevPage();
             this.resetAutoFlip();
         });
-        
+
         // 인디케이터 점들
         this.dots.forEach((dot, index) => {
             dot.addEventListener('click', () => {
@@ -764,7 +764,7 @@ class StoryBook {
                 this.resetAutoFlip();
             });
         });
-        
+
         // 키보드 네비게이션
         document.addEventListener('keydown', (e) => {
             if (e.key === 'ArrowRight') {
@@ -775,51 +775,51 @@ class StoryBook {
                 this.resetAutoFlip();
             }
         });
-        
+
         // 마우스 호버 시 자동넘김 일시정지
         const book = document.querySelector('.book');
         book.addEventListener('mouseenter', () => {
             this.pauseAutoFlip();
         });
-        
+
         book.addEventListener('mouseleave', () => {
             this.resumeAutoFlip();
         });
     }
-    
+
     nextPage() {
         if (this.isFlipping) return;
-        
+
         const nextIndex = (this.currentPage + 1) % this.totalPages;
         this.flipToPage(nextIndex);
     }
-    
+
     prevPage() {
         if (this.isFlipping) return;
-        
+
         const prevIndex = this.currentPage === 0 ? this.totalPages - 1 : this.currentPage - 1;
         this.flipToPage(prevIndex);
     }
-    
+
     goToPage(pageIndex) {
         if (this.isFlipping || pageIndex === this.currentPage) return;
-        
+
         this.flipToPage(pageIndex);
     }
-    
+
     flipToPage(pageIndex) {
         if (this.isFlipping) return;
-        
+
         this.isFlipping = true;
         const currentPageEl = this.pages[this.currentPage];
         const targetPageEl = this.pages[pageIndex];
-        
+
         // 현재 페이지에 flipping 클래스 추가
         currentPageEl.classList.add('flipping');
-        
+
         // 애니메이션 효과
         this.addPageFlipEffect(currentPageEl);
-        
+
         // 페이지 넘김 애니메이션
         setTimeout(() => {
             // 이전 페이지들 모두 flipped 상태로
@@ -830,7 +830,7 @@ class StoryBook {
                     this.pages[i].classList.remove('flipped');
                 }
             }
-            
+
             // 새로운 페이지들 상태 설정
             for (let i = pageIndex; i < this.totalPages; i++) {
                 if (i < pageIndex) {
@@ -839,19 +839,19 @@ class StoryBook {
                     this.pages[i].classList.remove('flipped');
                 }
             }
-            
+
             this.currentPage = pageIndex;
             this.updatePageStates();
-            
+
         }, 100);
-        
+
         // 애니메이션 완료 후 정리
         setTimeout(() => {
             currentPageEl.classList.remove('flipping');
             this.isFlipping = false;
         }, 1200);
     }
-    
+
     addPageFlipEffect(page) {
         // 페이지 넘김 시 반짝이는 효과
         const shimmer = document.createElement('div');
@@ -866,41 +866,41 @@ class StoryBook {
             z-index: 100;
             animation: pageShimmer 1.2s ease-out;
         `;
-        
+
         page.appendChild(shimmer);
-        
+
         setTimeout(() => {
             if (shimmer.parentNode) {
                 shimmer.parentNode.removeChild(shimmer);
             }
         }, 1200);
     }
-    
+
     updatePageStates() {
         // 페이지 z-index 및 상태 업데이트
         this.pages.forEach((page, index) => {
             page.classList.remove('current');
-            
+
             if (index === this.currentPage) {
                 page.classList.add('current');
             }
-            
+
             if (index < this.currentPage) {
                 page.classList.add('flipped');
             } else {
                 page.classList.remove('flipped');
             }
         });
-        
+
         // 인디케이터 업데이트
         this.dots.forEach((dot, index) => {
             dot.classList.toggle('active', index === this.currentPage);
         });
-        
+
         // 버튼 상태 업데이트 (항상 순환이므로 비활성화 안함)
         this.updateButtonStates();
     }
-    
+
     updateButtonStates() {
         // 부드러운 버튼 효과
         if (this.currentPage === 0) {
@@ -908,34 +908,34 @@ class StoryBook {
         } else {
             this.prevBtn.style.opacity = '1';
         }
-        
+
         if (this.currentPage === this.totalPages - 1) {
             this.nextBtn.style.opacity = '0.7';
         } else {
             this.nextBtn.style.opacity = '1';
         }
     }
-    
+
     // 자동 넘김 기능
     startAutoFlip() {
         this.autoFlipTimer = setInterval(() => {
             this.nextPage();
         }, 6000); // 6초마다 자동 넘김
     }
-    
+
     pauseAutoFlip() {
         if (this.autoFlipTimer) {
             clearInterval(this.autoFlipTimer);
             this.autoFlipTimer = null;
         }
     }
-    
+
     resumeAutoFlip() {
         if (!this.autoFlipTimer) {
             this.startAutoFlip();
         }
     }
-    
+
     resetAutoFlip() {
         this.pauseAutoFlip();
         this.startAutoFlip();
@@ -980,19 +980,19 @@ document.addEventListener('touchstart', (e) => {
 
 document.addEventListener('touchend', (e) => {
     if (!touchStartX || !touchStartY) return;
-    
+
     const touchEndX = e.changedTouches[0].clientX;
     const touchEndY = e.changedTouches[0].clientY;
-    
+
     const diffX = touchStartX - touchEndX;
     const diffY = touchStartY - touchEndY;
-    
+
     // 최소 스와이프 거리
     if (Math.abs(diffX) < 50 || Math.abs(diffY) > 100) return;
-    
+
     const storyBook = window.storyBook;
     if (!storyBook) return;
-    
+
     if (diffX > 0) {
         // 왼쪽으로 스와이프 - 다음 페이지
         storyBook.nextPage();
@@ -1000,9 +1000,9 @@ document.addEventListener('touchend', (e) => {
         // 오른쪽으로 스와이프 - 이전 페이지
         storyBook.prevPage();
     }
-    
+
     storyBook.resetAutoFlip();
-    
+
     touchStartX = 0;
     touchStartY = 0;
 });
@@ -1018,13 +1018,13 @@ window.addEventListener('load', () => {
 function initCharacterInteractions() {
     const charactersContainer = document.querySelector('.characters-container');
     const characterCards = document.querySelectorAll('.character-card');
-    
+
     // Intersection Observer for section visibility
     const sectionObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('characters-visible');
-                
+
                 // 카드들 순차적으로 등장
                 setTimeout(() => {
                     characterCards.forEach((card, index) => {
@@ -1040,22 +1040,22 @@ function initCharacterInteractions() {
         threshold: 0.3,
         rootMargin: '0px 0px -100px 0px'
     });
-    
+
     if (charactersContainer) {
         sectionObserver.observe(charactersContainer);
     }
-    
+
     // 각 캐릭터 카드에 호버 이벤트
     characterCards.forEach((card, index) => {
         card.addEventListener('mouseenter', () => {
             addMagicParticles(card);
             playCharacterSound(index); // 효과음 (옵션)
         });
-        
+
         card.addEventListener('mouseleave', () => {
             removeMagicParticles(card);
         });
-        
+
         // 클릭 시 특별 효과
         card.addEventListener('click', () => {
             triggerSpecialEffect(card);
@@ -1068,20 +1068,20 @@ function addMagicParticles(card) {
     for (let i = 0; i < 6; i++) {
         const particle = document.createElement('div');
         particle.className = 'magic-particle';
-        
+
         // 랜덤 위치
         const left = Math.random() * 80 + 10; // 10% ~ 90%
         const delay = Math.random() * 2;
         const size = Math.random() * 4 + 3;
-        
+
         particle.style.left = left + '%';
         particle.style.bottom = '20px';
         particle.style.width = size + 'px';
         particle.style.height = size + 'px';
         particle.style.animationDelay = delay + 's';
-        
+
         card.appendChild(particle);
-        
+
         // 3초 후 제거
         setTimeout(() => {
             if (particle.parentNode) {
@@ -1103,11 +1103,11 @@ function removeMagicParticles(card) {
 function triggerSpecialEffect(card) {
     // 카드 전체가 반짝이는 효과
     card.style.animation = 'cardSparkle 1s ease-out';
-    
+
     setTimeout(() => {
         card.style.animation = '';
     }, 1000);
-    
+
     // 추가 파티클 폭발
     for (let i = 0; i < 12; i++) {
         const particle = document.createElement('div');
@@ -1123,15 +1123,15 @@ function triggerSpecialEffect(card) {
             top: 50%;
             animation: particleBurst 1.5s ease-out forwards;
         `;
-        
+
         const angle = (i / 12) * Math.PI * 2;
         const velocity = Math.random() * 100 + 50;
-        
+
         particle.style.setProperty('--angle', angle + 'rad');
         particle.style.setProperty('--velocity', velocity + 'px');
-        
+
         card.appendChild(particle);
-        
+
         setTimeout(() => {
             if (particle.parentNode) {
                 particle.parentNode.removeChild(particle);
@@ -1146,22 +1146,22 @@ function playCharacterSound(index) {
     if (typeof AudioContext !== 'undefined' || typeof webkitAudioContext !== 'undefined') {
         const AudioContextClass = AudioContext || webkitAudioContext;
         const audioContext = new AudioContextClass();
-        
+
         const oscillator = audioContext.createOscillator();
         const gainNode = audioContext.createGain();
-        
+
         oscillator.connect(gainNode);
         gainNode.connect(audioContext.destination);
-        
+
         // 캐릭터별 다른 음높이
         const frequencies = [523.25, 659.25, 783.99]; // C5, E5, G5
         oscillator.frequency.setValueAtTime(frequencies[index] || 523.25, audioContext.currentTime);
         oscillator.type = 'sine';
-        
+
         gainNode.gain.setValueAtTime(0, audioContext.currentTime);
         gainNode.gain.linearRampToValueAtTime(0.1, audioContext.currentTime + 0.01);
         gainNode.gain.exponentialRampToValueAtTime(0.001, audioContext.currentTime + 0.3);
-        
+
         oscillator.start(audioContext.currentTime);
         oscillator.stop(audioContext.currentTime + 0.3);
     }
@@ -1200,6 +1200,10 @@ document.head.appendChild(characterStyle);
 // 페이지 로드 시 초기화
 document.addEventListener('DOMContentLoaded', initCharacterInteractions);
 
+
+
+
+
 // 갤러리 캐러셀
 // 캐러셀 회전 제어
 let currentRotation = 0;
@@ -1215,19 +1219,89 @@ setInterval(() => {
     rotateCarousel(60);
 }, 3000);
 
+// === 팝업 이미지 기능 ===
+const popup = document.getElementById("image-popup");
+const popupImg = document.querySelector(".popup-image");
+const closeBtn = document.querySelector(".close-btn");
+
+// 각 캐러셀 아이템 클릭 시 팝업 열기
+document.querySelectorAll(".carousel-item").forEach(item => {
+    item.addEventListener("click", () => {
+        // background-image 속성 가져오기 (예: url("..."))
+        const bg = window.getComputedStyle(item).backgroundImage;
+        // url("...")에서 실제 경로만 추출
+        const url = bg.replace(/^url\(["']?/, '').replace(/["']?\)$/, '');
+
+        popupImg.src = url;   // 클릭한 이미지 그대로 넣기
+        popup.classList.add("active");
+    });
+});
+
+// 닫기 버튼
+closeBtn.addEventListener("click", () => {
+    popup.classList.remove("active");
+});
+
+// 팝업 영역 클릭 시 닫기 (이미지 제외)
+popup.addEventListener("click", (e) => {
+    if (e.target === popup) {
+        popup.classList.remove("active");
+    }
+});
+
+
+
+
+
+
 // 캐릭터 썸네일 클릭 시 섹션 배경 및 팝업 변경
+// JavaScript 시작
 document.addEventListener("DOMContentLoaded", () => {
     const thumbnails = document.querySelectorAll(".thumbnail");
     const charactersSection = document.querySelector(".characters-section");
     const characterPopup = document.querySelector(".character-popup");
     const popupName = document.querySelector(".popup-name");
     const popupDescription = document.querySelector(".popup-description");
+    
+    // ⭐️ 새로 추가된 누끼 이미지 관련 요소
+    const overlayImages = document.querySelectorAll(".character-overlay-image");
 
-    // 초기 배경 이미지 및 팝업 설정
+    // 초기 배경 이미지 설정 및 블러 활성화
     const initialImage = document.querySelector(".thumbnail.active").getAttribute("data-image");
-    charactersSection.style.backgroundImage = `url('${initialImage}')`;
+    
+    // 1. 섹션 본체와 가상 요소의 배경을 설정하고 블러 활성화
+    function updateCharacterView(imageUrl, charId) {
+        // 섹션 본체에 배경 설정 (부드러운 전환을 위해)
+        charactersSection.style.backgroundImage = `url('${imageUrl}')`;
+        
+        // 가상 요소에 동일한 배경 이미지 설정 후 블러 활성화
+        charactersSection.classList.add('blurry');
+        charactersSection.style.setProperty('--background-url', `url('${imageUrl}')`); // CSS 변수로 전달 (CSS에서 ::before에 적용)
+        
+        // 누끼 이미지 교체
+        overlayImages.forEach(img => {
+            img.classList.remove("active");
+        });
+        const activeImage = document.querySelector(`.character-overlay-image.${charId}-char`);
+        if (activeImage) {
+            activeImage.classList.add("active");
+        }
+    }
 
-    // ⭐ 추가된 코드: 각 썸네일의 배경 이미지 설정
+    // 초기 로드 시 실행
+    const initialThumbnail = document.querySelector(".thumbnail.active");
+    const initialCharId = initialThumbnail.getAttribute("data-char");
+    charactersSection.style.backgroundImage = `url('${initialImage}')`; // 초기 배경 설정
+    // 초기 블러는 스크립트 실행 후 딜레이를 두어 적용
+    setTimeout(() => {
+        updateCharacterView(initialImage, initialCharId);
+        // 팝업 텍스트 초기화 (옵션)
+        popupName.textContent = initialThumbnail.getAttribute("data-name");
+        popupDescription.innerHTML = initialThumbnail.getAttribute("data-description");
+        characterPopup.classList.add("show");
+    }, 100); 
+
+    // 각 썸네일의 배경 이미지 설정 (썸네일 자체 이미지)
     thumbnails.forEach(thumbnail => {
         const thumbImage = thumbnail.getAttribute("data-image");
         thumbnail.style.backgroundImage = `url('${thumbImage}')`;
@@ -1241,20 +1315,67 @@ document.addEventListener("DOMContentLoaded", () => {
             // 클릭한 썸네일에 'active' 클래스 추가
             thumbnail.classList.add("active");
             
-            // 클릭한 썸네일의 data-image 값으로 섹션 배경 변경
+            // 클릭한 썸네일의 data-image와 data-char 값 가져오기
             const newImage = thumbnail.getAttribute("data-image");
-            charactersSection.style.backgroundImage = `url('${newImage}')`;
+            const charId = thumbnail.getAttribute("data-char");
             
+            // 배경 업데이트 및 누끼 이미지 활성화
+            updateCharacterView(newImage, charId);
+
             // 팝업창에 캐릭터 정보 업데이트 및 표시
             const characterName = thumbnail.getAttribute("data-name");
             const characterDescription = thumbnail.getAttribute("data-description");
 
             popupName.textContent = characterName;
-            popupDescription.textContent = characterDescription;
+            popupDescription.innerHTML = characterDescription;
             
-            // 팝업창을 서서히 나타나게 함
+            // 팝업창을 서서히 나타나게 함 (이미 활성화되어 있다면 opacity만 유지)
             characterPopup.classList.add("show");
         });
     });
 });
+
+/* ---------------- Story Book 및 다른 기능은 기존 코드 유지 ---------------- */
+// (여기에 나머지 모든 JavaScript 코드를 그대로 붙여넣으시면 됩니다.)
+
+
+
+
+
+// 위로가기
+// JavaScript 코드 (기존 스크립트 파일에 추가)
+
+document.addEventListener('DOMContentLoaded', () => {
+    // ... 기존 코드 ...
+
+    /* ---------------- 위로 가기 버튼 로직 ---------------- */
+    const scrollToTopBtn = document.getElementById('scroll-to-top');
+    const scrollTrigger = 400;
+
+    const scrollFunction = () => {
+        const currentScroll = document.documentElement.scrollTop || document.body.scrollTop;
+        
+        if (currentScroll > scrollTrigger) {
+            scrollToTopBtn.classList.add('show');
+        } else {
+            scrollToTopBtn.classList.remove('show');
+        }
+    };
+
+    // 스크롤 이벤트에 함수 연결
+    window.onscroll = scrollFunction;
+
+    // 버튼 클릭 시 맨 위로 이동
+    scrollToTopBtn.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth' 
+        });
+    });
+    // ... 기존 코드 ...
+});
+
+
+
+
 

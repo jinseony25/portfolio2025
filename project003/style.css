@@ -9,6 +9,7 @@
 @import url('./ui/base/modal.css');
 @import url('./ui/base/cursor.css');
 @import url('./ui/base/scroll.css');
+@import url('./ui/base/top.css');
 
 /* page */
 @import url('./ui/page/nav.css');

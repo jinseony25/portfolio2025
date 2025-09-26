@@ -5,18 +5,13 @@ header {
     left: 0;
     width: 100%;
     height: 80px;
-    /* background: rgba(255, 255, 255, .1);
-    backdrop-filter: blur(3px); */
     z-index: 1000;
 }
 
 .logo img {
     height: 60px;
-    /* 헤더 높이(80px)에 맞게 조정 */
     width: auto;
-    /* 가로 비율 자동 */
     display: block;
-    /* 여백 제거 */
 }
 
 nav {
@@ -24,50 +19,79 @@ nav {
     justify-content: space-between;
     align-items: center;
     padding: 0 50px;
-    height: 80px
+    height: 80px;
 }
 
-.logo-text a {
-    font-style: 'Cinzel';
-    font-size: 28px;
-    color: fff;
-    text-shadow: 2px 2px 4px rgba(255, 255, 255, .5);
-}
-
+/* Nav 메뉴 전체 (세로 배치) */
 .nav-menu {
     display: flex;
     flex-direction: column;
     margin-top: 900px;
     list-style: none;
+    padding: 0;
     gap: 40px;
-    text-align: right;
 }
 
-.nav-menu a {
-    font-style: 'Cinzel';
-    color: #fff;
-    font-size: 20px;
+/* Nav 메뉴 개별 아이템 (작은 원형 버튼) */
+.nav-menu li {
     position: relative;
-    transition: .3s;
+    display: flex;
+    justify-content: flex-end;
+    /* 우측 정렬 */
+    align-items: center;
+    width: 20px;
+    height: 20px;
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+    cursor: pointer;
+    overflow: hidden;
 }
 
-.nav-menu a:hover {
-    color: var(--coral-pink);
-    transform: translateY(-2px)
+/* 툴팁 효과: 텍스트 노출 */
+.nav-menu:hover li {
+    width: 120px;
+    border-radius: 20px;
+    background-color: transparent;
+    box-shadow: none;
 }
 
+/* 툴팁 효과: 텍스트 노출 */
+.nav-menu:hover li a {
+    color: #fff;
+
+}
+
+/* a 태그 (글자) */
+.nav-menu a {
+    font-family: 'Cinzel', serif;
+    color: transparent;
+    font-size: 16px;
+
+    text-shadow: none;
+    transition: all 0.5s ease;
+    white-space: nowrap;
+    text-decoration: none;
+
+}
+
+/* 기존 하단 밑줄 효과 제거 */
 .nav-menu a::after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 0;
-    height: 3px;
-    background: linear-gradient(90deg, var(--coral-pink), var(--sunset-orange));
-    transition: .3s;
-    border-radius: 2px
+    display: none;
 }
 
-.nav-menu a:hover::after {
-    width: 100%
+.nav-menu li:nth-child(1) a:hover {
+    color: #FF6B6B;
+}
+
+.nav-menu li:nth-child(2) a:hover {
+    color: #FF6B6B;
+}
+
+.nav-menu li:nth-child(3) a:hover {
+    color: #FF6B6B;
+}
+
+.nav-menu li:nth-child(4) a:hover {
+    color: #FF6B6B;
 }

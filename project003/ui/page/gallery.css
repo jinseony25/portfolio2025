@@ -4,7 +4,7 @@
     padding: 100px 50px;
     background: linear-gradient(135deg, #f5e6d3, #f9f1e6);
     text-align: center;
-    background-image: url(../../img/background/back.png);
+    background-image: url(../../img/background/back9.png);
     background-size: cover;
     background-position: center;
     position: relative;
@@ -18,10 +18,15 @@
     content: "";
     position: absolute;
     inset: 0;
+    /* ✨ 블러 효과 추가 */
+    backdrop-filter: blur(5px); 
+    
+    /* 기존 배경 오버레이 색상 (필요시 투명도와 그라데이션 값을 조정하세요) */
     background: linear-gradient(to bottom,
-                rgba(0, 0, 0, 0.35) 0%,
-                rgba(0, 0, 0, 0.25) 30%,
-                rgba(0, 0, 0, 0.35) 100%);
+        rgba(0, 0, 0, 0.5) 0%, /* 시작점 투명도 */
+        rgba(0, 0, 0, 0.5) 50%, 
+        rgba(0, 0, 0, 0.5) 100%); /* 끝점 투명도 */
+        
     z-index: 1;
 }
 
@@ -41,14 +46,14 @@
     color: white;
     font-size: 2.8em;
     margin: 0;
-    text-shadow: 3px 3px 6px rgba(0,0,0,0.5);
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
     flex-shrink: 0;
     order: 1;
 }
 
 /* 3D 캐러셀 컨테이너 */
 .carousel-container {
-       margin-top: 15vh;    
+    margin-top: 15vh;
     /* margin-bottom: 3vh;  */
     perspective: 2000px;
     height: 60vh;
@@ -90,33 +95,39 @@
 }
 
 /* 6면체 배치 - 60도씩, 적당한 반지름으로 겹침 방지 */
-.carousel-item:nth-child(1) { 
+.carousel-item:nth-child(1) {
     transform: rotateY(0deg) translateZ(65vh);
     background-image: url(../../img/gallery/gallery1.jpg);
 }
-.carousel-item:nth-child(2) { 
+
+.carousel-item:nth-child(2) {
     transform: rotateY(60deg) translateZ(65vh);
     background-image: url(../../img/gallery/gallery2.jpg);
 }
-.carousel-item:nth-child(3) { 
+
+.carousel-item:nth-child(3) {
     transform: rotateY(120deg) translateZ(65vh);
     background-image: url(../../img/gallery/gallery3.jpg);
 }
-.carousel-item:nth-child(4) { 
+
+.carousel-item:nth-child(4) {
     transform: rotateY(180deg) translateZ(65vh);
     background-image: url(../../img/gallery/gallery4.jpg);
 }
-.carousel-item:nth-child(5) { 
+
+.carousel-item:nth-child(5) {
     transform: rotateY(240deg) translateZ(65vh);
     background-image: url(../../img/gallery/gallery5.jpg);
 }
-.carousel-item:nth-child(6) { 
+
+.carousel-item:nth-child(6) {
     transform: rotateY(300deg) translateZ(65vh);
     background-image: url(../../img/gallery/gallery6.jpg);
 }
+
 /* 나머지 2개는 숨김 */
 .carousel-item:nth-child(7),
-.carousel-item:nth-child(8) { 
+.carousel-item:nth-child(8) {
     display: none;
 }
 
@@ -128,10 +139,10 @@
 }
 
 .control-btn {
-    background: rgba(255,255,255,0.2);
-    border: 1px solid rgba(255,255,255,0.3);
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
     color: white;
-    padding: 15px 20px;
+    padding: 10px 15px;
     border-radius: 50px;
     cursor: pointer;
     margin: 0 15px;
@@ -142,9 +153,9 @@
 }
 
 .control-btn:hover {
-    background: rgba(255,255,255,0.3);
+    background: rgba(255, 255, 255, 0.3);
     transform: translateY(-3px);
-    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 /* 반응형 디자인 */
@@ -152,48 +163,53 @@
     .gallery-section {
         padding: 50px 20px;
     }
-    
+
     .gallery-container {
         padding: 5vh 0;
     }
-    
+
     .gallery-container h2 {
         font-size: 2.2em;
     }
-    
+
     .carousel-container {
         height: 50vh;
     }
-    
+
     .carousel {
         width: 40vh;
         height: 40vh;
     }
-    
+
     .carousel-item {
         width: 45vh;
         height: 25.31vh;
     }
-    
-    .carousel-item:nth-child(1) { 
+
+    .carousel-item:nth-child(1) {
         transform: rotateY(0deg) translateZ(45vh);
     }
-    .carousel-item:nth-child(2) { 
+
+    .carousel-item:nth-child(2) {
         transform: rotateY(60deg) translateZ(45vh);
     }
-    .carousel-item:nth-child(3) { 
+
+    .carousel-item:nth-child(3) {
         transform: rotateY(120deg) translateZ(45vh);
     }
-    .carousel-item:nth-child(4) { 
+
+    .carousel-item:nth-child(4) {
         transform: rotateY(180deg) translateZ(45vh);
     }
-    .carousel-item:nth-child(5) { 
+
+    .carousel-item:nth-child(5) {
         transform: rotateY(240deg) translateZ(45vh);
     }
-    .carousel-item:nth-child(6) { 
+
+    .carousel-item:nth-child(6) {
         transform: rotateY(300deg) translateZ(45vh);
     }
-    
+
     .control-btn {
         padding: 10px 20px;
         margin: 0 10px;
@@ -206,23 +222,70 @@
         width: 40vh;
         height: 22.5vh;
     }
-    
-    .carousel-item:nth-child(1) { 
+
+    .carousel-item:nth-child(1) {
         transform: rotateY(0deg) translateZ(35vh);
     }
-    .carousel-item:nth-child(2) { 
+
+    .carousel-item:nth-child(2) {
         transform: rotateY(60deg) translateZ(35vh);
     }
-    .carousel-item:nth-child(3) { 
+
+    .carousel-item:nth-child(3) {
         transform: rotateY(120deg) translateZ(35vh);
     }
-    .carousel-item:nth-child(4) { 
+
+    .carousel-item:nth-child(4) {
         transform: rotateY(180deg) translateZ(35vh);
     }
-    .carousel-item:nth-child(5) { 
+
+    .carousel-item:nth-child(5) {
         transform: rotateY(240deg) translateZ(35vh);
     }
-    .carousel-item:nth-child(6) { 
+
+    .carousel-item:nth-child(6) {
         transform: rotateY(300deg) translateZ(35vh);
     }
+}
+
+/* === 팝업 이미지 === */
+.popup-overlay {
+    display: none;
+    /* 기본은 숨김 */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 9999;
+    /* 다른 섹션 위에 올라오도록 */
+    align-items: center;
+    justify-content: center;
+}
+
+.popup-overlay.active {
+    display: flex;
+}
+
+.popup-image {
+    max-width: 90%;
+    max-height: 80%;
+    border-radius: 10px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+}
+
+.close-btn {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    font-size: 2.5em;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.close-btn:hover {
+    transform: scale(1.2);
 }

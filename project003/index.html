@@ -18,20 +18,17 @@
       <nav>
         <div class="logo">
           <a href="#home">
-            <!-- <img src="img/logo/logo4.png" alt="벼랑위의 포뇨 로고"> -->
           </a>
         </div>
         <ul class="nav-menu">
-          <li><a href="#home">HOME</a></li>
-          <li><a href="#story-parallax">STORY</a></li>
+          <li><a href="#story-book">STORY</a></li>
           <li><a href="#characters">CHARACTERS</a></li>
           <li><a href="#gallery">GALLERY</a></li>
-          <li><a href="#info">VIDEO</a></li>
+          <li><a href="#video">VIDEO</a></li>
         </ul>
       </nav>
     </div>
   </header>
-
 
   <main>
     <section id="home" class="hero">
@@ -101,29 +98,29 @@
         <div class="page-back"></div>
       </div>
 
-      <div class="page back-cover-page" data-page="5">
+      <!-- <div class="page back-cover-page" data-page="5">
         <div class="page-front">
           <div class="back-cover-content">
             <div class="back-cover-text">
-              <!-- <h3>감동의 바다 이야기</h3>
-                    <p>바다 속 작은 물고기 포뇨와 인간 소년 소스케의 순수한 우정과 모험을 그린 감동적인 이야기입니다.</p> -->
-              <!-- <div class="movie-info">
+              <h3>감동의 바다 이야기</h3>
+                    <p>바다 속 작은 물고기 포뇨와 인간 소년 소스케의 순수한 우정과 모험을 그린 감동적인 이야기입니다.</p>
+              <div class="movie-info">
                         <p><strong>제작:</strong> 스튜디오 지브리</p>
                         <p><strong>감독:</strong> 미야자키 하야오</p>
                         <p><strong>개봉:</strong> 2008년</p>
-                    </div> -->
+                    </div>
             </div>
-            <!-- <div class="back-cover-image"></div> -->
+            <div class="back-cover-image"></div>
             <div class="copyright">
               <p>© 2008 Studio Ghibli</p>
             </div>
           </div>
         </div>
         <div class="page-back"></div>
-      </div>
+      </div> -->
 
-      <button id="prevBtn" class="nav-btn prev-btn">◀</button>
-      <button id="nextBtn" class="nav-btn next-btn">▶</button>
+      <button id="prevBtn" class="nav-btn prev-btn">&lt;</button>
+      <button id="nextBtn" class="nav-btn next-btn">&gt;</button>
 
       <div class="page-indicator">
         <span class="dot active" data-page="0"></span>
@@ -131,35 +128,40 @@
         <span class="dot" data-page="2"></span>
         <span class="dot" data-page="3"></span>
         <span class="dot" data-page="4"></span>
-        <span class="dot" data-page="5"></span>
+        <!-- <span class="dot" data-page="5"></span> -->
       </div>
     </section>
 
 
 
 
-    <!-- characters section -->
-    <section id="characters" class="characters-section">
-      <div class="characters-container">
+   <section id="characters" class="characters-section">
+    <div class="characters-container">
         <div class="thumbnail-sidebar">
-          <h1>PONYO</h1>
-          <div class="thumbnail active" data-image="../../img/gallery/gallery3.jpg" data-name="포뇨"
-            data-description="바다의 마법사 후지모토의 딸로, 인간이 되고 싶어하는 물고기 소녀.">
-          </div>
-          <div class="thumbnail" data-image="../../img/gallery/ponyo048.jpg" data-name="소스케"
-            data-description="순수하고 착한 소년으로, 포뇨와 특별한 우정을 나눈다.">
-          </div>
-          <div class="thumbnail" data-image="../../img/gallery/ponyo018.jpg" data-name="리사"
-            data-description="밝고 활동적인 소스케의 엄마로, 포뇨를 따뜻하게 받아준다.">
-          </div>
+            <h1>PONYO</h1>
+            <div class="thumbnail active" 
+                data-image="../../img/gallery/gallery3.jpg" 
+                data-name="포뇨"
+                data-description="바다의 마법사 후지모토의 딸로,<br>인간이 되고 싶어하는 물고기 소녀.">
+            </div>
+            <div class="thumbnail" 
+                data-image="../../img/gallery/ponyo048.jpg" 
+                data-name="소스케"
+                data-description="순수하고 착한 소년으로,<br>포뇨와 특별한 우정을 나눈다.">
+            </div>
+            <div class="thumbnail" 
+                data-image="../../img/gallery/ponyo018.jpg" 
+                data-name="리사"
+                data-description="밝고 활동적인 소스케의 엄마로,<br>포뇨를 따뜻하게 받아준다.">
+            </div>
         </div>
 
         <div class="character-popup">
-          <h3 class="popup-name"></h3>
-          <p class="popup-description"></p>
+            <h3 class="popup-name"></h3>
+            <p class="popup-description"></p>
         </div>
-      </div>
-    </section>
+    </div>
+</section>  
 
 
 
@@ -234,9 +236,14 @@
 
         <!-- 컨트롤 버튼 -->
         <div class="controls">
-          <button class="control-btn" onclick="rotateCarousel(-60)">◀</button>
-          <button class="control-btn" onclick="rotateCarousel(60)">▶</button>
+          <button class="control-btn" onclick="rotateCarousel(-60)">&lt;</button>
+          <button class="control-btn" onclick="rotateCarousel(60)">&gt;</button>
         </div>
+      </div>
+      <!-- 이미지 팝업 -->
+      <div id="image-popup" class="popup-overlay">
+        <span class="close-btn">&times;</span>
+        <img class="popup-image" src="" alt="확대 이미지">
       </div>
     </section>
 
@@ -246,26 +253,19 @@
 
     <section id="video">
       <div class="video-wrapper">
-        <iframe src="https://tv.naver.com/embed/5698044" frameborder="0" allow="autoplay; fullscreen" allowfullscreen>
-        </iframe>
+        <video src="vid/vid.mp4" controls autoplay muted loop>
+        </video>
       </div>
     </section>
-    <!-- link 교체 예정 -->
-    <!-- https://www.youtube.com/watch?v=6WlVvl8hK5M -->
   </main>
 
-
+  
 
 
 
   <footer id="info">
     <div class="footer-content">
-      <h3>스튜디오 지브리</h3>
-      <p>벼랑위의 포뇨는 2008년 스튜디오 지브리에서 제작한 애니메이션 영화입니다.</p>
-      <div class="social-links">
-        <a href="#">📘</a><a href="#">🐦</a><a href="#">📷</a><a href="#">📺</a>
-      </div>
-      <div class="copyright">© 2008 Studio Ghibli • Hayao Miyazaki</div>
+      <h3 class="copyright">© 2025 Jinseon Jeon. All Rights Reserved.</h3>
     </div>
   </footer>
 
@@ -278,8 +278,15 @@
     <button type="button" class="modal-next" aria-label="다음 이미지">&#10095;</button>
   </div>
 
+  <!-- 위로가기 버튼 -->
+  <button id="scroll-to-top" class="back-to-top" title="맨 위로">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M12 2L6 8h4v12h4V8h4L12 2z" />
+    </svg>
+  </button>
 
-  <script src="script.js"></script>
+
+  <!-- <script src="script.js"></script> -->
   <script src="js.js"></script>
 </body>
 
