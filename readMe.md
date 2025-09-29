@@ -71,6 +71,30 @@
 
 ---
 
+## 2️⃣ Project 03 : 벼랑위의 포뇨
+> 영화 사이트 제작
+
+**📆 제작 기간** : 2025.05.26 ~ 2025.10.20   
+**🧑 역할** : 퍼블리싱 100%, 기획 100%
+
+### ⭐ 프로젝트 설명
+바다와 육지를 잇는 순수한 감성과 환상적인 모험을 담은 이야기입니다.
+포뇨와 소스케의 동화적이고 따뜻한 교감을 구현하고자 했습니다.
+
+- 메인컬러 : 스카이 블루 / 포인트컬러 : 코랄 레드  
+
+### 🚀 링크
+- [무드보드](https://www.figma.com/proto/TSghEgF1Ed5aCHkgVIzAxH/%ED%8C%80%EB%B2%84%EC%83%B5-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8?node-id=10-2&t=dBhuqklmzDCVMapE-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1)
+- [컨셉뷰](https://www.figma.com/proto/sAnzYFwM4yxtCVOSkZIrWn/%EB%B2%BC%EB%9E%91%EC%9C%84%EC%9D%98%ED%8F%AC%EB%87%A8?node-id=72-7&t=JAHieb1sZbfvjKGB-1&scaling=min-zoom&content-scaling=fixed&page-id=72%3A5).
+- [배포 사이트](https://jinseony25.github.io/portfolio2025/project003)
+
+### 👀 페이지 미리보기
+| 메인 페이지 | 
+|------------|
+| ![메인](https://github.com/jinseony25/portfolio2025/blob/main/project003/mock.png)| 
+
+---
+
 ## 🎯 배운 점 & 성장 포인트
 - 시멘틱 마크업 구조화 정립  
 - 일관된 네이밍·디자인 토큰 기반 CSS 재사용성 향상  
