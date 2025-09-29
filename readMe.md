@@ -85,7 +85,7 @@
 
 ### 🚀 링크
 - [무드보드](https://www.figma.com/proto/sAnzYFwM4yxtCVOSkZIrWn/%EB%B2%BC%EB%9E%91%EC%9C%84%EC%9D%98%ED%8F%AC%EB%87%A8?node-id=121-3&t=ylxB9kWPGxPd3ikS-1&scaling=min-zoom&content-scaling=fixed&page-id=119%3A2)
-- [컨셉뷰](https://www.figma.com/proto/sAnzYFwM4yxtCVOSkZIrWn/%EB%B2%BC%EB%9E%91%EC%9C%84%EC%9D%98%ED%8F%AC%EB%87%A8?node-id=72-7&t=JAHieb1sZbfvjKGB-1&scaling=min-zoom&content-scaling=fixed&page-id=72%3A5).
+- [컨셉뷰](https://www.figma.com/proto/sAnzYFwM4yxtCVOSkZIrWn/%EB%B2%BC%EB%9E%91%EC%9C%84%EC%9D%98%ED%8F%AC%EB%87%A8?node-id=72-7&t=JAHieb1sZbfvjKGB-1&scaling=min-zoom&content-scaling=fixed&page-id=72%3A5)
 - [배포 사이트](https://jinseony25.github.io/portfolio2025/project003)
 
 ### 👀 페이지 미리보기
