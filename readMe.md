@@ -84,7 +84,7 @@
 - 메인컬러 : 스카이 블루 / 포인트컬러 : 코랄 레드  
 
 ### 🚀 링크
-- [무드보드](https://www.figma.com/design/sAnzYFwM4yxtCVOSkZIrWn/%EB%B2%BC%EB%9E%91%EC%9C%84%EC%9D%98%ED%8F%AC%EB%87%A8?node-id=127-3&t=rWrnLUdw2Pb4lkvo-1)
+- [무드보드](https://www.figma.com/proto/sAnzYFwM4yxtCVOSkZIrWn/%EB%B2%BC%EB%9E%91%EC%9C%84%EC%9D%98%ED%8F%AC%EB%87%A8?node-id=127-3&t=rvVCOFAArEAwZyLF-1&scaling=min-zoom&content-scaling=fixed&page-id=119%3A2)
 - [컨셉뷰](https://www.figma.com/proto/sAnzYFwM4yxtCVOSkZIrWn/%EB%B2%BC%EB%9E%91%EC%9C%84%EC%9D%98%ED%8F%AC%EB%87%A8?node-id=72-7&t=JAHieb1sZbfvjKGB-1&scaling=min-zoom&content-scaling=fixed&page-id=72%3A5)
 - [배포 사이트](https://jinseony25.github.io/portfolio2025/project003)
 
