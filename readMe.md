@@ -91,7 +91,7 @@
 ### 👀 페이지 미리보기
 | 메인 페이지 | 
 |------------|
-| ![메인](https://github.com/jinseony25/portfolio2025/blob/main/project003/mock.png)| 
+| ![메인](project003/mockup/mock4.png)| 
 
 ---
 
