@@ -1,178 +1,225 @@
 /* --- Booking Section --- */
 .booking-section {
-    padding: 6rem 0;
+  padding: 6rem 0;
 }
 
 .booking-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
 }
 
 .booking-form-wrapper {
-    display: flex;
-    gap: 3rem;
-    align-items: center;
-    background: rgba(255, 255, 255, 0.05);
-    padding: 3rem;
-    border-radius: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 3rem;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .poster-section {
-    flex: 0 0 350px;
+  flex: 0 0 350px;
 }
 
 .poster {
-    width: 100%;
-    aspect-ratio: 2/3;
-    background: url(../../resources/img/background/poster.jpg) center/cover;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  width: 100%;
+  aspect-ratio: 2/3;
+  background: url(../../resources/img/background/poster.jpg) center/cover;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
 .form-section {
-    flex: 1;
+  flex: 1;
 }
 
 .form-section h3 {
-    font-family: var(--font-heading);
-    font-size: 1rem;
-    margin-bottom: 0.5rem;
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
 }
 
 .form-details {
-    color: #aaa;
-    margin-bottom: 2rem;
+  color: #aaa;
+  margin-bottom: 2rem;
 }
 
 .form-group {
-    margin-bottom: 1.5rem;
+  margin-bottom: 1.5rem;
 }
 
 .form-group label {
-    display: block;
-    margin-bottom: 0.5rem;
-    font-weight: 500;
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
 }
 
 .form-group select,
 .person-inputs input {
-    width: 80%;
-    padding: 0.8rem;
-    border: 1px solid #555;
-    border-radius: 8px;
-    background: #222;
-    color: #fff;
-    font-size: 1rem;
+  width: 80%;
+  padding: 0.8rem;
+  border: 1px solid #555;
+  border-radius: 8px;
+  background: #222;
+  color: #fff;
+  font-size: 1rem;
 }
 
 .person-inputs {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
-.person-inputs>div {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
+.person-inputs > div {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 
 .person-inputs span {
-    flex-basis: 50px;
+  flex-basis: 50px;
 }
 
 .book-button {
-    width: 100%;
-    margin-top: 1rem;
+  width: 100%;
+  margin-top: 1rem;
 }
 
 /* --- Booking Modal Popup --- */
 .modal {
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.8);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-    padding-top: 50px;
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  padding-top: 50px;
 }
 
 .modal-content {
-    background-color: var(--color-dark);
-    margin: 5% auto;
-    padding: 2.5rem;
-    border-radius: 20px;
-    width: 90%;
-    max-width: 800px;
-    position: relative;
-    animation: fadeIn 0.5s ease-out;
-    box-shadow: 0 10px 40px rgba(159, 84, 255, 0.5);
-    border: 1px solid var(--color-accent);
+  background-color: var(--color-dark);
+  margin: 0 auto;
+  padding: 2.5rem;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 800px;
+  position: relative;
+  animation: fadeIn 0.5s ease-out;
+  box-shadow: 0 10px 40px rgba(159, 84, 255, 0.5);
+  border: 1px solid var(--color-accent);
 }
 
 .modal .booking-container {
-    padding: 0;
+  padding: 0;
 }
 
 .close-button {
-    color: var(--color-light);
-    font-size: 2.5rem;
-    font-weight: bold;
-    position: absolute;
-    right: 20px;
-    top: 10px;
-    cursor: pointer;
-    transition: color 0.2s ease;
+  color: var(--color-light);
+  font-size: 2.5rem;
+  font-weight: bold;
+  position: absolute;
+  right: 20px;
+  top: 10px;
+  cursor: pointer;
+  transition: color 0.2s ease;
 }
 
 .close-button:hover,
 .close-button:focus {
-    color: var(--color-accent);
+  color: var(--color-accent);
 }
 
 .modal .section-title {
-    margin-bottom: 2rem;
-    font-size: 2.5rem;
+  margin-bottom: 2rem;
+  font-size: 2.5rem;
 }
 
 @keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(-50px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @media (max-width: 768px) {
-    .modal-content {
-        width: 95%;
-        padding: 1.5rem;
-        margin: 10% auto;
-    }
+  .modal-content {
+    width: 95%;
+    padding: 1.5rem;
+    margin: 10% auto;
+  }
 
-    .close-button {
-        font-size: 2rem;
-        right: 15px;
-        top: 5px;
-    }
+  .close-button {
+    font-size: 2rem;
+    right: 15px;
+    top: 5px;
+  }
 }
 
+.cta-button:hover {
+  cursor: pointer;
+}
 
+/* 예약 완료 모달 */
+.custom-alert {
+  padding-top: 150px;
+  z-index: 1001;
+}
 
+.custom-alert-content {
+  max-width: 320px; /* 가로폭 줄임 */
+  width: 90%;
+  padding: 2rem;
+  text-align: center;
+  background-color: var(--color-dark);
+  box-shadow: 0 5px 25px rgba(159, 84, 255, 0.7);
+  border: 2px solid var(--color-accent);
+  border-radius: 15px;
+}
 
+.custom-alert-title {
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  color: var(--color-light);
+  margin-bottom: 1rem;
+}
 
+.custom-alert-message {
+  font-size: 0.9rem;
+  color: #ccc;
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+}
 
+.custom-alert-close-button {
+  color: #fff;
+  font-size: 1.5rem;
+  position: absolute;
+  right: 12px;
+  top: 8px;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
 
+.custom-alert-close-button:hover {
+  color: var(--color-accent);
+}
 
-
+.custom-alert-confirm-button {
+  display: inline-block;
+  padding: 0.6rem 1.5rem;
+  font-size: 0.9rem;
+  border-radius: 8px;
+  margin-top: 0.5rem;
+}

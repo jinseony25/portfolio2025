@@ -78,6 +78,22 @@
     max-height: 90vh;
     display: flex;
     justify-content: center;
+    flex-direction: column;
+
+}
+
+.modal-contentbook {
+    position: relative;
+    padding: 20px;
+    background: #1a1a1a;
+    border-radius: 15px;
+    max-width: 25vw;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    left: 700px;
+    top: 150px;
 }
 
 /* 팝업 내 이미지 */
@@ -107,6 +123,13 @@
     line-height: 1;
     cursor: pointer;
     border: 2px solid #fff;
+}
+
+.modal-contentbook .cta-button {
+    width: 100px;
+    height: auto;
+    border-radius: 20px;
+    margin: 0 auto;
 }
 
 /* --- 기존 코드 수정 --- */
